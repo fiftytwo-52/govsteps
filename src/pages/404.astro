@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import NotFoundArt from '../components/NotFoundArt.astro';
-import { guides } from '../data/guides';
+import { guides, guidePath } from '../data/guides';
 
 const randomGuides = [...guides].sort(() => 0.5 - Math.random()).slice(0, 3);
 ---
@@ -17,7 +17,7 @@ const randomGuides = [...guides].sort(() => 0.5 - Math.random()).slice(0, 3);
 
     <div class="mx-auto mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
       {randomGuides.map((g) => (
-        <a href={`/guides/${g.slug}`} class="rounded-md border border-hairline bg-canvas-elevated p-4 text-sm font-medium text-ink transition-all hover:-translate-y-0.5 hover:border-link hover:text-link dark:border-hairline-dark dark:bg-canvas-elevated-dark dark:text-ink-dark dark:hover:border-link-dark dark:hover:text-link-dark">
+        <a href={`${guidePath(g)}/`} class="rounded-md border border-hairline bg-canvas-elevated p-4 text-sm font-medium text-ink transition-all hover:-translate-y-0.5 hover:border-link hover:text-link dark:border-hairline-dark dark:bg-canvas-elevated-dark dark:text-ink-dark dark:hover:border-link-dark dark:hover:text-link-dark">
           {g.title}
         </a>
       ))}
