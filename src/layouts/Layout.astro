@@ -10,7 +10,7 @@ interface Props {
   robots?: string;
 }
 
-const {
+const {govsteps.com
   title,
   description = 'Step-by-step guides for US, UK, and Canadian government paperwork — taxes, immigration, IDs, and benefits explained in plain language.',
   schema = [],
@@ -76,6 +76,16 @@ const allSchema = [...siteSchema, ...schema];
       const theme = localStorage.getItem('theme') ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       document.documentElement.classList.toggle('dark', theme === 'dark');
     </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-XG1X8DE2Y8"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XG1X8DE2Y8');
+    </script>
   </head>
   <body class="flex min-h-screen flex-col">
     <!-- nav-bar: canvas background, hairline bottom border -->
@@ -140,7 +150,17 @@ const allSchema = [...siteSchema, ...schema];
       <div class="container-geist py-16">
         <div class="grid gap-10 sm:grid-cols-3">
           <div>
-            <p class="text-sm font-semibold text-ink dark:text-ink-dark">GovSteps</p>
+            <a href="/" class="flex items-center gap-2 text-sm font-semibold text-ink dark:text-ink-dark" aria-label="GovSteps home">
+              <svg class="size-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect width="24" height="24" rx="5" fill="#171717" class="dark:hidden" />
+                <rect width="24" height="24" rx="5" fill="#ededed" class="hidden dark:block" />
+                <path d="M5.5 18.5V14.5H10V10.5H14.5" stroke="#fafafa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="dark:hidden" />
+                <path d="M5.5 18.5V14.5H10V10.5H14.5" stroke="#0a0a0a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block" />
+                <path d="M14.5 10.5V6.5H18.5" stroke="#0070f3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="dark:hidden" />
+                <path d="M14.5 10.5V6.5H18.5" stroke="#3291ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block" />
+              </svg>
+              GovSteps
+            </a>
             <p class="mt-2 max-w-xs text-sm text-body dark:text-body-dark">Plain-language, step-by-step guides for US, UK, and Canadian government paperwork.</p>
           </div>
           <div class="text-sm">
