@@ -1,0 +1,173 @@
+---
+// Shared guide-page layout used by all three country routes:
+//   /guides/[slug]        (US — legacy URLs kept)
+//   /uk/guides/[slug]     (UK)
+//   /can/guides/[slug]    (Canada)
+import Layout from '../layouts/Layout.astro';
+import StepTimeline from './StepTimeline.astro';
+import DocumentChecklist from './DocumentChecklist.astro';
+import InfoBox from './InfoBox.astro';
+import Faq from './Faq.astro';
+import Icon from './Icon.astro';
+import TranslateGuide from './TranslateGuide.astro';
+import CountryFlag from './CountryFlag.astro';
+import { categories, guidePath, getCountry, guides } from '../data/guides';
+import type { Guide } from '../data/guides';
+import { linkTerms } from '../data/glossary';
+
+interface Props {
+  guide: Guide;
+}
+
+const { guide } = Astro.props;
+const country = getCountry(guide.country);
+const category = categories.find((c) => c.id === guide.category);
+// Related guides stay within the same country.
+const related = guides
+  .filter((g) => g.country === guide.country && g.category === guide.category && g.slug !== guide.slug)
+  .slice(0, 3);
+const homeHref = country.pathPrefix || '/';
+const dataLabel = guide.updatedAt ? `${guide.updatedAt}-Latest` : new Date().getFullYear().toString();
+
+// --- SEO structured data ---------------------------------------------
+const guideUrl = new URL(`${country.pathPrefix}/guides/${guide.slug}`, Astro.site).toString();
+const stepToHowToStep = (step: (typeof guide.steps)[number], i: number) => ({
+  '@type': 'HowToStep',
+  position: i + 1,
+  name: step.title,
+  text: step.detail,
+  ...(step.duration ? { timeRequired: step.duration } : {}),
+});
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: guide.title,
+  description: guide.description,
+  totalTime: guide.totalTime,
+  ...(guide.updatedAt ? { dateModified: `${guide.updatedAt}-01-01` } : {}),
+  inLanguage: 'en',
+  ...(guide.totalCost ? { estimatedCost: { '@type': 'MonetaryAmount', description: guide.totalCost } } : {}),
+  step: guide.steps.map(stepToHowToStep),
+};
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: guide.faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<Layout title={guide.metaTitle} description={guide.description} schema={[howToSchema, faqSchema]}>
+  <!-- Hero band: grey panel, breadcrumb + title + summary + quick facts -->
+  <section class="relative overflow-hidden border-b border-hairline bg-hairline-soft/60 dark:border-hairline-dark dark:bg-hairline-soft-dark/40">
+    <div class="huge-bg-word" aria-hidden="true"><span>{guide.category.toUpperCase()}</span></div>
+    <div class="container-geist relative z-10 py-12 lg:py-16">
+      <!-- Breadcrumb -->
+      <nav class="font-mono text-xs text-mute dark:text-mute-dark" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-link dark:hover:text-link-dark">Home</a>
+        <span class="mx-1.5">/</span>
+        <a href={homeHref} class="hover:text-link dark:hover:text-link-dark">{country.short} guides</a>
+        <span class="mx-1.5">/</span>
+        <a href={`${homeHref}#cat-${guide.category}`} class="hover:text-link dark:hover:text-link-dark">{category?.name}</a>
+        <span class="mx-1.5">/</span>
+        <span class="text-body dark:text-body-dark">{guide.title}</span>
+      </nav>
+
+      <!-- Header -->
+      <header class="mt-6">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-canvas-elevated px-3 py-1 text-xs font-medium text-ink dark:bg-canvas-elevated-dark dark:text-ink-dark">
+            <Icon name={category?.icon ?? 'file'} class="size-3.5" /> {category?.name}
+          </span>
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-link-soft px-3 py-1 text-xs font-medium text-link-deep dark:bg-link-soft-dark dark:text-link-dark">
+            <CountryFlag code={guide.country} class="h-3.5 w-5" /> {country.name}
+          </span>
+          {guide.audience.map((a) => (
+            <span class="rounded-full bg-link-soft px-3 py-1 text-xs font-medium text-link-deep dark:bg-link-soft-dark dark:text-link-dark">{a}</span>
+          ))}
+        </div>
+        <h1 class="heading-lg mt-5 max-w-3xl text-ink dark:text-ink-dark">{guide.title}</h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-body dark:text-body-dark" set:html={linkTerms(guide.summary)} />
+        <div class="mt-6 max-w-3xl">
+          <TranslateGuide />
+        </div>
+      </header>
+
+      <!-- Quick facts -->
+      <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-5">
+        <InfoBox icon="gauge" label="Difficulty" value={guide.difficulty} />
+        <InfoBox icon="timer" label="Total Time" value={guide.totalTime} />
+        <InfoBox icon="dollar" label="Cost" value={guide.totalCost} />
+        <InfoBox icon="list" label="Steps" value={`${guide.steps.length} steps`} />
+        <InfoBox icon="calendar" label="Data from" value={dataLabel} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Content band: two-column doc layout — steps main column, sticky documents sidebar -->
+  <div class="container-geist py-12 lg:py-16">
+    <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-12">
+      <!-- Sidebar: documents first (gather before you start), sticky on desktop -->
+      <aside class="lg:col-start-2 lg:row-start-1 lg:sticky lg:top-20 lg:self-start">
+        <DocumentChecklist documents={guide.documents} />
+
+        <!-- Disclaimer: warning treatment per Geist semantic colors -->
+        <div class="mt-4 flex gap-3 rounded-md border border-hairline bg-hairline-soft p-4 text-sm text-body dark:border-hairline-dark dark:bg-hairline-soft-dark dark:text-body-dark">
+          <Icon name="alert" class="mt-0.5 size-5 shrink-0 text-[#ab570a]" />
+          <p>
+            <strong class="font-semibold text-ink dark:text-ink-dark">Before you act:</strong>
+            Requirements, fees, and processing times change. Always confirm current details on the official government website
+            ({country.sources}) before submitting anything.
+          </p>
+        </div>
+      </aside>
+
+      <!-- Main column: steps + FAQ + related -->
+      <div class="min-w-0 lg:col-start-1 lg:row-start-1">
+        <!-- Steps -->
+        <section>
+          <p class="eyebrow">The Steps</p>
+          <h2 class="heading-md mt-1.5 text-ink dark:text-ink-dark">Follow these in order</h2>
+          <p class="mt-2 text-sm text-body dark:text-body-dark">
+            Each card shows the phase, expected time, and any cost. Data checked against official {country.short} sources
+            <span class="whitespace-nowrap font-mono text-[11px] font-medium text-link-deep dark:text-link-dark">({dataLabel})</span>.
+          </p>
+          <div class="mt-6">
+            <StepTimeline steps={guide.steps} />
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="mt-12">
+          <p class="eyebrow">FAQ</p>
+          <h2 class="heading-md mt-1.5 text-ink dark:text-ink-dark">Frequently Asked Questions</h2>
+          <div class="mt-5">
+            <Faq faqs={guide.faqs} />
+          </div>
+        </section>
+
+        <!-- Related guides -->
+        {related.length > 0 && (
+          <section class="mt-12">
+            <p class="eyebrow">Related</p>
+            <h2 class="heading-md mt-1.5 text-ink dark:text-ink-dark">Related {country.short} Guides</h2>
+            <div class="mt-4 grid gap-3 sm:grid-cols-3">
+              {related.map((r) => (
+                <a href={guidePath(r)} class="group rounded-md border border-hairline bg-canvas-elevated p-4 text-sm font-medium text-ink transition-all hover:-translate-y-0.5 hover:border-link hover:text-link dark:border-hairline-dark dark:bg-canvas-elevated-dark dark:text-ink-dark dark:hover:border-link-dark dark:hover:text-link-dark">
+                  <span class="flex items-start justify-between gap-2">
+                    {r.title}
+                    <Icon name="arrowright" class="mt-0.5 size-3.5 shrink-0 -translate-x-1 text-mute opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-link group-hover:opacity-100 dark:text-mute-dark dark:group-hover:text-link-dark" />
+                  </span>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    </div>
+  </div>
+
+</Layout>

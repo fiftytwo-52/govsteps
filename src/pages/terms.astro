@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const lastUpdated = 'September 2026';
+
+const sections = [
+  {
+    title: 'Acceptance of terms',
+    body: 'By accessing GovSteps, you agree to these Terms of Use. If you do not agree, please do not use the site.',
+  },
+  {
+    title: 'Informational purposes only',
+    body: `All content on GovSteps is provided for general informational purposes. It is not legal, tax, immigration,
+           or financial advice, and it does not create an attorney-client or accountant-client relationship.
+           Government requirements, fees, forms, and processing times change frequently and vary by state and individual circumstances.`,
+  },
+  {
+    title: 'Verify with official sources',
+    body: `You are responsible for verifying all information against official government sources (irs.gov, uscis.gov,
+           travel.state.gov, ssa.gov, and your state agencies) before making decisions or submitting applications.
+           Never rely solely on this site for any legal or financial action.`,
+  },
+  {
+    title: 'No affiliation with the government',
+    body: `GovSteps is an independent website. We are not affiliated with, endorsed by, or sponsored by any US government
+           agency. We do not process applications, accept payments for government services, or access government records on your behalf.`,
+  },
+  {
+    title: 'Limitation of liability',
+    body: `To the maximum extent permitted by law, GovSteps and its operators are not liable for any loss or damage —
+           including missed deadlines, denied applications, financial loss, or legal consequences — arising from your use of,
+           or reliance on, any content on this site.`,
+  },
+  {
+    title: 'Intellectual property',
+    body: `The design, text, and structure of this site are owned by GovSteps. You may not republish full guides without
+           permission. Quoting brief excerpts with a link back is welcome.`,
+  },
+  {
+    title: 'Third-party links and ads',
+    body: `We link to official government websites for your convenience and may display third-party advertising.
+           We do not control and are not responsible for third-party content, products, or services.`,
+  },
+  {
+    title: 'Changes',
+    body: 'We may update these terms at any time. Continued use of the site after changes means you accept the updated terms.',
+  },
+];
+---
+
+<Layout title="Terms of Use — GovSteps" description="GovSteps terms of use: informational purposes only, no legal advice, accuracy disclaimer, and limitation of liability.">
+  <!-- Hero band: grey panel -->
+  <section class="relative overflow-hidden border-b border-hairline bg-hairline-soft/60 dark:border-hairline-dark dark:bg-hairline-soft-dark/40">
+    <div class="huge-bg-word" aria-hidden="true"><span>TERMS</span></div>
+    <div class="container-geist relative z-10 py-12 lg:py-16">
+      <p class="eyebrow">Legal</p>
+      <h1 class="heading-lg mt-2 text-ink dark:text-ink-dark">Terms of Use</h1>
+      <p class="mt-3 max-w-2xl text-base leading-relaxed text-body dark:text-body-dark">
+        The short version: GovSteps is an independent, informational website. It is not legal, tax, or immigration advice,
+        and it is not affiliated with any US government agency.
+      </p>
+      <p class="mt-4 font-mono text-xs text-mute dark:text-mute-dark">Last updated: {lastUpdated}</p>
+    </div>
+  </section>
+
+  <!-- Body: canvas band, numbered sections -->
+  <div class="container-geist py-12 lg:py-16">
+    <div class="max-w-2xl space-y-10">
+      {sections.map((s, i) => (
+        <section>
+          <h2 class="heading-md text-ink dark:text-ink-dark">
+            <span class="mr-3 font-mono text-sm font-medium text-mute dark:text-mute-dark">{String(i + 1).padStart(2, '0')}</span>
+            {s.title}
+          </h2>
+          <p class="mt-3 leading-relaxed text-body dark:text-body-dark">{s.body}</p>
+        </section>
+      ))}
+      <section>
+        <h2 class="heading-md text-ink dark:text-ink-dark">
+          <span class="mr-3 font-mono text-sm font-medium text-mute dark:text-mute-dark">{String(sections.length + 1).padStart(2, '0')}</span>
+          Contact
+        </h2>
+        <p class="mt-3 leading-relaxed text-body dark:text-body-dark">
+          Questions about these terms? Use our <a href="/contact" class="font-medium text-link hover:underline dark:text-link-dark">contact page</a>.
+        </p>
+      </section>
+    </div>
+  </div>
+</Layout>

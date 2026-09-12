@@ -1,0 +1,15 @@
+---
+import GuidePage from '../../../components/GuidePage.astro';
+import { guidesForCountry } from '../../../data/guides';
+
+export function getStaticPaths() {
+  return guidesForCountry('ca').map((guide) => ({
+    params: { slug: guide.slug },
+    props: { guide },
+  }));
+}
+
+const { guide } = Astro.props;
+---
+
+<GuidePage guide={guide} />

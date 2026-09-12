@@ -1,0 +1,52 @@
+---
+/**
+ * NotFoundArt — original hand-authored SVG artwork in the GovSteps house style.
+ * 100% original vector: free to use, no attribution required, no external assets.
+ */
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+
+<svg viewBox="0 0 320 240" fill="none" role="img" aria-label="A magnifying glass inspecting a document — page not found" class={className}>
+  <defs>
+    <pattern id="gs-dots-404" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.3" class="fill-hairline dark:fill-hairline-dark"></circle>
+    </pattern>
+  </defs>
+
+  <!-- dotted backdrop -->
+  <rect width="320" height="240" fill="url(#gs-dots-404)" opacity="0.8"></rect>
+
+  <!-- stray paper, top left -->
+  <g transform="rotate(-9 62 74)">
+    <rect x="40" y="46" width="46" height="58" rx="6" class="fill-canvas-elevated stroke-hairline dark:fill-canvas-elevated-dark dark:stroke-hairline-dark" stroke-width="1.5"></rect>
+    <rect x="50" y="58" width="26" height="5" rx="2.5" class="fill-hairline dark:fill-hairline-dark"></rect>
+    <rect x="50" y="70" width="18" height="5" rx="2.5" class="fill-hairline dark:fill-hairline-dark"></rect>
+  </g>
+
+  <!-- dotted search trail -->
+  <path d="M92 108 C 128 138, 160 152, 194 162" stroke-dasharray="1.5 7" stroke-linecap="round" class="stroke-mute/60 dark:stroke-mute-dark/60" stroke-width="1.5"></path>
+
+  <!-- main document -->
+  <g transform="rotate(-3 160 110)">
+    <rect x="96" y="26" width="128" height="168" rx="10" class="fill-canvas-elevated stroke-ink/15 dark:fill-canvas-elevated-dark dark:stroke-ink-dark/15" stroke-width="1.5"></rect>
+    <rect x="112" y="44" width="54" height="9" rx="4.5" class="fill-ink/75 dark:fill-ink-dark/75"></rect>
+    <rect x="112" y="66" width="96" height="6" rx="3" class="fill-hairline dark:fill-hairline-dark"></rect>
+    <rect x="112" y="80" width="84" height="6" rx="3" class="fill-hairline dark:fill-hairline-dark"></rect>
+    <rect x="112" y="94" width="92" height="6" rx="3" class="fill-hairline dark:fill-hairline-dark"></rect>
+    <rect x="112" y="116" width="70" height="6" rx="3" class="fill-link dark:fill-link-dark"></rect>
+    <rect x="112" y="140" width="11" height="11" rx="3.5" class="stroke-ink/40 dark:stroke-ink-dark/40" stroke-width="1.5"></rect>
+    <rect x="131" y="144" width="52" height="5" rx="2.5" class="fill-hairline dark:fill-hairline-dark"></rect>
+    <circle cx="117.5" cy="163.5" r="11" class="fill-link dark:fill-link-dark"></circle>
+    <path d="M112.8 163.8 l3.2 3.4 l6 -6.8" class="stroke-canvas dark:stroke-canvas-dark" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    <rect x="131" y="161" width="40" height="5" rx="2.5" class="fill-hairline dark:fill-hairline-dark"></rect>
+  </g>
+
+  <!-- magnifying glass with question mark -->
+  <circle cx="230" cy="170" r="33" class="fill-canvas/70 stroke-ink dark:fill-canvas-dark/70 dark:stroke-ink-dark" stroke-width="2.5"></circle>
+  <path d="M223 158c0-4.5 3.2-7.5 7-7.5s7 3 7 6.8c0 4.6-7 5.8-7 10.7" class="stroke-link dark:stroke-link-dark" stroke-width="2.5" stroke-linecap="round"></path>
+  <circle cx="230" cy="174.5" r="1.6" class="fill-link dark:fill-link-dark"></circle>
+  <line x1="254" y1="194" x2="272" y2="212" class="stroke-ink dark:stroke-ink-dark" stroke-width="4.5" stroke-linecap="round"></line>
+</svg>

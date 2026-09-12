@@ -1,0 +1,56 @@
+e---
+// Rectangular SVG flags for US, UK, and Canada — no emojis, crisp at any size.
+import type { CountryCode } from '../data/guides';
+
+interface Props {
+  code: CountryCode;
+  class?: string;
+}
+
+const { code, class: className = 'h-4 w-6' } = Astro.props;
+---
+
+<svg
+  viewBox="0 0 60 40"
+  role="img"
+  aria-hidden="true"
+  focusable="false"
+  class={`block shrink-0 rounded-[2px] ring-1 ring-black/10 dark:ring-white/20 ${className}`}
+>
+  {code === 'us' && (
+    <g>
+      <rect width="60" height="40" fill="#fff"></rect>
+      {Array.from({ length: 13 }).map((_, i) =>
+        i % 2 === 0 ? <rect y={(i * 40) / 13} width="60" height={40 / 13} fill="#B22234"></rect> : null
+      )}
+      <rect width="24" height={(40 / 13) * 7} fill="#3C3B6E"></rect>
+      {Array.from({ length: 5 }).map((_, col) =>
+        Array.from({ length: 6 }).map((_, row) => (
+          <circle cx={3.2 + col * 4.4} cy={2.7 + row * 3.4} r="0.9" fill="#fff"></circle>
+        ))
+      )}
+    </g>
+  )}
+
+  {code === 'uk' && (
+    <g>
+      <rect width="60" height="40" fill="#012169"></rect>
+      <path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="8"></path>
+      <path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"></path>
+      <path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="13"></path>
+      <path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="8"></path>
+    </g>
+  )}
+
+  {code === 'ca' && (
+    <g>
+      <rect width="60" height="40" fill="#fff"></rect>
+      <rect width="15" height="40" fill="#D80621"></rect>
+      <rect x="45" width="15" height="40" fill="#D80621"></rect>
+      <path
+        d="M30 5 L31.6 9.4 L35.3 8.1 L34.5 12.4 L39.4 13.5 L36 16.8 L38.4 20.3 L33.6 20.1 L34.2 24.6 L30 21.8 L25.8 24.6 L26.4 20.1 L21.6 20.3 L24 16.8 L20.6 13.5 L25.5 12.4 L24.7 8.1 L28.4 9.4 Z"
+        fill="#D80621"></path>
+      <rect x="29.3" y="21.5" width="1.4" height="8" fill="#D80621"></rect>
+    </g>
+  )}
+</svg>

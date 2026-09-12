@@ -1,0 +1,37 @@
+---
+/**
+ * HeroFlowArt — original hand-authored SVG artwork in the GovSteps house style.
+ * 100% original vector: free to use, no attribution required, no external assets.
+ */
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+
+<svg viewBox="0 0 320 96" fill="none" aria-hidden="true" class={className}>
+  <!-- connectors -->
+  <path d="M92 48 H 116" stroke-dasharray="1.5 6" stroke-linecap="round" class="stroke-mute/60 dark:stroke-mute-dark/60" stroke-width="1.5"></path>
+  <path d="M204 48 H 228" stroke-dasharray="1.5 6" stroke-linecap="round" class="stroke-mute/60 dark:stroke-mute-dark/60" stroke-width="1.5"></path>
+
+  <!-- card 1: the document -->
+  <rect x="8" y="14" width="80" height="68" rx="10" class="fill-canvas-elevated stroke-ink/15 dark:fill-canvas-elevated-dark dark:stroke-ink-dark/15" stroke-width="1.5"></rect>
+  <rect x="24" y="30" width="34" height="7" rx="3.5" class="fill-ink/70 dark:fill-ink-dark/70"></rect>
+  <rect x="24" y="46" width="44" height="5" rx="2.5" class="fill-hairline dark:fill-hairline-dark"></rect>
+  <rect x="24" y="58" width="32" height="5" rx="2.5" class="fill-hairline dark:fill-hairline-dark"></rect>
+
+  <!-- card 2: the steps -->
+  <rect x="120" y="14" width="80" height="68" rx="10" class="fill-canvas-elevated stroke-ink/15 dark:fill-canvas-elevated-dark dark:stroke-ink-dark/15" stroke-width="1.5"></rect>
+  <circle cx="136" cy="34" r="4.5" class="fill-link dark:fill-link-dark"></circle>
+  <rect x="148" y="31.5" width="36" height="5" rx="2.5" class="fill-hairline dark:fill-hairline-dark"></rect>
+  <circle cx="136" cy="50" r="4.5" class="fill-ink/30 dark:fill-ink-dark/30"></circle>
+  <rect x="148" y="47.5" width="28" height="5" rx="2.5" class="fill-hairline dark:fill-hairline-dark"></rect>
+  <circle cx="136" cy="66" r="4.5" class="fill-ink/30 dark:fill-ink-dark/30"></circle>
+  <rect x="148" y="63.5" width="32" height="5" rx="2.5" class="fill-hairline dark:fill-hairline-dark"></rect>
+
+  <!-- card 3: done -->
+  <rect x="232" y="14" width="80" height="68" rx="10" class="fill-canvas-elevated stroke-ink/15 dark:fill-canvas-elevated-dark dark:stroke-ink-dark/15" stroke-width="1.5"></rect>
+  <circle cx="272" cy="44" r="16" class="fill-link dark:fill-link-dark"></circle>
+  <path d="M265.5 44.4 l4.5 5 l9 -9.6" class="stroke-canvas dark:stroke-canvas-dark" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <rect x="252" y="68" width="40" height="5" rx="2.5" class="fill-hairline dark:fill-hairline-dark"></rect>
+</svg>

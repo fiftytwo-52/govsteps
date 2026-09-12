@@ -1,0 +1,63 @@
+<svg 
+  xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fafafa"/>
+      <stop offset="1" stop-color="#ededed"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- subtle grid -->
+  <g stroke="#e0e0e0" stroke-width="1">
+    <path d="M0 105 H1200 M0 210 H1200 M0 315 H1200 M0 420 H1200 M0 525 H1200"/>
+    <path d="M150 0 V630 M300 0 V630 M450 0 V630 M600 0 V630 M750 0 V630 M900 0 V630 M1050 0 V630"/>
+  </g>
+  <!-- logo mark: ascending staircase, final step in brand blue -->
+  <g transform="translate(90,90)">
+    <rect width="72" height="72" rx="16" fill="#171717"/>
+    <path d="M16.5 55.5V42.5H30V31.5H43.5" fill="none" stroke="#fafafa" stroke-width="6.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M43.5 31.5V19.5H55.5" fill="none" stroke="#0070f3" stroke-width="6.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="186" y="144" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="44" font-weight="600" fill="#171717">GovSteps</text>
+  <!-- headline -->
+  <text x="90" y="300" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="76" font-weight="700" fill="#171717">Government paperwork,</text>
+  <text x="90" y="392" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="76" font-weight="700" fill="#0070f3">step by step.</text>
+  <!-- subline -->
+  <text x="90" y="470" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="32" fill="#525252">Plain-language guides for the US, UK & Canada —</text>
+  <text x="90" y="514" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="32" fill="#525252">taxes, immigration, passports, IDs, and benefits.</text>
+  <!-- flags: US / UK / CA -->
+  <g transform="translate(90,548)">
+    <!-- US -->
+    <svg width="72" height="48" viewBox="0 0 60 40">
+      <rect width="60" height="40" fill="#fff"/>
+      <rect y="0" width="60" height="3.08" fill="#B22234"/>
+      <rect y="6.16" width="60" height="3.08" fill="#B22234"/>
+      <rect y="12.32" width="60" height="3.08" fill="#B22234"/>
+      <rect y="18.48" width="60" height="3.08" fill="#B22234"/>
+      <rect y="24.64" width="60" height="3.08" fill="#B22234"/>
+      <rect y="30.8" width="60" height="3.08" fill="#B22234"/>
+      <rect y="36.96" width="60" height="3.08" fill="#B22234"/>
+      <rect width="24" height="21.5" fill="#3C3B6E"/>
+    </svg>
+    <!-- UK -->
+    <svg x="92" width="72" height="48" viewBox="0 0 60 40">
+      <rect width="60" height="40" fill="#012169"/>
+      <path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="12"/>
+      <path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="6"/>
+      <path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="20"/>
+      <path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="12"/>
+    </svg>
+    <!-- CA -->
+    <svg x="184" width="72" height="48" viewBox="0 0 60 40">
+      <rect width="60" height="40" fill="#fff"/>
+      <rect width="15" height="40" fill="#D80621"/>
+      <rect x="45" width="15" height="40" fill="#D80621"/>
+      <path d="M30 7 L31.3 10.7 L34.4 9.6 L33.7 13.2 L37.8 14.1 L35 16.9 L37 19.8 L33 19.6 L33.5 23.4 L30 21 L26.5 23.4 L27 19.6 L23 19.8 L25 16.9 L22.2 14.1 L26.3 13.2 L25.6 9.6 L28.7 10.7 Z" fill="#D80621"/>
+    </svg>
+  </g>
+  <!-- freshness chip -->
+  <g transform="translate(1010,92)">
+    <rect width="100" height="40" rx="20" fill="#0070f3"/>
+    <text x="50" y="26" text-anchor="middle" font-family="ui-monospace, 'SF Mono', monospace" font-size="16" font-weight="500" fill="#fff">2025 ✓</text>
+  </g>
+</svg>

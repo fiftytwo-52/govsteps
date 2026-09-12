@@ -1,0 +1,19 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  label: string;
+  value: string;
+  icon: string;
+}
+
+const { label, value, icon } = Astro.props;
+---
+
+<div class="rounded-md border border-hairline bg-canvas-elevated p-4 text-center dark:border-hairline-dark dark:bg-canvas-elevated-dark">
+  <div class="mx-auto grid size-9 place-items-center rounded-sm border border-hairline bg-canvas text-ink dark:border-hairline-dark dark:bg-canvas-dark dark:text-ink-dark" aria-hidden="true">
+    <Icon name={icon} class="size-4" />
+  </div>
+  <div class="eyebrow mt-2.5">{label}</div>
+  <div class="mt-1 text-sm font-semibold text-ink dark:text-ink-dark">{value}</div>
+</div>

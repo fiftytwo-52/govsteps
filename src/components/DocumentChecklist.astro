@@ -1,0 +1,32 @@
+---
+import Icon from './Icon.astro';
+import { linkTerms } from '../data/glossary';
+
+interface Props {
+  documents: string[];
+}
+
+const { documents } = Astro.props;
+---
+
+<div class="rounded-md border border-hairline bg-hairline-soft p-5 sm:p-6 dark:border-hairline-dark dark:bg-hairline-soft-dark">
+  <h3 class="flex items-center gap-2.5 text-base font-semibold text-ink dark:text-ink-dark">
+    <Icon name="folder" class="size-5 shrink-0" />
+    Documents to Bring / Prepare
+  </h3>
+  <p class="mt-1 text-sm text-body dark:text-body-dark">Tap each item to check it off as you gather your papers.</p>
+  <ul class="mt-4 space-y-2">
+    {documents.map((doc) => (
+      <li>
+        <label class="flex cursor-pointer items-start gap-3 rounded-sm border border-hairline bg-canvas-elevated p-3 text-sm leading-snug text-ink transition-colors hover:border-link has-[:checked]:opacity-50 has-[:checked]:line-through dark:border-hairline-dark dark:bg-canvas-elevated-dark dark:text-ink-dark dark:hover:border-link-dark">
+          <input
+            type="checkbox"
+            class="mt-0.5 size-4 shrink-0 accent-ink dark:accent-ink-dark"
+            aria-label={doc}
+          />
+          <span set:html={linkTerms(doc)} />
+        </label>
+      </li>
+    ))}
+  </ul>
+</div>

@@ -1,0 +1,46 @@
+---
+/**
+ * AboutHeroArt — original hand-authored SVG artwork in the GovSteps house style.
+ * 100% original vector: free to use, no attribution required, no external assets.
+ */
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+
+<svg viewBox="0 0 400 240" fill="none" role="img" aria-label="Scattered paperwork reorganized into a neat, ordered checklist" class={className}>
+  <!-- messy stack of forms -->
+  <g>
+    <rect x="26" y="58" width="72" height="92" rx="7" transform="rotate(-11 62 104)" class="fill-canvas-elevated stroke-hairline dark:fill-canvas-elevated-dark dark:stroke-hairline-dark" stroke-width="1.5"></rect>
+    <rect x="46" y="44" width="72" height="92" rx="7" transform="rotate(5 82 90)" class="fill-canvas-elevated stroke-hairline dark:fill-canvas-elevated-dark dark:stroke-hairline-dark" stroke-width="1.5"></rect>
+    <rect x="38" y="70" width="72" height="92" rx="7" transform="rotate(-2 74 116)" class="fill-canvas-elevated stroke-ink/15 dark:fill-canvas-elevated-dark dark:stroke-ink-dark/15" stroke-width="1.5"></rect>
+    <rect x="52" y="88" width="40" height="6" rx="3" class="fill-hairline dark:fill-hairline-dark"></rect>
+    <rect x="52" y="102" width="30" height="6" rx="3" class="fill-hairline dark:fill-hairline-dark"></rect>
+    <rect x="52" y="116" width="36" height="6" rx="3" class="fill-hairline dark:fill-hairline-dark"></rect>
+  </g>
+
+  <!-- flow arrow -->
+  <path d="M124 116 C 156 96, 178 104, 200 110" stroke-dasharray="1.5 7" stroke-linecap="round" class="stroke-link/70 dark:stroke-link-dark/70" stroke-width="2"></path>
+  <path d="M196 102 l10 8 -10 8" class="stroke-link/70 dark:stroke-link-dark/70" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+
+  <!-- neat guide card -->
+  <rect x="222" y="38" width="152" height="164" rx="12" class="fill-canvas-elevated stroke-ink/15 dark:fill-canvas-elevated-dark dark:stroke-ink-dark/15" stroke-width="1.5"></rect>
+  <rect x="222" y="50" width="6" height="140" rx="3" class="fill-link dark:fill-link-dark"></rect>
+  <rect x="244" y="56" width="44" height="9" rx="4.5" class="fill-ink/75 dark:fill-ink-dark/75"></rect>
+
+  <!-- step rows -->
+  <circle cx="252" cy="92" r="5" class="fill-ink/30 dark:fill-ink-dark/30"></circle>
+  <rect x="266" y="89" width="72" height="6" rx="3" class="fill-hairline dark:fill-hairline-dark"></rect>
+  <circle cx="252" cy="122" r="5" class="fill-ink/30 dark:fill-ink-dark/30"></circle>
+  <rect x="266" y="119" width="56" height="6" rx="3" class="fill-hairline dark:fill-hairline-dark"></rect>
+  <circle cx="252" cy="152" r="11" class="fill-link dark:fill-link-dark"></circle>
+  <path d="M247.5 152.3 l3 3.2 l6 -6.4" class="stroke-canvas dark:stroke-canvas-dark" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  <rect x="266" y="149" width="64" height="6" rx="3" class="fill-hairline dark:fill-hairline-dark"></rect>
+
+  <!-- completion badge -->
+  <g transform="rotate(8 342 52)">
+    <rect x="322" y="36" width="40" height="26" rx="13" class="fill-link-soft dark:fill-link-soft-dark"></rect>
+    <path d="M333 49 l4 4.5 l8 -9" class="stroke-link dark:stroke-link-dark" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+  </g>
+</svg>

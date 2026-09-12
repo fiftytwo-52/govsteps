@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const lastUpdated = 'September 2026';
+
+const sections = [
+  {
+    title: 'Information we collect',
+    body: `We do not require registration and we do not ask for personal information such as your name, Social Security number,
+           immigration status, or financial details. Any information you voluntarily provide by email (for example, when reporting
+           an error) is used only to respond to you.`,
+  },
+  {
+    title: 'Cookies and local storage',
+    body: `We use browser local storage to remember your dark/light theme preference and your progress on document checklists.
+           This data stays on your device and is never sent to our servers. We do not use cookies to track you across other websites.`,
+  },
+  {
+    title: 'Analytics and advertising',
+    body: `We may use analytics services (such as Google Analytics) to understand aggregate site usage — pages visited, approximate
+           location, device type — in order to improve the site. We may also display advertising served by third parties
+           (such as Google AdSense). These vendors may use cookies subject to their own privacy policies. You can opt out of
+           personalized advertising at Google Ads Settings (adssettings.google.com).`,
+  },
+  {
+    title: 'Third-party links',
+    body: `Our guides link to official government websites (irs.gov, uscis.gov, travel.state.gov, state DMV sites). We are not
+           responsible for the content or privacy practices of those sites.`,
+  },
+  {
+    title: "Children's privacy",
+    body: 'This site is not directed at children under 13, and we do not knowingly collect information from them.',
+  },
+  {
+    title: 'Your rights',
+    body: `Depending on your location, you may have rights to access, correct, or delete personal data we hold about you.
+           Since we collect almost no personal data, these rights rarely apply — but if you have a request, contact us and we will respond.`,
+  },
+  {
+    title: 'Changes to this policy',
+    body: 'We may update this policy from time to time. Changes are posted on this page with an updated date.',
+  },
+];
+---
+
+<Layout title="Privacy Policy — GovSteps" description="GovSteps privacy policy: what data we collect, how we use cookies and analytics, and your choices.">
+  <!-- Hero band: grey panel -->
+  <section class="relative overflow-hidden border-b border-hairline bg-hairline-soft/60 dark:border-hairline-dark dark:bg-hairline-soft-dark/40">
+    <div class="huge-bg-word" aria-hidden="true"><span>PRIVACY</span></div>
+    <div class="container-geist relative z-10 py-12 lg:py-16">
+      <p class="eyebrow">Legal</p>
+      <h1 class="heading-lg mt-2 text-ink dark:text-ink-dark">Privacy Policy</h1>
+      <p class="mt-3 max-w-2xl text-base leading-relaxed text-body dark:text-body-dark">
+        GovSteps ("we", "us", "our") operates this website. This page informs you of our policies regarding the collection,
+        use, and disclosure of information when you use our site.
+      </p>
+      <p class="mt-4 font-mono text-xs text-mute dark:text-mute-dark">Last updated: {lastUpdated}</p>
+    </div>
+  </section>
+
+  <!-- Body: canvas band, content on the shared left column -->
+  <div class="container-geist py-12 lg:py-16">
+    <div class="max-w-2xl space-y-10">
+      {sections.map((s, i) => (
+        <section>
+          <h2 class="heading-md text-ink dark:text-ink-dark">
+            <span class="mr-3 font-mono text-sm font-medium text-mute dark:text-mute-dark">{String(i + 1).padStart(2, '0')}</span>
+            {s.title}
+          </h2>
+          <p class="mt-3 leading-relaxed text-body dark:text-body-dark">{s.body}</p>
+        </section>
+      ))}
+      <section>
+        <h2 class="heading-md text-ink dark:text-ink-dark">
+          <span class="mr-3 font-mono text-sm font-medium text-mute dark:text-mute-dark">{String(sections.length + 1).padStart(2, '0')}</span>
+          Contact
+        </h2>
+        <p class="mt-3 leading-relaxed text-body dark:text-body-dark">
+          Questions about this policy? Reach us via our <a href="/contact" class="font-medium text-link hover:underline dark:text-link-dark">contact page</a>.
+        </p>
+      </section>
+    </div>
+  </div>
+</Layout>

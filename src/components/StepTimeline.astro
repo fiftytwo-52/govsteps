@@ -1,0 +1,401 @@
+---
+import type { Step } from '../data/guides';
+import Icon from './Icon.astro';
+import { linkTerms } from '../data/glossary';
+
+interface Props {
+  steps: Step[];
+}
+
+const { steps } = Astro.props;
+
+const phaseLabels: Record<Step['phase'], string> = {
+  before: 'Before You Go',
+  go: 'Go',
+  fill: 'Fill / Prepare',
+  submit: 'Submit & Pay',
+  wait: 'Wait',
+  followup: 'Follow Up',
+  receive: 'Receive',
+};
+
+const phaseIcons: Record<Step['phase'], string> = {
+  before: 'clipboard',
+  go: 'pin',
+  fill: 'pen',
+  submit: 'send',
+  wait: 'hourglass',
+  followup: 'search',
+  receive: 'check',
+};
+---
+
+<div class="stepflow" data-stepflow>
+  <!-- Sticky progress header: ring meter + counter + reset -->
+  <div class="stepflow-progress sticky top-14 z-30 -mx-4 mb-6 flex items-center justify-between gap-4 border-y border-hairline bg-canvas/90 px-4 py-2.5 backdrop-blur dark:border-hairline-dark dark:bg-canvas-dark/90 sm:-mx-6 sm:px-6 lg:top-16">
+    <div class="flex items-center gap-3">
+      <!-- Progress ring: SVG circle that fills as steps complete -->
+      <span class="relative grid size-10 shrink-0 place-items-center" aria-hidden="true">
+        <svg viewBox="0 0 36 36" class="size-10 -rotate-90">
+          <circle cx="18" cy="18" r="15.5" fill="none" stroke="currentColor" stroke-width="3.5" class="text-hairline dark:text-hairline-dark"></circle>
+          <circle
+            data-progress-ring
+            cx="18" cy="18" r="15.5" fill="none"
+            stroke="currentColor" stroke-width="3.5" stroke-linecap="round"
+            class="text-link transition-[stroke-dashoffset] duration-500 ease-out dark:text-link-dark"
+            stroke-dasharray="97.4" stroke-dashoffset="97.4"
+          ></circle>
+        </svg>
+        <span data-progress-percent class="absolute font-mono text-[10px] font-semibold tabular-nums text-ink dark:text-ink-dark">0%</span>
+      </span>
+      <p class="font-mono text-[11px] font-medium uppercase tracking-wide text-body dark:text-body-dark">
+        <span data-progress-count class="text-ink dark:text-ink-dark">0</span> of {steps.length} steps
+      </p>
+    </div>
+    <button type="button" data-progress-reset class="rounded-full border border-hairline px-3 py-1 font-mono text-[11px] text-body transition-colors hover:border-link hover:text-link dark:border-hairline-dark dark:text-body-dark dark:hover:border-link-dark dark:hover:text-link-dark">
+      Reset
+    </button>
+  </div>
+
+  <ol class="relative space-y-3 sm:space-y-4" data-step-list>
+    {steps.map((step, i) => (
+      <li
+        class={`phase-${step.phase} stepflow-item relative flex gap-4 opacity-0 sm:gap-5`}
+        data-step-item
+        style={`--stagger: {i}`}
+      >
+        <!-- Curly arrow connector: squiggle track + progress stroke + arrowhead -->
+        {i < steps.length - 1 && (
+          <>
+            <svg
+              class="absolute bottom-6 left-[8px] top-12 w-5 sm:left-[9px]"
+              viewBox="0 0 20 100"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M10 0 C 3 16, 17 32, 10 48 C 5 60, 15 72, 10 84 L 10 96"
+                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                vector-effect="non-scaling-stroke"
+                class="text-hairline dark:text-hairline-dark"
+              />
+              <path
+                d="M10 0 C 3 16, 17 32, 10 48 C 5 60, 15 72, 10 84 L 10 96"
+                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                vector-effect="non-scaling-stroke"
+                pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"
+                class="text-link transition-[stroke-dashoffset] duration-700 ease-out dark:text-link-dark"
+                data-connector
+              />
+            </svg>
+            <svg
+              class="absolute bottom-2 left-[10px] size-4 text-hairline transition-colors duration-700 sm:left-[11px] dark:text-hairline-dark"
+              viewBox="0 0 16 16" fill="none" aria-hidden="true"
+              data-connector-head
+            >
+              <path d="M3 4 L8 10 L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </>
+        )}
+
+        <!-- Node: phase-tinted bubble, ring when complete, check swap -->
+        <span class="relative z-10 mt-4 shrink-0" aria-hidden="true">
+          <span
+            class="grid size-9 place-items-center rounded-full border-2 border-canvas-elevated text-sm font-semibold text-canvas shadow-[0_0_0_1px_var(--phase)] transition-transform duration-300 sm:size-10 dark:border-canvas-elevated-dark dark:text-canvas-dark"
+            style={`background-color: var(--phase)`}
+          >
+            <span data-step-number>{i + 1}</span>
+            <Icon name="check" class="absolute size-4 scale-0 transition-transform duration-300" data-step-check />
+          </span>
+        </span>
+
+        <!-- Step card: clickable to mark complete; left phase rail on hover/complete -->
+        <div
+          class="step-card relative flex-1 cursor-pointer rounded-lg border border-hairline bg-canvas-elevated p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-link/60 hover:shadow-[0px_8px_24px_rgba(0,0,0,0.07)] sm:p-5 dark:border-hairline-dark dark:bg-canvas-elevated-dark dark:hover:border-link-dark/60"
+          role="button"
+          tabindex="0"
+          aria-pressed="false"
+          data-step-card
+        >
+          <!-- Phase accent rail: left edge of the card -->
+          <span class="absolute inset-y-0 left-0 w-1" style={`background-color: var(--phase)`} aria-hidden="true"></span>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <span
+              class="inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 font-mono text-[11px] font-medium uppercase text-canvas dark:text-canvas-dark"
+              style={`background-color: var(--phase)`}
+            >
+              <Icon name={phaseIcons[step.phase]} class="size-3" /> {phaseLabels[step.phase]}
+            </span>
+            {step.duration && (
+              <span class="inline-flex items-center gap-1 rounded-full bg-hairline-soft px-2.5 py-0.5 font-mono text-[11px] text-body dark:bg-hairline-soft-dark dark:text-body-dark">
+                <Icon name="timer" class="size-3" /> {step.duration}
+              </span>
+            )}
+            {step.cost && (
+              <span class="inline-flex items-center gap-1 rounded-full bg-hairline-soft px-2.5 py-0.5 font-mono text-[11px] text-body dark:bg-hairline-soft-dark dark:text-body-dark">
+                <Icon name="dollar" class="size-3" /> {step.cost}
+              </span>
+            )}
+          </div>
+
+          <h3 class="mt-3 flex items-start gap-2 text-base font-semibold leading-snug text-ink dark:text-ink-dark">
+            <Icon name={phaseIcons[step.phase]} class="mt-0.5 size-4 shrink-0 text-mute dark:text-mute-dark" />
+            {step.title}
+          </h3>
+          <p class="mt-1.5 text-sm leading-relaxed text-body dark:text-body-dark" set:html={linkTerms(step.detail)} />
+
+          {step.links && step.links.length > 0 && (
+            <div class="mt-3 flex flex-wrap gap-2">
+              {step.links.map((link) => {
+                const isInternal = link.href.startsWith('/');
+                return isInternal ? (
+                  <a href={link.href} class="inline-flex items-center gap-1.5 rounded-sm bg-link-soft px-3 py-1.5 text-xs font-medium text-link-deep transition-colors hover:bg-link hover:text-white dark:bg-link-soft-dark dark:text-link-dark dark:hover:bg-link-dark dark:hover:text-canvas-dark">
+                    <Icon name="link" class="size-3.5" /> {link.label}
+                  </a>
+                ) : (
+                  <a href={link.href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-sm border border-hairline bg-canvas-elevated px-3 py-1.5 text-xs font-medium text-ink transition-colors hover:border-link hover:text-link dark:border-hairline-dark dark:bg-canvas-elevated-dark dark:text-ink-dark dark:hover:border-link-dark dark:hover:text-link-dark">
+                    <Icon name="external" class="size-3.5" /> {link.label}
+                  </a>
+                );
+              })}
+            </div>
+          )}
+
+          <p class="mt-3 flex items-center gap-1.5 font-mono text-[11px] text-mute opacity-0 transition-opacity duration-300 dark:text-mute-dark" data-done-hint>
+            <Icon name="check" class="size-3" /> Click to mark as done
+          </p>
+        </div>
+      </li>
+    ))}
+  </ol>
+</div>
+
+<style>
+  /* Scroll-reveal: items slide up + fade in, staggered */
+  .stepflow-item {
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s ease-out,
+      transform 0.5s ease-out;
+    transition-delay: calc(var(--stagger) * 60ms);
+  }
+  .stepflow-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Hover: hint fades in, card lifts slightly */
+  .step-card:hover [data-done-hint] {
+    opacity: 0.85;
+  }
+
+  /* Completed state: link-tinted card, phase rail glows, title settles */
+  .stepflow-item.is-done .step-card {
+    border-color: var(--link, #0070f3);
+    background-color: color-mix(in srgb, var(--link, #0070f3) 4%, transparent);
+  }
+  .stepflow-item.is-done .step-card:hover {
+    box-shadow: none;
+    transform: none;
+  }
+  .stepflow-item.is-done [data-step-check] {
+    transform: scale(1);
+  }
+  .stepflow-item.is-done [data-step-number] {
+    display: none;
+  }
+  .stepflow-item.is-done .stepflow-progress-none {
+    opacity: 0;
+  }
+  .stepflow-item.is-done [data-done-hint] {
+    opacity: 0;
+  }
+  .stepflow-item.is-done .step-card > *:not(span) {
+    opacity: 0.72;
+  }
+
+  /* Curly arrowhead turns link-colored once the step above is marked done */
+  .stepflow-item.is-done [data-connector-head] {
+    color: var(--color-link);
+  }
+  .dark .stepflow-item.is-done [data-connector-head] {
+    color: var(--color-link-dark);
+  }
+
+  /* Progress header hides itself until at least one step is revealed */
+  .stepflow-progress {
+    opacity: 0;
+    transform: translateY(-4px);
+    transition:
+      opacity 0.4s ease-out,
+      transform 0.4s ease-out;
+  }
+  .stepflow-progress.is-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stepflow-item,
+    .stepflow-progress,
+    .step-card,
+    [data-connector],
+    [data-progress-ring] {
+      transition: none !important;
+    }
+    .stepflow-item {
+      opacity: 1;
+      transform: none;
+    }
+    .stepflow-progress {
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  function setupStepflow(): void {
+    const roots = document.querySelectorAll<HTMLElement>('[data-stepflow]');
+    if (!roots.length) return;
+
+    roots.forEach((root) => {
+      const items = Array.from(root.querySelectorAll<HTMLElement>('[data-step-item]'));
+      const progressHeader = root.querySelector<HTMLElement>('.stepflow-progress');
+      const countEl = root.querySelector<HTMLElement>('[data-progress-count]');
+      const percentEl = root.querySelector<HTMLElement>('[data-progress-percent]');
+      const ringEl = root.querySelector<SVGCircleElement>('[data-progress-ring]');
+      const resetBtn = root.querySelector<HTMLButtonElement>('[data-progress-reset]');
+      const storageKey = location.pathname.includes('/guides/')
+        ? `govsteps:progress:${location.pathname}`
+        : null;
+
+      // ---------- Scroll reveal ----------
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+          if (progressHeader && root.querySelector('[data-step-item].is-visible')) {
+            progressHeader.classList.add('is-active');
+          }
+        },
+        { rootMargin: '0px 0px -10% 0px', threshold: 0.15 },
+      );
+      items.forEach((item) => revealObserver.observe(item));
+
+      // ---------- Completion state ----------
+      const done = new Set<number>();
+
+      function persist(): void {
+        if (!storageKey) return;
+        try {
+          localStorage.setItem(storageKey, JSON.stringify([...done]));
+        } catch {
+          /* storage unavailable — progress just won't persist */
+        }
+      }
+
+      function updateProgress(): void {
+        if (!countEl || !percentEl) return;
+        const total = items.length;
+        const ratio = total > 0 ? done.size / total : 0;
+        countEl.textContent = String(done.size);
+        percentEl.textContent = `${Math.round(ratio * 100)}%`;
+        // Ring meter: circumference 2πr (r=15.5 → ~97.4), dashoffset = C × (1 − ratio)
+        if (ringEl) ringEl.style.strokeDashoffset = String(97.4 * (1 - ratio));
+      }
+
+      function updateConnector(index: number): void {
+        const item = items[index];
+        if (!item) return;
+        const connector = item.querySelector<SVGPathElement>('[data-connector]');
+        if (connector) connector.style.strokeDashoffset = done.has(index) ? '0' : '100';
+      }
+
+      function setDone(index: number, value: boolean): void {
+        const item = items[index];
+        if (!item) return;
+        if (value) done.add(index);
+        else done.delete(index);
+        item.classList.toggle('is-done', value);
+        const card = item.querySelector<HTMLElement>('[data-step-card]');
+        if (card) card?.setAttribute('aria-pressed', value ? 'true' : 'false');
+        updateConnector(index);
+        updateProgress();
+        persist();
+      }
+
+      items.forEach((item, index) => {
+        const card = item.querySelector<HTMLElement>('[data-step-card]');
+        if (!card) return;
+        card.addEventListener('click', (e) => {
+          // Don't toggle when clicking a link inside the card
+          if ((e.target as HTMLElement).closest('a')) return;
+          setDone(index, !done.has(index));
+        });
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setDone(index, !done.has(index));
+          }
+        });
+      });
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          done.clear();
+          items.forEach((item, index) => {
+            item.classList.remove('is-done');
+            const card = item.querySelector<HTMLElement>('[data-step-card]');
+            if (card) card.setAttribute('aria-pressed', 'false');
+            updateConnector(index);
+          });
+          updateProgress();
+          persist();
+        });
+      }
+
+      // ---------- Restore saved progress ----------
+      if (storageKey) {
+        try {
+          const saved = JSON.parse(localStorage.getItem(storageKey) ?? '[]') as number[];
+          saved.filter((n) => Number.isInteger(n) && n >= 0 && n < items.length).forEach((n) => {
+            const item = items[n];
+            done.add(n);
+            item?.classList.add('is-done');
+            const card = item?.querySelector<HTMLElement>('[data-step-card]');
+            if (card) card.setAttribute('aria-pressed', 'true');
+            const connector = item?.querySelector<SVGPathElement>('[data-connector]');
+            if (connector) connector.style.strokeDashoffset = '0';
+          });
+          if (done.size > 0 && progressHeader) progressHeader.classList.add('is-active');
+          updateProgress();
+        } catch {
+          /* corrupt saved state — ignore */
+        }
+      }
+
+      // Items already in the viewport on load should not wait for a scroll
+      requestAnimationFrame(() => {
+        items.forEach((item) => {
+          const rect = item.getBoundingClientRect();
+          if (rect.top < window.innerHeight) {
+            item.classList.add('is-visible');
+            revealObserver.unobserve(item);
+          }
+        });
+        if (progressHeader && root.querySelector('[data-step-item].is-visible')) {
+          progressHeader.classList.add('is-active');
+        }
+      });
+    });
+  }
+
+  document.addEventListener('astro:page-load', setupStepflow);
+  setupStepflow();
+</script>

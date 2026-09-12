@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<Layout title="Contact — GovSteps" description="Contact GovSteps: report an error, suggest a guide, or send feedback about our US government how-to guides.">
+  <!-- Hero band -->
+  <section class="relative overflow-hidden border-b border-hairline dark:border-hairline-dark">
+    <div class="huge-bg-word" aria-hidden="true"><span>CONTACT</span></div>
+    <div class="container-geist relative z-10 py-24">
+      <div class="max-w-3xl">
+        <p class="eyebrow">Contact</p>
+        <h1 class="heading-lg mt-2 text-ink dark:text-ink-dark">We read everything.</h1>
+        <p class="mt-5 text-base leading-relaxed text-body dark:text-body-dark">
+          Questions, corrections, or ideas for a guide we should write next? Pick the right inbox below —
+          the most-requested guide topics get written first.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Channels: grey panel band -->
+  <section class="border-b border-hairline bg-hairline-soft/60 dark:border-hairline-dark dark:bg-hairline-soft-dark/40">
+    <div class="container-geist py-24">
+      <div class="max-w-2xl">
+        <p class="eyebrow">Channels</p>
+        <h2 class="heading-lg mt-2 text-ink dark:text-ink-dark">Reach the right inbox</h2>
+      </div>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2">
+        <div class="rounded-md border border-hairline bg-canvas-elevated p-6 dark:border-hairline-dark dark:bg-canvas-elevated-dark sm:p-8">
+          <span class="grid size-10 place-items-center rounded-md border border-hairline bg-canvas text-ink dark:border-hairline-dark dark:bg-canvas-dark dark:text-ink-dark">
+            <Icon name="mail" class="size-5" />
+          </span>
+          <h3 class="mt-4 text-base font-semibold text-ink dark:text-ink-dark">General & feedback</h3>
+          <p class="mt-1.5 text-sm leading-relaxed text-body dark:text-body-dark">Questions about the site, or feedback on a guide you used.</p>
+          <p class="mt-4 text-sm text-body dark:text-body-dark">
+            <a href="mailto:gun-yes@proton.me" class="font-medium text-link underline decoration-link/40 underline-offset-4 transition-colors hover:decoration-link dark:text-link-dark dark:decoration-link-dark/40 dark:hover:decoration-link-dark">Click here</a>
+            to email us.
+          </p>
+        </div>
+        <div class="rounded-md border border-hairline bg-canvas-elevated p-6 dark:border-hairline-dark dark:bg-canvas-elevated-dark sm:p-8">
+          <span class="grid size-10 place-items-center rounded-md border border-hairline bg-canvas text-ink dark:border-hairline-dark dark:bg-canvas-dark dark:text-ink-dark">
+            <Icon name="bug" class="size-5" />
+          </span>
+          <h3 class="mt-4 text-base font-semibold text-ink dark:text-ink-dark">Report an error</h3>
+          <p class="mt-1.5 text-sm leading-relaxed text-body dark:text-body-dark">Wrong fee, outdated form number, broken link — send it here.</p>
+          <p class="mt-4 text-sm text-body dark:text-body-dark">
+            <a href="mailto:gun-yes@proton.me?subject=Error%20report%20%E2%80%94%20GovSteps" class="font-medium text-link underline decoration-link/40 underline-offset-4 transition-colors hover:decoration-link dark:text-link-dark dark:decoration-link-dark/40 dark:hover:decoration-link-dark">Click here</a>
+            to report it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Suggest a guide: canvas band, two columns -->
+  <section class="border-b border-hairline dark:border-hairline-dark">
+    <div class="container-geist grid gap-12 py-24 lg:grid-cols-2 lg:gap-16">
+      <div>
+        <p class="eyebrow">Suggestions</p>
+        <h2 class="heading-lg mt-2 text-ink dark:text-ink-dark">Suggest a guide</h2>
+        <p class="mt-5 text-base leading-relaxed text-body dark:text-body-dark">
+          Is there a government process that confused you? Send us the topic and we will research it and build a
+          step-by-step guide for it.
+        </p>
+      </div>
+      <div class="flex gap-3 rounded-md border border-hairline bg-hairline-soft p-6 text-sm leading-relaxed text-body dark:border-hairline-dark dark:bg-hairline-soft-dark dark:text-body-dark sm:p-8">
+        <Icon name="alert" class="mt-0.5 size-5 shrink-0 text-[#ab570a]" />
+        <p>
+          <strong class="font-semibold text-ink dark:text-ink-dark">Important:</strong>
+          GovSteps is an informational website. We cannot file forms for you, check your case status,
+          or give legal or tax advice. For official help with your specific situation, contact the relevant agency directly
+          (IRS: 1-800-829-1040, USCIS: 1-800-375-5283, SSA: 1-800-772-1213) or consult a licensed attorney or CPA.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://govsteps.com/sitemap.xml

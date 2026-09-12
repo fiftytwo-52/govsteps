@@ -1,0 +1,126 @@
+---
+// SVG flags for the translation languages — US (English), India, Nepal,
+// Brazil, Spain, and the UK. Simplified so every detail still reads
+// crisply at 14–16px tall. Nepal's flag is non-rectangular (double
+// pennant), so it skips the rounded ring the rectangular flags get.
+type LangFlag = 'gb' | 'us' | 'in' | 'np' | 'br' | 'es';
+
+interface Props {
+  code: LangFlag;
+  class?: string;
+}
+
+const { code, class: className = 'h-4 w-6' } = Astro.props;
+
+// 8 bold Ashoka Chakra spokes instead of 24 hairlines (which turn to
+// noise at pill-button size).
+const chakraSpokes = Array.from({ length: 8 }).map((_, i) => {
+  const a = (i * Math.PI) / 4;
+  return {
+    x1: 30 + 1.7 * Math.cos(a),
+    y1: 20 + 1.7 * Math.sin(a),
+    x2: 30 + 5 * Math.cos(a),
+    y2: 20 + 5 * Math.sin(a),
+  };
+});
+
+// US flag: 13 stripes + blue canton with a 5/4 offset grid of star dots.
+const stripeH = 40 / 13;
+const cantonH = stripeH * 7;
+const starDots = Array.from({ length: 5 }).flatMap((_, r) => {
+  const y = 3.6 + r * 3.6;
+  const five = r % 2 === 0;
+  const count = five ? 5 : 4;
+  return Array.from({ length: count }).map((_, c) => ({
+    x: (five ? 2.9 : 5.2) + c * 4.55,
+    y,
+  }));
+});
+---
+
+<svg
+  viewBox="0 0 60 40"
+  role="img"
+  aria-hidden="true"
+  focusable="false"
+  class={`block shrink-0 ${code === 'np' ? '' : 'rounded-[2px] ring-1 ring-black/10 dark:ring-white/20'} ${className}`}
+>
+  {code === 'gb' && (
+    <g>
+      <rect width="60" height="40" fill="#012169"></rect>
+      <path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="8"></path>
+      <path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"></path>
+      <path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="13"></path>
+      <path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="8"></path>
+    </g>
+  )}
+
+  {code === 'us' && (
+    <g>
+      {Array.from({ length: 13 }).map((_, i) => (
+        <rect
+          y={i * stripeH}
+          width="60"
+          height={stripeH + 0.15}
+          fill={i % 2 === 0 ? '#B22234' : '#fff'}
+        ></rect>
+      ))}
+      <rect width="24.5" height={cantonH} fill="#3C3B6E"></rect>
+      {starDots.map((s) => (
+        <circle cx={s.x} cy={s.y} r="1.05" fill="#fff"></circle>
+      ))}
+    </g>
+  )}
+
+  {code === 'in' && (
+    <g>
+      <rect width="60" height="40" fill="#FF9933"></rect>
+      <rect y="13.33" width="60" height="13.33" fill="#fff"></rect>
+      <rect y="26.66" width="60" height="13.34" fill="#138808"></rect>
+      <circle cx="30" cy="20" r="5.2" fill="none" stroke="#000080" stroke-width="1.2"></circle>
+      <circle cx="30" cy="20" r="1.1" fill="#000080"></circle>
+      {chakraSpokes.map((s) => (
+        <line x1={s.x1} y1={s.y1} x2={s.x2} y2={s.y2} stroke="#000080" stroke-width="0.8"></line>
+      ))}
+    </g>
+  )}
+
+  {code === 'np' && (
+    <g>
+      <!-- Double pennant: crimson field, blue border following the outline
+           itself — no rectangular background. Upper pennant is smaller,
+           lower pennant extends further right, like the real flag. -->
+      <path
+        d="M17 3 L43 14.5 L17 22 L49 33 L17 37 Z"
+        fill="#DC143C"
+        stroke="#003893"
+        stroke-width="2.6"
+        stroke-linejoin="round"
+      ></path>
+      <!-- Simplified moon (upper pennant): crescent -->
+      <circle cx="25.5" cy="12" r="2.7" fill="#fff"></circle>
+      <circle cx="26.8" cy="11.2" r="2.2" fill="#DC143C"></circle>
+      <!-- Simplified sun (lower pennant) -->
+      <circle cx="26.5" cy="29.5" r="2.3" fill="#fff"></circle>
+    </g>
+  )}
+
+  {code === 'br' && (
+    <g>
+      <rect width="60" height="40" fill="#009C3B"></rect>
+      <path d="M30 4 L56 20 L30 36 L4 20 Z" fill="#FFDF00"></path>
+      <circle cx="30" cy="20" r="8.5" fill="#002776"></circle>
+      <path
+        d="M21.8 18.6 C26 16.8 31 16.6 35.5 18.2 C37 18.7 38.3 18.6 38.6 17.9 C38.5 21.3 34.6 23.2 30.6 23.2 C26.4 23.2 23 21.4 21.8 18.6 Z"
+        fill="#fff"
+      ></path>
+    </g>
+  )}
+
+  {code === 'es' && (
+    <g>
+      <rect width="60" height="40" fill="#AA151B"></rect>
+      <rect y="10" width="60" height="20" fill="#F1BF00"></rect>
+    </g>
+  )}
+</svg>

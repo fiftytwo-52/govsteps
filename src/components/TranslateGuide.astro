@@ -1,0 +1,213 @@
+---
+// Language selector for guide pages — lets immigrants read the guide in
+// Hindi, Nepali, Português (Brasil), or Español via Google Translate.
+// Shows the language icon + the CURRENT language's flag and name on the
+// button (e.g. 🇳🇵 Nepali); clicking opens a dropdown to switch.
+// Selection is stored in the `googtrans` cookie + localStorage and the
+// page reloads already translated. The band uses a soft link-tinted
+// background so it catches the eye in the hero.
+import Icon from './Icon.astro';
+import LanguageFlag from './LanguageFlag.astro';
+import { translationLanguages } from '../data/types';
+
+const current = {
+  short: 'English',
+  flag: 'us',
+};
+---
+
+<div
+  data-translate-guide
+  class="relative inline-flex max-w-full items-center gap-3 rounded-full border border-link/30 bg-link-soft/70 py-1.5 pl-4 pr-1.5 dark:border-link-dark/40 dark:bg-link-soft-dark"
+>
+  <Icon name="translate" class="size-4 shrink-0 text-link dark:text-link-dark" />
+
+  <button
+    type="button"
+    data-translate-toggle
+    aria-haspopup="listbox"
+    aria-expanded="false"
+    aria-controls="translate-menu"
+    class="inline-flex cursor-pointer items-center gap-2 rounded-full bg-canvas-elevated px-3 py-1 text-sm font-medium text-ink shadow-sm transition-colors hover:text-link dark:bg-canvas-elevated-dark dark:text-ink-dark dark:hover:text-link-dark"
+  >
+    <span class="notranslate inline-flex items-center gap-2" data-translate-current>
+      <LanguageFlag code={current.flag} class="h-3.5 w-5" />
+      <span data-translate-label>{current.short}</span>
+    </span>
+    <svg class="size-3.5 shrink-0 transition-transform" data-translate-chevron fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+
+  <span class="hidden pr-2 text-xs text-body sm:inline dark:text-body-dark">Read this guide in your language</span>
+
+  <ul
+    id="translate-menu"
+    role="listbox"
+    aria-label="Choose a language"
+    data-translate-menu
+    class="absolute left-4 top-full z-50 mt-2 hidden w-64 overflow-hidden rounded-lg border border-hairline bg-canvas-elevated p-1.5 shadow-[0px_12px_40px_rgba(0,0,0,0.14)] dark:border-hairline-dark dark:bg-canvas-elevated-dark"
+  >
+    <li
+      role="option"
+      aria-selected="true"
+      tabindex="0"
+      data-lang=""
+      class="notranslate flex cursor-pointer items-center gap-2.5 rounded-md px-3 py-2 text-sm text-body transition-colors hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark"
+    >
+      <LanguageFlag code="us" class="h-3.5 w-5" />
+      English (original)
+    </li>
+    {translationLanguages.map((lang) => (
+      <li
+        role="option"
+        aria-selected="false"
+        tabindex="0"
+        data-lang={lang.code}
+        class="notranslate flex cursor-pointer items-center gap-2.5 rounded-md px-3 py-2 text-sm text-body transition-colors hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark"
+      >
+        <LanguageFlag code={lang.flag} class="h-3.5 w-5" />
+        {lang.label}
+      </li>
+    ))}
+  </ul>
+
+  <!-- Google Translate mount point (kept invisible; we drive it via cookie) -->
+  <div id="google_translate_element" class="hidden" aria-hidden="true"></div>
+</div>
+
+<style is:global>
+  /* Hide Google Translate's injected toolbar / banners — we use our own dropdown. */
+  body {
+    top: 0 !important;
+  }
+  .skiptranslate > iframe,
+  #goog-gt-tt,
+  .goog-te-balloon-frame,
+  .skiptranslate iframe {
+    display: none !important;
+  }
+  #google_translate_element {
+    display: none !important;
+  }
+</style>
+
+<script>
+  const WIDGET_SRC = 'https://translate.google.com/translate_a/element.js';
+
+  function setCookie(name: string, value: string) {
+    const parts = [`${name}=${value}`, 'path=/'];
+    // Set on bare hostname and with leading dot so subdomains match too.
+    const host = location.hostname;
+    document.cookie = parts.join('; ');
+    if (host.includes('.')) {
+      document.cookie = [...parts, `domain=.${host}`].join('; ');
+    }
+  }
+
+  function deleteCookie(name: string) {
+    const host = location.hostname;
+    document.cookie = `${name}=;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+    if (host.includes('.')) {
+      document.cookie = `${name}=;path=/;domain=.${host};expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+    }
+  }
+
+  function loadWidget() {
+    if (document.querySelector(`script[src^="${WIDGET_SRC}"]`)) return;
+    (window as any).googleTranslateElementInit = () => {
+      try {
+        new (window as any).google.translate.TranslateElement(
+          { pageLanguage: 'en', autoDisplay: false, layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE },
+          'google_translate_element',
+        );
+      } catch {
+        /* widget failed to load — page stays in English */
+      }
+    };
+    const s = document.createElement('script');
+    s.src = `${WIDGET_SRC}?cb=googleTranslateElementInit`;
+    s.async = true;
+    document.head.appendChild(s);
+  }
+
+  const root = document.querySelector('[data-translate-guide]') as HTMLElement | null;
+  if (root) {
+    const toggle = root.querySelector('[data-translate-toggle]') as HTMLButtonElement | null;
+    const menu = root.querySelector('[data-translate-menu]') as HTMLElement | null;
+    const current = root.querySelector('[data-translate-current]') as HTMLElement | null;
+
+    // Reflect the saved language on the button: swap in its flag + short name.
+    const applySavedLanguage = () => {
+      const saved = localStorage.getItem('guide-lang') ?? '';
+      if (!saved || !menu || !current) return;
+      const opt = menu.querySelector(`[data-lang="${saved}"]`) as HTMLElement | null;
+      if (!opt) return;
+      // The option's first <svg> child is its flag; the trailing text is its name.
+      const flag = opt.querySelector('svg');
+      const label = opt.textContent?.replace('English (original)', 'English')?.trim() ?? '';
+      if (flag) {
+        current.querySelectorAll(':scope > svg').forEach((f) => f.remove());
+        current.prepend(flag.cloneNode(true));
+      }
+      const labelEl = current.querySelector('[data-translate-label]');
+      if (labelEl) {
+        labelEl.textContent =
+          saved === 'hi' ? 'Hindi' :
+          saved === 'ne' ? 'Nepali' :
+          saved === 'pt-BR' ? 'Português' :
+          saved === 'es' ? 'Español' :
+          label.split(' — ')[1] ?? label;
+      }
+      menu.querySelectorAll('[role="option"]').forEach((o) => {
+        o.setAttribute('aria-selected', String((o as HTMLElement).dataset.lang === saved));
+      });
+    };
+    applySavedLanguage();
+
+    const choose = (code: string) => {
+      if (code) {
+        setCookie('googtrans', `/en/${code}`);
+        localStorage.setItem('guide-lang', code);
+      } else {
+        deleteCookie('googtrans');
+        localStorage.removeItem('guide-lang');
+      }
+      location.reload();
+    };
+
+    const setOpen = (open: boolean) => {
+      menu?.classList.toggle('hidden', !open);
+      toggle?.setAttribute('aria-expanded', String(open));
+      const chevron = root.querySelector('[data-translate-chevron]') as SVGElement | null;
+      chevron?.style.setProperty('transform', open ? 'rotate(180deg)' : '');
+    };
+
+    toggle?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setOpen(menu?.classList.contains('hidden') ?? false);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (root.contains(e.target as Node)) return;
+      setOpen(false);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') setOpen(false);
+    });
+
+    menu?.querySelectorAll('[role="option"]').forEach((opt) => {
+      opt.addEventListener('click', () => choose((opt as HTMLElement).dataset.lang ?? ''));
+      opt.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          choose((opt as HTMLElement).dataset.lang ?? '');
+        }
+      });
+    });
+
+    // Load the widget so a saved cookie re-translates on every visit.
+    loadWidget();
+  }
+</script>
