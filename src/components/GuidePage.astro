@@ -26,11 +26,11 @@ const category = categories.find((c) => c.id === guide.category);
 const related = guides
   .filter((g) => g.country === guide.country && g.category === guide.category && g.slug !== guide.slug)
   .slice(0, 3);
-const homeHref = country.pathPrefix || '/';
+const homeHref = country.pathPrefix ? `${country.pathPrefix}/` : '/';
 const dataLabel = guide.updatedAt ? `${guide.updatedAt}-Latest` : new Date().getFullYear().toString();
 
 // --- SEO structured data ---------------------------------------------
-const guideUrl = new URL(`${country.pathPrefix}/guides/${guide.slug}`, Astro.site).toString();
+const guideUrl = new URL(guidePath(guide), Astro.site).toString();
 const stepToHowToStep = (step: (typeof guide.steps)[number], i: number) => ({
   '@type': 'HowToStep',
   position: i + 1,

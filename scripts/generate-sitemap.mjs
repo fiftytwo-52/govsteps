@@ -31,7 +31,7 @@ const staticPaths = ['/', '/uk/', '/can/', '/about/', '/contact/', '/privacy/', 
 const entries = [
     ...staticPaths.map((loc) => ({ loc, lastmod: undefined })),
     // One entry per guide; lastmod from the guide's updatedAt year.
-    ...guides.map((g) => ({ loc: `${guidePath(g)}/`, lastmod: `${g.updatedAt}-01-01` })),
+    ...guides.map((g) => ({ loc: guidePath(g), lastmod: `${g.updatedAt}-01-01` })),
 ];
 
 const urls = entries

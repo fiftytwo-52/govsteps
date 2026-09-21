@@ -1,0 +1,4 @@
+# Domain canonicalization redirects for Cloudflare Pages
+https://www.govsteps.com/* https://govsteps.com/:splat 301
+http://www.govsteps.com/* https://govsteps.com/:splat 301
+http://govsteps.com/* https://govsteps.com/:splat 301

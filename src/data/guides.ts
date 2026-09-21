@@ -30,7 +30,7 @@ export function getCountry(code: CountryCode): Country {
     return c;
 }
 
-/** URL path helper: guides live at [prefix]/guides/[slug]. US has no prefix (legacy URLs). */
+/** URL path helper: guides live at [prefix]/guides/[slug]/. US has no prefix (legacy URLs). */
 export function guidePath(g: Guide): string {
-    return `${getCountry(g.country).pathPrefix}/guides/${g.slug}`;
+    return `${getCountry(g.country).pathPrefix}/guides/${g.slug}/`;
 }

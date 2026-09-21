@@ -52,7 +52,7 @@ const guideSearch = JSON.stringify(
         const count = guides.filter((g) => g.country === c.code).length;
         return (
           <a
-            href={c.pathPrefix || '/'}
+            href={c.pathPrefix ? `${c.pathPrefix}/` : '/'}
             aria-current={active ? 'page' : undefined}
             class={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-sm font-medium transition-all ${
               active
