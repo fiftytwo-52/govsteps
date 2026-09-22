@@ -18,7 +18,7 @@ const {
 } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const siteName = 'GovSteps';
-const ogImage = new URL('/og-image.svg', Astro.site);
+const ogImage = new URL('/og-image.png', Astro.site);
 
 // Site-level structured data (merged with any page-level schema).
 const siteSchema = [
@@ -51,7 +51,12 @@ const allSchema = [...siteSchema, ...schema];
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" sizes="32x32" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     {!robots?.includes('noindex') && <link rel="canonical" href={canonicalURL} />}
+    <link rel="alternate" hreflang="en-US" href="https://govsteps.com/" />
+    <link rel="alternate" hreflang="en-GB" href="https://govsteps.com/uk/" />
+    <link rel="alternate" hreflang="en-CA" href="https://govsteps.com/can/" />
+    <link rel="alternate" hreflang="x-default" href="https://govsteps.com/" />
     <title>{title}</title>
 
     <!-- Open Graph -->
@@ -191,7 +196,7 @@ const allSchema = [...siteSchema, ...schema];
           </div>
         </div>
         <div class="mt-12 border-t border-hairline pt-6 text-xs text-mute dark:border-hairline-dark dark:text-mute-dark">
-          <p>GovSteps is an independent informational website. It is not affiliated with any US, UK, or Canadian government agency. Always verify requirements at official sources (usa.gov, gov.uk, canada.ca, and their agencies).</p>
+          <p>GovSteps is an independent informational website. It is not affiliated with any US, UK, or Canadian government agency. Always verify requirements at official sources (<a href="https://www.usa.gov" target="_blank" rel="noopener noreferrer" class="underline hover:text-ink dark:hover:text-ink-dark">usa.gov</a>, <a href="https://www.gov.uk" target="_blank" rel="noopener noreferrer" class="underline hover:text-ink dark:hover:text-ink-dark">gov.uk</a>, <a href="https://www.canada.ca" target="_blank" rel="noopener noreferrer" class="underline hover:text-ink dark:hover:text-ink-dark">canada.ca</a>, and their agencies).</p>
           <p class="mt-2">&copy; {new Date().getFullYear()} GovSteps. All rights reserved.</p>
         </div>
       </div>

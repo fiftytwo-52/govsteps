@@ -37,11 +37,20 @@ const guideSearch = JSON.stringify(
     };
   }),
 );
+const pageTitle = code === 'us'
+  ? 'GovSteps — US Government Paperwork, Step by Step'
+  : code === 'uk'
+  ? 'GovSteps — UK Government Paperwork, Step by Step'
+  : 'GovSteps — Canada Government Paperwork, Step by Step';
+
+const pageDescription = code === 'us'
+  ? 'Step-by-step guides for US government paperwork: taxes, immigration, passports, IDs, and benefits. Costs, fees, and verified official links.'
+  : `Step-by-step guides for ${country.name} government paperwork: taxes, immigration, passports, IDs, and benefits. Costs, fees, and verified official links.`;
 ---
 
 <Layout
-  title={`GovSteps — Step-by-Step Guides for ${country.name} Government Paperwork`}
-  description={`Plain-language, step-by-step guides for ${country.name} government paperwork — taxes, immigration, passports, IDs, benefits, and business registration. Every step, fee, and waiting time, checked against official ${new Date().getFullYear()} sources.`}
+  title={pageTitle}
+  description={pageDescription}
 >
   <!-- Country bar: horizontally centered pills, directly below the nav bar -->
   <div class="border-b border-hairline bg-canvas/70 dark:border-hairline-dark dark:bg-canvas-dark/70">
@@ -61,8 +70,9 @@ const guideSearch = JSON.stringify(
             }`}
           >
             <CountryFlag code={c.code} class="h-4 w-6" />
-            {c.name}
-            <span class={`font-mono text-[10px] ${active ? 'opacity-70' : 'text-mute dark:text-mute-dark'}`}>{count}</span>
+            <span>{c.name}</span>
+            <span class="sr-only">({count} guides)</span>
+            <span aria-hidden="true" class={`font-mono text-[10px] ${active ? 'opacity-70' : 'text-mute dark:text-mute-dark'}`}>{count}</span>
           </a>
         );
       })}
@@ -170,19 +180,22 @@ const guideSearch = JSON.stringify(
           const count = countryGuides.filter((g) => g.category === cat.id).length;
           if (count === 0) return null;
           return (
-            <a
-              href={`#cat-${cat.id}`}
-              class="group rounded-md border border-hairline bg-canvas-elevated p-6 transition-shadow hover:shadow-[0px_2px_2px_rgba(0,0,0,0.04)] dark:border-hairline-dark dark:bg-canvas-elevated-dark"
+            <div
+              class="group relative rounded-md border border-hairline bg-canvas-elevated p-6 transition-shadow hover:shadow-[0px_2px_2px_rgba(0,0,0,0.04)] dark:border-hairline-dark dark:bg-canvas-elevated-dark"
             >
               <span class="grid size-10 place-items-center rounded-md border border-hairline bg-canvas text-ink dark:border-hairline-dark dark:bg-canvas-dark dark:text-ink-dark">
                 <Icon name={cat.icon} class="size-5" />
               </span>
-              <h3 class="heading-md mt-4 text-ink group-hover:text-link dark:text-ink-dark dark:group-hover:text-link-dark">{cat.name}</h3>
+              <h3 class="heading-md mt-4 text-ink group-hover:text-link dark:text-ink-dark dark:group-hover:text-link-dark">
+                <a href={`#cat-${cat.id}`} class="after:absolute after:inset-0 focus:outline-none">
+                  {cat.name}
+                </a>
+              </h3>
               <p class="mt-1.5 text-sm text-body dark:text-body-dark">{cat.blurb}</p>
               <p class="mt-4 font-mono text-xs text-mute dark:text-mute-dark">
                 {count} guides
               </p>
-            </a>
+            </div>
           );
         })}
       </div>
@@ -210,14 +223,13 @@ const guideSearch = JSON.stringify(
                 <span class="grid size-6 place-items-center text-ink dark:text-ink-dark">
                   <Icon name={cat.icon} class="size-5" />
                 </span>
-                {cat.name}
+                {cat.name} Guides
               </h3>
               <p class="font-mono text-xs text-mute dark:text-mute-dark">{catGuides.length} guides</p>
             </div>
             <div class="mt-6 grid gap-4 md:grid-cols-2">
               {catGuides.map((guide, i) => (
-                <a
-                  href={guidePath(guide)}
+                <div
                   data-guide-card
                   data-slug={guide.slug}
                   data-collapsed={i >= 4 ? 'true' : 'false'}
@@ -230,10 +242,12 @@ const guideSearch = JSON.stringify(
                     class="pointer-events-none absolute -right-4 -bottom-5 size-28 text-ink opacity-[0.06] transition-opacity duration-300 group-hover:opacity-[0.12] dark:text-ink-dark dark:opacity-[0.08] dark:group-hover:opacity-[0.16]"
                   />
                   <div class="relative">
-                    <h4 class="flex items-start justify-between gap-2 text-base font-semibold leading-snug text-ink group-hover:text-link dark:text-ink-dark dark:group-hover:text-link-dark">
-                      {guide.title}
+                    <span class="flex items-start justify-between gap-2 text-base font-semibold leading-snug text-ink group-hover:text-link dark:text-ink-dark dark:group-hover:text-link-dark">
+                      <a href={guidePath(guide)} class="after:absolute after:inset-0 focus:outline-none">
+                        {guide.title}
+                      </a>
                       <Icon name="arrowright" class="mt-0.5 size-4 shrink-0 -translate-x-1 text-mute opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-link group-hover:opacity-100 dark:text-mute-dark dark:group-hover:text-link-dark" />
-                    </h4>
+                    </span>
                     <p class="mt-1.5 line-clamp-1 text-sm text-body dark:text-body-dark">{guide.summary}</p>
                     <p class="mt-3 flex flex-wrap items-center gap-x-2 font-mono text-xs text-mute dark:text-mute-dark">
                       <span>{guide.steps.length} steps · {guide.totalTime}</span>
@@ -244,7 +258,7 @@ const guideSearch = JSON.stringify(
                       )}
                     </p>
                   </div>
-                </a>
+                </div>
               ))}
             </div>
             {catGuides.length > 4 && (
@@ -273,7 +287,7 @@ const guideSearch = JSON.stringify(
       </p>
       <div class="mt-8 flex flex-wrap justify-center gap-3">
         <a href="#guides" class="rounded-full bg-ink px-6 py-2.5 text-base font-medium leading-5 text-canvas hover:opacity-80 dark:bg-ink-dark dark:text-canvas-dark">
-          Browse All Guides
+          Explore All Guides
         </a>
       </div>
     </div>
