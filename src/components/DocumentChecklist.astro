@@ -9,24 +9,124 @@ interface Props {
 const { documents } = Astro.props;
 ---
 
-<div class="rounded-xl border border-slate-200 bg-slate-50/75 p-5 sm:p-6 shadow-xs dark:border-neutral-800 dark:bg-neutral-900/90">
-  <h3 class="flex items-center gap-2.5 text-base font-bold text-slate-900 dark:text-white">
-    <Icon name="folder" class="size-5 shrink-0 text-blue-600 dark:text-blue-400" />
+<div class="checklist-card rounded-xl border border-slate-300 bg-slate-50 p-5 sm:p-6 shadow-xs dark:border-neutral-800 dark:bg-neutral-900">
+  <h3 class="checklist-title flex items-center gap-2.5 text-base font-bold text-slate-900 dark:text-white">
+    <Icon name="folder" class="checklist-icon size-5 shrink-0 text-blue-600 dark:text-blue-400" />
     <span>Documents to Bring / Prepare</span>
   </h3>
-  <p class="mt-1.5 text-sm font-normal text-slate-600 dark:text-neutral-300">Tap each item to check it off as you gather your papers.</p>
+  <p class="checklist-subtitle mt-1.5 text-sm font-normal text-slate-700 dark:text-neutral-200">
+    Tap each item to check it off as you gather your papers.
+  </p>
   <ul class="mt-4 space-y-2">
-    {documents.map((doc) => (
+    {documents.map((doc, idx) => (
       <li>
-        <label class="flex cursor-pointer items-start gap-3 rounded-lg border border-slate-200/90 bg-white p-3.5 text-sm font-medium leading-snug text-slate-900 shadow-xs transition-all hover:border-blue-500 hover:bg-blue-50/20 has-[:checked]:opacity-50 has-[:checked]:line-through dark:border-neutral-700/80 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:border-blue-400 dark:hover:bg-neutral-700/60">
+        <label class="checklist-item flex cursor-pointer items-start gap-3 rounded-lg border border-slate-300 bg-white p-3.5 text-sm font-medium leading-snug text-slate-900 shadow-xs transition-all hover:border-blue-500 hover:bg-blue-50/30 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:border-blue-400 dark:hover:bg-neutral-700/60">
           <input
             type="checkbox"
-            class="mt-0.5 size-4 shrink-0 rounded accent-blue-600 dark:accent-blue-400"
+            id={`doc-check-${idx}`}
+            class="checklist-checkbox mt-0.5 size-4 shrink-0 rounded accent-blue-600 dark:accent-blue-400"
             aria-label={doc}
           />
-          <span class="text-slate-900 dark:text-neutral-100" set:html={linkTerms(doc)} />
+          <span class="checklist-text text-slate-900 dark:text-neutral-100" set:html={linkTerms(doc)} />
         </label>
       </li>
     ))}
   </ul>
 </div>
+
+<style>
+  /* Guaranteed contrast & visibility in all browsers (independent of oklch) */
+  .checklist-card {
+    background-color: #f8fafc !important;
+    border-color: #cbd5e1 !important;
+  }
+  .checklist-title {
+    color: #0f172a !important;
+  }
+  .checklist-icon {
+    color: #2563eb !important;
+  }
+  .checklist-subtitle {
+    color: #334155 !important;
+  }
+  .checklist-item {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+    opacity: 1 !important;
+  }
+  .checklist-item:hover {
+    border-color: #3b82f6 !important;
+    background-color: #eff6ff !important;
+  }
+  .checklist-checkbox {
+    accent-color: #2563eb !important;
+  }
+  .checklist-text,
+  .checklist-text :global(*:not([role="tooltip"])) {
+    color: #0f172a !important;
+  }
+
+  /* Checked state */
+  .checklist-item:has(input:checked),
+  .checklist-item.is-checked {
+    opacity: 0.65 !important;
+  }
+  .checklist-item:has(input:checked) .checklist-text,
+  .checklist-item.is-checked .checklist-text {
+    text-decoration: line-through !important;
+    text-decoration-color: currentColor !important;
+  }
+
+  /* Dark mode overrides (works with .dark class on html) */
+  :global(.dark) .checklist-card {
+    background-color: #18181b !important;
+    border-color: #27272a !important;
+  }
+  :global(.dark) .checklist-title {
+    color: #ffffff !important;
+  }
+  :global(.dark) .checklist-icon {
+    color: #60a5fa !important;
+  }
+  :global(.dark) .checklist-subtitle {
+    color: #e2e8f0 !important;
+  }
+  :global(.dark) .checklist-item {
+    background-color: #27272a !important;
+    border-color: #3f3f46 !important;
+    color: #f8fafc !important;
+    opacity: 1 !important;
+  }
+  :global(.dark) .checklist-item:hover {
+    border-color: #60a5fa !important;
+    background-color: #323238 !important;
+  }
+  :global(.dark) .checklist-checkbox {
+    accent-color: #3b82f6 !important;
+  }
+  :global(.dark) .checklist-text,
+  :global(.dark) .checklist-text :global(*:not([role="tooltip"])) {
+    color: #f8fafc !important;
+  }
+  :global(.dark) .checklist-item:has(input:checked),
+  :global(.dark) .checklist-item.is-checked {
+    opacity: 0.6 !important;
+  }
+</style>
+
+<script>
+  function setupCheckboxes() {
+    document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach((cb) => {
+      const input = cb as HTMLInputElement;
+      const label = input.closest('.checklist-item');
+      if (!label) return;
+      label.classList.toggle('is-checked', input.checked);
+      input.addEventListener('change', () => {
+        label.classList.toggle('is-checked', input.checked);
+      });
+    });
+  }
+  setupCheckboxes();
+  document.addEventListener('astro:page-load', setupCheckboxes);
+</script>
