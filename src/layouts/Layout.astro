@@ -4,6 +4,8 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  /** Optional OG image absolute or relative URL */
+  ogImage?: string;
   /** Optional JSON-LD objects to embed on this page (HowTo, FAQPage, etc.) */
   schema?: Record<string, unknown>[];
   /** Override the robots meta directive (default: index, follow) */
@@ -13,12 +15,22 @@ interface Props {
 const {
   title,
   description = 'Step-by-step guides for US, UK, and Canadian government paperwork — taxes, immigration, IDs, and benefits explained in plain language.',
+  ogImage,
   schema = [],
   robots = 'index, follow',
 } = Astro.props;
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const siteName = 'GovSteps';
-const ogImage = new URL('/og-image.png', Astro.site);
+const formattedTitle = title.includes('GovSteps') ? title : `${title} - GovSteps`;
+const resolvedOgImage = ogImage
+  ? (ogImage.startsWith('http') ? new URL(ogImage) : new URL(ogImage, Astro.site))
+  : new URL('/images/og/og-itin-guide.png', Astro.site);
+
+const currentPath = Astro.url.pathname;
+const isUk = currentPath.startsWith('/uk');
+const isCan = currentPath.startsWith('/can');
+const activeCountry = isUk ? 'uk' : isCan ? 'ca' : 'us';
 
 // Site-level structured data (merged with any page-level schema).
 const siteSchema = [
@@ -35,6 +47,7 @@ const siteSchema = [
     '@type': 'Organization',
     name: siteName,
     url: Astro.site?.toString() ?? canonicalURL.origin,
+    logo: new URL('/images/logos/logo.svg', Astro.site).toString(),
     description: 'Plain-language, step-by-step guides for US, UK, and Canadian government paperwork.',
   },
 ];
@@ -50,29 +63,27 @@ const allSchema = [...siteSchema, ...schema];
     <meta name="robots" content={robots} />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" sizes="32x32" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" sizes="any" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
     {!robots?.includes('noindex') && <link rel="canonical" href={canonicalURL} />}
-    <link rel="alternate" hreflang="en-US" href="https://govsteps.com/" />
-    <link rel="alternate" hreflang="en-GB" href="https://govsteps.com/uk/" />
-    <link rel="alternate" hreflang="en-CA" href="https://govsteps.com/can/" />
-    <link rel="alternate" hreflang="x-default" href="https://govsteps.com/" />
-    <title>{title}</title>
+    <title>{formattedTitle}</title>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteName} />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={formattedTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={resolvedOgImage} />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
+    <meta name="twitter:title" content={formattedTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={resolvedOgImage} />
 
     <!-- Structured data -->
     {allSchema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
@@ -98,28 +109,51 @@ const allSchema = [...siteSchema, ...schema];
   <body class="flex min-h-screen flex-col">
     <!-- nav-bar: canvas background, hairline bottom border -->
     <header class="sticky top-0 z-50 border-b border-hairline bg-canvas/80 backdrop-blur dark:border-hairline-dark dark:bg-canvas-dark/80">
-      <div class="container-geist flex items-center justify-between py-3">
-        <!-- Logo: top-left corner (black wordmark per Geist) -->
-        <a href="/" class="flex items-center gap-2 text-base font-semibold tracking-[-0.28px] text-ink dark:text-ink-dark">
-          <svg class="size-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <rect width="24" height="24" rx="5" fill="#171717" class="dark:hidden" />
-            <rect width="24" height="24" rx="5" fill="#ededed" class="hidden dark:block" />
-            <path d="M5.5 18.5V14.5H10V10.5H14.5" stroke="#fafafa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="dark:hidden" />
-            <path d="M5.5 18.5V14.5H10V10.5H14.5" stroke="#0a0a0a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block" />
-            <path d="M14.5 10.5V6.5H18.5" stroke="#0070f3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="dark:hidden" />
-            <path d="M14.5 10.5V6.5H18.5" stroke="#3291ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block" />
+      <div class="container-geist flex items-center justify-between py-2.5">
+        <!-- Logo: DocuCheck mark + wordmark -->
+        <a href="/" class="flex items-center gap-2.5 focus:outline-none focus-visible:ring-1 focus-visible:ring-link" aria-label="GovSteps homepage">
+          <svg class="h-8 w-auto" viewBox="0 0 256 72" role="img" aria-hidden="true">
+            <rect x="10" y="8" width="40" height="56" rx="6" fill="#FFFFFF" stroke="#14263F" class="dark:stroke-white/80" stroke-width="5"/>
+            <path d="M36 8 H50 V22 Z" fill="#F5A623"/>
+            <line x1="19" y1="33" x2="41" y2="33" stroke="#14263F" stroke-width="4" stroke-linecap="round"/>
+            <line x1="19" y1="41" x2="41" y2="41" stroke="#14263F" stroke-width="4" stroke-linecap="round"/>
+            <line x1="19" y1="49" x2="33" y2="49" stroke="#14263F" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="50" cy="54" r="15" fill="#F5A623" stroke="#FFFFFF" stroke-width="3"/>
+            <path d="M43 54 l5 5 l10 -11" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="76" y="49" font-family="system-ui, -apple-system, sans-serif" font-size="33" font-weight="700" letter-spacing="-0.5">
+              <tspan class="fill-[#14263F] dark:fill-white">Gov</tspan><tspan fill="#F5A623">Steps</tspan>
+            </text>
           </svg>
-          GovSteps
         </a>
 
-        <!-- Nav + controls: top-right (6px-square buttons per Geist app chrome) -->
+        <!-- Country Switcher (header, on every page: United States · United Kingdom · Canada) -->
+        <div class="hidden items-center rounded-full border border-hairline bg-canvas-elevated p-0.5 text-xs font-medium md:flex dark:border-hairline-dark dark:bg-canvas-elevated-dark" role="navigation" aria-label="Country switcher">
+          <a
+            href="/"
+            class={`rounded-full px-3 py-1 transition-colors ${activeCountry === 'us' ? 'bg-ink text-canvas font-semibold dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark'}`}
+            aria-current={activeCountry === 'us' ? 'page' : undefined}
+          >
+            United States
+          </a>
+          <a
+            href="/uk/"
+            class={`rounded-full px-3 py-1 transition-colors ${activeCountry === 'uk' ? 'bg-ink text-canvas font-semibold dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark'}`}
+            aria-current={activeCountry === 'uk' ? 'page' : undefined}
+          >
+            United Kingdom
+          </a>
+          <a
+            href="/can/"
+            class={`rounded-full px-3 py-1 transition-colors ${activeCountry === 'ca' ? 'bg-ink text-canvas font-semibold dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark'}`}
+            aria-current={activeCountry === 'ca' ? 'page' : undefined}
+          >
+            Canada
+          </a>
+        </div>
+
+        <!-- Nav + controls: top-right -->
         <div class="flex items-center gap-2">
-          <nav class="hidden items-center gap-1 text-sm font-medium md:flex">
-            <a href="/" class="rounded-full px-3 py-1.5 text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark">Home</a>
-            <a href="/#guides" class="rounded-full px-3 py-1.5 text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark">Guides</a>
-            <a href="/#categories" class="rounded-full px-3 py-1.5 text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark">Categories</a>
-            <a href="/uk/" class="rounded-full px-3 py-1.5 text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark">UK</a>
-            <a href="/can/" class="rounded-full px-3 py-1.5 text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark">Canada</a>
+          <nav class="hidden items-center gap-1 text-sm font-medium lg:flex">
             <a href="/about/" class="rounded-full px-3 py-1.5 text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark">About</a>
             <a href="/contact/" class="rounded-full px-3 py-1.5 text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark">Contact</a>
           </nav>
@@ -134,17 +168,21 @@ const allSchema = [...siteSchema, ...schema];
         </div>
       </div>
 
+      <!-- Mobile menu -->
       <nav id="mobile-menu" class="hidden border-t border-hairline md:hidden dark:border-hairline-dark">
         <div class="container-geist py-3">
-        <div class="flex flex-col gap-1 text-sm font-medium">
-          <a href="/" class="rounded-full px-3 py-2 text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark">Home</a>
-          <a href="/#guides" class="rounded-full px-3 py-2 text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark">Guides</a>
-          <a href="/#categories" class="rounded-full px-3 py-2 text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark">Categories</a>
-          <a href="/uk/" class="rounded-full px-3 py-2 text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark">UK Guides</a>
-          <a href="/can/" class="rounded-full px-3 py-2 text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark">Canada Guides</a>
-          <a href="/about/" class="rounded-full px-3 py-2 text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark">About</a>
-          <a href="/contact/" class="rounded-full px-3 py-2 text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark">Contact</a>
-        </div>
+          <p class="font-mono text-[10px] font-semibold uppercase tracking-wider text-mute dark:text-mute-dark">Country Hubs</p>
+          <div class="mt-2 flex flex-col gap-1 text-sm font-medium">
+            <a href="/" class={`rounded-md px-3 py-2 ${activeCountry === 'us' ? 'bg-ink text-canvas dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark'}`}>United States Guides</a>
+            <a href="/uk/" class={`rounded-md px-3 py-2 ${activeCountry === 'uk' ? 'bg-ink text-canvas dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark'}`}>United Kingdom Guides</a>
+            <a href="/can/" class={`rounded-md px-3 py-2 ${activeCountry === 'ca' ? 'bg-ink text-canvas dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark'}`}>Canada Guides</a>
+          </div>
+          <div class="mt-3 border-t border-hairline pt-3 dark:border-hairline-dark">
+            <div class="flex flex-col gap-1 text-sm font-medium">
+              <a href="/about/" class="rounded-md px-3 py-2 text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark">About</a>
+              <a href="/contact/" class="rounded-md px-3 py-2 text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark">Contact</a>
+            </div>
+          </div>
         </div>
       </nav>
     </header>
@@ -158,16 +196,19 @@ const allSchema = [...siteSchema, ...schema];
       <div class="container-geist py-16">
         <div class="grid gap-10 sm:grid-cols-3">
           <div>
-            <a href="/" class="flex items-center gap-2 text-sm font-semibold text-ink dark:text-ink-dark" aria-label="GovSteps home">
-              <svg class="size-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <rect width="24" height="24" rx="5" fill="#171717" class="dark:hidden" />
-                <rect width="24" height="24" rx="5" fill="#ededed" class="hidden dark:block" />
-                <path d="M5.5 18.5V14.5H10V10.5H14.5" stroke="#fafafa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="dark:hidden" />
-                <path d="M5.5 18.5V14.5H10V10.5H14.5" stroke="#0a0a0a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block" />
-                <path d="M14.5 10.5V6.5H18.5" stroke="#0070f3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="dark:hidden" />
-                <path d="M14.5 10.5V6.5H18.5" stroke="#3291ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block" />
+            <a href="/" class="flex items-center gap-2 focus:outline-none focus-visible:ring-1 focus-visible:ring-link" aria-label="GovSteps home">
+              <svg class="h-7 w-auto" viewBox="0 0 256 72" role="img" aria-hidden="true">
+                <rect x="10" y="8" width="40" height="56" rx="6" fill="#FFFFFF" stroke="#14263F" class="dark:stroke-white/80" stroke-width="5"/>
+                <path d="M36 8 H50 V22 Z" fill="#F5A623"/>
+                <line x1="19" y1="33" x2="41" y2="33" stroke="#14263F" stroke-width="4" stroke-linecap="round"/>
+                <line x1="19" y1="41" x2="41" y2="41" stroke="#14263F" stroke-width="4" stroke-linecap="round"/>
+                <line x1="19" y1="49" x2="33" y2="49" stroke="#14263F" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="50" cy="54" r="15" fill="#F5A623" stroke="#FFFFFF" stroke-width="3"/>
+                <path d="M43 54 l5 5 l10 -11" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="76" y="49" font-family="system-ui, -apple-system, sans-serif" font-size="33" font-weight="700" letter-spacing="-0.5">
+                  <tspan class="fill-[#14263F] dark:fill-white">Gov</tspan><tspan fill="#F5A623">Steps</tspan>
+                </text>
               </svg>
-              GovSteps
             </a>
             <p class="mt-2 max-w-xs text-sm text-body dark:text-body-dark">Plain-language, step-by-step guides for US, UK, and Canadian government paperwork.</p>
           </div>

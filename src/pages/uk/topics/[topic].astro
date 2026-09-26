@@ -1,0 +1,14 @@
+---
+import TopicPage from '../../../components/TopicPage.astro';
+import { categories } from '../../../data/types';
+
+export function getStaticPaths() {
+  return categories.map((cat) => ({
+    params: { topic: cat.id },
+  }));
+}
+
+const { topic } = Astro.params;
+---
+
+<TopicPage country="uk" topic={topic!} />

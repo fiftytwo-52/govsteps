@@ -11,44 +11,90 @@ import Faq from './Faq.astro';
 import Icon from './Icon.astro';
 import TranslateGuide from './TranslateGuide.astro';
 import CountryFlag from './CountryFlag.astro';
+import ShareButtons from './ShareButtons.astro';
 import { categories, guidePath, getCountry, guides } from '../data/guides';
 import type { Guide } from '../data/guides';
-import { linkTerms } from '../data/glossary';
+import { linkTerms, resetPageGlossary } from '../data/glossary';
+import { getGuideEditorial } from '../data/types';
+import { getGuideHero, getGuideOgImage } from '../data/guideImages';
+import { toIso8601Duration } from '../utils/duration';
 
 interface Props {
   guide: Guide;
 }
 
 const { guide } = Astro.props;
+
+// Reset glossary terms seen on this page so only the first instance of each term gets an interactive tooltip
+resetPageGlossary();
+
 const country = getCountry(guide.country);
 const category = categories.find((c) => c.id === guide.category);
-// Related guides stay within the same country.
-const related = guides
-  .filter((g) => g.country === guide.country && g.category === guide.category && g.slug !== guide.slug)
-  .slice(0, 3);
+const editorial = getGuideEditorial(guide);
+const heroImg = getGuideHero(guide);
 const homeHref = country.pathPrefix ? `${country.pathPrefix}/` : '/';
-const dataLabel = guide.updatedAt ? `${guide.updatedAt}-Latest` : new Date().getFullYear().toString();
+const topicHref = `${country.pathPrefix ? country.pathPrefix : ''}/topics/${guide.category}/`;
+
+// Select 4 to 6 related guides: same category first, then same country
+const sameCategoryRelated = guides.filter(
+  (g) => g.country === guide.country && g.category === guide.category && g.slug !== guide.slug
+);
+const otherCategoryRelated = guides.filter(
+  (g) => g.country === guide.country && g.category !== guide.category && g.slug !== guide.slug
+);
+const related = [...sameCategoryRelated, ...otherCategoryRelated].slice(0, 6);
 
 // --- SEO structured data ---------------------------------------------
 const guideUrl = new URL(guidePath(guide), Astro.site).toString();
-const stepToHowToStep = (step: (typeof guide.steps)[number], i: number) => ({
-  '@type': 'HowToStep',
-  position: i + 1,
-  name: step.title,
-  text: step.detail,
-  ...(step.duration ? { timeRequired: step.duration } : {}),
-});
+const ogImageUrl = getGuideOgImage(guide, Astro.site ? new URL(Astro.site).origin : 'https://govsteps.com');
+const heroFullUrl = new URL(heroImg.src, Astro.site).toString();
+
+const stepToHowToStep = (step: (typeof guide.steps)[number], i: number) => {
+  const durationIso = toIso8601Duration(step.duration);
+  return {
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: step.title,
+    text: step.detail,
+    ...(durationIso ? { timeRequired: durationIso } : {}),
+  };
+};
+
+const totalTimeIso = toIso8601Duration(guide.totalTime);
+
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: guide.title,
   description: guide.description,
-  totalTime: guide.totalTime,
-  ...(guide.updatedAt ? { dateModified: `${guide.updatedAt}-01-01` } : {}),
+  image: heroFullUrl,
+  ...(totalTimeIso ? { totalTime: totalTimeIso } : {}),
+  dateModified: `${editorial.lastReviewedDate}`,
   inLanguage: 'en',
-  ...(guide.totalCost ? { estimatedCost: { '@type': 'MonetaryAmount', description: guide.totalCost } } : {}),
+  author: {
+    '@type': 'Person',
+    name: editorial.author.name,
+    jobTitle: editorial.author.title,
+    url: new URL('/about#team', Astro.site).toString(),
+  },
+  reviewedBy: {
+    '@type': 'Person',
+    name: editorial.reviewer.name,
+    jobTitle: editorial.reviewer.title,
+    url: new URL('/about#team', Astro.site).toString(),
+  },
+  ...(guide.totalCost
+    ? {
+        estimatedCost: {
+          '@type': 'MonetaryAmount',
+          currency: guide.country === 'uk' ? 'GBP' : guide.country === 'ca' ? 'CAD' : 'USD',
+          description: guide.totalCost,
+        },
+      }
+    : {}),
   step: guide.steps.map(stepToHowToStep),
 };
+
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -58,9 +104,45 @@ const faqSchema = {
     acceptedAnswer: { '@type': 'Answer', text: f.a },
   })),
 };
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: new URL('/', Astro.site).toString(),
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: `${country.short} Guides`,
+      item: new URL(homeHref, Astro.site).toString(),
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: category?.name ?? 'Topic',
+      item: new URL(topicHref, Astro.site).toString(),
+    },
+    {
+      '@type': 'ListItem',
+      position: 4,
+      name: guide.title,
+      item: guideUrl,
+    },
+  ],
+};
 ---
 
-<Layout title={guide.metaTitle} description={guide.description} schema={[howToSchema, faqSchema]}>
+<Layout
+  title={guide.metaTitle}
+  description={guide.description}
+  ogImage={ogImageUrl}
+  schema={[howToSchema, faqSchema, breadcrumbSchema]}
+>
   <!-- Hero band: grey panel, breadcrumb + title + summary + quick facts -->
   <section class="relative overflow-hidden border-b border-hairline bg-hairline-soft/60 dark:border-hairline-dark dark:bg-hairline-soft-dark/40">
     <div class="huge-bg-word" aria-hidden="true"><span>{guide.category.toUpperCase()}</span></div>
@@ -71,7 +153,7 @@ const faqSchema = {
         <span class="mx-1.5">/</span>
         <a href={homeHref} class="hover:text-link dark:hover:text-link-dark">{country.short} guides</a>
         <span class="mx-1.5">/</span>
-        <a href={`${homeHref}#cat-${guide.category}`} class="hover:text-link dark:hover:text-link-dark">{category?.name}</a>
+        <a href={topicHref} class="hover:text-link dark:hover:text-link-dark">{category?.name}</a>
         <span class="mx-1.5">/</span>
         <span class="text-body dark:text-body-dark">{guide.title}</span>
       </nav>
@@ -79,9 +161,12 @@ const faqSchema = {
       <!-- Header -->
       <header class="mt-6">
         <div class="flex flex-wrap items-center gap-2">
-          <span class="inline-flex items-center gap-1.5 rounded-full bg-canvas-elevated px-3 py-1 text-xs font-medium text-ink dark:bg-canvas-elevated-dark dark:text-ink-dark">
+          <a
+            href={topicHref}
+            class="inline-flex items-center gap-1.5 rounded-full bg-canvas-elevated px-3 py-1 text-xs font-medium text-ink transition-colors hover:border-link hover:text-link dark:bg-canvas-elevated-dark dark:text-ink-dark"
+          >
             <Icon name={category?.icon ?? 'file'} class="size-3.5" /> {category?.name}
-          </span>
+          </a>
           <span class="inline-flex items-center gap-1.5 rounded-full bg-link-soft px-3 py-1 text-xs font-medium text-link-deep dark:bg-link-soft-dark dark:text-link-dark">
             <CountryFlag code={guide.country} class="h-3.5 w-5" /> {country.name}
           </span>
@@ -89,9 +174,58 @@ const faqSchema = {
             <span class="rounded-full bg-link-soft px-3 py-1 text-xs font-medium text-link-deep dark:bg-link-soft-dark dark:text-link-dark">{a}</span>
           ))}
         </div>
+
         <h1 class="heading-lg mt-5 max-w-3xl text-ink dark:text-ink-dark">{guide.title}</h1>
+
+        <!-- Editorial metadata & author credentials -->
+        <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-y border-hairline py-3 text-xs text-mute dark:border-hairline-dark dark:text-mute-dark">
+          <div class="flex items-center gap-1.5">
+            <Icon name="calendar" class="size-3.5 text-link" />
+            <span>Last reviewed: <strong class="font-medium text-ink dark:text-ink-dark">{editorial.lastReviewed}</strong></span>
+          </div>
+          <span class="hidden sm:inline text-hairline-dark">|</span>
+          <div class="flex items-center gap-1.5">
+            <span>Written by <a href="/about#team" class="font-medium text-ink underline decoration-hairline hover:text-link dark:text-ink-dark">{editorial.author.name}</a> ({editorial.author.title})</span>
+          </div>
+          <span class="hidden sm:inline text-hairline-dark">|</span>
+          <div class="flex items-center gap-1.5">
+            <span>Reviewed by <a href="/about#team" class="font-medium text-ink underline decoration-hairline hover:text-link dark:text-ink-dark">{editorial.reviewer.name}</a> ({editorial.reviewer.title})</span>
+          </div>
+        </div>
+
+        {editorial.isOverdue && (
+          <div class="mt-4 flex items-start gap-3 rounded-md border border-amber-300 bg-amber-50/80 p-3.5 text-xs text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/40 dark:text-amber-200">
+            <Icon name="alert" class="mt-0.5 size-4 shrink-0 text-amber-600 dark:text-amber-400" />
+            <div>
+              <strong class="font-semibold">Review in progress:</strong> This guide was last verified over 6 months ago. Our editorial team is currently auditing it against the latest government guidance. If you notice any recent agency rule changes, please <a href="/about#corrections" class="underline font-medium hover:text-amber-700 dark:hover:text-amber-100">report a correction</a>.
+            </div>
+          </div>
+        )}
+
         <p class="mt-4 max-w-2xl text-base leading-relaxed text-body dark:text-body-dark" set:html={linkTerms(guide.summary)} />
+
+        <!-- Hero illustration -->
+        <figure class="mt-6 max-w-3xl overflow-hidden rounded-xl border border-hairline bg-canvas-elevated shadow-sm dark:border-hairline-dark dark:bg-canvas-elevated-dark">
+          <picture>
+            <source srcset={heroImg.webpSrc} type="image/webp" />
+            <img
+              src={heroImg.src}
+              alt={heroImg.alt}
+              width={heroImg.width}
+              height={heroImg.height}
+              fetchpriority="high"
+              decoding="async"
+              class="h-auto w-full object-cover max-h-[380px]"
+            />
+          </picture>
+        </figure>
+
+        <!-- Share Buttons (top) -->
         <div class="mt-6 max-w-3xl">
+          <ShareButtons title={guide.title} url={guideUrl} />
+        </div>
+
+        <div class="mt-4 max-w-3xl">
           <TranslateGuide />
         </div>
       </header>
@@ -102,7 +236,7 @@ const faqSchema = {
         <InfoBox icon="timer" label="Total Time" value={guide.totalTime} />
         <InfoBox icon="dollar" label="Cost" value={guide.totalCost} />
         <InfoBox icon="list" label="Steps" value={`${guide.steps.length} steps`} />
-        <InfoBox icon="calendar" label="Data from" value={dataLabel} />
+        <InfoBox icon="calendar" label="Reviewed" value={editorial.lastReviewed} />
       </div>
     </div>
   </section>
@@ -125,7 +259,7 @@ const faqSchema = {
         </div>
       </aside>
 
-      <!-- Main column: steps + FAQ + related -->
+      <!-- Main column: steps + FAQ + share + related -->
       <div class="min-w-0 lg:col-start-1 lg:row-start-1">
         <!-- Steps -->
         <section>
@@ -133,7 +267,7 @@ const faqSchema = {
           <h2 class="heading-md mt-1.5 text-ink dark:text-ink-dark">Follow these in order</h2>
           <p class="mt-2 text-sm text-body dark:text-body-dark">
             Each card shows the phase, expected time, and any cost. Data checked against official {country.short} sources
-            <span class="whitespace-nowrap font-mono text-[11px] font-medium text-link-deep dark:text-link-dark">({dataLabel})</span>.
+            <span class="whitespace-nowrap font-mono text-[11px] font-medium text-link-deep dark:text-link-dark">({editorial.lastReviewed})</span>.
           </p>
           <div class="mt-6">
             <StepTimeline steps={guide.steps} />
@@ -149,18 +283,43 @@ const faqSchema = {
           </div>
         </section>
 
-        <!-- Related guides -->
+        <!-- Share Buttons (after FAQ) -->
+        <div class="mt-10 rounded-xl border border-hairline bg-canvas-elevated p-5 dark:border-hairline-dark dark:bg-canvas-elevated-dark">
+          <p class="text-sm font-medium text-ink dark:text-ink-dark mb-3">Found this guide helpful? Share it with someone navigating this process:</p>
+          <ShareButtons title={guide.title} url={guideUrl} />
+        </div>
+
+        <!-- Related guides (4-6 guides) -->
         {related.length > 0 && (
           <section class="mt-12">
-            <p class="eyebrow">Related</p>
-            <h2 class="heading-md mt-1.5 text-ink dark:text-ink-dark">Related {country.short} Guides</h2>
-            <div class="mt-4 grid gap-3 sm:grid-cols-3">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="eyebrow">Keep Reading</p>
+                <h2 class="heading-md mt-1.5 text-ink dark:text-ink-dark">Related {country.short} Guides</h2>
+              </div>
+              <a href={homeHref} class="text-xs font-medium text-link hover:underline dark:text-link-dark">View all {country.short} guides &rarr;</a>
+            </div>
+            <div class="mt-5 grid gap-3 sm:grid-cols-2 md:grid-cols-3">
               {related.map((r) => (
-                <a href={guidePath(r)} class="group rounded-md border border-hairline bg-canvas-elevated p-4 text-sm font-medium text-ink transition-all hover:-translate-y-0.5 hover:border-link hover:text-link dark:border-hairline-dark dark:bg-canvas-elevated-dark dark:text-ink-dark dark:hover:border-link-dark dark:hover:text-link-dark">
-                  <span class="flex items-start justify-between gap-2">
-                    {r.title}
-                    <Icon name="arrowright" class="mt-0.5 size-3.5 shrink-0 -translate-x-1 text-mute opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-link group-hover:opacity-100 dark:text-mute-dark dark:group-hover:text-link-dark" />
-                  </span>
+                <a
+                  href={guidePath(r)}
+                  class="group flex flex-col justify-between rounded-lg border border-hairline bg-canvas-elevated p-4 text-sm font-medium text-ink transition-all hover:-translate-y-0.5 hover:border-link hover:text-link dark:border-hairline-dark dark:bg-canvas-elevated-dark dark:text-ink-dark dark:hover:border-link-dark dark:hover:text-link-dark"
+                >
+                  <div>
+                    <div class="flex items-start justify-between gap-2">
+                      <span class="line-clamp-2">{r.title}</span>
+                      <Icon name="arrowright" class="mt-0.5 size-3.5 shrink-0 -translate-x-1 text-mute opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-link group-hover:opacity-100 dark:text-mute-dark dark:group-hover:text-link-dark" />
+                    </div>
+                  </div>
+                  <div class="mt-3 flex items-center gap-2 pt-2 border-t border-hairline/60 text-xs font-normal text-mute dark:border-hairline-dark/60 dark:text-mute-dark">
+                    <span class="inline-flex items-center gap-1">
+                      <Icon name="gauge" class="size-3" /> {r.difficulty}
+                    </span>
+                    <span>&bull;</span>
+                    <span class="inline-flex items-center gap-1">
+                      <Icon name="timer" class="size-3" /> {r.totalTime}
+                    </span>
+                  </div>
                 </a>
               ))}
             </div>

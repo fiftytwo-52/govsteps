@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://govsteps.com/</loc>
   </url>
@@ -22,475 +23,1161 @@
     <loc>https://govsteps.com/terms/</loc>
   </url>
   <url>
+    <loc>https://govsteps.com/topics/taxes/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/topics/immigration/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/topics/ids/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/topics/benefits/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/topics/business/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/topics/accidents/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/topics/students/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/topics/civic/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/uk/topics/taxes/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/uk/topics/immigration/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/uk/topics/ids/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/uk/topics/benefits/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/uk/topics/business/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/uk/topics/accidents/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/uk/topics/students/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/uk/topics/civic/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/can/topics/taxes/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/can/topics/immigration/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/can/topics/ids/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/can/topics/benefits/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/can/topics/business/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/can/topics/accidents/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/can/topics/students/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://govsteps.com/can/topics/civic/</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
     <loc>https://govsteps.com/guides/how-to-apply-for-itin/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-05</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-itin-document.png</image:loc>
+      <image:title>How to Apply for an ITIN (Individual Taxpayer Identification Number)</image:title>
+      <image:caption>ITIN tax approval document and IRS Form W-7</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-get-a-passport/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-01</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Get a US Passport (First-Time Applicant)</image:title>
+      <image:caption>Passport booklet with official application documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-get-drivers-license-new-immigrant/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-06</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-drivers-license.png</image:loc>
+      <image:title>How to Get a Driver&apos;s License as a New Immigrant</image:title>
+      <image:caption>Driver&apos;s license identification card with vehicle</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-replace-social-security-card/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-02</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-social-security-card.png</image:loc>
+      <image:title>How to Replace a Lost Social Security Card</image:title>
+      <image:caption>Official Social Security card with registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-apply-for-medicare/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-20</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-medicare-card.png</image:loc>
+      <image:title>How to Enroll in Medicare (Turning 65)</image:title>
+      <image:caption>Medicare health insurance card with medical documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-get-green-card-through-marriage/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-25</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-green-card.png</image:loc>
+      <image:title>How to Get a Green Card Through Marriage (US Citizen Spouse)</image:title>
+      <image:caption>Permanent resident green card and immigration paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-apply-for-citizenship/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-08-13</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-citizenship.png</image:loc>
+      <image:title>How to Apply for US Citizenship (Naturalization)</image:title>
+      <image:caption>Citizenship oath ceremony and naturalization paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-file-taxes-first-time/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-10</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to File US Taxes for the First Time (Form 1040)</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-start-an-llc/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-22</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-llc-business.png</image:loc>
+      <image:title>How to Start an LLC</image:title>
+      <image:caption>Small business storefront and company registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-get-a-real-id/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-04</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-real-id.png</image:loc>
+      <image:title>How to Get a REAL ID (for Domestic Flights)</image:title>
+      <image:caption>REAL ID driver credential with security star emblem</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-apply-for-green-card-lottery/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-10</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-green-card.png</image:loc>
+      <image:title>How to Apply for the Green Card Lottery (DV Program)</image:title>
+      <image:caption>Permanent resident green card and immigration paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-apply-for-unemployment-benefits/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-12</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-unemployment.png</image:loc>
+      <image:title>How to Apply for Unemployment Benefits</image:title>
+      <image:caption>Unemployment benefits support and income assistance paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-renew-a-green-card/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-18</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-green-card.png</image:loc>
+      <image:title>How to Renew a Green Card (Form I-90)</image:title>
+      <image:caption>Permanent resident green card and immigration paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-apply-for-aca-health-insurance/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-25</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-health-insurance.png</image:loc>
+      <image:title>How to Get Health Insurance Through the ACA Marketplace</image:title>
+      <image:caption>Health insurance coverage shield and medical policy</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-replace-a-lost-passport/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-08</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Replace a Lost or Stolen Passport</image:title>
+      <image:caption>Passport booklet with official application documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-change-your-legal-name/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-23</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-marriage-license.png</image:loc>
+      <image:title>How to Change Your Legal Name (Marriage, Divorce, or Court Order)</image:title>
+      <image:caption>Certified marriage license certificate with legal seal</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-get-a-copy-of-birth-certificate/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-17</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-birth-certificate.png</image:loc>
+      <image:title>How to Get a Copy of Your Birth Certificate</image:title>
+      <image:caption>Certified birth certificate with official raised seal</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-file-taxes-for-free/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-22</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to File Your Federal Taxes for Free (IRS Free File)</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-check-irs-refund-status/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-01</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to Check Your IRS Refund Status</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-file-quarterly-estimated-taxes/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-13</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to File Quarterly Estimated Taxes (Freelancers &amp; Self-Employed)</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-apply-for-ssdi/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-04</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-unemployment.png</image:loc>
+      <image:title>How to Apply for SSDI (Social Security Disability Insurance)</image:title>
+      <image:caption>Unemployment benefits support and income assistance paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-apply-for-ssi/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-04</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-unemployment.png</image:loc>
+      <image:title>How to Apply for SSI (Supplemental Security Income)</image:title>
+      <image:caption>Unemployment benefits support and income assistance paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-get-an-ein/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-10</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-ein-document.png</image:loc>
+      <image:title>How to Get an EIN (Employer Identification Number)</image:title>
+      <image:caption>Employer Identification Number and business tax filing document</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-pass-the-citizenship-test/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-14</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-citizenship.png</image:loc>
+      <image:title>How to Pass the US Citizenship Test (Naturalization Interview)</image:title>
+      <image:caption>Citizenship oath ceremony and naturalization paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-renew-a-passport/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-01</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Renew a US Passport</image:title>
+      <image:caption>Passport booklet with official application documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/what-to-do-after-a-car-accident/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-09</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-car-accident.png</image:loc>
+      <image:title>What to Do After a Car Accident (Step-by-Step)</image:title>
+      <image:caption>Incident documentation and police report paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-file-a-police-report/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-04</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-car-accident.png</image:loc>
+      <image:title>How to File a Police Report (Theft, Damage, or Lost Documents)</image:title>
+      <image:caption>Incident documentation and police report paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-replace-stolen-documents/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-13</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-real-id.png</image:loc>
+      <image:title>How to Replace Stolen Documents (Wallet, Passport, Social Security Card)</image:title>
+      <image:caption>REAL ID driver credential with security star emblem</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-file-the-fafsa/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-17</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-student-aid.png</image:loc>
+      <image:title>How to File the FAFSA (Free Application for Federal Student Aid)</image:title>
+      <image:caption>Student financial aid application and graduation cap</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-get-a-student-visa/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-14</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-student-aid.png</image:loc>
+      <image:title>How to Get a US Student Visa (F-1)</image:title>
+      <image:caption>Student financial aid application and graduation cap</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-apply-for-loan-forgiveness/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-10</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-student-aid.png</image:loc>
+      <image:title>How to Apply for Student Loan Forgiveness (PSLF &amp; Income-Driven Plans)</image:title>
+      <image:caption>Student financial aid application and graduation cap</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-register-to-vote/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-09</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-vote.png</image:loc>
+      <image:title>How to Register to Vote in the US</image:title>
+      <image:caption>Official voter registration ballot box and ballot form</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-respond-to-jury-duty/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-14</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-vote.png</image:loc>
+      <image:title>How to Respond to a Jury Duty Summons</image:title>
+      <image:caption>Official voter registration ballot box and ballot form</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-apply-for-a-social-security-number-for-your-child/</loc>
-    <lastmod>2026-01-01</lastmod>
+    <lastmod>2026-01-14</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-social-security-card.png</image:loc>
+      <image:title>How to Get a Social Security Number for Your Child</image:title>
+      <image:caption>Official Social Security card with registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-apply-for-wic-benefits/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-10</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-unemployment.png</image:loc>
+      <image:title>How to Apply for WIC (Women, Infants, and Children)</image:title>
+      <image:caption>Unemployment benefits support and income assistance paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-apply-for-snap-food-stamps/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-08-06</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-unemployment.png</image:loc>
+      <image:title>How to Apply for SNAP (Food Stamps)</image:title>
+      <image:caption>Unemployment benefits support and income assistance paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-get-a-replacement-green-card/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-06</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-green-card.png</image:loc>
+      <image:title>How to Replace or Renew a Green Card (Form I-90)</image:title>
+      <image:caption>Permanent resident green card and immigration paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-apply-for-medicaid/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-10</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-health-insurance.png</image:loc>
+      <image:title>How to Apply for Medicaid</image:title>
+      <image:caption>Health insurance coverage shield and medical policy</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-get-a-marriage-license-in-the-us/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-11</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-marriage-license.png</image:loc>
+      <image:title>How to Get a Marriage License in the US</image:title>
+      <image:caption>Certified marriage license certificate with legal seal</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-change-your-address-with-usps-and-government/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-19</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-real-id.png</image:loc>
+      <image:title>How to Change Your Address When You Move (USPS and Government Agencies)</image:title>
+      <image:caption>REAL ID driver credential with security star emblem</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-apply-for-a-fha-loan/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-10</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-llc-business.png</image:loc>
+      <image:title>How to Apply for an FHA Loan (First-Time Home Buyers)</image:title>
+      <image:caption>Small business storefront and company registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-apply-for-va-benefits-and-va-loan/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-10</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-health-insurance.png</image:loc>
+      <image:title>How to Apply for VA Benefits and a VA Home Loan</image:title>
+      <image:caption>Health insurance coverage shield and medical policy</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-file-a-small-claims-court-case/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-04</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-vote.png</image:loc>
+      <image:title>How to File a Small Claims Court Case</image:title>
+      <image:caption>Official voter registration ballot box and ballot form</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-fill-out-a-w9-tax-form/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-11</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to Fill Out a W-9 Tax Form (Step by Step)</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-file-schedule-c-tax-form/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-11</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to File Schedule C (Self-Employment Tax Form)</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-understand-1099-tax-forms/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-12</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to Understand Your 1099 Tax Forms (NEC, K, INT, DIV, B)</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-report-k1-tax-form/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-05</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to Report a Schedule K-1 on Your Tax Return</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-claim-1098-t-and-education-credits/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-09</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to Use Tax Form 1098-T (Education Credits)</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-get-car-insurance-in-the-us/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-18</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-car-accident.png</image:loc>
+      <image:title>How to Get Car Insurance in the US (Best Rates)</image:title>
+      <image:caption>Incident documentation and police report paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-get-renters-insurance/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-01</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Get Renters Insurance (Cheap, Fast Coverage)</image:title>
+      <image:caption>Official government paperwork and application documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-get-a-home-equity-loan-or-heloc/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-11</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-llc-business.png</image:loc>
+      <image:title>How to Get a Home Equity Loan or HELOC</image:title>
+      <image:caption>Small business storefront and company registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-get-a-personal-loan/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-23</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-llc-business.png</image:loc>
+      <image:title>How to Get a Personal Loan (and When It Beats a Credit Card)</image:title>
+      <image:caption>Small business storefront and company registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-get-a-business-loan/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-06</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-llc-business.png</image:loc>
+      <image:title>How to Get a Business Loan (SBA and Bank Options)</image:title>
+      <image:caption>Small business storefront and company registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-get-a-loan-with-bad-credit/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-19</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-llc-business.png</image:loc>
+      <image:title>How to Get a Loan with Bad Credit (Without Getting Trapped)</image:title>
+      <image:caption>Small business storefront and company registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-refinance-a-car-loan/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-09</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-llc-business.png</image:loc>
+      <image:title>How to Refinance a Car Loan (Lower Your Payment the Right Way)</image:title>
+      <image:caption>Small business storefront and company registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/guides/how-to-get-a-federal-student-loan/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-23</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-student-aid.png</image:loc>
+      <image:title>How to Get a Federal Student Loan (FAFSA to Master Promissory Note)</image:title>
+      <image:caption>Student financial aid application and graduation cap</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-apply-for-a-national-insurance-number/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-22</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-social-security-card.png</image:loc>
+      <image:title>How to Apply for a National Insurance Number (UK)</image:title>
+      <image:caption>Official Social Security card with registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-apply-for-uk-passport/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-05</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Apply for a UK Passport</image:title>
+      <image:caption>Passport booklet with official application documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-apply-for-uk-visa/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-23</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Apply for a UK Visa (Work, Study, Family)</image:title>
+      <image:caption>Official government paperwork and application documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-apply-for-british-citizenship/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-15</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-citizenship.png</image:loc>
+      <image:title>How to Apply for British Citizenship (Naturalisation)</image:title>
+      <image:caption>Citizenship oath ceremony and naturalization paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-apply-for-eu-settlement-scheme/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-08-24</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Apply to the EU Settlement Scheme (Settled Status)</image:title>
+      <image:caption>Official government paperwork and application documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-file-uk-self-assessment/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-22</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to File a UK Self Assessment Tax Return</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-apply-for-uk-driving-licence/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-11</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-drivers-license.png</image:loc>
+      <image:title>How to Get a UK Driving Licence</image:title>
+      <image:caption>Driver&apos;s license identification card with vehicle</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-apply-for-uk-benefits-universal-credit/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-21</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-unemployment.png</image:loc>
+      <image:title>How to Apply for Universal Credit (UK Benefits)</image:title>
+      <image:caption>Unemployment benefits support and income assistance paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-see-a-gp-and-register-with-the-nhs/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-16</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-health-insurance.png</image:loc>
+      <image:title>How to Register with a GP (NHS) and See a Doctor</image:title>
+      <image:caption>Health insurance coverage shield and medical policy</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-register-a-uk-limited-company/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-25</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-llc-business.png</image:loc>
+      <image:title>How to Register a Limited Company (UK)</image:title>
+      <image:caption>Small business storefront and company registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-apply-for-uk-student-visa/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-18</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-student-aid.png</image:loc>
+      <image:title>How to Apply for a UK Student Visa</image:title>
+      <image:caption>Student financial aid application and graduation cap</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-get-a-share-code-and-prove-right-to-work-or-rent/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-10</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-green-card.png</image:loc>
+      <image:title>How to Get a Share Code (Prove Right to Work or Rent in the UK)</image:title>
+      <image:caption>Permanent resident green card and immigration paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-register-to-vote-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-03</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-vote.png</image:loc>
+      <image:title>How to Register to Vote in the UK</image:title>
+      <image:caption>Official voter registration ballot box and ballot form</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-replace-a-lost-or-stolen-uk-passport/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-03</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Replace a Lost or Stolen UK Passport</image:title>
+      <image:caption>Passport booklet with official application documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-apply-for-child-benefit-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-07</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-health-insurance.png</image:loc>
+      <image:title>How to Apply for Child Benefit in the UK</image:title>
+      <image:caption>Health insurance coverage shield and medical policy</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-register-a-birth-in-the-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-15</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-birth-certificate.png</image:loc>
+      <image:title>How to Register a Birth in the UK</image:title>
+      <image:caption>Certified birth certificate with official raised seal</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-open-a-uk-bank-account-new-immigrant/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-11</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Open a UK Bank Account as a New Immigrant</image:title>
+      <image:caption>Official government paperwork and application documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-apply-for-a-skilled-worker-visa-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-15</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-green-card.png</image:loc>
+      <image:title>How to Apply for a UK Skilled Worker Visa</image:title>
+      <image:caption>Permanent resident green card and immigration paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-claim-a-tax-refund-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-23</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to Claim a Tax Refund in the UK</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-apply-for-a-uk-ghic/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-16</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-health-insurance.png</image:loc>
+      <image:title>How to Apply for a UK Global Health Insurance Card (GHIC)</image:title>
+      <image:caption>Health insurance coverage shield and medical policy</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-report-a-crime-to-the-police-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-23</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-car-accident.png</image:loc>
+      <image:title>How to Report a Crime to the Police in the UK</image:title>
+      <image:caption>Incident documentation and police report paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-give-notice-of-marriage-in-the-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-04</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-marriage-license.png</image:loc>
+      <image:title>How to Give Notice of Marriage in the UK</image:title>
+      <image:caption>Certified marriage license certificate with legal seal</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-claim-tax-refund-p50-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-14</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to Claim a Tax Refund After Leaving a Job (Form P50)</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-claim-tax-refund-p55-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-19</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to Claim a Pension Tax Refund (Forms P55, P53Z)</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-claim-r40-tax-refund-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-15</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to Claim an R40 Tax Refund (Savings Interest Overpayment)</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-report-crypto-tax-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-10</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to Report Crypto Tax to HMRC (Capital Gains + Income)</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-get-car-insurance-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-09</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-car-accident.png</image:loc>
+      <image:title>How to Get Car Insurance in the UK (Best Quotes)</image:title>
+      <image:caption>Incident documentation and police report paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-get-travel-insurance-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-03</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Get Travel Insurance from the UK</image:title>
+      <image:caption>Official government paperwork and application documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/what-student-loan-plan-am-i-on-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-11</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-student-aid.png</image:loc>
+      <image:title>What Student Loan Plan Am I On? (Check, Repay, and Write-Off Rules)</image:title>
+      <image:caption>Student financial aid application and graduation cap</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-get-a-personal-loan-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-17</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-llc-business.png</image:loc>
+      <image:title>How to Get a Personal Loan in the UK (Unsecured Loans Explained)</image:title>
+      <image:caption>Small business storefront and company registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-get-a-loan-with-bad-credit-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-13</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-llc-business.png</image:loc>
+      <image:title>How to Get a Loan with Bad Credit in the UK (Without the Traps)</image:title>
+      <image:caption>Small business storefront and company registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-get-a-business-loan-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-25</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-llc-business.png</image:loc>
+      <image:title>How to Get a Business Loan in the UK (Start Up Loans and Banks)</image:title>
+      <image:caption>Small business storefront and company registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-borrow-against-your-home-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-04</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-llc-business.png</image:loc>
+      <image:title>How to Borrow Against Your Home (Remortgage, Further Advance, Secured Loan)</image:title>
+      <image:caption>Small business storefront and company registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/what-is-a-bridging-loan-uk/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-17</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-llc-business.png</image:loc>
+      <image:title>What Is a Bridging Loan and When Does One Make Sense?</image:title>
+      <image:caption>Small business storefront and company registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-apply-for-a-sin-number/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-10</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Apply for a SIN (Social Insurance Number)</image:title>
+      <image:caption>Official government paperwork and application documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-apply-for-a-canadian-passport/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-13</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Apply for a Canadian Passport</image:title>
+      <image:caption>Passport booklet with official application documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-apply-for-a-pr-card/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-17</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-green-card.png</image:loc>
+      <image:title>How to Apply for a PR Card (Permanent Resident Card)</image:title>
+      <image:caption>Permanent resident green card and immigration paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-apply-for-canada-express-entry/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2025-08-24</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Apply for Permanent Residence via Express Entry (Canada)</image:title>
+      <image:caption>Official government paperwork and application documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-apply-for-canadian-citizenship/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-23</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-citizenship.png</image:loc>
+      <image:title>How to Apply for Canadian Citizenship</image:title>
+      <image:caption>Citizenship oath ceremony and naturalization paperwork</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-file-taxes-in-canada/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-17</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to File Your Taxes in Canada (CRA Return)</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-get-a-canadian-drivers-licence/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-04</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-drivers-license.png</image:loc>
+      <image:title>How to Get a Driver&apos;s Licence in Canada (Newcomers)</image:title>
+      <image:caption>Driver&apos;s license identification card with vehicle</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-apply-for-provincial-health-insurance/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-11</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-health-insurance.png</image:loc>
+      <image:title>How to Apply for Provincial Health Insurance (OHIP and Equivalents)</image:title>
+      <image:caption>Health insurance coverage shield and medical policy</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-register-a-business-in-canada/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-14</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-llc-business.png</image:loc>
+      <image:title>How to Register a Business in Canada (Federal or Provincial)</image:title>
+      <image:caption>Small business storefront and company registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-apply-for-a-canadian-work-permit/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-24</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Apply for a Canadian Work Permit</image:title>
+      <image:caption>Official government paperwork and application documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-apply-for-a-canadian-study-permit/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-17</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-student-aid.png</image:loc>
+      <image:title>How to Apply for a Canadian Study Permit</image:title>
+      <image:caption>Student financial aid application and graduation cap</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-apply-for-cra-my-account/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-23</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to Register for CRA My Account</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-register-to-vote-in-canada/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-14</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-vote.png</image:loc>
+      <image:title>How to Register to Vote in Canada</image:title>
+      <image:caption>Official voter registration ballot box and ballot form</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-get-a-canadian-birth-certificate/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-06</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-birth-certificate.png</image:loc>
+      <image:title>How to Get a Copy of a Canadian Birth Certificate</image:title>
+      <image:caption>Certified birth certificate with official raised seal</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-apply-for-canada-child-benefit/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-08</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-health-insurance.png</image:loc>
+      <image:title>How to Apply for the Canada Child Benefit (CCB)</image:title>
+      <image:caption>Health insurance coverage shield and medical policy</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-open-a-canadian-bank-account-newcomer/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-23</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Open a Canadian Bank Account as a Newcomer</image:title>
+      <image:caption>Official government paperwork and application documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-get-a-canadian-sin-for-newcomers/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-20</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Get a Canadian SIN as a Newcomer (Social Insurance Number)</image:title>
+      <image:caption>Official government paperwork and application documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-apply-for-canadian-passport-renewal/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-16</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Renew a Canadian Passport</image:title>
+      <image:caption>Passport booklet with official application documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-file-a-canadian-tax-return-as-a-newcomer/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-23</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to File Your First Canadian Tax Return as a Newcomer</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-replace-a-lost-or-stolen-canadian-passport/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-19</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Replace a Lost or Stolen Canadian Passport</image:title>
+      <image:caption>Passport booklet with official application documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-get-a-police-record-check-in-canada/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-14</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-vote.png</image:loc>
+      <image:title>How to Get a Police Record Check in Canada</image:title>
+      <image:caption>Official voter registration ballot box and ballot form</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-apply-for-osap-and-student-aid-canada/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-18</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-student-aid.png</image:loc>
+      <image:title>How to Apply for Student Financial Aid in Canada (OSAP and Provincial Aid)</image:title>
+      <image:caption>Student financial aid application and graduation cap</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-file-t1-tax-return-canada/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-18</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to File a T1 Tax Return in Canada (Step by Step)</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-claim-home-office-expenses-t2200/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-07</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to Claim Home Office Expenses (Form T2200)</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-report-t5-investment-income-canada/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-03-05</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-tax-form.png</image:loc>
+      <image:title>How to Report T5 Investment Income on Your Tax Return</image:title>
+      <image:caption>Official tax return form with calculator and receipts</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-get-a-home-equity-loan-or-heloc-canada/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-06</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-llc-business.png</image:loc>
+      <image:title>How to Get a Home Equity Loan or HELOC in Canada</image:title>
+      <image:caption>Small business storefront and company registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-get-a-personal-loan-canada/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-02-18</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-llc-business.png</image:loc>
+      <image:title>How to Get a Personal Loan in Canada</image:title>
+      <image:caption>Small business storefront and company registration documents</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-get-a-business-loan-canada/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-01</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-llc-business.png</image:loc>
+      <image:title>How to Get a Business Loan in Canada (CSBFP, BDC, and Banks)</image:title>
+      <image:caption>Small business storefront and company registration documents</image:caption>
+    </image:image>
   </url>
 </urlset>

@@ -88,6 +88,8 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Gather proof of citizenship', detail: 'Get your original birth certificate (the long-form with parents\' names) or naturalization certificate. Order a certified copy from your state vital records office if you don\'t have one.', duration: '1–4 weeks if ordering',
                 links: [
+                    { label: "Need state ID for travel? REAL ID guide", href: "/guides/how-to-get-a-real-id" },
+                    { label: 'Naturalized citizen? How to apply for citizenship', href: '/guides/how-to-apply-for-citizenship' },
                     { label: 'How to get your birth certificate', href: '/guides/how-to-get-a-copy-of-birth-certificate' },
                 ],
             },
@@ -195,6 +197,7 @@ export const guides: Guide[] = [
             {
                 phase: 'fill', title: 'Fill out Form SS-5', detail: 'Download Form SS-5 from ssa.gov and complete it in blue or black ink. If applying in person, you can also fill it at the office.', duration: '15 min',
                 links: [
+                    { label: "Secondary ID options: REAL ID license guide", href: "/guides/how-to-get-a-real-id" },
                     { label: 'Download Form SS-5 (ssa.gov)', href: 'https://www.ssa.gov/forms/ss-5.pdf' },
                 ],
             },
@@ -204,7 +207,11 @@ export const guides: Guide[] = [
                     { label: 'Find a Social Security office', href: 'https://secure.ssa.gov/ICON/main.jsp' },
                 ],
             },
-            { phase: 'wait', title: 'Wait for your card by mail', detail: 'The replacement card arrives in 2–4 weeks. Your number never changes — only the card is reissued.', duration: '2–4 weeks' },
+            { phase: 'wait', title: 'Wait for your card by mail', detail: 'The replacement card arrives in 2–4 weeks. Your number never changes — only the card is reissued.', duration: '2–4 weeks',
+                links: [
+                    { label: "Using your SSN for a driver's license", href: '/guides/how-to-get-drivers-license-new-immigrant' },
+                ],
+            },
             {
                 phase: 'followup', title: 'Follow up if it does not arrive', detail: 'Call 1-800-772-1213 if the card has not arrived after 4 weeks. Have your receipt or confirmation number ready.', duration: '30 min',
                 links: [
@@ -238,7 +245,11 @@ export const guides: Guide[] = [
             'List of medications (for choosing a Part D plan)',
         ],
         steps: [
-            { phase: 'before', title: 'Learn your enrollment window', detail: 'Your Initial Enrollment Period spans 7 months: your 65th birthday month, plus 3 months before and 3 months after. Enrolling late means lifetime penalties.', duration: '20 min' },
+            { phase: 'before', title: 'Learn your enrollment window', detail: 'Your Initial Enrollment Period spans 7 months: your 65th birthday month, plus 3 months before and 3 months after. Enrolling late means lifetime penalties.', duration: '20 min',
+                links: [
+                    { label: 'Under 65? Apply for ACA health insurance marketplace coverage', href: '/guides/how-to-apply-for-aca-health-insurance' },
+                ],
+            },
             { phase: 'before', title: 'Check if you already have Part A', detail: 'If you or your spouse worked 10+ years in the US and paid Medicare taxes, you likely get Part A automatically if already receiving Social Security benefits.', duration: '15 min' },
             {
                 phase: 'fill', title: 'Apply online at ssa.gov', detail: 'Complete the Medicare application online (takes ~30–45 min). You can also call 1-800-772-1213 or visit an office. You do NOT need to be retired to apply.', duration: '45 min',
@@ -335,7 +346,11 @@ export const guides: Guide[] = [
             'Two passport-style photos (only if mailing from abroad)',
         ],
         steps: [
-            { phase: 'before', title: 'Check eligibility requirements', detail: 'Generally: 18+, green card for 5 years (3 if married to a US citizen), continuous residence, 50% of time physically in the US, good moral character, and English basics.', duration: '30 min' },
+            { phase: 'before', title: 'Check eligibility requirements', detail: 'Generally: 18+, green card for 5 years (3 if married to a US citizen), continuous residence, 50% of time physically in the US, good moral character, and English basics.', duration: '30 min',
+                links: [
+                    { label: 'Fast-track 3-year rule: Green card through marriage', href: '/guides/how-to-get-green-card-through-marriage' },
+                ],
+            },
             {
                 phase: 'before', title: 'Gather records', detail: 'Collect 5 years of tax returns, travel dates (from passport stamps), employment history, and addresses. Gaps or errors here cause delays.', duration: '1–2 weeks',
                 links: [
@@ -448,7 +463,7 @@ export const guides: Guide[] = [
                 phase: 'before', title: 'Pick and check a name', detail: 'Your name must include "LLC" or "Limited Liability Company" and be unique in your state. Search the Secretary of State\'s business name database. Also check the USPTO trademark database.', duration: '1 hour',
                 links: [
                     { label: 'USPTO trademark search', href: 'https://www.uspto.gov/trademarks/search' },
-                    { label: 'Find your Secretary of State (usa.gov)', href: 'https://www.usa.gov/state-territory-resources' },
+                    { label: 'Find your Secretary of State (usa.gov)', href: 'https://www.usa.gov/state-motor-vehicle-services' },
                 ],
             },
             { phase: 'before', title: 'Choose a registered agent', detail: 'This person/company receives legal mail for the LLC. You can be your own agent (you must have a physical state address), or pay a service ~$100–$300/year.', duration: '30 min' },
@@ -456,6 +471,7 @@ export const guides: Guide[] = [
             {
                 phase: 'fill', title: 'Get an EIN from the IRS', detail: 'Apply free at irs.gov/ein (takes 10 minutes, number issued instantly). Never pay a third party for this. Non-citizens without an SSN can still get an EIN by faxing Form SS-4.', duration: '15 min',
                 links: [
+                    { label: 'Foreign business owners: How to get an ITIN', href: '/guides/how-to-apply-for-itin' },
                     { label: 'Get an EIN free (irs.gov)', href: 'https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number' },
                     { label: 'No SSN? Apply for an ITIN', href: '/guides/how-to-apply-for-itin' },
                 ],
@@ -494,6 +510,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Check if you already have one', detail: 'Look at your license — a gold or black star in the top corner means it is already REAL ID compliant. Also note: a valid passport works for flights instead of REAL ID.', duration: '5 min',
                 links: [
+                    { label: "New immigrant? How to get a driver's license", href: '/guides/how-to-get-drivers-license-new-immigrant' },
                     { label: 'DHS: REAL ID basics', href: 'https://www.dhs.gov/real-id' },
                 ],
             },
@@ -542,6 +559,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Check country eligibility', detail: 'Your country of birth must have low US immigration (under 50,000 immigrants in 5 years). Countries like India, China, Mexico, and Canada are excluded — but you may qualify through a spouse\'s or parent\'s country of birth.', duration: '15 min',
                 links: [
+                    { label: 'Married to a US citizen? Green card through marriage', href: '/guides/how-to-get-green-card-through-marriage' },
                     { label: 'Eligible countries list (travel.state.gov)', href: 'https://travel.state.gov/content/travel/en/us-visas/immigrate/diversity-visa-program-entry/diversity-visa-submit-entry.html' },
                 ],
             },
@@ -589,7 +607,11 @@ export const guides: Guide[] = [
             'Alien registration number and work authorization (for non-citizens)',
         ],
         steps: [
-            { phase: 'before', title: 'Confirm you qualify', detail: 'You must be unemployed through no fault of your own (laid off, hours cut — not fired for cause or quit without good reason), meet your state\'s earnings minimums, and be able, available, and actively seeking work.', duration: '30 min' },
+            { phase: 'before', title: 'Confirm you qualify', detail: 'You must be unemployed through no fault of your own (laid off, hours cut — not fired for cause or quit without good reason), meet your state\'s earnings minimums, and be able, available, and actively seeking work.', duration: '30 min',
+                links: [
+                    { label: 'Lost job coverage? Special enrollment for ACA health insurance', href: '/guides/how-to-apply-for-aca-health-insurance' },
+                ],
+            },
             { phase: 'before', title: 'Gather employment records', detail: 'List every employer from the last 18 months with exact dates, pay, and reason for separation. Your state\'s claim form will ask for all of it.', duration: '1 hour' },
             {
                 phase: 'submit', title: 'File your initial claim', detail: 'File online with your state\'s unemployment agency (search "[your state] unemployment claim"). File during your first week of unemployment — benefits do not backdate.', duration: '1 hour',
@@ -632,12 +654,14 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Check your expiration date', detail: 'File within 6 months of expiration — earlier filing is allowed but the new card\'s clock starts from approval. If your card is already expired, your permanent resident status has NOT expired — only the card.', duration: '10 min',
                 links: [
-                    { label: 'USCIS: green card renewal', href: 'https://www.uscis.gov/green-card/after-we-grant-your-green-card/renew-a-green-card' },
+                    { label: 'Conditional marriage green card rules', href: '/guides/how-to-get-green-card-through-marriage' },
+                    { label: 'USCIS: green card renewal', href: 'https://www.uscis.gov/i-90' },
                 ],
             },
             {
                 phase: 'fill', title: 'File Form I-90 online', detail: 'Create an account at my.uscis.gov and complete the I-90 (~30 minutes). Online filing gives you case status alerts and faster processing than paper.', duration: '30 min',
                 links: [
+                    { label: 'Eligible for citizenship? Apply for US citizenship', href: '/guides/how-to-apply-for-citizenship' },
                     { label: 'Form I-90 (uscis.gov)', href: 'https://www.uscis.gov/i-90' },
                 ],
             },
@@ -738,6 +762,7 @@ export const guides: Guide[] = [
             {
                 phase: 'fill', title: 'Complete DS-11 and DS-64', detail: 'Fill both forms. DS-64 asks when and where the loss happened — approximate answers are fine. Sign DS-11 only at the acceptance facility.', duration: '30 min',
                 links: [
+                    { label: 'Standard US passport application steps', href: '/guides/how-to-get-a-passport' },
                     { label: 'Passport forms (travel.state.gov)', href: 'https://travel.state.gov/content/travel/en/passports/how-apply/forms.html' },
                 ],
             },
@@ -854,6 +879,7 @@ export const guides: Guide[] = [
             {
                 phase: 'followup', title: 'Order extra copies for the future', detail: 'Agencies keep certified copies when you apply for passports or name changes. Having 2–3 spares saves repeat trips. Store them in a fireproof place — never laminate them.', duration: '—',
                 links: [
+                    { label: 'Using your birth certificate for REAL ID', href: '/guides/how-to-get-a-real-id' },
                     { label: 'Applying for a passport?', href: '/guides/how-to-get-a-passport' },
                     { label: 'Getting a REAL ID?', href: '/guides/how-to-get-a-real-id' },
                 ],
@@ -931,6 +957,9 @@ export const guides: Guide[] = [
         steps: [
             {
                 phase: 'before', title: 'Get your three pieces of info ready', detail: 'The tool requires your SSN or ITIN, your filing status, and the EXACT refund amount in whole dollars from your filed return. If you do not know the amount, open the PDF of your return — guessing wrong locks you out for 24 hours.', duration: '5 min',
+                links: [
+                    { label: 'New to filing taxes? Step-by-step tax return guide', href: '/guides/how-to-file-taxes-first-time' },
+                ],
             },
             {
                 phase: 'go', title: 'Open the official tool (not a third-party tracker)', detail: 'Use "Where\'s My Refund?" on IRS.gov or the official IRS2Go mobile app. Emails or texts claiming to "track your refund" are phishing — the IRS never initiates contact that way.', duration: '2 min',
@@ -968,11 +997,16 @@ export const guides: Guide[] = [
             'IRS account with Direct Pay or EFTPS access',
         ],
         steps: [
-            { phase: 'before', title: 'Confirm you actually owe estimates', detail: 'You must pay estimates if you expect to owe $1,000+ at tax time AND your withholding covers less than 90% of this year\'s tax or 100% of last year\'s tax (110% if your income was over $150,000). Salaried with a small side gig? Increasing your W-4 withholding instead can be simpler.', duration: '15 min' },
+            { phase: 'before', title: 'Confirm you actually owe estimates', detail: 'You must pay estimates if you expect to owe $1,000+ at tax time AND your withholding covers less than 90% of this year\'s tax or 100% of last year\'s tax (110% if your income was over $150,000). Salaried with a small side gig? Increasing your W-4 withholding instead can be simpler.', duration: '15 min',
+                links: [
+                    { label: 'Need a tax ID? ITIN application guide', href: '/guides/how-to-apply-for-itin' },
+                ],
+            },
             { phase: 'before', title: 'Learn the four due dates', detail: 'Q1: April 15. Q2: June 15. Q3: September 15. Q4: January 15 of the next year. Yes, they are unevenly spaced — Q2 covers only two months. Mark all four in your calendar with a reminder one week ahead.', duration: '5 min' },
             {
                 phase: 'fill', title: 'Calculate your payment with Form 1040-ES', detail: 'The worksheet in Form 1040-ES walks you through it: estimate this year\'s income, subtract deductions, apply your tax rate plus ~15.3% self-employment tax, then divide by four. A simpler shortcut: pay 100% of last year\'s total tax in four equal chunks (the "safe harbor") and you cannot be penalized no matter what you earn this year.', duration: '30–45 min',
                 links: [
+                    { label: 'LLC taxation and business setup guide', href: '/guides/how-to-start-an-llc' },
                     { label: 'Form 1040-ES (with worksheet)', href: 'https://www.irs.gov/forms-pubs/about-form-1040-es' },
                 ],
             },
@@ -1027,7 +1061,12 @@ export const guides: Guide[] = [
                 ],
             },
             { phase: 'submit', title: 'Complete the interview details and sign releases', detail: 'SSA may call to clarify answers. Sign Form SSA-827 (medical release) so they can request your records. Respond to every SSA letter immediately — missing a deadline can close your claim and force you to restart.', duration: '1 hour' },
-            { phase: 'wait', title: 'Wait for the initial decision (3–6 months)', detail: 'A Disability Determination Services examiner reviews your records and may send you to a consultative exam (a doctor paid by SSA). Roughly 2 out of 3 applications are denied at this stage — usually for "insufficient medical evidence." A denial is not the end; it is the norm.', duration: '3–6 months' },
+            {
+                phase: 'wait', title: 'Wait for the initial decision (3–6 months)', detail: 'A Disability Determination Services examiner reviews your records and may send you to a consultative exam (a doctor paid by SSA). Roughly 2 out of 3 applications are denied at this stage — usually for "insufficient medical evidence." A denial is not the end; it is the norm.', duration: '3–6 months',
+                links: [
+                    { label: "Need health coverage while waiting? ACA marketplace guide", href: "/guides/how-to-apply-for-aca-health-insurance" },
+                ],
+            },
             { phase: 'followup', title: 'Appeal within 60 days — do not just re-apply', detail: 'If denied, file for Reconsideration within 60 days. If denied again, request a hearing before an Administrative Law Judge — this is where most claims are won, with a representative helping. Re-applying from zero resets your earnings record and can cost you back-pay. Most claimants use a disability lawyer who works on contingency (25% of back-pay, capped by law).', duration: '60-day deadline' },
             { phase: 'receive', title: 'Understand your benefits when approved', detail: 'Monthly payments are based on your lifetime earnings record (average around $1,500/month). After 24 months on SSDI you qualify for Medicare. Your spouse and children may also receive auxiliary payments. Back-pay covers the months from your established onset date.', duration: '—' },
         ],
@@ -1107,6 +1146,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Confirm you actually need an EIN', detail: 'You need one if you: hire employees, operate as an LLC, partnership, or corporation, open a business bank account, file excise taxes, or withhold taxes for a household employee. Sole proprietors with no employees can use their SSN — but an EIN keeps your SSN off W-9s and reduces identity-theft risk.', duration: '10 min',
                 links: [
+                    { label: 'Forming an entity? How to start an LLC', href: '/guides/how-to-start-an-llc' },
                     { label: 'IRS: Do you need an EIN?', href: 'https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers' },
                 ],
             },
@@ -1117,7 +1157,12 @@ export const guides: Guide[] = [
                     { label: 'IRS EIN online application', href: 'https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number' },
                 ],
             },
-            { phase: 'fill', title: 'Answer the SS-4 questions', detail: 'You will identify the "responsible party" (you, with your SSN/ITIN), choose your entity type, explain why you are applying (started business, hired employee, banking purpose, etc.), and describe the business activity. Answer honestly — the entity type here affects your tax filings.', duration: '15 min' },
+            {
+                phase: 'fill', title: 'Answer the SS-4 questions', detail: 'You will identify the "responsible party" (you, with your SSN/ITIN), choose your entity type, explain why you are applying (started business, hired employee, banking purpose, etc.), and describe the business activity. Answer honestly — the entity type here affects your tax filings.', duration: '15 min',
+                links: [
+                    { label: "Foreign applicants: Form W-7 ITIN guide", href: "/guides/how-to-apply-for-itin" },
+                ],
+            },
             { phase: 'receive', title: 'Save the CP 575 confirmation', detail: 'The EIN appears on screen and on your CP 575 notice (arrives by mail in ~4 weeks). Download and print the on-screen confirmation immediately — the IRS cannot re-display it, and replacing a lost notice takes weeks. Open your business bank account with it right away.', duration: 'Same day' },
             { phase: 'followup', title: 'Use the EIN correctly going forward', detail: 'Use the EIN on business bank accounts, W-9s to clients, payroll filings, and business tax returns — but note: for a single-member LLC without employees, the IRS still expects your personal SSN on your 1040 Schedule C. If you lose the number later, call the Business & Specialty Tax Line at 800-829-4933.', duration: '—' },
         ],
@@ -1151,6 +1196,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Learn the exact test format', detail: 'At your interview a USCIS officer asks 10 civics questions from the official list of 100 — you must answer 6 correctly. You then read one sentence aloud in English and write one sentence from dictation. The officer also reviews your N-400 application line by line and asks questions about your background.', duration: '30 min',
                 links: [
+                    { label: 'Complete Form N-400 citizenship application guide', href: '/guides/how-to-apply-for-citizenship' },
                     { label: 'USCIS: Civics test study materials', href: 'https://www.uscis.gov/citizenship/find-study-materials-and-resources' },
                 ],
             },
@@ -1158,14 +1204,18 @@ export const guides: Guide[] = [
             {
                 phase: 'fill', title: 'Study the 100 questions in batches', detail: 'Break them into themes: Constitution and rights, system of government, history, geography, symbols, and holidays. Learn 10 per week with the free USCIS flash cards and practice tests. Drill the ones you miss. Pay special attention to answers that depend on your state — your senator, governor, and capital change with elections, so verify current officeholders right before your interview.', duration: '2–6 months',
                 links: [
-                    { label: 'USCIS practice tests', href: 'https://www.uscis.gov/citizenship/2020-test/practice-tests' },
+                    { label: 'USCIS practice tests', href: 'https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test' },
                 ],
             },
             { phase: 'fill', title: 'Practice English reading and writing', detail: 'The reading test uses simple civics sentences (e.g., "Abraham Lincoln was president"). The writing test is dictation of similar sentences. USCIS publishes the exact vocabulary lists — study those words and you cannot be surprised. Watch the official USCIS interview videos to see the real pace and tone.', duration: 'Ongoing' },
             { phase: 'before', title: 'Re-read your own N-400 before the interview', detail: 'The officer will ask you to confirm everything on your application under oath — trips abroad, addresses, employment, marriages, and the "good moral character" questions. Contradicting your own answers is the fastest way to trouble. Bring your passport, green card, state ID, and any documents referenced in your interview notice.', duration: '1 hour' },
             { phase: 'submit', title: 'Attend the interview', detail: 'Arrive 30 minutes early at the field office with your appointment letter and photo ID. The interview itself takes about 20–30 minutes: oath, N-400 review, civics questions, reading, writing. Answer in English (unless exempt by age/residency), stay calm, and if you do not understand a question it is fine to ask the officer to repeat it.', duration: 'Half day' },
             { phase: 'followup', title: 'If you fail, retake the failed part', detail: 'You get two chances. If you fail civics or English, you are rescheduled for a second attempt (usually 60–90 days later) on only the failed portion. Fail twice and the application is denied — but you can reapply and pay the fee again. Most people who study the official materials pass on the first try.', duration: '60–90 days' },
-            { phase: 'receive', title: 'Attend the oath ceremony and get your certificate', detail: 'After passing, you receive an oath ceremony notice (same-day ceremonies exist at some offices, otherwise weeks to months later). You surrender your green card, take the Oath of Allegiance, and receive your Certificate of Naturalization — then you can apply for a US passport the same week.', duration: 'Weeks to months' },
+            { phase: 'receive', title: 'Attend the oath ceremony and get your certificate', detail: 'After passing, you receive an oath ceremony notice (same-day ceremonies exist at some offices, otherwise weeks to months later). You surrender your green card, take the Oath of Allegiance, and receive your Certificate of Naturalization — then you can apply for a US passport the same week.', duration: 'Weeks to months',
+                links: [
+                    { label: 'After naturalization: How to get a US passport', href: '/guides/how-to-get-a-passport' },
+                ],
+            },
         ],
         faqs: [
             { q: 'Can I take the test in my own language?', a: 'Only if you are 50+ with 20 years as a permanent resident, or 55+ with 15 years — you bring an interpreter for the civics portion but still must pass the English reading/writing unless you are 65+ with 20 years (special consideration rule).' },
@@ -1196,6 +1246,8 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Confirm you qualify for renewal by mail', detail: 'You can renew by mail if your current passport: is undamaged, was issued when you were 16 or older, was issued within the last 15 years, and has your current name (or you can document a name change). If ANY of these fail — damaged, issued as a child, expired more than 5 years ago — you must apply in person with Form DS-11 like a first-time applicant.', duration: '10 min',
                 links: [
+                    { label: "REAL ID identification requirements", href: "/guides/how-to-get-a-real-id" },
+                    { label: 'First time applying? US passport application guide', href: '/guides/how-to-get-a-passport' },
                     { label: 'State Dept: renew by mail', href: 'https://travel.state.gov/content/travel/en/passports/have-passport/renew.html' },
                 ],
             },
@@ -1287,7 +1339,7 @@ export const guides: Guide[] = [
             {
                 phase: 'go', title: 'File the report — online if your city allows it', detail: 'Most large departments have an online portal for non-emergency reports: theft under a value threshold, vandalism, lost property, and fraud. Fill every field accurately; false statements are a crime. For in-person filing, go to the station with jurisdiction where the incident occurred (not the one nearest you). For emergencies or crimes in progress, call 911 first and file the written report with the responding officers.', duration: '20–60 min',
                 links: [
-                    { label: 'Find your local police department', href: 'https://www.usa.gov/police' },
+                    { label: 'Find your local police department', href: 'https://www.usa.gov/report-crime' },
                 ],
             },
             { phase: 'submit', title: 'Get the report number before you leave', detail: 'Ask for the report or case number, the officer\'s name and badge, and the phone number or portal where you can order the official copy. The report may take 3–10 business days to appear in the system. If nothing is entered after two weeks, follow up with the records unit — reports do fall through the cracks.', duration: '5 min' },
@@ -1357,6 +1409,7 @@ export const guides: Guide[] = [
             {
                 phase: 'submit', title: 'Replace your driver\'s license or state ID', detail: 'Visit your state DMV with your police report, birth certificate or passport, and 2 proofs of residency. Most states issue a temporary paper license on the spot and mail the real card in 1–3 weeks. Report the old license as canceled/lost so it cannot be used for fraud. A REAL ID replacement requires the full document set again.', duration: '1–3 weeks',
                 links: [
+                    { label: "Foreign driver license conversion guide", href: "/guides/how-to-get-drivers-license-new-immigrant" },
                     { label: 'Find your state DMV', href: 'https://www.usa.gov/motor-vehicle-services' },
                 ],
             },
@@ -1478,7 +1531,8 @@ export const guides: Guide[] = [
             {
                 phase: 'receive', title: 'Enter the US (no earlier than 30 days before your I-20 start)', detail: 'F-1 students may enter up to 30 days before the program start date on the I-20 — earlier entry is not allowed on the student visa. At the border, carry your passport with visa, I-20 (signed), and financial proof; the CBP officer will issue an electronic I-94 record admitting you for "D/S" (duration of status). After arrival, report to your school\'s international office within the program reporting window — failing to register triggers SEVIS termination.', duration: 'Travel day',
                 links: [
-                    { label: 'CBP: arriving students', href: 'https://www.cbp.gov/travel/international-visitors/students' },
+                    { label: "Getting a driver's license as an international student", href: '/guides/how-to-get-drivers-license-new-immigrant' },
+                    { label: 'CBP: arriving students', href: 'https://studyinthestates.dhs.gov/students' },
                 ],
             },
         ],
@@ -1557,6 +1611,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Confirm you are eligible', detail: 'You must be: a US citizen (green card holders and visa holders cannot vote — doing so is a deportable offense and a bar to future citizenship), 18 years old by election day (many states let 17-year-olds pre-register), a resident of the state where you register, and not currently serving a felony sentence in states that disenfranchise (rules vary widely; many states restore rights after sentence completion, some immediately).', duration: '10 min',
                 links: [
+                    { label: 'Must be a US citizen: How to apply for citizenship', href: '/guides/how-to-apply-for-citizenship' },
                     { label: 'Check registration rules by state', href: 'https://www.usa.gov/voting' },
                 ],
             },
@@ -1736,13 +1791,13 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Check the eligibility rules', detail: 'You qualify if you are pregnant, postpartum (up to 6 months), breastfeeding (up to 1 year), an infant, or a child under 5, AND your household income is under the limit (roughly 185% of poverty — about $2,248/month for 2 people, $3,445 for 4, in 2025). Already on Medicaid, SNAP, or TANF? You automatically meet the income test.', duration: '10 min',
                 links: [
-                    { label: 'WIC eligibility (USDA)', href: 'https://www.fns.usda.gov/wic/wic-eligibility-and-coverage' },
+                    { label: 'WIC eligibility (USDA)', href: 'https://www.fns.usda.gov/wic/wic-eligibility-requirements' },
                 ],
             },
             {
                 phase: 'go', title: 'Contact your local WIC office', detail: 'WIC is run by states — find your agency through the USDA WIC directory or by calling the state health department. Many offices take online pre-applications or same-week appointments. Say who the applicants are (e.g. "pregnant mom and 2-year-old").', duration: '15 min',
                 links: [
-                    { label: 'Find your WIC agency', href: 'https://www.fns.usda.gov/wic/contacts' },
+                    { label: 'Find your WIC agency', href: 'https://www.fns.usda.gov/wic/program-contacts' },
                 ],
             },
             { phase: 'go', title: 'Attend the certification appointment', detail: 'A staff member checks income and residency documents, takes height/weight and a blood iron test (a finger prick for kids), and asks about diet and health. The health screening is required — it is how WIC tailors your food package and referrals.', duration: '45–60 min' },
@@ -1779,6 +1834,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Check income and eligibility basics', detail: 'Gross monthly income generally must be under 130% of poverty (about $3,445/month for a family of 4 in 2025), with deductions for housing and childcare often raising the qualifying income. Able-bodied adults 18–52 without dependents face a 3-month time limit unless working 80 hours/month or in a work program.', duration: '15 min',
                 links: [
+                    { label: 'Healthcare coverage: How to apply for ACA insurance', href: '/guides/how-to-apply-for-aca-health-insurance' },
                     { label: 'SNAP eligibility (USDA)', href: 'https://www.fns.usda.gov/snap/recipient/eligibility' },
                 ],
             },
@@ -1822,6 +1878,8 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Confirm you need to file I-90', detail: 'File I-90 to renew a card expiring within 6 months, or to replace a lost/stolen/damaged card, correct a USCIS error, or update your name (after marriage, etc.). Do NOT file I-90 if you are a conditional resident (2-year card) — you file I-751 or I-829 instead. Cards expiring do not mean status expiring: your permanent residence continues.', duration: '15 min',
                 links: [
+                    { label: "Eligible to naturalize instead? How to apply for citizenship", href: "/guides/how-to-apply-for-citizenship" },
+                    { label: 'Applying through spouse? Green card through marriage guide', href: '/guides/how-to-get-green-card-through-marriage' },
                     { label: 'I-90 overview (USCIS)', href: 'https://www.uscis.gov/i-90' },
                 ],
             },
@@ -1923,7 +1981,11 @@ export const guides: Guide[] = [
             { phase: 'submit', title: 'Pay the fee and check the validity window', detail: 'Fees run $25–$115 by county (cash-only in some). Licenses are valid 30–90 days depending on state — schedule the ceremony inside that window or reapply and pay again. Some states waive the fee if you complete premarital counseling.' },
             { phase: 'fill', title: 'Hold the ceremony with an authorized officiant', detail: 'The license must be signed by an authorized officiant: religious leader, judge, justice of the peace, or in some states a notary or friend ordained online (check your state — some restrict who can officiate). Two witnesses are required in most states. The officiant and witnesses sign the license at the ceremony.' },
             { phase: 'submit', title: 'Return the signed license', detail: 'The officiant (or you, in some counties) must return the signed license to the clerk within days of the ceremony — the deadline is printed on it. The county records it and issues the official marriage certificate. Order 2–3 certified copies ($10–$30 each) — you will need them repeatedly.' },
-            { phase: 'receive', title: 'Use the certificate for everything downstream', detail: 'Certified copies drive the paperwork chain: Social Security name change, driver\'s license update, passport, employer benefits, insurance, and immigration petitions (I-130 spousal cases require it). Keep the certificate with your permanent records — it is proof for life.' },
+            { phase: 'receive', title: 'Use the certificate for everything downstream', detail: 'Certified copies drive the paperwork chain: Social Security name change, driver\'s license update, passport, employer benefits, insurance, and immigration petitions (I-130 spousal cases require it). Keep the certificate with your permanent records — it is proof for life.',
+                links: [
+                    { label: 'Immigration steps: Green card through marriage', href: '/guides/how-to-get-green-card-through-marriage' },
+                ],
+            },
         ],
         faqs: [
             { q: 'We are getting married for immigration purposes. Any red flags?', a: 'The marriage license process is identical for everyone. For the immigration side, the I-130 petition requires the marriage certificate plus evidence the marriage is genuine (joint accounts, photos, leases). A marriage that is legal but entered into solely for a green card is immigration fraud — the process is the same, but the relationship must be real.' },
@@ -2060,7 +2122,7 @@ export const guides: Guide[] = [
             {
                 phase: 'go', title: 'Enroll in VA healthcare', detail: 'Apply online at VA.gov/health-care/apply (10 minutes), by phone (1-877-222-VETS), or at any VA medical center. Enrollment is grouped by priority (service-connected disabilities, POW status, income). Apply within 5 years of discharge for enhanced eligibility — but any veteran can apply anytime.', duration: '10 min',
                 links: [
-                    { label: 'Apply for VA health care', href: 'https://www.va.gov/health-care/apply/' },
+                    { label: 'Apply for VA health care', href: 'https://www.va.gov/health-care/how-to-apply/' },
                 ],
             },
             {
@@ -2108,7 +2170,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Check your case fits small claims', detail: 'Limits range from $5,000 (several states) to $25,000 (Tennessee). Cases must be money disputes — unpaid rent or invoices, security deposits, property damage, bad workmanship. Small claims cannot handle evictions, name changes, or divorce. Sue where the defendant lives or where the dispute happened.', duration: '20 min',
                 links: [
-                    { label: 'Small claims by state (USA.gov)', href: 'https://www.usa.gov/small-claims' },
+                    { label: 'Small claims by state (USA.gov)', href: 'https://www.usa.gov/legal-aid' },
                 ],
             },
             {
@@ -2183,7 +2245,11 @@ export const guides: Guide[] = [
             'Home office measurements (square footage) and utility costs',
         ],
         steps: [
-            { phase: 'before', title: 'Confirm Schedule C is right for you', detail: 'Use Schedule C if you are a sole proprietor, freelancer, gig worker, or single-member LLC. Partners and multi-member LLCs use Schedule K-1 (Form 1065) instead; S-corp owners take wages plus a K-1.', duration: '15 min' },
+            { phase: 'before', title: 'Confirm Schedule C is right for you', detail: 'Use Schedule C if you are a sole proprietor, freelancer, gig worker, or single-member LLC. Partners and multi-member LLCs use Schedule K-1 (Form 1065) instead; S-corp owners take wages plus a K-1.', duration: '15 min',
+                links: [
+                    { label: 'Forming an LLC for your business', href: '/guides/how-to-start-an-llc' },
+                ],
+            },
             { phase: 'before', title: 'Total your business income', detail: 'Add up all 1099-NECs, 1099-Ks (payment platforms), and any income paid without a form. The IRS matches reported 1099s to your return automatically — unreported income generates a CP2000 notice with penalties.', duration: '30–60 min' },
             { phase: 'fill', title: 'Categorize expenses (Part II)', detail: 'Common categories: advertising, car expenses, supplies, contract labor, insurance, legal/professional services, rent, software subscriptions, phone/internet (business share), travel, meals (50% limit). Keep personal costs out — commingling is the fastest route to an audit.', duration: '1–2 hours' },
             { phase: 'fill', title: 'Claim the home office deduction if eligible', detail: 'The simplified method: $5 per square foot up to 300 sq ft ($1,500 max), no receipts needed. The regular method: actual expenses (rent, utilities, insurance) times the business-use percentage. Either way the space must be used regularly and exclusively for business.', duration: '30 min' },
@@ -2216,9 +2282,17 @@ export const guides: Guide[] = [
             'Login for each bank, broker, and payment platform',
         ],
         steps: [
-            { phase: 'before', title: 'Collect every 1099 — including ones you forgot about', detail: 'Payers must send 1099s by January 31 (1099-B/DIV/INT brokers by mid-February). Log into each bank, brokerage, and gig platform and download the tax forms section — paper copies get lost in the mail, but the IRS copy does not.', duration: '30 min' },
+            { phase: 'before', title: 'Collect every 1099 — including ones you forgot about', detail: 'Payers must send 1099s by January 31 (1099-B/DIV/INT brokers by mid-February). Log into each bank, brokerage, and gig platform and download the tax forms section — paper copies get lost in the mail, but the IRS copy does not.', duration: '30 min',
+                links: [
+                    { label: 'Protect personal assets: Start an LLC', href: '/guides/how-to-start-an-llc' },
+                ],
+            },
             { phase: 'before', title: 'Identify which 1099 you have', detail: 'NEC = freelance/self-employment pay ($600+). K = payment card and third-party network transactions (platforms like PayPal, Venmo, Stripe). INT = bank interest ($10+). DIV = dividends and capital gains distributions. B = investment sales. R = retirement distributions. MISC = rents, royalties, prizes.', duration: '10 min' },
-            { phase: 'fill', title: '1099-NEC → Schedule C', detail: 'Freelance income goes on Schedule C, where you can subtract business expenses before it hits your 1040. You owe income tax plus self-employment tax (15.3%) on the net profit.', duration: '15 min' },
+            { phase: 'fill', title: '1099-NEC → Schedule C', detail: 'Freelance income goes on Schedule C, where you can subtract business expenses before it hits your 1040. You owe income tax plus self-employment tax (15.3%) on the net profit.', duration: '15 min',
+                links: [
+                    { label: 'First time filing income taxes? Beginner guide', href: '/guides/how-to-file-taxes-first-time' },
+                ],
+            },
             { phase: 'fill', title: '1099-K → Schedule C (business) or already-reported (personal)', detail: 'For business income, add the 1099-K amount to your Schedule C gross receipts — but do not double-count payments that also appear on a 1099-NEC. Personal transfers (friends reimbursing dinner) are not income; the form just reports gross platform activity.', duration: '20 min' },
             { phase: 'fill', title: '1099-INT and 1099-DIV → Schedule B', detail: 'Interest goes on Schedule B (or directly on 1040 Line 2b if under $1,500 and simple). Dividends go on Schedule B Line 5 — check whether they are ordinary or qualified; qualified dividends get the lower capital-gains rate.', duration: '15 min' },
             { phase: 'fill', title: '1099-B → Form 8949 + Schedule D', detail: 'Brokerage sales are reported on Form 8949 and totaled on Schedule D. Your broker sends Form 1099-B with cost basis — verify it, especially for older investments where basis may be missing and the IRS assumes zero (maximum tax).', duration: '30 min' },
@@ -2254,7 +2328,12 @@ export const guides: Guide[] = [
             { phase: 'fill', title: 'Box 1: ordinary business income → Schedule E Part II', detail: 'The main number. Positive amounts are taxable income; negative amounts are losses you may deduct (subject to basis and at-risk limits). Tax software walks you through Schedule E, but check that it carries to your 1040 correctly.', duration: '30 min' },
             { phase: 'fill', title: 'Boxes 2–14: the pass-through items', detail: 'Rental real estate income (Box 2), interest (4), dividends (5), capital gains (9a/9b → Schedule D), Section 179 depreciation (12 → Form 4562), self-employment earnings (14 → Schedule SE), credits (13 → various credit forms). Each box maps to a specific form — software does this automatically if you enter the K-1 in its dedicated section.', duration: '45–90 min' },
             { phase: 'fill', title: 'Distributions (Box 19) are usually not taxed again', detail: 'Cash the entity sent you is generally a return of your investment, not extra income — the Box 1 allocation is what gets taxed. Track your outside basis: distributions above basis create capital gains.', duration: '15 min' },
-            { phase: 'submit', title: 'File with Schedule E attached', detail: 'Schedule E Part II summarizes the K-1 activity and flows to your 1040. E-file if your software supports K-1s; keep the actual K-1 PDF with your records in case the IRS asks.', duration: '15 min' },
+            {
+                phase: 'submit', title: 'File with Schedule E attached', detail: 'Schedule E Part II summarizes the K-1 activity and flows to your 1040. E-file if your software supports K-1s; keep the actual K-1 PDF with your records in case the IRS asks.', duration: '15 min',
+                links: [
+                    { label: "How to file federal taxes for the first time", href: "/guides/how-to-file-taxes-first-time" },
+                ],
+            },
             { phase: 'followup', title: 'Track carryovers for next year', detail: 'Disallowed losses, passive-activity carryovers, and credit carryforwards move to future years. Note them now — your next return needs them, and preparers charge to reconstruct lost history.', duration: '15 min' },
         ],
         faqs: [
@@ -2287,7 +2366,12 @@ export const guides: Guide[] = [
             { phase: 'before', title: 'Determine who claims the credit', detail: 'If the student is a dependent, the parents claim the credit on their return — even if the student paid or took the loan. If the student is not a dependent, the student claims it. The student cannot claim a credit on their own return if someone else claims them as a dependent.', duration: '15 min' },
             { phase: 'fill', title: 'Choose American Opportunity or Lifetime Learning', detail: 'AOTC: up to $2,500/student, 40% refundable, only for the first 4 years of undergraduate study, requires half-time enrollment. LLC: up to $2,000/return, covers any education level including courses to improve job skills, no degree requirement. You cannot claim both for the same student.', duration: '20 min' },
             { phase: 'fill', title: 'Enter amounts actually paid, not just billed', detail: 'The credit is based on qualified tuition and fees paid during the tax year. Compare the 1098-T Box 1 with your payment records — scholarships (Box 5) reduce the creditable amount, and scholarship dollars exceeding tuition can even be taxable income to the student.', duration: '30 min' },
-            { phase: 'fill', title: 'Fill out Form 8863', detail: 'Education credits are claimed on Form 8863, which calculates the phase-out (AOTC: MAGI $80k–$90k single, $160k–$180k joint; LLC: $80k–$90k single). Tax software asks the questions and fills it in — say yes when it asks about education expenses.', duration: '30 min' },
+            {
+                phase: 'fill', title: 'Fill out Form 8863', detail: 'Education credits are claimed on Form 8863, which calculates the phase-out (AOTC: MAGI $80k–$90k single, $160k–$180k joint; LLC: $80k–$90k single). Tax software asks the questions and fills it in — say yes when it asks about education expenses.', duration: '30 min',
+                links: [
+                    { label: "First time filing taxes? Complete beginner guide", href: "/guides/how-to-file-taxes-first-time" },
+                ],
+            },
             { phase: 'submit', title: 'File and keep the 1098-T with your records', detail: 'You do not attach the 1098-T to your return, but keep it — the IRS can request it. If the school reported wrong amounts, ask for a corrected 1098-T before filing.', duration: '10 min' },
             { phase: 'followup', title: 'Do not double-benefit with 529 money', detail: '529 distributions used for tuition cannot also fund the credit — the same dollars cannot count twice. Use 529 money for room and board (not creditable anyway) and pay at least $4,000 of tuition from taxable funds to max the AOTC.', duration: '15 min' },
         ],
@@ -2320,7 +2404,11 @@ export const guides: Guide[] = [
         steps: [
             { phase: 'before', title: 'Know your state\'s minimum requirements', detail: 'Nearly all states mandate liability coverage (typically 25/50/25: $25k injury per person, $50k per accident, $25k property damage). Minimums are legal but thin — one hospital stay can exceed them and you pay the difference. Consider 100/300/100 if you have any savings to protect.', duration: '20 min' },
             { phase: 'before', title: 'Decide: liability-only vs full coverage', detail: 'If your car is worth less than ~10x the extra premium, liability-only usually makes sense. If the car is financed or leased, the lender requires comprehensive + collision. Check your car\'s current value (KBB.com) before deciding.', duration: '15 min' },
-            { phase: 'before', title: 'Immigrants: convert to a US license ASAP', detail: 'Insurers price foreign licenses and no US driving history as high risk — sometimes 2–3x the rate. A US license (you can convert in most states without a road test if your country has reciprocity) plus 6 months of clean history drops rates sharply. Some insurers accept your foreign no-claims letter (in English) for a discount.', duration: 'varies' },
+            { phase: 'before', title: 'Immigrants: convert to a US license ASAP', detail: 'Insurers price foreign licenses and no US driving history as high risk — sometimes 2–3x the rate. A US license (you can convert in most states without a road test if your country has reciprocity) plus 6 months of clean history drops rates sharply. Some insurers accept your foreign no-claims letter (in English) for a discount.', duration: 'varies',
+                links: [
+                    { label: "Step-by-step immigrant driver's license guide", href: '/guides/how-to-get-drivers-license-new-immigrant' },
+                ],
+            },
             { phase: 'fill', title: 'Gather quotes from at least 5 insurers', detail: 'Get quotes from a mix: large national brands (Geico, Progressive, State Farm), a regional player, and an independent agent who shops multiple companies. Rates for identical coverage vary by 100%+ between insurers — the single biggest saving is simply comparing. Use each insurer\'s site directly rather than lead-generation sites that sell your data.', duration: '1 hour' },
             { phase: 'fill', title: 'Set the same coverage levels in every quote', detail: 'Quote with identical liability limits, deductibles, and options, or the comparison is meaningless. Choose a deductible ($500 vs $1,000) you could actually pay after an accident — raising it cuts the premium 10–20%. Ask about discounts: bundling, good student, low mileage, defensive driving course, pay-in-full, paperless.', duration: '15 min' },
             { phase: 'submit', title: 'Buy the policy and get proof immediately', detail: 'Purchase online and download your insurance card (ID card) instantly — most states accept digital proof, but keep a paper copy in the glovebox. Set the policy start date for the day you take the car; driving uninsured even one day is illegal and lenders verify coverage automatically.', duration: '15 min' },
@@ -2458,10 +2546,14 @@ export const guides: Guide[] = [
             'Personal financial statement (SBA Form 413 for SBA loans)',
         ],
         steps: [
-            { phase: 'before', title: 'Define the amount and the exact purpose', detail: 'Lenders reject vague requests. "Working capital to cover inventory purchases through Q4" or "$80,000 of kitchen equipment" gets underwritten; "growth money" does not. Your amount should map to a specific plan and a specific repayment source — the revenue the loan generates or your proven cash flow.', duration: '1–2 hours' },
+            { phase: 'before', title: 'Define the amount and the exact purpose', detail: 'Lenders reject vague requests. "Working capital to cover inventory purchases through Q4" or "$80,000 of kitchen equipment" gets underwritten; "growth money" does not. Your amount should map to a specific plan and a specific repayment source — the revenue the loan generates or your proven cash flow.', duration: '1–2 hours',
+                links: [
+                    { label: 'Form your business structure: How to start an LLC', href: '/guides/how-to-start-an-llc' },
+                ],
+            },
             { phase: 'before', title: 'Check whether you clear the standard bar', detail: 'Typical bank/SBA requirements: 640+ personal credit (SBA microloans go lower), 2+ years in business, roughly $100k+ annual revenue, and no recent bankruptcies. Stronger on one axis can offset weakness on another — excellent cash flow can carry a 620 score, but startups under 2 years should target microloans, credit unions, or the SBA Small Loan exception rather than a standard 7(a).', duration: '30 min' },
             { phase: 'before', title: 'Match the loan type to the need', detail: 'SBA 7(a): the general-purpose loan up to $5M — working capital, equipment, real estate, refinancing; 10-year terms (25 for real estate), ~10% down, personal guarantee required. SBA microloan: up to $50,000 through nonprofit intermediaries, best for startups. Term loan: fixed lump sum from a bank. Line of credit: revolving, for cash-flow gaps. Equipment financing: the equipment itself is the collateral, so approval is easier.', duration: '1 hour' },
-            { phase: 'go', title: 'Find lenders through SBA Lender Match and locally', detail: 'Use SBA.gov\'s Lender Match tool to find SBA-approved lenders active in your state and industry — approval cultures differ sharply between banks. Add your existing bank (relationship helps) and a local credit union (most flexible for small balances). Compare rates, guarantee fees, and required collateral across at least three.', duration: '1–2 hours', links: [{ label: 'SBA Lender Match', href: 'https://www.sba.gov/funding-programs/loans/lender-match' }] },
+            { phase: 'go', title: 'Find lenders through SBA Lender Match and locally', detail: 'Use SBA.gov\'s Lender Match tool to find SBA-approved lenders active in your state and industry — approval cultures differ sharply between banks. Add your existing bank (relationship helps) and a local credit union (most flexible for small balances). Compare rates, guarantee fees, and required collateral across at least three.', duration: '1–2 hours', links: [{ label: 'SBA Lender Match', href: 'https://www.sba.gov/funding-programs/loans' }] },
             { phase: 'fill', title: 'Assemble the full package', detail: 'Business plan with use of funds, personal and business tax returns (2–3 years), P&L and balance sheet, 12-month projections, bank statements, and the personal financial statement. For loans over $350,000 the SBA additionally requires a personal guarantee from every 20%+ owner; collateral is required where available. Complete packages move; incomplete ones stall for months.', duration: '3–5 days' },
             { phase: 'submit', title: 'Apply, then respond to underwriting fast', detail: 'Expect 2–4 weeks for a decision on bank loans and 1–3 months for full SBA 7(a) processing (SBA Express is faster, capped lower). Underwriters will ask follow-up questions — the businesses that answer same-day close weeks earlier. On approval, review the full fee schedule and the personal guarantee scope before signing.', duration: '2–12 weeks' },
             { phase: 'followup', title: 'Repay cleanly to build a banking track record', detail: 'On-time repayment on your first business loan is how the second one gets faster and cheaper — banks reward a proven payment history with higher limits and lighter documentation. Keep business finances in a dedicated account so the record is clean for next time.', duration: 'ongoing' },

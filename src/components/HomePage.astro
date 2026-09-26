@@ -8,6 +8,7 @@ import Icon from './Icon.astro';
 import CountryFlag from './CountryFlag.astro';
 import HeroFlowArt from './HeroFlowArt.astro';
 import CardArt from './CardArt.astro';
+import Faq from './Faq.astro';
 import { guides, categories, countries, guidePath, getCountry, totalSteps } from '../data/guides';
 import type { CountryCode } from '../data/guides';
 
@@ -46,38 +47,46 @@ const pageTitle = code === 'us'
 const pageDescription = code === 'us'
   ? 'Step-by-step guides for US government paperwork: taxes, immigration, passports, IDs, and benefits. Costs, fees, and verified official links.'
   : `Step-by-step guides for ${country.name} government paperwork: taxes, immigration, passports, IDs, and benefits. Costs, fees, and verified official links.`;
+
+const homeFaqs = [
+  {
+    q: 'Is GovSteps completely free to use?',
+    a: 'Yes. GovSteps is 100% free to read and access. We never charge subscription fees, sell paperwork packages, or lock step-by-step instructions behind paywalls.',
+  },
+  {
+    q: 'Is GovSteps affiliated with or endorsed by any government agency?',
+    a: 'No. GovSteps is an independent civic information website. We are not affiliated with, authorized by, or connected to the US Government, the UK Government, the Government of Canada, or any of their departments or agencies. All guides link directly to official government agency websites (.gov, .gov.uk, .gc.ca) for source verification.',
+  },
+  {
+    q: 'How frequently are government fees, forms, and processing times updated?',
+    a: 'Our editorial team monitors statutory changes on an ongoing weekly basis. High-volatility categories (taxes, immigration, and public benefits) undergo a comprehensive source audit every six months, while stable categories are reviewed annually. Community reports of recent rule changes are investigated and updated within 48 hours.',
+  },
+  {
+    q: 'Can GovSteps submit applications, check my case status, or provide legal advice?',
+    a: 'No. GovSteps is an educational roadmap service. We cannot file forms on your behalf, check pending case statuses with agencies, or provide legal or tax advice. For individual legal or tax assistance, you should consult a licensed immigration attorney, certified CPA, or contact the relevant government agency directly.',
+  },
+  {
+    q: 'Which countries does GovSteps currently support?',
+    a: 'GovSteps covers paperwork processes across three countries: the United States, the United Kingdom, and Canada. Each country has dedicated, localized guides tailored to its specific agencies, statutory procedures, and local currencies.',
+  },
+];
+
+const homeFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: homeFaqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
 ---
 
 <Layout
   title={pageTitle}
   description={pageDescription}
+  schema={[homeFaqSchema]}
 >
-  <!-- Country bar: horizontally centered pills, directly below the nav bar -->
-  <div class="border-b border-hairline bg-canvas/70 dark:border-hairline-dark dark:bg-canvas-dark/70">
-    <div class="container-geist flex flex-wrap items-center justify-center gap-2 py-2.5">
-      <span class="mr-1.5 hidden font-mono text-[11px] font-medium uppercase tracking-wide text-mute sm:inline dark:text-mute-dark">Choose a country</span>
-      {countries.map((c) => {
-        const active = c.code === code;
-        const count = guides.filter((g) => g.country === c.code).length;
-        return (
-          <a
-            href={c.pathPrefix ? `${c.pathPrefix}/` : '/'}
-            aria-current={active ? 'page' : undefined}
-            class={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-sm font-medium transition-all ${
-              active
-                ? 'border-ink bg-ink text-canvas dark:border-ink-dark dark:bg-ink-dark dark:text-canvas-dark'
-                : 'border-hairline bg-canvas-elevated text-body hover:border-link hover:text-link dark:border-hairline-dark dark:bg-canvas-elevated-dark dark:text-body-dark dark:hover:border-link-dark dark:hover:text-link-dark'
-            }`}
-          >
-            <CountryFlag code={c.code} class="h-4 w-6" />
-            <span>{c.name}</span>
-            <span class="sr-only">({count} guides)</span>
-            <span aria-hidden="true" class={`font-mono text-[10px] ${active ? 'opacity-70' : 'text-mute dark:text-mute-dark'}`}>{count}</span>
-          </a>
-        );
-      })}
-    </div>
-  </div>
 
   <!-- hero-band: mesh gradient, display copy left, circular search pill right -->
   <section class="mesh-hero relative overflow-hidden border-b border-hairline dark:border-hairline-dark">
@@ -150,7 +159,7 @@ const pageDescription = code === 'us'
       </p>
       <p class="inline-flex items-center gap-1.5 text-sm text-body dark:text-body-dark">
         <Icon name="list" class="size-3.5 text-mute dark:text-mute-dark" />
-        <span class="font-semibold text-ink dark:text-ink-dark">{countryGuides.length}</span> guides
+        <span class="font-semibold text-ink dark:text-ink-dark">{countryGuides.length}</span> {countryGuides.length === 1 ? 'guide' : 'guides'}
       </p>
       <p class="inline-flex items-center gap-1.5 text-sm text-body dark:text-body-dark">
         <Icon name="check" class="size-3.5 text-mute dark:text-mute-dark" />
@@ -187,17 +196,64 @@ const pageDescription = code === 'us'
                 <Icon name={cat.icon} class="size-5" />
               </span>
               <h3 class="heading-md mt-4 text-ink group-hover:text-link dark:text-ink-dark dark:group-hover:text-link-dark">
-                <a href={`#cat-${cat.id}`} class="after:absolute after:inset-0 focus:outline-none">
+                <a href={`${country.pathPrefix}/topics/${cat.id}/`} class="after:absolute after:inset-0 focus:outline-none">
                   {cat.name}
                 </a>
               </h3>
               <p class="mt-1.5 text-sm text-body dark:text-body-dark">{cat.blurb}</p>
               <p class="mt-4 font-mono text-xs text-mute dark:text-mute-dark">
-                {count} guides
+                {count} {count === 1 ? 'guide' : 'guides'}
               </p>
             </div>
           );
         })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Who it's for feature section with lifestyle illustration -->
+  <section class="border-b border-hairline dark:border-hairline-dark">
+    <div class="container-geist grid items-center gap-12 py-12 lg:grid-cols-2 lg:gap-16 lg:py-20">
+      <div class="max-w-xl">
+        <p class="eyebrow">Who It's For</p>
+        <h2 class="heading-lg mt-2 text-ink dark:text-ink-dark">Built for anyone facing confusing government systems</h2>
+        <p class="mt-4 text-base leading-relaxed text-body dark:text-body-dark">
+          Whether you are a new immigrant applying for your first tax number, an expat renewing a passport, or an entrepreneur registering a new business, GovSteps eliminates bureaucratic guesswork with verified, sequential roadmaps.
+        </p>
+        <div class="mt-6 space-y-3">
+          <div class="flex items-start gap-3">
+            <span class="mt-1 grid size-5 place-items-center rounded-full bg-link-soft text-link-deep dark:bg-link-soft-dark dark:text-link-dark">
+              <Icon name="check" class="size-3" />
+            </span>
+            <p class="text-sm text-body dark:text-body-dark"><strong>New immigrants & families:</strong> Visas, green cards, citizenship ceremonies, and ITIN applications explained simply.</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="mt-1 grid size-5 place-items-center rounded-full bg-link-soft text-link-deep dark:bg-link-soft-dark dark:text-link-dark">
+              <Icon name="check" class="size-3" />
+            </span>
+            <p class="text-sm text-body dark:text-body-dark"><strong>First-time taxpayers:</strong> Step-by-step guidance through deductions, W-2/1099 filing, and direct file portals.</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="mt-1 grid size-5 place-items-center rounded-full bg-link-soft text-link-deep dark:bg-link-soft-dark dark:text-link-dark">
+              <Icon name="check" class="size-3" />
+            </span>
+            <p class="text-sm text-body dark:text-body-dark"><strong>Everyday citizens:</strong> REAL ID requirements, license renewals, passport renewals, and vital records.</p>
+          </div>
+        </div>
+      </div>
+      <div class="overflow-hidden rounded-xl border border-hairline bg-canvas-elevated shadow-sm dark:border-hairline-dark dark:bg-canvas-elevated-dark">
+        <picture>
+          <source srcset="/images/lifestyle/lifestyle-family-documents.webp" type="image/webp" />
+          <img
+            src="/images/lifestyle/lifestyle-family-documents.png"
+            alt="Family reviewing paperwork together at home"
+            width="1920"
+            height="1280"
+            class="h-auto w-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
       </div>
     </div>
   </section>
@@ -223,9 +279,11 @@ const pageDescription = code === 'us'
                 <span class="grid size-6 place-items-center text-ink dark:text-ink-dark">
                   <Icon name={cat.icon} class="size-5" />
                 </span>
-                {cat.name} Guides
+                <a href={`${country.pathPrefix}/topics/${cat.id}/`} class="hover:text-link dark:hover:text-link-dark">
+                  {cat.name} Guides
+                </a>
               </h3>
-              <p class="font-mono text-xs text-mute dark:text-mute-dark">{catGuides.length} guides</p>
+              <p class="font-mono text-xs text-mute dark:text-mute-dark">{catGuides.length} {catGuides.length === 1 ? 'guide' : 'guides'}</p>
             </div>
             <div class="mt-6 grid gap-4 md:grid-cols-2">
               {catGuides.map((guide, i) => (
@@ -275,6 +333,64 @@ const pageDescription = code === 'us'
           </div>
         );
       })}
+    </div>
+  </section>
+
+  <!-- How it works feature section with lifestyle illustration -->
+  <section class="border-b border-hairline bg-hairline-soft/60 dark:border-hairline-dark dark:bg-hairline-soft-dark/40">
+    <div class="container-geist grid items-center gap-12 py-12 lg:grid-cols-2 lg:gap-16 lg:py-20">
+      <div class="overflow-hidden rounded-xl border border-hairline bg-canvas-elevated shadow-sm dark:border-hairline-dark dark:bg-canvas-elevated-dark lg:order-1">
+        <picture>
+          <source srcset="/images/lifestyle/lifestyle-office-waiting-room.webp" type="image/webp" />
+          <img
+            src="/images/lifestyle/lifestyle-office-waiting-room.png"
+            alt="Government office waiting room"
+            width="1920"
+            height="1280"
+            class="h-auto w-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </div>
+      <div class="max-w-xl lg:order-2">
+        <p class="eyebrow">How It Works</p>
+        <h2 class="heading-lg mt-2 text-ink dark:text-ink-dark">Skip the waiting room confusion</h2>
+        <p class="mt-4 text-base leading-relaxed text-body dark:text-body-dark">
+          Official government portals are notorious for nested PDF manuals, broken cross-links, and ambiguous instructions. GovSteps translates convoluted statutory instructions into an intuitive three-stage walkthrough:
+        </p>
+        <div class="mt-6 grid gap-4 sm:grid-cols-3">
+          <div class="rounded-lg border border-hairline bg-canvas-elevated p-4 dark:border-hairline-dark dark:bg-canvas-elevated-dark">
+            <span class="font-mono text-xs font-semibold text-link dark:text-link-dark">Step 1</span>
+            <h3 class="mt-1 text-sm font-semibold text-ink dark:text-ink-dark">Checklist</h3>
+            <p class="mt-1 text-xs text-mute dark:text-mute-dark">Gather every required document before leaving home.</p>
+          </div>
+          <div class="rounded-lg border border-hairline bg-canvas-elevated p-4 dark:border-hairline-dark dark:bg-canvas-elevated-dark">
+            <span class="font-mono text-xs font-semibold text-link dark:text-link-dark">Step 2</span>
+            <h3 class="mt-1 text-sm font-semibold text-ink dark:text-ink-dark">Timeline</h3>
+            <p class="mt-1 text-xs text-mute dark:text-mute-dark">Follow sequential steps with verified wait times and fees.</p>
+          </div>
+          <div class="rounded-lg border border-hairline bg-canvas-elevated p-4 dark:border-hairline-dark dark:bg-canvas-elevated-dark">
+            <span class="font-mono text-xs font-semibold text-link dark:text-link-dark">Step 3</span>
+            <h3 class="mt-1 text-sm font-semibold text-ink dark:text-ink-dark">Result</h3>
+            <p class="mt-1 text-xs text-mute dark:text-mute-dark">Know exactly what to expect in the mail or at your appointment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ section: full-bleed grey panel band -->
+  <section class="border-t border-hairline bg-hairline-soft/60 dark:border-hairline-dark dark:bg-hairline-soft-dark/40">
+    <div class="container-geist py-12 lg:py-16">
+      <div class="max-w-3xl">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="heading-lg mt-1.5 text-ink dark:text-ink-dark">Frequently Asked Questions</h2>
+        <p class="mt-2 text-sm text-body dark:text-body-dark">Everything you need to know about using GovSteps guides and verifying information.</p>
+      </div>
+      <div class="mt-8 max-w-3xl">
+        <Faq faqs={homeFaqs} />
+      </div>
     </div>
   </section>
 

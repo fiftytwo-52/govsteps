@@ -9,7 +9,7 @@
     "deploy": "npm run build && wrangler pages deploy dist --project-name govsteps --branch main --commit-dirty=true",
     "sitemap": "node --experimental-strip-types scripts/generate-sitemap.mjs",
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "npm run sitemap && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },

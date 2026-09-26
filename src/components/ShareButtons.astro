@@ -1,0 +1,168 @@
+---
+interface Props {
+  title: string;
+  url: string;
+  ogImage?: string;
+  label?: string;
+}
+
+const {
+  title,
+  url,
+  ogImage = 'https://govsteps.com/images/og/og-itin-guide.png',
+  label = 'Share this guide',
+} = Astro.props;
+
+const encodedUrl = encodeURIComponent(url);
+const encodedTitle = encodeURIComponent(title);
+const encodedImage = encodeURIComponent(ogImage);
+
+const shareLinks = [
+  {
+    name: 'Facebook',
+    ariaLabel: 'Share on Facebook',
+    href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+    icon: `<path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>`,
+  },
+  {
+    name: 'X',
+    ariaLabel: 'Share on X',
+    href: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`,
+    icon: `<path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>`,
+  },
+  {
+    name: 'WhatsApp',
+    ariaLabel: 'Share on WhatsApp',
+    href: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,
+    icon: `<path fill="currentColor" d="M12.031 2c-5.508 0-9.986 4.477-9.986 9.984 0 1.758.459 3.477 1.332 4.992L2 22.547l5.703-1.496c1.465.799 3.117 1.221 4.809 1.221 5.508 0 9.984-4.477 9.984-9.984C22.496 6.477 18.02 2 12.031 2zm0 18.281c-1.488 0-2.949-.402-4.223-1.16l-.305-.18-3.379.887.902-3.297-.199-.316c-.832-1.32-1.273-2.859-1.273-4.43 0-4.57 3.719-8.289 8.289-8.289 4.57 0 8.289 3.719 8.289 8.289 0 4.57-3.719 8.289-8.289 8.289zm4.543-6.203c-.246-.125-1.465-.723-1.691-.805-.23-.086-.398-.125-.566.125-.168.246-.648.805-.797.973-.145.168-.293.188-.539.066-.246-.125-1.043-.383-1.988-1.227-.734-.656-1.23-1.465-1.375-1.711-.145-.246-.016-.379.109-.504.109-.109.246-.293.367-.438.125-.148.168-.246.246-.414.086-.168.043-.316-.023-.438-.066-.125-.566-1.363-.777-1.871-.203-.496-.414-.43-.566-.438h-.484c-.168 0-.438.063-.668.316-.23.246-.883.863-.883 2.105 0 1.242.906 2.445 1.031 2.613.125.168 1.781 2.719 4.316 3.812.602.262 1.07.418 1.438.535.602.191 1.152.164 1.586.098.484-.074 1.465-.602 1.672-1.184.207-.582.207-1.082.145-1.184-.063-.109-.23-.168-.477-.293z"/>`,
+  },
+  {
+    name: 'Telegram',
+    ariaLabel: 'Share on Telegram',
+    href: `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`,
+    icon: `<path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>`,
+  },
+  {
+    name: 'LinkedIn',
+    ariaLabel: 'Share on LinkedIn',
+    href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+    icon: `<path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>`,
+  },
+  {
+    name: 'Pinterest',
+    ariaLabel: 'Share on Pinterest',
+    href: `https://pinterest.com/pin/create/button/?url=${encodedUrl}&media=${encodedImage}&description=${encodedTitle}`,
+    icon: `<path fill="currentColor" d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.182-.78 1.172-4.97 1.172-4.97s-.299-.6-.299-1.486c0-1.39.806-2.428 1.81-2.428.854 0 1.266.641 1.266 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.177-4.068-2.845 0-4.515 2.135-4.515 4.34 0 .859.331 1.781.745 2.281.082.099.094.186.069.287-.076.316-.245.998-.278 1.138-.044.183-.145.222-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.525-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/>`,
+  },
+  {
+    name: 'Email',
+    ariaLabel: 'Share via Email',
+    href: `mailto:?subject=${encodedTitle}&body=${encodedUrl}`,
+    icon: `<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>`,
+  },
+];
+---
+
+<div class="my-6 rounded-lg border border-hairline bg-canvas-elevated p-4 dark:border-hairline-dark dark:bg-canvas-elevated-dark" data-share-row>
+  <div class="flex flex-wrap items-center justify-between gap-3">
+    <div class="flex items-center gap-2">
+      <svg class="size-4 text-link dark:text-link-dark" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+      </svg>
+      <span class="text-xs font-semibold uppercase tracking-wider text-ink dark:text-ink-dark">{label}</span>
+    </div>
+
+    <!-- Social intent buttons (plain HTML links, zero JS required) -->
+    <div class="flex flex-wrap items-center gap-1.5">
+      {shareLinks.map((item) => (
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={item.ariaLabel}
+          title={item.ariaLabel}
+          class="grid size-8 place-items-center rounded-md border border-hairline bg-canvas text-body transition-colors hover:border-link hover:text-link focus:outline-none focus-visible:ring-1 focus-visible:ring-link dark:border-hairline-dark dark:bg-canvas-dark dark:text-body-dark dark:hover:border-link-dark dark:hover:text-link-dark"
+        >
+          <svg class="size-3.5" viewBox="0 0 24 24" aria-hidden="true" set:html={item.icon} />
+        </a>
+      ))}
+
+      <!-- Copy link button -->
+      <button
+        type="button"
+        data-copy-link={url}
+        aria-label="Copy guide link to clipboard"
+        title="Copy link"
+        class="inline-flex h-8 items-center gap-1.5 rounded-md border border-hairline bg-canvas px-2.5 text-xs font-medium text-body transition-colors hover:border-link hover:text-link focus:outline-none focus-visible:ring-1 focus-visible:ring-link dark:border-hairline-dark dark:bg-canvas-dark dark:text-body-dark dark:hover:border-link-dark dark:hover:text-link-dark"
+      >
+        <svg class="size-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+        </svg>
+        <span data-copy-status>Copy link</span>
+      </button>
+
+      <!-- Web Share API button for Mobile / Instagram surfaces -->
+      <button
+        type="button"
+        data-web-share
+        data-title={title}
+        data-url={url}
+        aria-label="Share via device apps (including Instagram)"
+        title="More share options (Instagram, etc.)"
+        class="hidden h-8 items-center gap-1.5 rounded-md border border-link/40 bg-link-soft px-2.5 text-xs font-medium text-link-deep transition-colors hover:bg-link/20 focus:outline-none dark:border-link-dark/40 dark:bg-link-soft-dark dark:text-link-dark"
+      >
+        <svg class="size-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+        </svg>
+        <span>More…</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Copy link handling
+  document.querySelectorAll('[data-copy-link]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const url = btn.getAttribute('data-copy-link');
+      if (!url) return;
+      const statusSpan = btn.querySelector('[data-copy-status]');
+      try {
+        if (navigator.clipboard) {
+          await navigator.clipboard.writeText(url);
+        } else {
+          // fallback
+          const temp = document.createElement('input');
+          temp.value = url;
+          document.body.appendChild(temp);
+          temp.select();
+          document.execCommand('copy');
+          document.body.removeChild(temp);
+        }
+        if (statusSpan) statusSpan.textContent = 'Copied!';
+        setTimeout(() => {
+          if (statusSpan) statusSpan.textContent = 'Copy link';
+        }, 2000);
+      } catch {
+        if (statusSpan) statusSpan.textContent = 'URL: ' + url;
+      }
+    });
+  });
+
+  // Web Share API support (surfaces Instagram, WhatsApp, system share on mobile)
+  if (typeof navigator !== 'undefined' && navigator.share) {
+    document.querySelectorAll('[data-web-share]').forEach((btn) => {
+      btn.classList.remove('hidden');
+      btn.classList.add('inline-flex');
+      btn.addEventListener('click', async () => {
+        const title = btn.getAttribute('data-title') || document.title;
+        const url = btn.getAttribute('data-url') || window.location.href;
+        try {
+          await navigator.share({ title, url });
+        } catch {
+          // user cancelled or unsupported
+        }
+      });
+    });
+  }
+</script>

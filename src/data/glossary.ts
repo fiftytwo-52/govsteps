@@ -126,14 +126,32 @@ const pattern = new RegExp(
     'g',
 );
 
+// Set of terms already defined on the active page (emits full tooltip on 1st occurrence, <abbr> on later occurrences)
+let activePageSeen = new Set<string>();
+
+export function resetPageGlossary(): void {
+    activePageSeen.clear();
+}
+
 /**
  * Wraps known glossary terms in a string with hover/focus tooltip markup.
+ * First occurrence on a page gets the full interactive definition tooltip;
+ * subsequent occurrences use semantic <abbr title="..."> to eliminate boilerplate HTML repetition.
  * Input must be plain text (no HTML) — output is HTML, use with set:html.
  */
-export function linkTerms(text: string): string {
+export function linkTerms(text: string, seenSet?: Set<string>): string {
+    const seen = seenSet ?? activePageSeen;
     const linked = text.replace(pattern, (match) => {
         const entry = glossary[match];
         if (!entry) return match;
+
+        const termKey = match.toLowerCase();
+        if (seen.has(termKey)) {
+            // Already defined on this page — use lightweight semantic abbr to avoid HTML bloat
+            return `<abbr title="${entry.full}" class="${TERM_CLASS}">${match}</abbr>`;
+        }
+        seen.add(termKey);
+
         return (
             `<span class="${TERM_CLASS}" tabindex="0" data-term` +
             (entry.href ? ` data-href="${entry.href}"` : '') +
@@ -146,6 +164,7 @@ export function linkTerms(text: string): string {
             `</span></span>`
         );
     });
+
     // Second pass: keep code-like tokens out of machine translation. Google
     // Translate garbles currency amounts, form codes, and URLs in Nepali,
     // Hindi, etc. — wrapping them in notranslate spans preserves them.

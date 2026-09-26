@@ -144,7 +144,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Gather evidence for the rules you must meet', detail: 'Work visas need a Certificate of Sponsorship from a Home Office licensed employer. Student visas need a CAS. Family visas need proof of relationship and a £29,000 minimum income (2025) or savings. Most routes require bank statements showing money held for 28 days.', duration: '1–4 weeks',
                 links: [
-                    { label: 'Financial evidence rules (gov.uk)', href: 'https://www.gov.uk/government/publications/financial-requirement-for-uk-family-visas' },
+                    { label: 'Financial evidence rules (gov.uk)', href: 'https://www.gov.uk/uk-family-visa' },
                 ],
             },
             {
@@ -256,7 +256,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Check whether you can still apply', detail: 'You can apply late with "reasonable grounds": you did not know about the scheme, you were in care, illness or COVID prevented you, or you are joining a family member. Family members of EU citizens (including non-EU spouses) can also apply. The Home Office publishes a non-exhaustive reasonable-grounds list.', duration: '20 min',
                 links: [
-                    { label: 'Applying late (gov.uk)', href: 'https://www.gov.uk/eu-settled-status-eu-citizens-families/apply-made-late' },
+                    { label: 'Applying late (gov.uk)', href: 'https://www.gov.uk/settled-status-eu-citizens-families/applying-for-settled-status' },
                 ],
             },
             {
@@ -524,7 +524,7 @@ export const guides: Guide[] = [
             {
                 phase: 'followup', title: 'Register for Corporation Tax', detail: 'Within 3 months of starting to trade, register for Corporation Tax (online, via the company\'s Government Gateway — the UTR arrives by post). If you expect to take on employees or pass the VAT threshold (£90,000 turnover, 2024), register for PAYE/VAT too.', duration: '1 hour',
                 links: [
-                    { label: 'Corporation Tax registration (gov.uk)', href: 'https://www.gov.uk/register-for-corporation-tax' },
+                    { label: 'Corporation Tax registration (gov.uk)', href: 'https://www.gov.uk/corporation-tax' },
                 ],
             },
             { phase: 'followup', title: 'Meet ongoing filing duties', detail: 'Every year the company must: file a confirmation statement (£13 online), file annual accounts with Companies House, pay Corporation Tax (19–25% depending on profit, main rate 25% above £250,000), and maintain PAYE if it has employees. Penalties for late filing escalate quickly — set calendar reminders for your accounting reference date.', duration: 'Ongoing' },
@@ -701,13 +701,13 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Report the passport lost or stolen immediately', detail: 'Report it online at gov.uk or call 0300 790 6609. Once reported, the passport is cancelled — this protects you if someone tries to use your identity. If it was stolen abroad, also report it to the local police and get a crime reference for insurance.', duration: '10 min',
                 links: [
-                    { label: 'Report a lost or stolen passport (gov.uk)', href: 'https://www.gov.uk/report-lost-or-stolen-passport' },
+                    { label: 'Report a lost or stolen passport (gov.uk)', href: 'https://www.gov.uk/report-a-lost-or-stolen-passport' },
                 ],
             },
             {
                 phase: 'fill', title: 'Apply online for a replacement', detail: 'Use the standard online application at gov.uk. You will need a new digital photo and details of the loss. The fee is the same as a renewal: £88.50 for adults, £57.50 for children (2025 fees).', duration: '30 min',
                 links: [
-                    { label: 'Replace a passport (gov.uk)', href: 'https://www.gov.uk/replace-lost-stolen-passport' },
+                    { label: 'Replace a passport (gov.uk)', href: 'https://www.gov.uk/renew-adult-passport' },
                 ],
             },
             { phase: 'fill', title: 'Arrange a countersignatory', detail: 'Unlike routine renewals, lost or stolen replacements require a countersignatory who has known you for 2+ years, holds a British or Irish passport, and is not a relative or partner. They confirm your identity and photo — digitally if you apply online.' },
@@ -834,7 +834,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Understand the two document hurdles', detail: 'Banks must verify your identity (passport + visa is enough) and your UK address (the hard part). If you have no UK address history, target banks that accept a tenancy agreement or employer letter, or start with an app-based bank.', duration: '15 min',
                 links: [
-                    { label: 'Opening a bank account (gov.uk)', href: 'https://www.gov.uk/government/publications/opening-a-bank-account' },
+                    { label: 'Opening a bank account (gov.uk)', href: 'https://www.gov.uk/browse/tax' },
                 ],
             },
             {
@@ -898,7 +898,7 @@ export const guides: Guide[] = [
             {
                 phase: 'wait', title: 'Wait for the decision', detail: 'Standard service: 3 weeks outside the UK, 8 weeks inside the UK (switching employers or extending). Priority services (5 working days) and super priority (next working day) are available for extra fees. You receive an eVisa — check it in your UKVI account before travelling.', duration: '3–8 weeks',
                 links: [
-                    { label: 'Decision wait times (gov.uk)', href: 'https://www.gov.uk/guidance/visa-decision-waiting-times' },
+                    { label: 'Decision wait times (gov.uk)', href: 'https://www.gov.uk/guidance/visa-processing-times-applications-outside-the-uk' },
                 ],
             },
             { phase: 'followup', title: 'Know the settlement and family rules', detail: 'After 5 continuous years on a Skilled Worker visa you can apply for Indefinite Leave to Remain (absences limited to 180 days/year). Your partner and children can apply as dependants — they can work and study with almost no restrictions.' },
@@ -983,7 +983,7 @@ export const guides: Guide[] = [
             {
                 phase: 'fill', title: 'Apply online', detail: 'Apply at the official NHS site (never a third-party site charging £20–£40 for the same free card). You need your NI number, name, address, and date of birth. You can apply for yourself and family members including children under 16 in one session.', duration: '10 min',
                 links: [
-                    { label: 'Apply for a GHIC (NHS)', href: 'https://services.nhsbsa.nhs.uk/order-ghic' },
+                    { label: 'Apply for a GHIC (NHS)', href: 'https://www.nhs.uk/using-the-nhs/healthcare-abroad/apply-for-a-free-uk-global-health-insurance-card-ghic/' },
                 ],
             },
             { phase: 'submit', title: 'Get the provisional card instantly', detail: 'You can download a provisional GHIC immediately, which is valid for 90 days — enough if you travel soon. The plastic card arrives by post within about 10 days. The card is valid for up to 5 years.' },
@@ -1145,7 +1145,7 @@ export const guides: Guide[] = [
             { phase: 'before', title: 'Understand why you were overtaxed', detail: 'First flexible withdrawals are often taxed through emergency "Month 1" codes — the system taxes your lump sum as if you would receive it every month, shoving an £8,000 withdrawal into the 40% band even if you are a basic-rate taxpayer. The result: a large overpayment that HMRC owes you.', duration: '10 min' },
             { phase: 'before', title: 'Pick the right form: P55, P53Z, or P50Z', detail: 'P55: you withdrew part of your pot flexibly and are NOT taking the whole pot, and have no other income in the tax year besides the state pension. P53Z: you emptied the pot AND still work or have other income. P50Z: you emptied the pot and have no other income. Using the wrong form delays the refund.', duration: '10 min' },
             { phase: 'fill', title: 'Gather your withdrawal figures', detail: 'From your pension statement or provider app: the date of withdrawal, gross amount, and tax deducted. If you made several withdrawals, the form asks for totals. Keep the provider\'s reference number handy.', duration: '15 min' },
-            { phase: 'fill', title: 'Complete the P55 online', detail: 'The Government Gateway form walks you through: personal details, pension provider info, withdrawal and tax amounts, and other income (state pension counts). At the end you see an estimate of the refund. Submit and save the reference number.', duration: '20 min', links: [{ label: 'Claim a refund on pension income (gov.uk)', href: 'https://www.gov.uk/government/collections/pension-flexibility-and-tax' }] },
+            { phase: 'fill', title: 'Complete the P55 online', detail: 'The Government Gateway form walks you through: personal details, pension provider info, withdrawal and tax amounts, and other income (state pension counts). At the end you see an estimate of the refund. Submit and save the reference number.', duration: '20 min', links: [{ label: 'Claim a refund on pension income (gov.uk)', href: 'https://www.gov.uk/tax-on-pension' }] },
             { phase: 'submit', title: 'Wait for the calculation', detail: 'HMRC recalculates your whole year\'s tax using your actual annual income. Most P55 refunds arrive within 4 weeks by bank transfer. Some refunds instead get spread through your remaining pension payments — HMRC tells you which.', duration: 'up to 4 weeks' },
             { phase: 'followup', title: 'Check your tax code for next year', detail: 'After a partial withdrawal, HMRC often issues a new tax code that taxes your remaining pension withdrawals correctly going forward — so the emergency-code problem should not repeat. Check your code each year after any withdrawal, and backdate unclaimed refunds up to 4 years.', duration: '15 min' },
         ],
@@ -1177,7 +1177,7 @@ export const guides: Guide[] = [
         steps: [
             { phase: 'before', title: 'Check whether R40 is the right route', detail: 'Use R40 when you overpaid tax but do not file Self Assessment — typically: banks deducted tax from interest when you were a non-taxpayer; your income dropped mid-career; or you left the UK part-way through a tax year. If you DO file Self Assessment, the overpayment is corrected on the return instead.', duration: '15 min' },
             { phase: 'before', title: 'Identify the overpayment and the tax years', detail: 'Ask banks for interest certificates for each year. Compare the tax taken (banks used to deduct 20% automatically; since 2016 most interest is paid gross and covered by allowances — overtaxed interest is mostly an issue for earlier years or special products). You can claim for up to 4 tax years back.', duration: '30 min' },
-            { phase: 'fill', title: 'Complete one R40 per tax year', detail: 'A separate form is needed for each year claimed. The form asks for all income for the year, tax already paid, and the repayment amount claimed. Print or download from gov.uk — there is no online submission, so post it to HMRC (address on the form) or submit through a tax adviser.', duration: '20 min/year', links: [{ label: 'Form R40 and notes (gov.uk)', href: 'https://www.gov.uk/government/publications/form-r40-application-for-repayment-of-tax' }] },
+            { phase: 'fill', title: 'Complete one R40 per tax year', detail: 'A separate form is needed for each year claimed. The form asks for all income for the year, tax already paid, and the repayment amount claimed. Print or download from gov.uk — there is no online submission, so post it to HMRC (address on the form) or submit through a tax adviser.', duration: '20 min/year', links: [{ label: 'Form R40 and notes (gov.uk)', href: 'https://www.gov.uk/claim-tax-refund/tax-on-savings' }] },
             { phase: 'submit', title: 'Post with supporting statements', detail: 'Attach photocopies (never originals) of interest certificates, P60s, and anything else showing tax deducted. Missing evidence is the main reason claims stall. Keep a copy of everything you send and get free proof of postage.', duration: '15 min' },
             { phase: 'wait', title: 'Wait for HMRC to process', detail: 'R40 claims are handled by post and take longer than online claims — typically 6–8 weeks, sometimes more for multi-year claims. HMRC may write asking for clarification; reply promptly with the requested figures.', duration: '6–8 weeks' },
             { phase: 'receive', title: 'Get repaid, or fix the root cause', detail: 'Repayment goes to your bank account (or cheque if you prefer). If you are still on the wrong tax code or banks are still deducting tax, file the registration forms so future years sort themselves — reclaiming repeatedly is wasted effort.', duration: '—' },
@@ -1279,7 +1279,7 @@ export const guides: Guide[] = [
         steps: [
             { phase: 'before', title: 'Check what you already have', detail: 'Many packaged bank accounts (typically £10–£25/month tiers) include travel insurance — check before buying. Some home contents policies cover possessions away from home, and annual credit-card benefits occasionally include travel cover. Existing cover rarely includes medical conditions without screening, so the checks in the next step still apply.', duration: '15 min' },
             { phase: 'before', title: 'Declare your medical conditions properly', detail: 'The #1 reason claims are rejected. Every insurer runs a medical screening questionnaire online or by phone — answer it fully, including controlled conditions and medication. It raises the premium but keeps the cover valid. Comparison sites like MoneySupermarket and specialist brokers (AllClear, Staysure for older travellers) handle pre-existing conditions well.', duration: '20 min' },
-            { phase: 'before', title: 'Know GHIC vs travel insurance', detail: 'The GHIC (and older EHIC) gets you state healthcare in the EU at the same cost as locals — it is free but NOT insurance: no repatriation to the UK (air ambulances cost £10k–£80k), no cancellation, no baggage, and it does not work outside the EU. Travel insurance covers all of that; carry both.', duration: '10 min', links: [{ label: 'GHIC vs travel insurance (gov.uk)', href: 'https://www.gov.uk/guidance/healthcare-abroad' }] },
+            { phase: 'before', title: 'Know GHIC vs travel insurance', detail: 'The GHIC (and older EHIC) gets you state healthcare in the EU at the same cost as locals — it is free but NOT insurance: no repatriation to the UK (air ambulances cost £10k–£80k), no cancellation, no baggage, and it does not work outside the EU. Travel insurance covers all of that; carry both.', duration: '10 min', links: [{ label: 'GHIC vs travel insurance (gov.uk)', href: 'https://www.gov.uk/global-health-insurance-card' }] },
             { phase: 'fill', title: 'Decide single-trip vs annual multi-trip', detail: 'Rule of thumb: two or more trips a year makes annual cover cheaper (typically £25–£150). Check the maximum trip length on annual policies (usually 31 days, extendable for long trips) and that winter sports, cruises, or gadget cover are included or added — they are standard exclusions.', duration: '10 min' },
             { phase: 'fill', title: 'Compare the policy wording, not just the price', detail: 'Key numbers: medical cover (want £2m+, including repatriation), cancellation (match your trip cost), baggage (check single-article limits — laptops often capped at £300–£500), and the excess per section. Alcohol exclusion clauses routinely void claims after drinking — read them. Gadget cover is often cheaper as a separate specialist policy.', duration: '20 min' },
             { phase: 'submit', title: 'Buy as soon as you book the trip', detail: 'Cancellation cover only works from the policy start date — buying a week before you fly means a cancellation in between is not covered. Buy the same day you pay for flights and hotels, and keep all booking confirmations in one folder for any claim.', duration: '15 min' },
@@ -1310,7 +1310,7 @@ export const guides: Guide[] = [
             'Payroll details from your employer, if checking deductions',
         ],
         steps: [
-            { phase: 'go', title: 'Log in to the official repayment site', detail: 'Sign in at gov.uk/student-loan-repayment with your Government Gateway details — the account screen names your plan type(s) and balance. It is free. Ignore "check your student loan balance" ads for paid services; the government tool is the only source you need.', duration: '5 min', links: [{ label: 'gov.uk — Student loan repayment', href: 'https://www.gov.uk/student-loan-repayment' }] },
+            { phase: 'go', title: 'Log in to the official repayment site', detail: 'Sign in at gov.uk/student-loan-repayment with your Government Gateway details — the account screen names your plan type(s) and balance. It is free. Ignore "check your student loan balance" ads for paid services; the government tool is the only source you need.', duration: '5 min', links: [{ label: 'gov.uk — Student loan repayment', href: 'https://www.gov.uk/repaying-your-student-loan' }] },
             { phase: 'before', title: 'Identify your plan by when and where you studied', detail: 'Plan 1: English or Welsh students who started before 1 September 2012 (and all pre-1998 mortgages-style loans are separate again). Plan 2: English or Welsh students who started 1 Sept 2012 – 31 July 2023. Plan 4: Scottish students, any time from 1998. Plan 5: English students who started on or after 1 August 2023. Postgraduate: English and Welsh master\'s or doctoral loans. If you studied in Scotland or NI, or combined study across periods, you can hold more than one plan at once.', duration: '10 min' },
             { phase: 'fill', title: 'Check your plan\'s threshold and rate', detail: '2025/26 thresholds (April 2025): Plan 1 £26,065, Plan 2 £28,470, Plan 4 £32,745, Plan 5 £25,000, postgraduate £21,000. Plans 1, 2, 4 and 5 take 9% of income above the threshold; postgraduate takes 6%. On Plan 2 earning £32,000: (£32,000 − £28,470) × 9% ≈ £26 a month. Thresholds usually rise each April with inflation or policy — recheck yearly.', duration: '10 min' },
             { phase: 'fill', title: 'Fix wrong deductions through your employer', detail: 'If payroll is deducting when you earn under the threshold or using the wrong plan, tell your employer in writing which plan(s) you hold and ask them to correct it. If they cannot sort it, contact the Student Loans Company with your payslips. Over-deductions are refunded, but only if you notice and claim.', duration: '20 min' },

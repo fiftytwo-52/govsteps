@@ -700,13 +700,13 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Confirm you are eligible', detail: 'You can vote in federal elections if you are a Canadian citizen, at least 18 years old on election day, and registered to vote at your current address. Permanent residents, work/study permit holders, and visitors cannot vote — even long-term residents.', duration: '5 min',
                 links: [
-                    { label: 'Register to vote (Elections Canada)', href: 'https://www.elections.ca/registration' },
+                    { label: 'Register to vote (Elections Canada)', href: 'https://www.elections.ca/content.aspx?section=vot&dir=reg&document=index&lang=e' },
                 ],
             },
             {
                 phase: 'fill', title: 'Register or update your address online', detail: 'Use the Elections Canada Online Voter Registration Service with your driver\'s licence number. You can check whether you are already registered, update your address after a move, or register for the first time. Changes made after an election is called may not take effect for that election.', duration: '10 min',
                 links: [
-                    { label: 'Online Voter Registration Service', href: 'https://www.elections.ca/registration' },
+                    { label: 'Online Voter Registration Service', href: 'https://www.elections.ca/content.aspx?section=vot&dir=reg&document=index&lang=e' },
                 ],
             },
             { phase: 'submit', title: 'Watch for your voter information card', detail: 'Once an election is called, registered voters receive a voter information card by mail within about a week. It tells you where and when to vote. Check the name and address on it — if anything is wrong, call Elections Canada at 1-800-463-6868 before election day.' },
@@ -1047,7 +1047,7 @@ export const guides: Guide[] = [
             {
                 phase: 'go', title: 'Apply at your local police service', detail: 'Apply to the police service for the municipality where you live (city police or provincial police detachment). Many services now take online applications; others require in-person attendance with ID. If you live in an area without municipal police, the provincial police or RCMP detachment handles it.', duration: '30 min',
                 links: [
-                    { label: 'Find your police service', href: 'https://www.cpkn.ca/en/find_police_service' },
+                    { label: 'Find your police service', href: 'https://www.rcmp-grc.gc.ca/en/home' },
                 ],
             },
             { phase: 'submit', title: 'Pay the fee and consent', detail: 'Fees: roughly $25–$50 for a basic check, $50–$75 for vulnerable sector (varies by service). You sign a consent form authorizing the search — record checks cannot be run on you without consent. Some employers reimburse the fee; keep the receipt.' },
