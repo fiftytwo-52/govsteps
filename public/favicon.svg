@@ -1,8 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="GovSteps favicon — document">
-  <title>GovSteps favicon — document</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="GovSteps favicon — steps">
+  <title>GovSteps favicon — steps</title>
   <rect width="64" height="64" rx="14" fill="#14263F"/>
-  <rect x="22" y="12" width="20" height="32" rx="3" fill="#FFFFFF"/>
-  <path d="M27 30 l4 4 l8 -9" fill="none" stroke="#F5A623" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="44" cy="46" r="10" fill="#F5A623"/>
-  <path d="M39.5 46 l3.5 3.5 l7 -8" fill="none" stroke="#14263F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="12" y="36" width="11" height="16" rx="2.5" fill="#F5A623"/>
+  <rect x="26.5" y="26" width="11" height="26" rx="2.5" fill="#F5A623"/>
+  <rect x="41" y="16" width="11" height="36" rx="2.5" fill="#F5A623"/>
 </svg>
