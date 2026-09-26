@@ -81,7 +81,7 @@ const schemas = [breadcrumbSchema, collectionSchema, ...(faqSchema ? [faqSchema]
   <!-- Hero banner -->
   <section class="relative overflow-hidden border-b border-hairline bg-hairline-soft/60 dark:border-hairline-dark dark:bg-hairline-soft-dark/40">
     <div class="huge-bg-word" aria-hidden="true"><span>{category.name.toUpperCase()}</span></div>
-    <div class="container-geist relative z-10 py-12 lg:py-16">
+    <div class="container-geist relative z-10 py-6 sm:py-8 lg:py-10">
       <!-- Breadcrumbs -->
       <nav class="font-mono text-xs text-mute dark:text-mute-dark" aria-label="Breadcrumb">
         <a href="/" class="hover:text-link dark:hover:text-link-dark">Home</a>
@@ -119,7 +119,7 @@ const schemas = [breadcrumbSchema, collectionSchema, ...(faqSchema ? [faqSchema]
   </section>
 
   <!-- Guides List -->
-  <section class="py-12 lg:py-16">
+  <section class="py-6 sm:py-8 lg:py-10">
     <div class="container-geist">
       <div class="flex flex-wrap items-center justify-between gap-3 border-b border-hairline pb-4 dark:border-hairline-dark">
         <h2 class="heading-md text-ink dark:text-ink-dark">All {category.name} Guides ({country.short})</h2>
@@ -158,7 +158,7 @@ const schemas = [breadcrumbSchema, collectionSchema, ...(faqSchema ? [faqSchema]
 
       <!-- FAQ Section -->
       {editorial.faqs && editorial.faqs.length > 0 && (
-        <section id="faq" class="mt-16 border-t border-hairline pt-12 dark:border-hairline-dark">
+        <section id="faq" class="mt-8 border-t border-hairline pt-6 sm:pt-8 dark:border-hairline-dark">
           <div class="max-w-3xl">
             <p class="eyebrow">FAQ</p>
             <h2 class="heading-md mt-1.5 text-ink dark:text-ink-dark">Frequently Asked Questions</h2>
@@ -173,7 +173,7 @@ const schemas = [breadcrumbSchema, collectionSchema, ...(faqSchema ? [faqSchema]
       )}
 
       <!-- Other categories -->
-      <div class="mt-16 border-t border-hairline pt-10 dark:border-hairline-dark">
+      <div class="mt-8 border-t border-hairline pt-6 dark:border-hairline-dark">
         <p class="eyebrow">Explore Other Topics in {country.name}</p>
         <div class="mt-4 flex flex-wrap gap-2">
           {categories

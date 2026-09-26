@@ -1,6 +1,5 @@
 ---
 import Icon from './Icon.astro';
-import { linkTerms } from '../data/glossary';
 
 interface Props {
   documents: string[];
@@ -9,25 +8,33 @@ interface Props {
 const { documents } = Astro.props;
 ---
 
-<div class="doc-card rounded-lg border p-5 sm:p-6 shadow-sm">
-  <h3 class="doc-title flex items-center gap-2.5 text-base font-semibold leading-snug">
+<div class="doc-card rounded-lg border p-4 sm:p-5 shadow-sm" style="background-color: var(--doc-card-bg); border-color: var(--doc-card-border);">
+  <h3 class="doc-title flex items-center gap-2 text-base font-bold leading-snug" style="color: var(--doc-title);">
     <Icon name="folder" class="size-5 shrink-0 text-link dark:text-link-dark" />
     <span>Documents to Bring / Prepare</span>
   </h3>
-  <p class="doc-subtitle mt-1.5 text-sm font-normal">
+  <p class="doc-subtitle mt-1 text-xs sm:text-sm font-normal" style="color: var(--doc-subtitle);">
     Tap each item to check it off as you gather your papers.
   </p>
-  <ul class="mt-4 space-y-2">
+  <ul class="mt-3 space-y-2">
     {documents.map((doc, idx) => (
       <li>
-        <label class="doc-item group flex cursor-pointer items-start gap-3 rounded-md border p-3.5 text-sm font-medium leading-snug transition-all">
+        <label
+          class="doc-item group flex cursor-pointer items-start gap-3 rounded-md border p-3 text-sm font-medium leading-snug transition-all"
+          style="background-color: var(--doc-bg); border-color: var(--doc-border); color: var(--doc-text);"
+        >
           <input
             type="checkbox"
             id={`doc-check-${idx}`}
-            class="doc-checkbox mt-0.5 size-4 shrink-0 rounded-sm accent-link dark:accent-link-dark"
+            class="doc-checkbox mt-0.5 size-4 shrink-0 rounded-sm"
             aria-label={doc}
           />
-          <span class="doc-text flex-1 select-none" set:html={linkTerms(doc)} />
+          <span
+            class="doc-text flex-1 select-none font-semibold"
+            style="color: var(--doc-text) !important; visibility: visible !important; display: inline-block !important;"
+          >
+            {doc}
+          </span>
         </label>
       </li>
     ))}
@@ -35,33 +42,37 @@ const { documents } = Astro.props;
 </div>
 
 <style>
-  /* Guaranteed contrast & visibility in all environments (light, dark, system, or forced mode) */
+  /* Guaranteed 100% font visibility & ultra-high contrast across all browsers/themes */
   :root {
-    --doc-card-bg: #ffffff;
-    --doc-card-border: #e5e7eb;
-    --doc-item-bg: #f8fafc;
-    --doc-item-border: #cbd5e1;
-    --doc-text-color: #0f172a;
-    --doc-subtext-color: #334155;
+    --doc-text: #09090b;
+    --doc-bg: #ffffff;
+    --doc-border: #cbd5e1;
+    --doc-card-bg: #f8fafc;
+    --doc-card-border: #e2e8f0;
+    --doc-title: #09090b;
+    --doc-subtitle: #334155;
   }
 
-  :global(.dark) {
-    --doc-card-bg: #111111;
-    --doc-card-border: #262626;
-    --doc-item-bg: #1e1e20;
-    --doc-item-border: #333336;
-    --doc-text-color: #f4f4f5;
-    --doc-subtext-color: #a1a1aa;
+  :global(.dark),
+  .dark {
+    --doc-text: #ffffff;
+    --doc-bg: #18181b;
+    --doc-border: #3f3f46;
+    --doc-card-bg: #09090b;
+    --doc-card-border: #27272a;
+    --doc-title: #ffffff;
+    --doc-subtitle: #d4d4d8;
   }
 
   @media (prefers-color-scheme: dark) {
     :root:not(.light) {
-      --doc-card-bg: #111111;
-      --doc-card-border: #262626;
-      --doc-item-bg: #1e1e20;
-      --doc-item-border: #333336;
-      --doc-text-color: #f4f4f5;
-      --doc-subtext-color: #a1a1aa;
+      --doc-text: #ffffff;
+      --doc-bg: #18181b;
+      --doc-border: #3f3f46;
+      --doc-card-bg: #09090b;
+      --doc-card-border: #27272a;
+      --doc-title: #ffffff;
+      --doc-subtitle: #d4d4d8;
     }
   }
 
@@ -71,17 +82,17 @@ const { documents } = Astro.props;
   }
 
   .doc-title {
-    color: var(--doc-text-color) !important;
+    color: var(--doc-title) !important;
   }
 
   .doc-subtitle {
-    color: var(--doc-subtext-color) !important;
+    color: var(--doc-subtitle) !important;
   }
 
   .doc-item {
-    background-color: var(--doc-item-bg) !important;
-    border-color: var(--doc-item-border) !important;
-    color: var(--doc-text-color) !important;
+    background-color: var(--doc-bg) !important;
+    border-color: var(--doc-border) !important;
+    color: var(--doc-text) !important;
     opacity: 1 !important;
   }
 
@@ -89,7 +100,8 @@ const { documents } = Astro.props;
     border-color: #0070f3 !important;
   }
 
-  :global(.dark) .doc-item:hover {
+  :global(.dark) .doc-item:hover,
+  .dark .doc-item:hover {
     border-color: #3291ff !important;
   }
 
@@ -97,14 +109,27 @@ const { documents } = Astro.props;
     accent-color: #0070f3 !important;
   }
 
-  :global(.dark) .doc-checkbox {
+  :global(.dark) .doc-checkbox,
+  .dark .doc-checkbox {
     accent-color: #3291ff !important;
   }
 
-  /* Make sure every span, abbr, and text node inherits full high contrast text color */
-  .doc-text,
-  .doc-text :global(*:not([role="tooltip"])) {
-    color: var(--doc-text-color) !important;
+  /* Force font visibility on the label text node */
+  .doc-text {
+    color: #09090b !important;
+    color: var(--doc-text, #09090b) !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    line-height: 1.375 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: inline-block !important;
+  }
+
+  :global(.dark) .doc-text,
+  .dark .doc-text {
+    color: #ffffff !important;
+    color: var(--doc-text, #ffffff) !important;
   }
 
   /* Checked state: strikethrough with dimming */

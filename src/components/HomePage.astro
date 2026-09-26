@@ -91,7 +91,7 @@ const homeFaqSchema = {
   <!-- hero-band: mesh gradient, display copy left, circular search pill right -->
   <section class="mesh-hero relative overflow-hidden border-b border-hairline dark:border-hairline-dark">
     <div class="huge-bg-word" aria-hidden="true"><span>GUIDES</span></div>
-    <div class="container-geist relative z-10 py-8 sm:py-12 lg:py-16">
+    <div class="container-geist relative z-10 py-6 sm:py-8 lg:py-10">
       <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
         <!-- Left: display copy -->
         <div class="hero-rise max-w-2xl" style="--d: 0">
@@ -178,7 +178,7 @@ const homeFaqSchema = {
 
   <!-- Categories: full-bleed grey panel band, hairline feature-card grid -->
   <section id="categories" class="border-b border-hairline bg-hairline-soft/60 dark:border-hairline-dark dark:bg-hairline-soft-dark/40">
-    <div class="container-geist py-8 sm:py-12 lg:py-16">
+    <div class="container-geist py-6 sm:py-8 lg:py-10">
       <div class="max-w-2xl">
         <p class="eyebrow">Categories</p>
         <h2 class="heading-lg mt-2 text-ink dark:text-ink-dark">Browse by topic</h2>
@@ -212,7 +212,7 @@ const homeFaqSchema = {
 
   <!-- Who it's for feature section with lifestyle illustration -->
   <section class="border-b border-hairline dark:border-hairline-dark">
-    <div class="container-geist grid items-center gap-12 py-12 lg:grid-cols-2 lg:gap-16 lg:py-20">
+    <div class="container-geist grid items-center gap-8 py-8 lg:grid-cols-2 lg:gap-12 lg:py-12">
       <div class="max-w-xl">
         <p class="eyebrow">Who It's For</p>
         <h2 class="heading-lg mt-2 text-ink dark:text-ink-dark">Built for anyone facing confusing government systems</h2>
@@ -258,7 +258,7 @@ const homeFaqSchema = {
   </section>
 
   <!-- Guides: canvas band -->
-  <section id="guides" class="py-8 sm:py-12 lg:py-16">
+  <section id="guides" class="py-6 sm:py-8 lg:py-10">
     <div class="container-geist">
       <div class="max-w-2xl">
         <p class="eyebrow">All Guides</p>
@@ -272,7 +272,7 @@ const homeFaqSchema = {
         const catGuides = countryGuides.filter((g) => g.category === cat.id);
         if (catGuides.length === 0) return null;
         return (
-          <div id={`cat-${cat.id}`} class="mt-10 scroll-mt-24 sm:mt-14 lg:mt-16">
+          <div id={`cat-${cat.id}`} class="mt-6 scroll-mt-24 sm:mt-8 lg:mt-10">
             <div class="flex flex-wrap items-center justify-between gap-3 border-b border-hairline pb-4 dark:border-hairline-dark">
               <h3 class="flex items-center gap-2.5 text-lg font-semibold text-ink dark:text-ink-dark">
                 <span class="grid size-6 place-items-center text-ink dark:text-ink-dark">
@@ -337,7 +337,7 @@ const homeFaqSchema = {
 
   <!-- How it works feature section with lifestyle illustration -->
   <section class="border-b border-hairline bg-hairline-soft/60 dark:border-hairline-dark dark:bg-hairline-soft-dark/40">
-    <div class="container-geist grid items-center gap-12 py-12 lg:grid-cols-2 lg:gap-16 lg:py-20">
+    <div class="container-geist grid items-center gap-8 py-8 lg:grid-cols-2 lg:gap-12 lg:py-12">
       <div class="overflow-hidden rounded-lg border border-hairline bg-canvas-elevated shadow-sm dark:border-hairline-dark dark:bg-canvas-elevated-dark lg:order-1">
         <picture>
           <source srcset="/images/lifestyle/lifestyle-office-waiting-room.webp" type="image/webp" />
@@ -381,7 +381,7 @@ const homeFaqSchema = {
 
   <!-- FAQ section: full-bleed grey panel band -->
   <section class="border-t border-hairline bg-hairline-soft/60 dark:border-hairline-dark dark:bg-hairline-soft-dark/40">
-    <div class="container-geist py-12 lg:py-16">
+    <div class="container-geist py-8 lg:py-10">
       <div class="max-w-3xl">
         <p class="eyebrow">FAQ</p>
         <h2 class="heading-lg mt-1.5 text-ink dark:text-ink-dark">Frequently Asked Questions</h2>
@@ -395,7 +395,7 @@ const homeFaqSchema = {
 
   <!-- cta-band: end-of-page call to action (full-bleed band, centered content) -->
   <section class="border-t border-hairline dark:border-hairline-dark">
-    <div class="container-geist py-8 text-center sm:py-12 lg:py-16">
+    <div class="container-geist py-6 text-center sm:py-8 lg:py-10">
       <h2 class="heading-lg text-ink dark:text-ink-dark">Stop guessing. Start with step one.</h2>
       <p class="mx-auto mt-4 max-w-xl text-base text-body dark:text-body-dark">
         Every guide is free, plain-language, and ends with exactly what you receive when it's done.

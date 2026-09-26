@@ -144,7 +144,7 @@ const breadcrumbSchema = {
   <!-- Hero band: grey panel, breadcrumb + title + summary + quick facts -->
   <section class="relative overflow-hidden border-b border-hairline bg-hairline-soft/60 dark:border-hairline-dark dark:bg-hairline-soft-dark/40">
     <div class="huge-bg-word" aria-hidden="true"><span>{guide.category.toUpperCase()}</span></div>
-    <div class="container-geist relative z-10 py-12 lg:py-16">
+    <div class="container-geist relative z-10 py-6 sm:py-8 lg:py-10">
       <!-- Breadcrumb -->
       <nav class="font-mono text-xs text-mute dark:text-mute-dark" aria-label="Breadcrumb">
         <a href="/" class="hover:text-link dark:hover:text-link-dark">Home</a>
@@ -157,7 +157,7 @@ const breadcrumbSchema = {
       </nav>
 
       <!-- Header -->
-      <header class="mt-6">
+      <header class="mt-4">
         <div class="flex flex-wrap items-center gap-2">
           <a
             href={topicHref}
@@ -173,10 +173,10 @@ const breadcrumbSchema = {
           ))}
         </div>
 
-        <h1 class="heading-lg mt-5 max-w-3xl text-ink dark:text-ink-dark">{guide.title}</h1>
+        <h1 class="heading-lg mt-3 max-w-3xl text-ink dark:text-ink-dark">{guide.title}</h1>
 
         <!-- Editorial metadata & verification -->
-        <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-y border-hairline py-3 text-xs text-mute dark:border-hairline-dark dark:text-mute-dark">
+        <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 border-y border-hairline py-2.5 text-xs text-mute dark:border-hairline-dark dark:text-mute-dark">
           <div class="flex items-center gap-1.5">
             <Icon name="calendar" class="size-3.5 text-link" />
             <span>Last reviewed: <strong class="font-medium text-ink dark:text-ink-dark">{editorial.lastReviewed}</strong></span>
@@ -189,7 +189,7 @@ const breadcrumbSchema = {
         </div>
 
         {editorial.isOverdue && (
-          <div class="mt-4 flex items-start gap-3 rounded-md border border-amber-300 bg-amber-50/80 p-3.5 text-xs text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/40 dark:text-amber-200">
+          <div class="mt-3 flex items-start gap-3 rounded-md border border-amber-300 bg-amber-50/80 p-3 text-xs text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/40 dark:text-amber-200">
             <Icon name="alert" class="mt-0.5 size-4 shrink-0 text-amber-600 dark:text-amber-400" />
             <div>
               <strong class="font-semibold">Review in progress:</strong> This guide was last verified over 6 months ago. Our editorial team is currently auditing it against the latest government guidance. If you notice any recent agency rule changes, please <a href="/about#corrections" class="underline font-medium hover:text-amber-700 dark:hover:text-amber-100">report a correction</a>.
@@ -197,10 +197,10 @@ const breadcrumbSchema = {
           </div>
         )}
 
-        <p class="mt-4 max-w-2xl text-base leading-relaxed text-body dark:text-body-dark" set:html={linkTerms(guide.summary)} />
+        <p class="mt-3 max-w-2xl text-base leading-relaxed text-body dark:text-body-dark" set:html={linkTerms(guide.summary)} />
 
         <!-- Hero illustration -->
-        <figure class="mt-6 max-w-3xl overflow-hidden rounded-lg border border-hairline bg-canvas-elevated shadow-sm dark:border-hairline-dark dark:bg-canvas-elevated-dark">
+        <figure class="mt-4 max-w-3xl overflow-hidden rounded-lg border border-hairline bg-canvas-elevated shadow-sm dark:border-hairline-dark dark:bg-canvas-elevated-dark">
           <picture>
             <source srcset={heroImg.webpSrc} type="image/webp" />
             <img
@@ -216,17 +216,17 @@ const breadcrumbSchema = {
         </figure>
 
         <!-- Share Buttons (top) -->
-        <div class="mt-6 max-w-3xl">
+        <div class="mt-3 max-w-3xl">
           <ShareButtons title={guide.title} url={guideUrl} />
         </div>
 
-        <div class="mt-4 max-w-3xl">
+        <div class="mt-2.5 max-w-3xl">
           <TranslateGuide />
         </div>
       </header>
 
       <!-- Quick facts -->
-      <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-5">
+      <div class="mt-5 grid grid-cols-2 gap-2.5 sm:grid-cols-5">
         <InfoBox icon="gauge" label="Difficulty" value={guide.difficulty} />
         <InfoBox icon="timer" label="Total Time" value={guide.totalTime} />
         <InfoBox icon="dollar" label="Cost" value={guide.totalCost} />
@@ -237,8 +237,8 @@ const breadcrumbSchema = {
   </section>
 
   <!-- Content band: two-column doc layout — steps main column, sticky documents sidebar -->
-  <div class="container-geist py-12 lg:py-16">
-    <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-12">
+  <div class="container-geist py-6 lg:py-8">
+    <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8">
       <!-- Sidebar: documents first (gather before you start), sticky on desktop -->
       <aside class="lg:col-start-2 lg:row-start-1 lg:sticky lg:top-20 lg:self-start">
         <DocumentChecklist documents={guide.documents} />
@@ -264,37 +264,37 @@ const breadcrumbSchema = {
             Each card shows the phase, expected time, and any cost. Data checked against official {country.short} sources
             <span class="whitespace-nowrap font-mono text-[11px] font-medium text-link-deep dark:text-link-dark">({editorial.lastReviewed})</span>.
           </p>
-          <div class="mt-6">
+          <div class="mt-4">
             <StepTimeline steps={guide.steps} />
           </div>
         </section>
 
         <!-- FAQ -->
-        <section class="mt-12">
+        <section class="mt-8">
           <p class="eyebrow">FAQ</p>
-          <h2 class="heading-md mt-1.5 text-ink dark:text-ink-dark">Frequently Asked Questions</h2>
-          <div class="mt-5">
+          <h2 class="heading-md mt-1 text-ink dark:text-ink-dark">Frequently Asked Questions</h2>
+          <div class="mt-3">
             <Faq faqs={guide.faqs} />
           </div>
         </section>
 
         <!-- Share Buttons (after FAQ) -->
-        <div class="mt-10 rounded-md border border-hairline bg-canvas-elevated p-5 dark:border-hairline-dark dark:bg-canvas-elevated-dark">
-          <p class="text-sm font-medium text-ink dark:text-ink-dark mb-3">Found this guide helpful? Share it with someone navigating this process:</p>
+        <div class="mt-6 rounded-md border border-hairline bg-canvas-elevated p-4 dark:border-hairline-dark dark:bg-canvas-elevated-dark">
+          <p class="text-sm font-medium text-ink dark:text-ink-dark mb-2.5">Found this guide helpful? Share it with someone navigating this process:</p>
           <ShareButtons title={guide.title} url={guideUrl} />
         </div>
 
         <!-- Related guides (4-6 guides) -->
         {related.length > 0 && (
-          <section class="mt-12">
+          <section class="mt-8">
             <div class="flex items-center justify-between">
               <div>
                 <p class="eyebrow">Keep Reading</p>
-                <h2 class="heading-md mt-1.5 text-ink dark:text-ink-dark">Related {country.short} Guides</h2>
+                <h2 class="heading-md mt-1 text-ink dark:text-ink-dark">Related {country.short} Guides</h2>
               </div>
               <a href={homeHref} class="text-xs font-medium text-link hover:underline dark:text-link-dark">View all {country.short} guides &rarr;</a>
             </div>
-            <div class="mt-5 grid gap-3 sm:grid-cols-2 md:grid-cols-3">
+            <div class="mt-3.5 grid gap-3 sm:grid-cols-2 md:grid-cols-3">
               {related.map((r) => (
                 <a
                   href={guidePath(r)}
