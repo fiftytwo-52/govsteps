@@ -2,22 +2,22 @@
 
 This watchlist defines the regulatory and agency feeds monitored by the GovSteps editorial team to keep all guides synchronized with statutory fee, form, and processing time changes.
 
-## Monitoring Cadence & Assigned Editorial Leads
+## Monitoring Cadence & Editorial Desks
 
-| Agency / Domain | Canonical News / Alerts Endpoint | Primary Focus Areas | Check Frequency | Editorial Owner |
+| Agency / Domain | Canonical News / Alerts Endpoint | Primary Focus Areas | Check Frequency | Editorial Desk |
 |---|---|---|---|---|
-| **US: Internal Revenue Service (IRS)** | [irs.gov/newsroom](https://www.irs.gov/newsroom) | Form 1040, Form W-7 (ITIN), standard deductions, Direct File expansion | Weekly (Mon) | David Vance (Tax & Business Lead) |
-| **US: Citizenship and Immigration Services (USCIS)** | [uscis.gov/newsroom/alerts](https://www.uscis.gov/newsroom/alerts) | Fee schedule revisions, Form I-130, Form I-485, Form N-400, policy alerts | Weekly (Mon & Thu) | Elena Rostova (Senior Immigration Lead) |
-| **US: Department of State (Travel & Passports)** | [travel.state.gov/content/travel/en/passports.html](https://travel.state.gov/content/travel/en/passports.html) | Routine vs expedited processing weeks, Form DS-11 / DS-82 fees | Bi-weekly | Marcus Chen (Identity Lead) |
-| **US: Social Security Administration (SSA)** | [ssa.gov/news/press/releases](https://www.ssa.gov/news/press/releases/) | SSN card replacement portal, evidence requirements, COLA adjustments | Monthly | Marcus Chen (Identity Lead) |
-| **US: HealthCare.gov / CMS** | [healthcare.gov/blog](https://www.healthcare.gov/blog/) | Open enrollment dates, FPL income thresholds, subsidy brackets | Monthly (Weekly Nov-Jan) | Sarah Jenkins (Benefits Lead) |
-| **UK: HM Revenue & Customs (HMRC)** | [gov.uk/government/organisations/hm-revenue-customs](https://www.gov.uk/government/organisations/hm-revenue-customs) | Self Assessment deadlines, National Insurance thresholds, tax codes | Weekly (Wed) | David Vance (Tax Lead) |
-| **UK: UK Visas and Immigration (Home Office)** | [gov.uk/government/organisations/uk-visas-and-immigration](https://www.gov.uk/government/organisations/uk-visas-and-immigration) | Skilled Worker minimum salary, eVisa transition, settlement fees | Weekly (Tue) | Elena Rostova (Immigration Lead) |
-| **UK: HM Passport Office (HMPO)** | [gov.uk/browse/abroad/passports](https://www.gov.uk/browse/abroad/passports) | Online vs paper renewal fees, turnaround estimates | Monthly | Marcus Chen (Identity Lead) |
-| **UK: Driver and Vehicle Licensing Agency (DVLA)** | [gov.uk/government/organisations/driver-and-vehicle-licensing-agency](https://www.gov.uk/government/organisations/driver-and-vehicle-licensing-agency) | Theory & practical driving test fees, license renewals | Monthly | Marcus Chen (Identity Lead) |
-| **CA: Immigration, Refugees and Citizenship Canada (IRCC)** | [canada.ca/en/immigration-refugees-citizenship/news.html](https://www.canada.ca/en/immigration-refugees-citizenship/news.html) | Express Entry draws, study permit caps, citizenship processing times | Weekly (Tue & Fri) | Elena Rostova (Immigration Lead) |
-| **CA: Canada Revenue Agency (CRA)** | [canada.ca/en/revenue-agency/news.html](https://www.canada.ca/en/revenue-agency/news.html) | GST/HST credit dates, personal tax brackets, SIN registration | Weekly (Wed) | David Vance (Tax Lead) |
-| **CA: Service Canada & Passport Program** | [canada.ca/en/employment-social-development/corporate/portfolio/service-canada.html](https://www.canada.ca/en/employment-social-development/corporate/portfolio/service-canada.html) | Passport turnaround times, Canadian Dental Care Plan, EI rules | Monthly | Sarah Jenkins (Benefits Lead) |
+| **US: Internal Revenue Service (IRS)** | [irs.gov/newsroom](https://www.irs.gov/newsroom) | Form 1040, Form W-7 (ITIN), standard deductions, Direct File expansion | Weekly (Mon) | Tax & Business Desk |
+| **US: Citizenship and Immigration Services (USCIS)** | [uscis.gov/newsroom/alerts](https://www.uscis.gov/newsroom/alerts) | Fee schedule revisions, Form I-130, Form I-485, Form N-400, policy alerts | Weekly (Mon & Thu) | Immigration Desk |
+| **US: Department of State (Travel & Passports)** | [travel.state.gov/content/travel/en/passports.html](https://travel.state.gov/content/travel/en/passports.html) | Routine vs expedited processing weeks, Form DS-11 / DS-82 fees | Bi-weekly | Identity & Travel Desk |
+| **US: Social Security Administration (SSA)** | [ssa.gov/news/press/releases](https://www.ssa.gov/news/press/releases/) | SSN card replacement portal, evidence requirements, COLA adjustments | Monthly | Identity & Travel Desk |
+| **US: HealthCare.gov / CMS** | [healthcare.gov/blog](https://www.healthcare.gov/blog/) | Open enrollment dates, FPL income thresholds, subsidy brackets | Monthly (Weekly Nov-Jan) | Benefits & Healthcare Desk |
+| **UK: HM Revenue & Customs (HMRC)** | [gov.uk/government/organisations/hm-revenue-customs](https://www.gov.uk/government/organisations/hm-revenue-customs) | Self Assessment deadlines, National Insurance thresholds, tax codes | Weekly (Wed) | Tax Desk |
+| **UK: UK Visas and Immigration (Home Office)** | [gov.uk/government/organisations/uk-visas-and-immigration](https://www.gov.uk/government/organisations/uk-visas-and-immigration) | Skilled Worker minimum salary, eVisa transition, settlement fees | Weekly (Tue) | Immigration Desk |
+| **UK: HM Passport Office (HMPO)** | [gov.uk/browse/abroad/passports](https://www.gov.uk/browse/abroad/passports) | Online vs paper renewal fees, turnaround estimates | Monthly | Identity & Travel Desk |
+| **UK: Driver and Vehicle Licensing Agency (DVLA)** | [gov.uk/government/organisations/driver-and-vehicle-licensing-agency](https://www.gov.uk/government/organisations/driver-and-vehicle-licensing-agency) | Theory & practical driving test fees, license renewals | Monthly | Identity & Travel Desk |
+| **CA: Immigration, Refugees and Citizenship Canada (IRCC)** | [canada.ca/en/immigration-refugees-citizenship/news.html](https://www.canada.ca/en/immigration-refugees-citizenship/news.html) | Express Entry draws, study permit caps, citizenship processing times | Weekly (Tue & Fri) | Immigration Desk |
+| **CA: Canada Revenue Agency (CRA)** | [canada.ca/en/revenue-agency/news.html](https://www.canada.ca/en/revenue-agency/news.html) | GST/HST credit dates, personal tax brackets, SIN registration | Weekly (Wed) | Tax Desk |
+| **CA: Service Canada & Passport Program** | [canada.ca/en/employment-social-development/corporate/portfolio/service-canada.html](https://www.canada.ca/en/employment-social-development/corporate/portfolio/service-canada.html) | Passport turnaround times, Canadian Dental Care Plan, EI rules | Monthly | Benefits & Healthcare Desk |
 
 ---
 

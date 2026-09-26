@@ -72,16 +72,14 @@ const howToSchema = {
   dateModified: `${editorial.lastReviewedDate}`,
   inLanguage: 'en',
   author: {
-    '@type': 'Person',
-    name: editorial.author.name,
-    jobTitle: editorial.author.title,
-    url: new URL('/about#team', Astro.site).toString(),
+    '@type': 'Organization',
+    name: 'GovSteps Editorial Team',
+    url: new URL('/about/', Astro.site).toString(),
   },
-  reviewedBy: {
-    '@type': 'Person',
-    name: editorial.reviewer.name,
-    jobTitle: editorial.reviewer.title,
-    url: new URL('/about#team', Astro.site).toString(),
+  publisher: {
+    '@type': 'Organization',
+    name: 'GovSteps',
+    url: new URL('/', Astro.site).toString(),
   },
   ...(guide.totalCost
     ? {
@@ -177,7 +175,7 @@ const breadcrumbSchema = {
 
         <h1 class="heading-lg mt-5 max-w-3xl text-ink dark:text-ink-dark">{guide.title}</h1>
 
-        <!-- Editorial metadata & author credentials -->
+        <!-- Editorial metadata & verification -->
         <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-y border-hairline py-3 text-xs text-mute dark:border-hairline-dark dark:text-mute-dark">
           <div class="flex items-center gap-1.5">
             <Icon name="calendar" class="size-3.5 text-link" />
@@ -185,11 +183,8 @@ const breadcrumbSchema = {
           </div>
           <span class="hidden sm:inline text-hairline-dark">|</span>
           <div class="flex items-center gap-1.5">
-            <span>Written by <a href="/about#team" class="font-medium text-ink underline decoration-hairline hover:text-link dark:text-ink-dark">{editorial.author.name}</a> ({editorial.author.title})</span>
-          </div>
-          <span class="hidden sm:inline text-hairline-dark">|</span>
-          <div class="flex items-center gap-1.5">
-            <span>Reviewed by <a href="/about#team" class="font-medium text-ink underline decoration-hairline hover:text-link dark:text-ink-dark">{editorial.reviewer.name}</a> ({editorial.reviewer.title})</span>
+            <Icon name="check" class="size-3.5 text-emerald-600 dark:text-emerald-400" />
+            <span>Verified against official <a href="/about/#standards" class="font-medium text-ink underline decoration-hairline hover:text-link dark:text-ink-dark">agency guidelines</a></span>
           </div>
         </div>
 

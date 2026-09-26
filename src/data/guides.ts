@@ -9,8 +9,8 @@ import { guides as usGuides } from './guides-us';
 import { guides as ukGuides } from './guides-uk';
 import { guides as caGuides } from './guides-ca';
 
-export type { Step, Guide, CountryCode, Country, EditorialMember } from './types';
-export { countries, categories, editorialTeam, getGuideEditorial } from './types';
+export type { Step, Guide, CountryCode, Country } from './types';
+export { countries, categories, getGuideEditorial } from './types';
 
 /** All guides, every country, in a stable order (US first to preserve legacy listing order). */
 export const guides: Guide[] = [...usGuides, ...ukGuides, ...caGuides];
