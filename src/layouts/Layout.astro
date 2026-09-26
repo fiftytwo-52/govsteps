@@ -126,24 +126,24 @@ const allSchema = [...siteSchema, ...schema];
         </a>
 
         <!-- Country Switcher (header, on every page: United States · United Kingdom · Canada) -->
-        <div class="hidden items-center rounded-full border border-hairline bg-canvas-elevated p-0.5 text-xs font-medium md:flex dark:border-hairline-dark dark:bg-canvas-elevated-dark" role="navigation" aria-label="Country switcher">
+        <div class="hidden items-center rounded-md border border-hairline bg-canvas-elevated p-0.5 text-xs font-medium md:flex dark:border-hairline-dark dark:bg-canvas-elevated-dark" role="navigation" aria-label="Country switcher">
           <a
             href="/"
-            class={`rounded-full px-3 py-1 transition-colors ${activeCountry === 'us' ? 'bg-ink text-canvas font-semibold dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark'}`}
+            class={`rounded-sm px-2.5 py-1 transition-colors ${activeCountry === 'us' ? 'bg-ink text-canvas font-semibold dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark'}`}
             aria-current={activeCountry === 'us' ? 'page' : undefined}
           >
             United States
           </a>
           <a
             href="/uk/"
-            class={`rounded-full px-3 py-1 transition-colors ${activeCountry === 'uk' ? 'bg-ink text-canvas font-semibold dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark'}`}
+            class={`rounded-sm px-2.5 py-1 transition-colors ${activeCountry === 'uk' ? 'bg-ink text-canvas font-semibold dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark'}`}
             aria-current={activeCountry === 'uk' ? 'page' : undefined}
           >
             United Kingdom
           </a>
           <a
             href="/can/"
-            class={`rounded-full px-3 py-1 transition-colors ${activeCountry === 'ca' ? 'bg-ink text-canvas font-semibold dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark'}`}
+            class={`rounded-sm px-2.5 py-1 transition-colors ${activeCountry === 'ca' ? 'bg-ink text-canvas font-semibold dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark'}`}
             aria-current={activeCountry === 'ca' ? 'page' : undefined}
           >
             Canada
@@ -153,8 +153,8 @@ const allSchema = [...siteSchema, ...schema];
         <!-- Nav + controls: top-right -->
         <div class="flex items-center gap-2">
           <nav class="hidden items-center gap-1 text-sm font-medium lg:flex">
-            <a href="/about/" class="rounded-full px-3 py-1.5 text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark">About</a>
-            <a href="/contact/" class="rounded-full px-3 py-1.5 text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark">Contact</a>
+            <a href="/about/" class="rounded-md px-3 py-1.5 text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark">About</a>
+            <a href="/contact/" class="rounded-md px-3 py-1.5 text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark">Contact</a>
           </nav>
 
           <button id="theme-toggle" aria-label="Toggle dark mode" class="grid size-8 place-items-center rounded-sm border border-hairline bg-canvas-elevated text-ink hover:bg-hairline-soft dark:border-hairline-dark dark:bg-canvas-elevated-dark dark:text-ink-dark dark:hover:bg-hairline-soft-dark">

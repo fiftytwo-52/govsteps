@@ -163,15 +163,15 @@ const breadcrumbSchema = {
         <div class="flex flex-wrap items-center gap-2">
           <a
             href={topicHref}
-            class="inline-flex items-center gap-1.5 rounded-full bg-canvas-elevated px-3 py-1 text-xs font-medium text-ink transition-colors hover:border-link hover:text-link dark:bg-canvas-elevated-dark dark:text-ink-dark"
+            class="inline-flex items-center gap-1.5 rounded-md border border-hairline bg-canvas-elevated px-2.5 py-1 text-xs font-medium text-ink transition-colors hover:border-link hover:text-link dark:border-hairline-dark dark:bg-canvas-elevated-dark dark:text-ink-dark"
           >
             <Icon name={category?.icon ?? 'file'} class="size-3.5" /> {category?.name}
           </a>
-          <span class="inline-flex items-center gap-1.5 rounded-full bg-link-soft px-3 py-1 text-xs font-medium text-link-deep dark:bg-link-soft-dark dark:text-link-dark">
+          <span class="inline-flex items-center gap-1.5 rounded-md bg-link-soft px-2.5 py-1 text-xs font-medium text-link-deep dark:bg-link-soft-dark dark:text-link-dark">
             <CountryFlag code={guide.country} class="h-3.5 w-5" /> {country.name}
           </span>
           {guide.audience.map((a) => (
-            <span class="rounded-full bg-link-soft px-3 py-1 text-xs font-medium text-link-deep dark:bg-link-soft-dark dark:text-link-dark">{a}</span>
+            <span class="rounded-md bg-hairline-soft px-2.5 py-1 font-mono text-xs text-body dark:bg-hairline-soft-dark dark:text-body-dark">{a}</span>
           ))}
         </div>
 
@@ -205,7 +205,7 @@ const breadcrumbSchema = {
         <p class="mt-4 max-w-2xl text-base leading-relaxed text-body dark:text-body-dark" set:html={linkTerms(guide.summary)} />
 
         <!-- Hero illustration -->
-        <figure class="mt-6 max-w-3xl overflow-hidden rounded-xl border border-hairline bg-canvas-elevated shadow-sm dark:border-hairline-dark dark:bg-canvas-elevated-dark">
+        <figure class="mt-6 max-w-3xl overflow-hidden rounded-lg border border-hairline bg-canvas-elevated shadow-sm dark:border-hairline-dark dark:bg-canvas-elevated-dark">
           <picture>
             <source srcset={heroImg.webpSrc} type="image/webp" />
             <img
@@ -249,7 +249,7 @@ const breadcrumbSchema = {
         <DocumentChecklist documents={guide.documents} />
 
         <!-- Disclaimer: warning treatment per Geist semantic colors -->
-        <div class="mt-4 flex gap-3 rounded-xl border border-amber-200/80 bg-amber-50/70 p-4 text-sm text-amber-950 dark:border-amber-900/40 dark:bg-amber-950/20 dark:text-amber-200">
+        <div class="mt-4 flex gap-3 rounded-md border border-amber-200/80 bg-amber-50/70 p-4 text-sm text-amber-950 dark:border-amber-900/40 dark:bg-amber-950/20 dark:text-amber-200">
           <Icon name="alert" class="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-amber-400" />
           <p>
             <strong class="font-semibold text-amber-950 dark:text-amber-100">Before you act:</strong>
@@ -284,7 +284,7 @@ const breadcrumbSchema = {
         </section>
 
         <!-- Share Buttons (after FAQ) -->
-        <div class="mt-10 rounded-xl border border-hairline bg-canvas-elevated p-5 dark:border-hairline-dark dark:bg-canvas-elevated-dark">
+        <div class="mt-10 rounded-md border border-hairline bg-canvas-elevated p-5 dark:border-hairline-dark dark:bg-canvas-elevated-dark">
           <p class="text-sm font-medium text-ink dark:text-ink-dark mb-3">Found this guide helpful? Share it with someone navigating this process:</p>
           <ShareButtons title={guide.title} url={guideUrl} />
         </div>

@@ -31,7 +31,7 @@ const teamMembers = Object.values(editorialTeam);
           <span>Zero User Fees</span>
         </div>
       </div>
-      <div class="overflow-hidden rounded-xl border border-hairline bg-canvas-elevated shadow-sm dark:border-hairline-dark dark:bg-canvas-elevated-dark">
+      <div class="overflow-hidden rounded-lg border border-hairline bg-canvas-elevated shadow-sm dark:border-hairline-dark dark:bg-canvas-elevated-dark">
         <picture>
           <source srcset="/images/lifestyle/lifestyle-office-clerk-help.webp" type="image/webp" />
           <img
@@ -63,11 +63,11 @@ const teamMembers = Object.values(editorialTeam);
         {teamMembers.map((member) => (
           <div
             id={`author-${member.id}`}
-            class="flex flex-col justify-between rounded-xl border border-hairline bg-canvas-elevated p-6 shadow-sm dark:border-hairline-dark dark:bg-canvas-elevated-dark"
+            class="flex flex-col justify-between rounded-lg border border-hairline bg-canvas-elevated p-6 shadow-sm dark:border-hairline-dark dark:bg-canvas-elevated-dark"
           >
             <div>
               <div class="flex items-center gap-3">
-                <div class="grid size-12 place-items-center rounded-full bg-link-soft font-mono text-base font-semibold text-link-deep dark:bg-link-soft-dark dark:text-link-dark">
+                <div class="grid size-12 place-items-center rounded-md bg-link-soft font-mono text-base font-semibold text-link-deep dark:bg-link-soft-dark dark:text-link-dark">
                   {member.name.split(' ').map(n => n[0]).join('')}
                 </div>
                 <div>
@@ -119,7 +119,7 @@ const teamMembers = Object.values(editorialTeam);
         </div>
       </div>
 
-      <div class="flex flex-col justify-between rounded-xl border border-hairline bg-hairline-soft/50 p-6 dark:border-hairline-dark dark:bg-hairline-soft-dark/30 sm:p-8">
+      <div class="flex flex-col justify-between rounded-lg border border-hairline bg-hairline-soft/50 p-6 dark:border-hairline-dark dark:bg-hairline-soft-dark/30 sm:p-8">
         <div>
           <h3 class="text-lg font-semibold text-ink dark:text-ink-dark">Primary Source Protocol</h3>
           <p class="mt-2 text-sm leading-relaxed text-body dark:text-body-dark">

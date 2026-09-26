@@ -52,7 +52,7 @@ const phaseIcons: Record<Step['phase'], string> = {
         <span data-progress-count class="text-ink dark:text-ink-dark">0</span> of {steps.length} steps
       </p>
     </div>
-    <button type="button" data-progress-reset class="rounded-full border border-hairline px-3 py-1 font-mono text-[11px] text-body transition-colors hover:border-link hover:text-link dark:border-hairline-dark dark:text-body-dark dark:hover:border-link-dark dark:hover:text-link-dark">
+    <button type="button" data-progress-reset class="rounded-md border border-hairline px-2.5 py-1 font-mono text-[11px] text-body transition-colors hover:border-link hover:text-link dark:border-hairline-dark dark:text-body-dark dark:hover:border-link-dark dark:hover:text-link-dark">
       Reset
     </button>
   </div>
@@ -98,10 +98,10 @@ const phaseIcons: Record<Step['phase'], string> = {
           </>
         )}
 
-        <!-- Node: phase-tinted bubble, ring when complete, check swap -->
+        <!-- Node: phase-tinted squircle badge, ring when complete, check swap -->
         <span class="relative z-10 mt-4 shrink-0" aria-hidden="true">
           <span
-            class="grid size-9 place-items-center rounded-full border-2 border-canvas-elevated text-sm font-semibold text-canvas shadow-[0_0_0_1px_var(--phase)] transition-transform duration-300 sm:size-10 dark:border-canvas-elevated-dark dark:text-canvas-dark"
+            class="grid size-9 place-items-center rounded-lg border-2 border-canvas-elevated text-sm font-semibold text-canvas shadow-[0_0_0_1px_var(--phase)] transition-transform duration-300 sm:size-10 dark:border-canvas-elevated-dark dark:text-canvas-dark"
             style={`background-color: var(--phase)`}
           >
             <span data-step-number>{i + 1}</span>
@@ -122,18 +122,18 @@ const phaseIcons: Record<Step['phase'], string> = {
 
           <div class="flex flex-wrap items-center gap-2">
             <span
-              class="inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 font-mono text-[11px] font-medium uppercase text-canvas dark:text-canvas-dark"
+              class="inline-flex items-center gap-1.5 rounded-md px-2 py-0.5 font-mono text-[11px] font-medium uppercase text-canvas dark:text-canvas-dark"
               style={`background-color: var(--phase)`}
             >
               <Icon name={phaseIcons[step.phase]} class="size-3" /> {phaseLabels[step.phase]}
             </span>
             {step.duration && (
-              <span class="inline-flex items-center gap-1 rounded-full bg-hairline-soft px-2.5 py-0.5 font-mono text-[11px] text-body dark:bg-hairline-soft-dark dark:text-body-dark">
+              <span class="inline-flex items-center gap-1 rounded-md bg-hairline-soft px-2 py-0.5 font-mono text-[11px] text-body dark:bg-hairline-soft-dark dark:text-body-dark">
                 <Icon name="timer" class="size-3" /> {step.duration}
               </span>
             )}
             {step.cost && (
-              <span class="inline-flex items-center gap-1 rounded-full bg-hairline-soft px-2.5 py-0.5 font-mono text-[11px] text-body dark:bg-hairline-soft-dark dark:text-body-dark">
+              <span class="inline-flex items-center gap-1 rounded-md bg-hairline-soft px-2 py-0.5 font-mono text-[11px] text-body dark:bg-hairline-soft-dark dark:text-body-dark">
                 <Icon name="dollar" class="size-3" /> {step.cost}
               </span>
             )}
