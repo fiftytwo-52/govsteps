@@ -158,7 +158,7 @@ const schemas = [breadcrumbSchema, collectionSchema, ...(faqSchema ? [faqSchema]
 
       <!-- FAQ Section -->
       {editorial.faqs && editorial.faqs.length > 0 && (
-        <div class="mt-16 border-t border-hairline pt-12 dark:border-hairline-dark">
+        <section id="faq" class="mt-16 border-t border-hairline pt-12 dark:border-hairline-dark">
           <div class="max-w-3xl">
             <p class="eyebrow">FAQ</p>
             <h2 class="heading-md mt-1.5 text-ink dark:text-ink-dark">Frequently Asked Questions</h2>
@@ -169,7 +169,7 @@ const schemas = [breadcrumbSchema, collectionSchema, ...(faqSchema ? [faqSchema]
           <div class="mt-6 max-w-3xl">
             <Faq faqs={editorial.faqs} />
           </div>
-        </div>
+        </section>
       )}
 
       <!-- Other categories -->

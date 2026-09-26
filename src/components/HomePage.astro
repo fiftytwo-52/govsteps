@@ -187,7 +187,6 @@ const homeFaqSchema = {
       <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:mt-8 lg:grid-cols-3">
         {categories.map((cat) => {
           const count = countryGuides.filter((g) => g.category === cat.id).length;
-          if (count === 0) return null;
           return (
             <div
               class="group relative rounded-md border border-hairline bg-canvas-elevated p-6 transition-shadow hover:shadow-[0px_2px_2px_rgba(0,0,0,0.04)] dark:border-hairline-dark dark:bg-canvas-elevated-dark"
@@ -202,7 +201,7 @@ const homeFaqSchema = {
               </h3>
               <p class="mt-1.5 text-sm text-body dark:text-body-dark">{cat.blurb}</p>
               <p class="mt-4 font-mono text-xs text-mute dark:text-mute-dark">
-                {count} {count === 1 ? 'guide' : 'guides'}
+                {count === 0 ? 'Overview & FAQ' : `${count} ${count === 1 ? 'guide' : 'guides'}`}
               </p>
             </div>
           );

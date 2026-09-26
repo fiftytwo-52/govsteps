@@ -179,6 +179,7 @@ export function getGuideEditorial(guide: Guide): {
         author: editorialTeam[guide.author || authorKey] || editorialTeam['marcus-chen'],
         reviewer: editorialTeam[guide.reviewer || reviewerKey] || editorialTeam['elena-rostova'],
         lastReviewedDate,
+        lastReviewed: formattedReviewDate,
         formattedReviewDate,
         isOverdue,
     };
