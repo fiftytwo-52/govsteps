@@ -64,17 +64,10 @@ const { documents } = Astro.props;
     --doc-subtitle: #d4d4d8;
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root:not(.light) {
-      --doc-text: #ffffff;
-      --doc-bg: #18181b;
-      --doc-border: #3f3f46;
-      --doc-card-bg: #09090b;
-      --doc-card-border: #27272a;
-      --doc-title: #ffffff;
-      --doc-subtitle: #d4d4d8;
-    }
-  }
+  /* NOTE: no prefers-color-scheme media query here — the site's theme toggle
+     (Layout.astro) already defaults to the OS preference via the .dark class.
+     A media query would keep this section dark even after the user switches
+     the site to light mode. */
 
   .doc-card {
     background-color: var(--doc-card-bg) !important;
