@@ -50,6 +50,11 @@ const guideUrl = new URL(guidePath(guide), Astro.site).toString();
 const ogImageUrl = getGuideOgImage(guide, Astro.site ? new URL(Astro.site).origin : 'https://govsteps.com');
 const heroFullUrl = new URL(heroImg.src, Astro.site).toString();
 
+// First official (external) link found across steps — used for the "official site" CTA
+const officialLink = guide.steps
+  .flatMap((s) => s.links ?? [])
+  .find((l) => /^https?:\/\//.test(l.href));
+
 const stepToHowToStep = (step: (typeof guide.steps)[number], i: number) => {
   const durationIso = toIso8601Duration(step.duration);
   return {
@@ -239,6 +244,20 @@ const breadcrumbSchema = {
         <InfoBox icon="list" label="Steps" value={`${guide.steps.length} steps`} />
         <InfoBox icon="calendar" label="Reviewed" value={editorial.lastReviewed} />
       </div>
+
+      {officialLink && (
+        <div class="mt-4">
+          <a
+            href={officialLink.href}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-2 rounded-full bg-amber-400 px-5 py-2.5 text-sm font-semibold text-navy-900 shadow-sm transition hover:bg-amber-300"
+          >
+            Apply on the official site
+            <Icon name="external" class="size-4" />
+          </a>
+        </div>
+      )}
     </div>
   </section>
 

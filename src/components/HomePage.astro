@@ -81,12 +81,23 @@ const homeFaqSchema = {
     acceptedAnswer: { '@type': 'Answer', text: f.a },
   })),
 };
+
+// Brand entity: tells Google that govsteps.com IS "GovSteps"
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'GovSteps',
+  url: 'https://govsteps.com/',
+  logo: 'https://govsteps.com/apple-touch-icon.png',
+  description:
+    'GovSteps breaks down government paperwork into clear step-by-step guides with costs, time estimates, and official links.',
+};
 ---
 
 <Layout
   title={pageTitle}
   description={pageDescription}
-  schema={[homeFaqSchema]}
+  schema={[homeFaqSchema, orgSchema]}
 >
 
   <!-- hero-band: mesh gradient, display copy left, circular search pill right -->
