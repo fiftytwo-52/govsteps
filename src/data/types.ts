@@ -133,6 +133,7 @@ export const categories = [
     { id: 'accidents', name: 'Accidents & Emergencies', icon: 'alert', blurb: 'Crashes, police reports, insurance claims, and replacing stolen documents' },
     { id: 'students', name: 'Students', icon: 'grad', blurb: 'Student visas, study permits, loans, and study paperwork' },
     { id: 'civic', name: 'Civic Life', icon: 'flag', blurb: 'Voter registration, jury duty, and records requests' },
+    { id: 'insurance', name: 'Insurance', icon: 'shield', blurb: 'Car, health and travel insurance — coverage that protects you' },
 ];
 
 /** Language options offered on every guide page (for immigrants reading in their own language) */

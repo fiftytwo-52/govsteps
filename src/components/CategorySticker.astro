@@ -1,0 +1,13 @@
+---
+// CategorySticker.astro — decorative vector sticker per guide category.
+// Brand palette: navy #0F2A5C, amber #FBBF24, white.
+interface Props {
+  category: string;
+  class?: string;
+}
+
+const { category, class: cls = 'size-12' } = Astro.props;
+const src = `/images/stickers/sticker-${category}.svg`;
+---
+
+<img src={src} alt="" aria-hidden="true" class={cls} loading="lazy" decoding="async" />

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Icon from './Icon.astro';
+import CategorySticker from './CategorySticker.astro';
 import CountryFlag from './CountryFlag.astro';
 import CardArt from './CardArt.astro';
 import Faq from './Faq.astro';
@@ -92,6 +93,8 @@ const schemas = [breadcrumbSchema, collectionSchema, ...(faqSchema ? [faqSchema]
       </nav>
 
       <header class="mt-6 max-w-3xl">
+        <div class="flex items-start justify-between gap-6">
+          <div>
         <div class="flex flex-wrap items-center gap-2">
           <span class="inline-flex items-center gap-1.5 rounded-md border border-hairline bg-canvas-elevated px-2.5 py-1 text-xs font-medium text-ink dark:border-hairline-dark dark:bg-canvas-elevated-dark dark:text-ink-dark">
             <Icon name={category.icon} class="size-3.5" /> {category.name}
@@ -113,6 +116,9 @@ const schemas = [breadcrumbSchema, collectionSchema, ...(faqSchema ? [faqSchema]
         </p>
         <div class="mt-4 rounded-md border border-hairline bg-canvas p-3 text-xs text-mute dark:border-hairline-dark dark:bg-canvas-dark dark:text-mute-dark">
           {editorial.agencyOverview}
+        </div>
+          </div>
+          <CategorySticker category={category.id} class="hidden size-24 shrink-0 sm:block" />
         </div>
       </header>
     </div>

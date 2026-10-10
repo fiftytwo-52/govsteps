@@ -9,6 +9,7 @@ import DocumentChecklist from './DocumentChecklist.astro';
 import InfoBox from './InfoBox.astro';
 import Faq from './Faq.astro';
 import Icon from './Icon.astro';
+import CategorySticker from './CategorySticker.astro';
 import TranslateGuide from './TranslateGuide.astro';
 import CountryFlag from './CountryFlag.astro';
 import ShareButtons from './ShareButtons.astro';
@@ -158,6 +159,8 @@ const breadcrumbSchema = {
 
       <!-- Header -->
       <header class="mt-4">
+        <div class="flex items-start justify-between gap-4">
+          <div class="min-w-0">
         <div class="flex flex-wrap items-center gap-2">
           <a
             href={topicHref}
@@ -198,6 +201,9 @@ const breadcrumbSchema = {
         )}
 
         <p class="mt-3 max-w-2xl text-base leading-relaxed text-body dark:text-body-dark" set:html={linkTerms(guide.summary)} />
+          </div>
+          <CategorySticker category={guide.category} class="hidden size-20 shrink-0 sm:block" />
+        </div>
 
         <!-- Hero illustration -->
         <figure class="mt-4 max-w-3xl overflow-hidden rounded-lg border border-hairline bg-canvas-elevated shadow-sm dark:border-hairline-dark dark:bg-canvas-elevated-dark">

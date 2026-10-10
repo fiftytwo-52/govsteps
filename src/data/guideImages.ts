@@ -38,6 +38,7 @@ export const categoryFallbackOgCards: Record<string, string> = {
   accidents: '/images/og/og-drivers-license.png',
   students: '/images/og/og-fafsa.png',
   civic: '/images/og/og-register-vote.png',
+  insurance: '/images/og/og-aca-insurance.png',
 };
 
 export function getGuideOgImage(guide: Guide, siteOrigin: string = 'https://govsteps.com'): string {
