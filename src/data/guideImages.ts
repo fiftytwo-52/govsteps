@@ -58,7 +58,7 @@ const heroMappings: HeroMapping[] = [
     file: 'illustration-passport',
     alt: 'Passport booklet with official application documents',
     caption: 'Official passport application, renewal, and identity documents.',
-    slugPatterns: ['passport'],
+    slugPatterns: ['passport', 'precheck', 'tsa'],
   },
   {
     file: 'illustration-citizenship',
@@ -82,7 +82,7 @@ const heroMappings: HeroMapping[] = [
     file: 'illustration-tax-form',
     alt: 'Official tax return form with calculator and receipts',
     caption: 'Tax return forms, schedules, deductions, and refund status tracking.',
-    slugPatterns: ['tax', 'refund', '1040', '1099', 'w9', 'w-9', 'schedule-c', 'self-assessment', 'crypto-tax'],
+    slugPatterns: ['tax', 'refund', '1040', '1099', 'w9', 'w-9', 'schedule-c', 'self-assessment', 'crypto-tax', 'gst', 'hst', 'transcript'],
     categories: ['taxes'],
   },
   {
@@ -126,14 +126,14 @@ const heroMappings: HeroMapping[] = [
     file: 'illustration-health-insurance',
     alt: 'Health insurance coverage shield and medical policy',
     caption: 'Health coverage plans, subsidies, and official clinic registration.',
-    slugPatterns: ['aca', 'health-insurance', 'medicaid', 'nhs', 'ghic', 'ohip', 'msp'],
+    slugPatterns: ['aca', 'health-insurance', 'medicaid', 'nhs', 'ghic', 'ohip', 'msp', 'parental-leave', 'maternity'],
     categories: ['benefits'],
   },
   {
     file: 'illustration-unemployment',
     alt: 'Unemployment benefits support and income assistance paperwork',
     caption: 'Income support, disability assistance, and public benefit claims.',
-    slugPatterns: ['unemployment', 'universal-credit', 'ssdi', 'ssi', 'food-stamps', 'snap', 'wic', 'ei-canada'],
+    slugPatterns: ['unemployment', 'universal-credit', 'ssdi', 'ssi', 'food-stamps', 'snap', 'wic', 'ei-canada', 'ei-benefits', 'pip'],
   },
   {
     file: 'illustration-vote',
@@ -166,7 +166,7 @@ const heroMappings: HeroMapping[] = [
     file: 'illustration-marriage-license',
     alt: 'Certified marriage license certificate with legal seal',
     caption: 'Marriage license application, legal officiants, and certified certificates.',
-    slugPatterns: ['marriage', 'legal-name', 'name-change'],
+    slugPatterns: ['marriage', 'legal-name', 'name-change', 'sponsor-spouse'],
   },
 ];
 
