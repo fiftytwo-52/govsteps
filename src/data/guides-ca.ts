@@ -115,6 +115,9 @@ export const guides: Guide[] = [
             { q: 'How do I get a passport urgently?', a: 'Passport offices offer urgent (next business day) and express (2–9 business days) services for pick-up, but you must show proof of travel within the window and pay extra fees. Book the appointment and bring everything — incomplete files are refused.' },
             { q: 'I just became a citizen. When can I apply?', a: 'As soon as you have your citizenship certificate you can apply for a first passport. Note your PR card becomes invalid the day you take the oath, so apply promptly if you need to travel — many new citizens apply same-week with urgent service.' },
             { q: 'Can my guarantor be a relative?', a: 'Yes — since the rules were relaxed, a guarantor can be a family member or anyone living at your address, as long as they are a Canadian citizen 18+, have known you 2+ years, and hold a valid adult passport. Professionals (like doctors) are no longer required.' },
+            { q: 'Can I apply online for my first Canadian passport?', a: 'No — online application is only for renewals meeting strict criteria. First-time adult applicants must apply in person at a passport office or Service Canada point, or by mail, with original proof of citizenship and a guarantor-signed photo.' },
+            { q: 'What proof of citizenship do I need?', a: 'An original Canadian birth certificate or citizenship certificate — photocopies are not accepted, and it is returned with your new passport. If you were born abroad to Canadian parents, apply for proof of citizenship first; that process alone can take months.' },
+            { q: 'How long does a first passport take?', a: 'About 10 business days at a passport office plus mailing time, or up to 20 business days by mail. Apply well before any planned travel. For urgent needs, ask about express (2–9 business days) or urgent (next business day) service, which require an in-person appointment and proof of travel.' },
         ],
     },
     {
@@ -931,6 +934,9 @@ export const guides: Guide[] = [
             { q: 'My passport expired 2 years ago. Can I still use the renewal process?', a: 'No — simplified renewal only covers passports expired less than one year. Beyond that, you file a general adult application with proof of citizenship (birth certificate or citizenship certificate) and a guarantor.' },
             { q: 'I changed my name since my last passport.', a: 'Name changes take you out of the renewal stream: file a general application with the legal change document (marriage certificate, legal change of name certificate) and supporting ID in the new name.' },
             { q: 'I have a trip in 3 weeks. Which service should I use?', a: 'Book an in-person appointment at a passport office (not a Service Canada receiving point) and request express service (2–9 business days) with proof of travel. Urgent (next business day) is for emergencies within 48 hours of travel. Bring your itinerary.' },
+            { q: 'Can I renew my Canadian passport online?', a: 'Yes, if you meet all the criteria: 16 or older, your last passport was a regular 5- or 10-year passport issued within the last 15 years, it is not damaged, lost, or stolen, and your name and personal details are unchanged. Otherwise renew by mail or in person.' },
+            { q: 'Do I need a guarantor to renew?', a: 'No — renewals need no guarantor and no proof of citizenship. You need your most recent passport, a new photo, two references (not relatives, known you 2+ years), and the fee. Skipping the guarantor is the main advantage of renewing over applying fresh.' },
+            { q: 'Can I reuse my old passport photo?', a: 'No — every application needs new photos taken to current specifications. Do not cut photos out of the old passport; photo problems are one of the most common reasons applications are sent back.' },
         ],
     },
     {

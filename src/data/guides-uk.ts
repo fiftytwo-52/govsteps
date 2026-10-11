@@ -107,6 +107,9 @@ export const guides: Guide[] = [
             { q: 'How do I get a passport urgently?', a: 'The 1-week Fast Track service (££, bookable by phone) covers renewals, first adult passports, and child applications. Online Premium (1-day) exists for adult renewals only. Appointments are limited — check availability before booking travel.' },
             { q: 'Can I keep my old passport while the renewal is processed?', a: 'Yes if you apply online and your old passport is undamaged — you post it only after being asked, and you can keep travelling on it until then. Cancelled passports are returned to you.' },
             { q: 'I became British through naturalisation. Is the process different?', a: 'You must attend a passport interview for your first passport and send your naturalisation certificate. The certificate is returned — do not laminate it, as HMRC and employers will need it later too.' },
+            { q: 'How much does a UK passport cost?', a: 'An adult standard passport costs £88.50 online or £100 by post; child passports cost less. Fees change occasionally, so confirm the current fee on gov.uk before applying — online is both cheaper and faster than the paper form.' },
+            { q: 'Who can be my countersignatory?', a: 'Someone who has known you personally for at least 2 years, lives in the UK, and works in (or is retired from) a recognised profession — for example a teacher, solicitor, or civil servant. They confirm your identity online, and cannot be a relative, partner, or someone at your address.' },
+            { q: 'How long is a UK adult passport valid?', a: 'Ten years for adults 16 and over; five years for under-16s. Watch the expiry date for travel: many countries require 3–6 months of validity beyond your trip, so renew in the final year if you travel to the EU, US, or Asia.' },
         ],
     },
     {
@@ -724,6 +727,9 @@ export const guides: Guide[] = [
             { q: 'Someone found my passport after I reported it. Can I use it again?', a: 'No. A reported passport is permanently cancelled and will be flagged at every border. Destroy it or return it to HMPO — using or travelling on a cancelled passport is a crime.' },
             { q: 'I lost my passport abroad and need to fly home urgently.', a: 'Contact the nearest British embassy, high commission, or consulate. They can issue an emergency travel document valid for a single journey back to the UK, usually within 48 hours. You need a police report, a passport photo, proof of travel, and the fee (about £100).' },
             { q: 'Will a lost passport affect my next application?', a: 'Not usually — one loss is routine. Multiple losses can trigger extra identity checks and longer processing. Keep your passport number recorded somewhere safe so you can report a loss quickly.' },
+            { q: 'How do I report a lost or stolen UK passport?', a: 'Report it online through the gov.uk \'Report a lost or stolen passport\' service, or by phone. Reporting cancels the passport immediately so it cannot be misused — do it before applying for the replacement, as you will need the report reference.' },
+            { q: 'Does a replacement cost more than a renewal?', a: 'No — replacing a lost or stolen passport costs the same as a standard renewal (£88.50 online for an adult). The difference is time: replacements can take up to 6 weeks because of extra identity checks, versus about 3 weeks for a straightforward renewal.' },
+            { q: 'My passport was stolen. Should I report it to the police?', a: 'Yes — report the theft to the local police and get a crime reference number (and to local police abroad if it happened overseas). Cancelling the passport stops travel misuse, but a police report protects you if your identity details are used for fraud.' },
         ],
     },
     {

@@ -119,6 +119,9 @@ export const guides: Guide[] = [
             { q: 'Can I get a passport faster?', a: 'Yes. Expedited service costs an extra $60 and takes 2–3 weeks. For true emergencies (travel within 14 days), make an appointment at a regional passport agency.' },
             { q: 'What if my name changed since my birth certificate?', a: 'Bring a certified name-change document (marriage certificate, divorce decree, or court order) linking your current name to the one on your citizenship evidence. See our name change guide for the full process.' },
             { q: 'Do children under 16 need to appear in person?', a: 'Yes, and both parents must generally be present (or one parent with a notarized consent form from the other). Children\'s passports are valid for 5 years.' },
+            { q: 'What counts as proof of US citizenship?', a: 'A US birth certificate, Consular Report of Birth Abroad, Certificate of Naturalization, or Certificate of Citizenship. Bring the original — photocopies are not accepted — and it is returned with your new passport. Without one of these, the passport office cannot issue.' },
+            { q: 'Do I need an appointment to apply?', a: 'First-time applications are submitted in person at a passport acceptance facility (post offices, clerks of court, libraries). Many require appointments, so book ahead at travel.state.gov. Some accept walk-ins, but expect long waits without one.' },
+            { q: 'How long is an adult passport valid?', a: 'Ten years for applicants 16 and older. Children\'s passports (under 16) are valid 5 years and can never be renewed by mail — every child application is in person with DS-11, even renewals.' },
         ],
     },
     {
@@ -780,6 +783,9 @@ export const guides: Guide[] = [
             { q: 'I found my passport after reporting it lost. Can I use it?', a: 'No. Once reported, it is invalidated in the system and will be flagged at borders. Destroy it or mail it to the State Department with a note.' },
             { q: 'What if my passport is lost/stolen while abroad?', a: 'Go to the nearest US embassy or consulate — they can issue an emergency limited-validity passport within 24–72 hours for your return trip. File a local police report too; some countries require it at exit.' },
             { q: 'Will a lost passport delay my replacement?', a: 'Not usually — the process is the same as a first-time application. The DS-64 statement replaces the old passport as your record.' },
+            { q: 'Which forms do I need — DS-11, DS-64, or both?', a: 'Both. DS-64 is the statement explaining how the passport was lost or stolen; DS-11 is the application for the replacement itself. Submit them together in person — a lost passport cannot be replaced by mail with DS-82.' },
+            { q: 'How much does a lost passport replacement cost?', a: 'The same as a new adult passport book: $130 application fee plus a $35 execution fee ($165 total). The DS-64 loss statement itself is free. Fees are non-refundable, even if the passport turns up later.' },
+            { q: 'How fast can I get the replacement?', a: 'Routine service takes several weeks; expedited service (extra $60) shortens it. If you travel within 14 days, book an urgent-travel appointment at a passport agency. For a life-or-death emergency within 3 days, call the National Passport Information Center for an emergency appointment.' },
         ],
     },
     {
@@ -1267,6 +1273,9 @@ export const guides: Guide[] = [
             { q: 'Do I get my old passport back?', a: 'Yes — it is returned with your new one, usually canceled (holes punched or stamped). Keep it: it proves your travel history and is backup evidence of citizenship for naturalization records and some visa applications.' },
             { q: 'Can I renew online instead of by mail?', a: 'The State Department has an online renewal pilot for eligible adults renewing a regular tourist passport — check travel.state.gov for current availability. Eligibility mirrors the DS-82 mail rules, and you upload a digital photo and pay by card.' },
             { q: 'My passport expired years ago. Can I still renew by mail?', a: 'Only if it expired within the last 5 years and was issued when you were 16+. Expired longer than that, or issued as a minor, means applying in person with DS-11 — full first-time process with an acceptance facility appointment.' },
+            { q: 'My passport is damaged. Can I still renew by mail?', a: 'No — damaged passports are not eligible for DS-82 mail renewal. Apply in person with Form DS-11 as if for a new passport, and bring the damaged passport with you. Water damage, torn pages, or an unreadable data page always require the in-person route.' },
+            { q: 'Can I reuse my old passport photo?', a: 'No. Every application needs a new photo taken within the last 6 months meeting current State Department specs (2x2 inches, plain white background, no glasses). Photo problems are the most common reason renewals get delayed — when in doubt, have it taken professionally.' },
+            { q: 'Where do I check current processing times?', a: 'At travel.state.gov — the State Department updates routine and expedited times regularly and they shift with seasonal demand. Check before you apply, and pay for expedited service plus overnight delivery both ways if your trip is within a few months.' },
         ],
     },
     {
