@@ -32,6 +32,13 @@ resetPageGlossary();
 const country = getCountry(guide.country);
 const category = categories.find((c) => c.id === guide.category);
 const editorial = getGuideEditorial(guide);
+
+// SEO: render the meta title with a dynamic freshness year derived from the
+// guide's last review date, so hardcoded "(2025)"-style suffixes never go stale
+// in SERPs. Only the first "(YYYY ...)" group is replaced; titles without a
+// year suffix are left untouched.
+const reviewYear = editorial.lastReviewedDate.slice(0, 4);
+const metaTitle = guide.metaTitle.replace(/\(20\d{2}([^)]*)\)/, `(${reviewYear}$1)`);
 const heroImg = getGuideHero(guide);
 const homeHref = country.pathPrefix ? `${country.pathPrefix}/` : '/';
 const topicHref = `${country.pathPrefix ? country.pathPrefix : ''}/topics/${guide.category}/`;
@@ -142,7 +149,7 @@ const breadcrumbSchema = {
 ---
 
 <Layout
-  title={guide.metaTitle}
+  title={metaTitle}
   description={guide.description}
   ogImage={ogImageUrl}
   schema={[howToSchema, faqSchema, breadcrumbSchema]}

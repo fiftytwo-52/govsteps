@@ -40,10 +40,10 @@ const guideSearch = JSON.stringify(
   }),
 );
 const pageTitle = code === 'us'
-  ? 'GovSteps — US Government Paperwork, Step by Step'
+  ? 'GovSteps — Step-by-Step Guides for US Government Paperwork'
   : code === 'uk'
-  ? 'GovSteps — UK Government Paperwork, Step by Step'
-  : 'GovSteps — Canada Government Paperwork, Step by Step';
+  ? 'GovSteps — Step-by-Step Guides for UK Government Paperwork'
+  : 'GovSteps — Step-by-Step Guides for Canada Government Paperwork';
 
 const pageDescription = code === 'us'
   ? 'Step-by-step guides for US government paperwork: taxes, immigration, passports, IDs, and benefits. Costs, fees, and verified official links.'
@@ -109,7 +109,7 @@ const orgSchema = {
         <div class="hero-rise max-w-2xl" style="--d: 0">
           <p class="eyebrow hidden sm:block">Guides for citizens, immigrants & expats</p>
           <h1 class="display-xl mt-3 text-ink sm:mt-4 dark:text-ink-dark">
-            {country.name} paperwork, <span class="text-link dark:text-link-dark">step by step.</span>
+            {country.name} government paperwork, <span class="text-link dark:text-link-dark">step by step.</span>
           </h1>
           <p class="mt-3 hidden text-sm text-body sm:mt-4 sm:block sm:text-base dark:text-body-dark">
             Which documents to gather, which office to visit, which form to fill, how long to wait, and what it costs — all in plain language.

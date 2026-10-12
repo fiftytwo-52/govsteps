@@ -681,10 +681,19 @@
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-apply-for-uk-passport/</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <image:image>
       <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
       <image:title>How to Apply for a UK Passport</image:title>
+      <image:caption>Passport booklet with official application documents</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://govsteps.com/uk/guides/how-to-renew-a-uk-passport/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <image:image>
+      <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
+      <image:title>How to Renew a UK Passport</image:title>
       <image:caption>Passport booklet with official application documents</image:caption>
     </image:image>
   </url>
@@ -789,7 +798,7 @@
   </url>
   <url>
     <loc>https://govsteps.com/uk/guides/how-to-replace-a-lost-or-stolen-uk-passport/</loc>
-    <lastmod>2026-03-03</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <image:image>
       <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
       <image:title>How to Replace a Lost or Stolen UK Passport</image:title>
@@ -1041,7 +1050,7 @@
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-apply-for-a-canadian-passport/</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <image:image>
       <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
       <image:title>How to Apply for a Canadian Passport</image:title>
@@ -1185,7 +1194,7 @@
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-apply-for-canadian-passport-renewal/</loc>
-    <lastmod>2026-02-16</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <image:image>
       <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
       <image:title>How to Renew a Canadian Passport</image:title>
@@ -1203,7 +1212,7 @@
   </url>
   <url>
     <loc>https://govsteps.com/can/guides/how-to-replace-a-lost-or-stolen-canadian-passport/</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <image:image>
       <image:loc>https://govsteps.com/images/guides/illustration-passport.png</image:loc>
       <image:title>How to Replace a Lost or Stolen Canadian Passport</image:title>
