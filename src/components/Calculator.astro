@@ -16,7 +16,8 @@ const calc = getCalculator(id);
 {
   calc && (
     <section
-      class="mt-8 rounded-lg border border-hairline bg-canvas-elevated p-4 sm:p-5 dark:border-hairline-dark dark:bg-canvas-elevated-dark"
+      id="calculator"
+      class="mt-8 scroll-mt-24 rounded-lg border border-hairline bg-canvas-elevated p-4 sm:p-5 dark:border-hairline-dark dark:bg-canvas-elevated-dark"
       data-calculator={calc.id}
       aria-label={calc.title}
     >

@@ -254,8 +254,9 @@ const breadcrumbSchema = {
         <InfoBox icon="calendar" label="Reviewed" value={editorial.lastReviewed} />
       </div>
 
-      {officialLink && (
-        <div class="mt-4">
+      {/* Hero actions: official site + jump straight to the calculator (deep-linkable via #calculator) */}
+      <div class="mt-4 flex flex-wrap gap-3">
+        {officialLink && (
           <a
             href={officialLink.href}
             target="_blank"
@@ -265,8 +266,17 @@ const breadcrumbSchema = {
             Apply on the official site
             <Icon name="external" class="size-4" />
           </a>
-        </div>
-      )}
+        )}
+        {guide.calculator && (
+          <a
+            href="#calculator"
+            class="inline-flex items-center gap-2 rounded-full border border-link px-5 py-2.5 text-sm font-semibold text-link transition hover:bg-link hover:text-white dark:border-link-dark dark:text-link-dark dark:hover:bg-link-dark dark:hover:text-canvas-dark"
+          >
+            <Icon name="dollar" class="size-4" />
+            Jump to calculator
+          </a>
+        )}
+      </div>
     </div>
   </section>
 
