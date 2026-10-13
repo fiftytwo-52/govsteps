@@ -30,7 +30,8 @@ const resolvedOgImage = ogImage
 const currentPath = Astro.url.pathname;
 const isUk = currentPath.startsWith('/uk');
 const isCan = currentPath.startsWith('/can');
-const activeCountry = isUk ? 'uk' : isCan ? 'ca' : 'us';
+const isUae = currentPath.startsWith('/uae');
+const activeCountry = isUk ? 'uk' : isCan ? 'ca' : isUae ? 'ae' : 'us';
 
 // Site-level structured data (merged with any page-level schema).
 const siteSchema = [
@@ -122,7 +123,7 @@ const allSchema = [...siteSchema, ...schema];
           </svg>
         </a>
 
-        <!-- Country Switcher (header, on every page: United States · United Kingdom · Canada) -->
+        <!-- Country Switcher (header, on every page: United States · United Kingdom · Canada · United Arab Emirates) -->
         <div class="hidden items-center rounded-md border border-hairline bg-canvas-elevated p-0.5 text-xs font-medium md:flex dark:border-hairline-dark dark:bg-canvas-elevated-dark" role="navigation" aria-label="Country switcher">
           <a
             href="/"
@@ -144,6 +145,13 @@ const allSchema = [...siteSchema, ...schema];
             aria-current={activeCountry === 'ca' ? 'page' : undefined}
           >
             Canada
+          </a>
+          <a
+            href="/uae/"
+            class={`rounded-sm px-2.5 py-1 transition-colors ${activeCountry === 'ae' ? 'bg-ink text-canvas font-semibold dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark'}`}
+            aria-current={activeCountry === 'ae' ? 'page' : undefined}
+          >
+            United Arab Emirates
           </a>
         </div>
 
@@ -172,6 +180,7 @@ const allSchema = [...siteSchema, ...schema];
             <a href="/" class={`rounded-md px-3 py-2 ${activeCountry === 'us' ? 'bg-ink text-canvas dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark'}`}>United States Guides</a>
             <a href="/uk/" class={`rounded-md px-3 py-2 ${activeCountry === 'uk' ? 'bg-ink text-canvas dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark'}`}>United Kingdom Guides</a>
             <a href="/can/" class={`rounded-md px-3 py-2 ${activeCountry === 'ca' ? 'bg-ink text-canvas dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark'}`}>Canada Guides</a>
+            <a href="/uae/" class={`rounded-md px-3 py-2 ${activeCountry === 'ae' ? 'bg-ink text-canvas dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark'}`}>United Arab Emirates Guides</a>
           </div>
           <div class="mt-3 border-t border-hairline pt-3 dark:border-hairline-dark">
             <div class="flex flex-col gap-1 text-sm font-medium">
@@ -212,6 +221,7 @@ const allSchema = [...siteSchema, ...schema];
               <li><a href="/" class="hover:text-ink dark:hover:text-ink-dark">United States</a></li>
               <li><a href="/uk/" class="hover:text-ink dark:hover:text-ink-dark">United Kingdom</a></li>
               <li><a href="/can/" class="hover:text-ink dark:hover:text-ink-dark">Canada</a></li>
+              <li><a href="/uae/" class="hover:text-ink dark:hover:text-ink-dark">United Arab Emirates</a></li>
             </ul>
           </div>
           <div class="text-sm">
@@ -231,7 +241,7 @@ const allSchema = [...siteSchema, ...schema];
           </div>
         </div>
         <div class="mt-8 border-t border-hairline pt-4 text-xs text-mute dark:border-hairline-dark dark:text-mute-dark">
-          <p>GovSteps is an independent informational website. It is not affiliated with any US, UK, or Canadian government agency. Always verify requirements at official sources (<a href="https://www.usa.gov" target="_blank" rel="noopener noreferrer" class="underline hover:text-ink dark:hover:text-ink-dark">usa.gov</a>, <a href="https://www.gov.uk" target="_blank" rel="noopener noreferrer" class="underline hover:text-ink dark:hover:text-ink-dark">gov.uk</a>, <a href="https://www.canada.ca" target="_blank" rel="noopener noreferrer" class="underline hover:text-ink dark:hover:text-ink-dark">canada.ca</a>, and their agencies).</p>
+          <p>GovSteps is an independent informational website. It is not affiliated with any US, UK, Canadian, or UAE government agency. Always verify requirements at official sources (<a href="https://www.usa.gov" target="_blank" rel="noopener noreferrer" class="underline hover:text-ink dark:hover:text-ink-dark">usa.gov</a>, <a href="https://www.gov.uk" target="_blank" rel="noopener noreferrer" class="underline hover:text-ink dark:hover:text-ink-dark">gov.uk</a>, <a href="https://www.canada.ca" target="_blank" rel="noopener noreferrer" class="underline hover:text-ink dark:hover:text-ink-dark">canada.ca</a>, <a href="https://u.ae" target="_blank" rel="noopener noreferrer" class="underline hover:text-ink dark:hover:text-ink-dark">u.ae</a>, and their agencies).</p>
           <p class="mt-2">&copy; {new Date().getFullYear()} GovSteps. All rights reserved.</p>
         </div>
       </div>
