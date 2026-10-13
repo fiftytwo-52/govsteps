@@ -2057,6 +2057,7 @@ export const guides: Guide[] = [
     },
     {
         slug: 'how-to-apply-for-a-fha-loan',
+        calculator: 'us-fha-mortgage',
         country: 'us',
         updatedAt: '2025',
         title: 'How to Apply for an FHA Loan (First-Time Home Buyers)',
@@ -2501,6 +2502,7 @@ export const guides: Guide[] = [
     },
     {
         slug: 'how-to-get-a-personal-loan',
+        calculator: 'us-personal-loan',
         country: 'us',
         updatedAt: '2025',
         title: 'How to Get a Personal Loan (and When It Beats a Credit Card)',

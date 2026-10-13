@@ -1,0 +1,194 @@
+---
+// Inline calculator embedded inside a guide (see Guide.calculator).
+// Config-driven: inputs/outputs come from src/data/calculators.ts, the formula
+// runs in the browser on every input change — no submit button.
+import { getCalculator } from '../data/calculators';
+import Icon from './Icon.astro';
+
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+const calc = getCalculator(id);
+---
+
+{
+  calc && (
+    <section
+      class="mt-8 rounded-lg border border-hairline bg-canvas-elevated p-4 sm:p-5 dark:border-hairline-dark dark:bg-canvas-elevated-dark"
+      data-calculator={calc.id}
+      aria-label={calc.title}
+    >
+      <div class="flex items-center gap-2">
+        <span class="grid size-8 place-items-center rounded-md bg-link text-white dark:bg-link-dark dark:text-canvas-dark">
+          <Icon name="dollar" class="size-4" />
+        </span>
+        <div>
+          <p class="eyebrow">Calculator</p>
+          <h2 class="heading-md text-ink dark:text-ink-dark">{calc.title}</h2>
+        </div>
+      </div>
+      <p class="mt-2 text-sm text-body dark:text-body-dark">{calc.description}</p>
+
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        {calc.inputs.map((input) => (
+          <label class="block">
+            <span class="text-sm font-medium text-ink dark:text-ink-dark">{input.label}</span>
+            {input.type === 'number' && (
+              <span class="mt-1 flex items-center gap-1.5">
+                {input.prefix && <span class="text-sm text-mute dark:text-mute-dark">{input.prefix}</span>}
+                <input
+                  type="number"
+                  data-calc-input={input.id}
+                  value={input.defaultValue}
+                  min={input.min}
+                  max={input.max}
+                  step={input.step}
+                  class="w-full rounded-md border border-hairline bg-canvas px-3 py-2 text-sm text-ink dark:border-hairline-dark dark:bg-canvas-dark dark:text-ink-dark"
+                />
+                {input.suffix && <span class="text-sm text-mute dark:text-mute-dark">{input.suffix}</span>}
+              </span>
+            )}
+            {input.type === 'range' && (
+              <span class="mt-1 flex items-center gap-2">
+                <input
+                  type="range"
+                  data-calc-input={input.id}
+                  value={input.defaultValue}
+                  min={input.min}
+                  max={input.max}
+                  step={input.step}
+                  class="w-full accent-[var(--link)]"
+                />
+                <output data-calc-range-out={input.id} class="shrink-0 font-mono text-sm font-semibold text-ink dark:text-ink-dark">
+                  {input.defaultValue}
+                  {input.suffix ?? ''}
+                </output>
+              </span>
+            )}
+            {input.type === 'select' && (
+              <select
+                data-calc-input={input.id}
+                class="mt-1 w-full rounded-md border border-hairline bg-canvas px-3 py-2 text-sm text-ink dark:border-hairline-dark dark:bg-canvas-dark dark:text-ink-dark"
+              >
+                {input.options?.map((opt) => (
+                  <option value={opt.value} selected={opt.value === input.defaultValue}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+            )}
+            {input.type === 'checkbox' && (
+              <span class="mt-1 flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  data-calc-input={input.id}
+                  checked={input.defaultValue === true}
+                  class="size-4 accent-[var(--link)]"
+                />
+                <span class="text-sm text-body dark:text-body-dark">Yes</span>
+              </span>
+            )}
+            {input.hint && <span class="mt-1 block text-xs text-mute dark:text-mute-dark">{input.hint}</span>}
+          </label>
+        ))}
+      </div>
+
+      <div class="mt-4 rounded-md border border-hairline bg-canvas p-4 dark:border-hairline-dark dark:bg-canvas-dark">
+        <div class="grid gap-3 sm:grid-cols-2">
+          {calc.outputs.map((out) => (
+            <div data-calc-output-wrap={out.key} class={out.highlight ? 'sm:col-span-2' : ''}>
+              <p class="text-xs font-medium uppercase tracking-wide text-mute dark:text-mute-dark">{out.label}</p>
+              <p
+                data-calc-output={out.key}
+                class={
+                  out.highlight
+                    ? 'mt-1 text-2xl font-bold text-ink dark:text-ink-dark'
+                    : 'mt-1 text-lg font-semibold text-ink dark:text-ink-dark'
+                }
+              >
+                —
+              </p>
+              {out.hint && <p class="mt-0.5 text-xs text-mute dark:text-mute-dark">{out.hint}</p>}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <p class="mt-3 text-xs leading-relaxed text-mute dark:text-mute-dark">
+        Estimate only. {calc.disclaimer}{' '}
+        <a href={calc.sourceHref} target="_blank" rel="noopener noreferrer" class="text-link hover:underline dark:text-link-dark">
+          Source: {calc.sourceLabel}
+        </a>
+      </p>
+    </section>
+  )
+}
+
+<script>
+  import { CALCULATORS } from '../data/calculators';
+
+  const localeFor: Record<string, string> = { AED: 'en-AE', USD: 'en-US', GBP: 'en-GB', CAD: 'en-CA' };
+
+  document.querySelectorAll('[data-calculator]').forEach((section) => {
+    const calcId = section.getAttribute('data-calculator');
+    const calc = calcId ? CALCULATORS[calcId] : undefined;
+    if (!calc) return;
+
+    const money = new Intl.NumberFormat(localeFor[calc.currency] ?? 'en-US', {
+      style: 'currency',
+      currency: calc.currency,
+      maximumFractionDigits: 2,
+    });
+
+    const readValues = () => {
+      const values: Record<string, number | string | boolean> = {};
+      section.querySelectorAll('[data-calc-input]').forEach((el) => {
+        const input = el as HTMLInputElement | HTMLSelectElement;
+        const key = input.getAttribute('data-calc-input');
+        if (!key) return;
+        if (input instanceof HTMLInputElement && input.type === 'checkbox') {
+          values[key] = input.checked;
+        } else if (input instanceof HTMLInputElement && (input.type === 'number' || input.type === 'range')) {
+          values[key] = parseFloat(input.value) || 0;
+        } else {
+          values[key] = input.value;
+        }
+      });
+      return values;
+    };
+
+    const render = () => {
+      const result = calc.formula(readValues());
+      calc.outputs.forEach((out) => {
+        const el = section.querySelector(`[data-calc-output="${out.key}"]`);
+        if (!el) return;
+        const raw = result[out.key];
+        if (typeof raw === 'string') {
+          el.textContent = raw;
+        } else if (out.format === 'money') {
+          el.textContent = money.format(raw);
+        } else if (out.format === 'percent') {
+          el.textContent = `${raw.toFixed(1)}%`;
+        } else {
+          el.textContent = raw.toLocaleString(undefined, { maximumFractionDigits: 2 });
+        }
+      });
+      // Keep range slider readouts in sync
+      section.querySelectorAll('[data-calc-input][type="range"]').forEach((el) => {
+        const input = el as HTMLInputElement;
+        const key = input.getAttribute('data-calc-input');
+        const out = section.querySelector(`[data-calc-range-out="${key}"]`);
+        if (out) {
+          const def = calc.inputs.find((i) => i.id === key);
+          out.textContent = `${input.value}${def?.suffix ?? ''}`;
+        }
+      });
+    };
+
+    section.addEventListener('input', render);
+    section.addEventListener('change', render);
+    render();
+  });
+</script>

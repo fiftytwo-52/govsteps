@@ -1,10 +1,12 @@
 ---
-// Shared guide-page layout used by all three country routes:
+// Shared guide-page layout used by all country routes:
 //   /guides/[slug]        (US — legacy URLs kept)
 //   /uk/guides/[slug]     (UK)
 //   /can/guides/[slug]    (Canada)
+//   /uae/guides/[slug]    (UAE)
 import Layout from '../layouts/Layout.astro';
 import StepTimeline from './StepTimeline.astro';
+import Calculator from './Calculator.astro';
 import DocumentChecklist from './DocumentChecklist.astro';
 import InfoBox from './InfoBox.astro';
 import Faq from './Faq.astro';
@@ -300,6 +302,9 @@ const breadcrumbSchema = {
             <StepTimeline steps={guide.steps} />
           </div>
         </section>
+
+        <!-- Calculator (only on guides whose core task is a calculation) -->
+        {guide.calculator && <Calculator id={guide.calculator} />}
 
         <!-- FAQ -->
         <section class="mt-8">

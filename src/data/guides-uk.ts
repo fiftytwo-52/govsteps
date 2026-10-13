@@ -345,6 +345,7 @@ export const guides: Guide[] = [
     },
     {
         slug: 'how-to-file-uk-self-assessment',
+        calculator: 'uk-income-tax',
         country: 'uk',
         updatedAt: '2025',
         title: 'How to File a UK Self Assessment Tax Return',
@@ -794,6 +795,7 @@ export const guides: Guide[] = [
     },
     {
         slug: 'how-to-apply-for-child-benefit-uk',
+        calculator: 'uk-child-benefit',
         country: 'uk',
         updatedAt: '2025',
         title: 'How to Apply for Child Benefit in the UK',

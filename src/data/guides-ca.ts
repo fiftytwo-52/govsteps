@@ -1257,6 +1257,7 @@ export const guides: Guide[] = [
     },
     {
         slug: 'how-to-get-a-personal-loan-canada',
+        calculator: 'ca-personal-loan',
         country: 'ca',
         updatedAt: '2025',
         title: 'How to Get a Personal Loan in Canada',
@@ -1398,6 +1399,7 @@ export const guides: Guide[] = [
     },
     {
         slug: 'how-to-apply-for-ei-benefits-canada',
+        calculator: 'ca-ei',
         country: 'ca',
         updatedAt: '2026',
         title: 'How to Apply for EI Benefits (Employment Insurance)',
