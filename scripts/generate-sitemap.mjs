@@ -28,13 +28,14 @@ const { getGuideHero } = await import('../src/data/guideImages.ts');
 const SITE = 'https://govsteps.com';
 
 // Static core pages (404 is excluded — never indexed).
-const staticPaths = ['/', '/uk/', '/can/', '/about/', '/contact/', '/privacy/', '/terms/'];
+const staticPaths = ['/', '/uk/', '/can/', '/uae/', '/about/', '/contact/', '/privacy/', '/terms/'];
 
-// 24 Topic Category Pages (8 topics x 3 countries)
+// Topic Category Pages (all categories x 4 countries)
 const topicPaths = [
   ...categories.map((c) => `/topics/${c.id}/`),
   ...categories.map((c) => `/uk/topics/${c.id}/`),
   ...categories.map((c) => `/can/topics/${c.id}/`),
+  ...categories.map((c) => `/uae/topics/${c.id}/`),
 ];
 
 const entries = [
