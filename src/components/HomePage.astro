@@ -24,19 +24,24 @@ const countryGuides = guides.filter((g) => g.country === code);
 const countrySteps = countryGuides.reduce((sum, g) => sum + g.steps.length, 0);
 const totalDocuments = countryGuides.reduce((sum, g) => sum + g.documents.length, 0);
 
-// Search index: title, summary, category name, and href per guide
-// (lowercased copies for matching, display copies for the results dropdown)
+// Search index: ALL guides across every country (title, summary, category,
+// country, and href per guide). Lowercased copies for matching, display
+// copies for the results dropdown.
 const guideSearch = JSON.stringify(
-  countryGuides.map((g) => {
+  guides.map((g) => {
     const cat = categories.find((c) => c.id === g.category)?.name ?? '';
+    const c = getCountry(g.country);
     return {
       slug: g.slug,
       href: guidePath(g),
       title: g.title.toLowerCase(),
       summary: g.summary.toLowerCase(),
       cat: cat.toLowerCase(),
+      country: `${c.name} ${c.short}`.toLowerCase(),
       displayTitle: g.title,
       displayCat: cat,
+      displayCountry: c.name,
+      countryCode: g.country,
     };
   }),
 );
@@ -44,7 +49,9 @@ const pageTitle = code === 'us'
   ? 'GovSteps — Step-by-Step Guides for US Government Paperwork'
   : code === 'uk'
   ? 'GovSteps — Step-by-Step Guides for UK Government Paperwork'
-  : 'GovSteps — Step-by-Step Guides for Canada Government Paperwork';
+  : code === 'ca'
+  ? 'GovSteps — Step-by-Step Guides for Canada Government Paperwork'
+  : 'GovSteps — Step-by-Step Guides for UAE Government Paperwork';
 
 const pageDescription = code === 'us'
   ? 'Step-by-step guides for US government paperwork: taxes, immigration, passports, IDs, and benefits. Costs, fees, and verified official links.'
@@ -57,7 +64,7 @@ const homeFaqs = [
   },
   {
     q: 'Is GovSteps affiliated with or endorsed by any government agency?',
-    a: 'No. GovSteps is an independent civic information website. We are not affiliated with, authorized by, or connected to the US Government, the UK Government, the Government of Canada, or any of their departments or agencies. All guides link directly to official government agency websites (.gov, .gov.uk, .gc.ca) for source verification.',
+    a: 'No. GovSteps is an independent civic information website. We are not affiliated with, authorized by, or connected to the US Government, the UK Government, the Government of Canada, the Government of the United Arab Emirates, or any of their departments or agencies. All guides link directly to official government agency websites (.gov, .gov.uk, .gc.ca, u.ae) for source verification.',
   },
   {
     q: 'How frequently are government fees, forms, and processing times updated?',
@@ -133,7 +140,7 @@ const orgSchema = {
                 <input
                   type="search"
                   name="q"
-                  placeholder={`Search ${countryGuides.length} ${country.short} guides — passport, visa, taxes…`}
+                  placeholder={`Search all ${guides.length} guides — passport, visa, taxes…`}
                   aria-label="Search guides"
                   aria-expanded="false"
                   aria-controls="search-results"
@@ -464,11 +471,37 @@ const orgSchema = {
       return el;
     })();
 
-    // Multi-word AND matching: every word must appear in title/summary/category.
+    // Multi-word AND matching: every word must appear in title/summary/category/country.
     // "passport renew" matches "How to renew a passport" (both words present).
     function matches(g, words) {
-      const haystack = `${g.title} ${g.summary} ${g.cat}`;
+      const haystack = `${g.title} ${g.summary} ${g.cat} ${g.country ?? ''}`;
       return words.every((w) => haystack.includes(w));
+    }
+
+    // Inline SVG flags for the dropdown rows (same artwork as CountryFlag.astro).
+    function flagSvg(code) {
+      const open =
+        '<svg viewBox="0 0 60 40" aria-hidden="true" class="block h-3.5 w-5 shrink-0 rounded-[2px] ring-1 ring-black/10 dark:ring-white/20">';
+      let inner = '';
+      if (code === 'us') {
+        inner = '<rect width="60" height="40" fill="#fff"></rect>';
+        for (let i = 0; i < 13; i += 2)
+          inner += `<rect y="${(i * 40) / 13}" width="60" height="${40 / 13}" fill="#B22234"></rect>`;
+        inner += `<rect width="24" height="${(40 / 13) * 7}" fill="#3C3B6E"></rect>`;
+        for (let col = 0; col < 5; col++)
+          for (let row = 0; row < 6; row++)
+            inner += `<circle cx="${3.2 + col * 4.4}" cy="${2.7 + row * 3.4}" r="0.9" fill="#fff"></circle>`;
+      } else if (code === 'uk') {
+        inner =
+          '<rect width="60" height="40" fill="#012169"></rect><path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="8"></path><path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"></path><path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="13"></path><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="8"></path>';
+      } else if (code === 'ca') {
+        inner =
+          '<rect width="60" height="40" fill="#fff"></rect><rect width="15" height="40" fill="#D80621"></rect><rect x="45" width="15" height="40" fill="#D80621"></rect><path d="M30 5 L31.6 9.4 L35.3 8.1 L34.5 12.4 L39.4 13.5 L36 16.8 L38.4 20.3 L33.6 20.1 L34.2 24.6 L30 21.8 L25.8 24.6 L26.4 20.1 L21.6 20.3 L24 16.8 L20.6 13.5 L25.5 12.4 L24.7 8.1 L28.4 9.4 Z" fill="#D80621"></path><rect x="29.3" y="21.5" width="1.4" height="8" fill="#D80621"></rect>';
+      } else {
+        inner =
+          '<rect width="60" height="40" fill="#fff"></rect><rect x="15" width="45" height="13.4" fill="#00732F"></rect><rect x="15" y="26.6" width="45" height="13.4" fill="#000"></rect><rect width="15" height="40" fill="#FF0000"></rect>';
+      }
+      return open + inner + '</svg>';
     }
 
     let activeIndex = -1; // keyboard-selected row in the dropdown
@@ -500,13 +533,24 @@ const orgSchema = {
           a.href = g.href;
           a.className = 'flex items-center justify-between gap-3 px-4 py-3 text-sm text-ink hover:bg-hairline-soft dark:text-ink-dark dark:hover:bg-hairline-soft-dark';
           a.setAttribute('data-index', String(i));
+          const flag = document.createElement('span');
+          flag.innerHTML = flagSvg(g.countryCode);
           const title = document.createElement('span');
-          title.className = 'font-medium';
+          title.className = 'min-w-0 truncate font-medium';
           title.textContent = g.displayTitle;
+          const left = document.createElement('span');
+          left.className = 'flex min-w-0 items-center gap-2.5';
+          left.append(flag, title);
+          const country = document.createElement('span');
+          country.className = 'font-mono text-[11px] text-mute dark:text-mute-dark';
+          country.textContent = g.displayCountry;
           const cat = document.createElement('span');
           cat.className = 'shrink-0 font-mono text-[11px] text-mute dark:text-mute-dark';
           cat.textContent = g.displayCat;
-          a.append(title, cat);
+          const right = document.createElement('span');
+          right.className = 'flex shrink-0 flex-col items-end leading-tight';
+          right.append(country, cat);
+          a.append(left, right);
           dropdown.appendChild(a);
         });
         if (results.length > 6) {
@@ -569,7 +613,14 @@ const orgSchema = {
         section.style.display = anyVisible ? '' : 'none';
       });
 
-      noResults.classList.toggle('hidden', !words.length || visible.size > 0);
+      noResults.textContent =
+        results.length > 0
+          ? `No matches on this country's page — ${results.length} guide${results.length === 1 ? '' : 's'} found in other countries. Pick one from the dropdown above.`
+          : 'No guides match that search. Try "passport", "visa", "taxes", or "ID".';
+      // Local signal: cards only exist for this country's guides, so a
+      // cross-country-only search shows the note above, not a blank page.
+      const anyCardVisible = cards.some((c) => c.style.display !== 'none');
+      noResults.classList.toggle('hidden', !words.length || anyCardVisible);
 
       // Live dropdown under the search pill
       renderDropdown(q, results);

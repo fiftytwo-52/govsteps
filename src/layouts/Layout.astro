@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import CountryFlag from '../components/CountryFlag.astro';
 
 interface Props {
   title: string;
@@ -14,7 +15,7 @@ interface Props {
 
 const {
   title,
-  description = 'Step-by-step guides for US, UK, and Canadian government paperwork — taxes, immigration, IDs, and benefits explained in plain language.',
+  description = 'Step-by-step guides for US, UK, Canadian, and UAE government paperwork — taxes, immigration, IDs, and benefits explained in plain language.',
   ogImage,
   schema = [],
   robots = 'index, follow',
@@ -127,30 +128,34 @@ const allSchema = [...siteSchema, ...schema];
         <div class="hidden items-center rounded-md border border-hairline bg-canvas-elevated p-0.5 text-xs font-medium md:flex dark:border-hairline-dark dark:bg-canvas-elevated-dark" role="navigation" aria-label="Country switcher">
           <a
             href="/"
-            class={`rounded-sm px-2.5 py-1 transition-colors ${activeCountry === 'us' ? 'bg-ink text-canvas font-semibold dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark'}`}
+            class={`flex items-center gap-1.5 rounded-sm px-2.5 py-1 transition-colors ${activeCountry === 'us' ? 'bg-ink text-canvas font-semibold dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark'}`}
             aria-current={activeCountry === 'us' ? 'page' : undefined}
           >
+            <CountryFlag code="us" class="h-3.5 w-5" />
             United States
           </a>
           <a
             href="/uk/"
-            class={`rounded-sm px-2.5 py-1 transition-colors ${activeCountry === 'uk' ? 'bg-ink text-canvas font-semibold dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark'}`}
+            class={`flex items-center gap-1.5 rounded-sm px-2.5 py-1 transition-colors ${activeCountry === 'uk' ? 'bg-ink text-canvas font-semibold dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark'}`}
             aria-current={activeCountry === 'uk' ? 'page' : undefined}
           >
+            <CountryFlag code="uk" class="h-3.5 w-5" />
             United Kingdom
           </a>
           <a
             href="/can/"
-            class={`rounded-sm px-2.5 py-1 transition-colors ${activeCountry === 'ca' ? 'bg-ink text-canvas font-semibold dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark'}`}
+            class={`flex items-center gap-1.5 rounded-sm px-2.5 py-1 transition-colors ${activeCountry === 'ca' ? 'bg-ink text-canvas font-semibold dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark'}`}
             aria-current={activeCountry === 'ca' ? 'page' : undefined}
           >
+            <CountryFlag code="ca" class="h-3.5 w-5" />
             Canada
           </a>
           <a
             href="/uae/"
-            class={`rounded-sm px-2.5 py-1 transition-colors ${activeCountry === 'ae' ? 'bg-ink text-canvas font-semibold dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark'}`}
+            class={`flex items-center gap-1.5 rounded-sm px-2.5 py-1 transition-colors ${activeCountry === 'ae' ? 'bg-ink text-canvas font-semibold dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:text-ink dark:text-body-dark dark:hover:text-ink-dark'}`}
             aria-current={activeCountry === 'ae' ? 'page' : undefined}
           >
+            <CountryFlag code="ae" class="h-3.5 w-5" />
             United Arab Emirates
           </a>
         </div>
@@ -177,10 +182,10 @@ const allSchema = [...siteSchema, ...schema];
         <div class="container-geist py-3">
           <p class="font-mono text-[10px] font-semibold uppercase tracking-wider text-mute dark:text-mute-dark">Country Hubs</p>
           <div class="mt-2 flex flex-col gap-1 text-sm font-medium">
-            <a href="/" class={`rounded-md px-3 py-2 ${activeCountry === 'us' ? 'bg-ink text-canvas dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark'}`}>United States Guides</a>
-            <a href="/uk/" class={`rounded-md px-3 py-2 ${activeCountry === 'uk' ? 'bg-ink text-canvas dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark'}`}>United Kingdom Guides</a>
-            <a href="/can/" class={`rounded-md px-3 py-2 ${activeCountry === 'ca' ? 'bg-ink text-canvas dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark'}`}>Canada Guides</a>
-            <a href="/uae/" class={`rounded-md px-3 py-2 ${activeCountry === 'ae' ? 'bg-ink text-canvas dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark'}`}>United Arab Emirates Guides</a>
+            <a href="/" class={`flex items-center gap-2 rounded-md px-3 py-2 ${activeCountry === 'us' ? 'bg-ink text-canvas dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark'}`}><CountryFlag code="us" class="h-3.5 w-5" />United States Guides</a>
+            <a href="/uk/" class={`flex items-center gap-2 rounded-md px-3 py-2 ${activeCountry === 'uk' ? 'bg-ink text-canvas dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark'}`}><CountryFlag code="uk" class="h-3.5 w-5" />United Kingdom Guides</a>
+            <a href="/can/" class={`flex items-center gap-2 rounded-md px-3 py-2 ${activeCountry === 'ca' ? 'bg-ink text-canvas dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark'}`}><CountryFlag code="ca" class="h-3.5 w-5" />Canada Guides</a>
+            <a href="/uae/" class={`flex items-center gap-2 rounded-md px-3 py-2 ${activeCountry === 'ae' ? 'bg-ink text-canvas dark:bg-ink-dark dark:text-canvas-dark' : 'text-body hover:bg-hairline-soft hover:text-ink dark:text-body-dark dark:hover:bg-hairline-soft-dark dark:hover:text-ink-dark'}`}><CountryFlag code="ae" class="h-3.5 w-5" />United Arab Emirates Guides</a>
           </div>
           <div class="mt-3 border-t border-hairline pt-3 dark:border-hairline-dark">
             <div class="flex flex-col gap-1 text-sm font-medium">
