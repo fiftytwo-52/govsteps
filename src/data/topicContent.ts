@@ -1,5 +1,5 @@
 // Comprehensive editorial intros and FAQs for Topic category pages.
-// 8 topics × 3 countries = 24 unique, authoritative introductions and FAQ sets for YMYL SEO.
+// 9 topics × 4 countries = 36 unique, authoritative introductions and FAQ sets for YMYL SEO.
 
 import type { CountryCode } from './types';
 
@@ -507,6 +507,224 @@ export const topicData: Record<CountryCode, Record<string, TopicContent>> = {
         {
           q: 'What ID is accepted to vote at a Canadian federal polling station?',
           a: 'You can show one government-issued photo ID with your name and current address (such as a driver\'s licence), or two pieces of ID both showing your name and at least one showing your address (such as a bank statement and utility bill).',
+        },
+      ],
+    },
+  },
+  ae: {
+    taxes: {
+      headline: 'UAE Tax Guides: Corporate Tax, VAT Registration & Filing Steps',
+      lead: 'The UAE taxes businesses, not salaries: corporate tax and 5% VAT are administered by the Federal Tax Authority (FTA) through EmaraTax.',
+      body: 'Since June 2023 the UAE levies federal corporate tax at 0% on taxable income up to AED 375,000 and 9% above that threshold, with registration, annual returns, and record-keeping handled on the FTA\'s EmaraTax portal. Value Added Tax (VAT) at 5% applies to most goods and services; businesses must register once taxable supplies pass AED 375,000 in 12 months and may register voluntarily from AED 187,500. There is no personal income tax on salaries in the UAE. Our guides walk through corporate tax registration, VAT registration and deregistration, TRN lookup, invoicing rules, and filing deadlines step by step.',
+      agencyOverview: 'Official agency: Federal Tax Authority (tax.gov.ae) via the EmaraTax portal.',
+      faqs: [
+        {
+          q: 'What is the UAE corporate tax rate?',
+          a: 'Corporate tax is 0% on taxable income up to AED 375,000 and 9% on income above that threshold. Qualifying free zone persons can qualify for 0% on qualifying income if they meet the conditions. Registration with the FTA is mandatory even for businesses that owe no tax.',
+        },
+        {
+          q: 'When must a UAE business register for VAT?',
+          a: 'VAT registration is mandatory once taxable supplies exceed AED 375,000 in a 12-month period, and voluntary registration opens at AED 187,500. Register on EmaraTax before the deadline to avoid administrative penalties.',
+        },
+        {
+          q: 'Does the UAE charge personal income tax?',
+          a: 'No. The UAE does not levy personal income tax on salaries or wages. Individuals may still need to deal with VAT as consumers, and business owners must handle corporate tax and VAT for their companies.',
+        },
+        {
+          q: 'What is a TRN and where do I find it?',
+          a: 'A Tax Registration Number (TRN) is issued by the FTA when you register for VAT or corporate tax. It appears on your EmaraTax dashboard and must be shown on tax invoices. You can verify a supplier\'s TRN on the FTA website.',
+        },
+      ],
+    },
+    immigration: {
+      headline: 'UAE Visa & Immigration Guides: Residence, Golden, Green & Tourist Visas',
+      lead: 'UAE immigration runs through the Federal Authority for Identity, Citizenship, Customs & Port Security (ICP) and the u.ae portal — residence visas, Emirates ID, and status changes in one system.',
+      body: 'Most people enter the UAE on a tourist visa or visa-on-arrival, then convert to a residence visa sponsored by an employer, family member, university, or their own business. Residence visas are tied to an Emirates ID and medical fitness test, and the long-term Golden Visa and 5-year Green Visa reward investors, skilled professionals, and freelancers. You can often change visa status without leaving the country. Our guides cover each visa type, sponsorship rules, renewals, cancellation and grace periods, overstay fines, and the documents you need at every step.',
+      agencyOverview: 'Official agencies: ICP (icp.gov.ae) and the u.ae government portal; Dubai visas also involve GDRFA.',
+      faqs: [
+        {
+          q: 'What is the difference between a UAE residence visa and an Emirates ID?',
+          a: 'A residence visa is your permission to live in the UAE; the Emirates ID is the physical identity card every resident must hold. You apply for the ID as part of the residence process, and you need it for banking, tenancy contracts, healthcare, and government services.',
+        },
+        {
+          q: 'Can I change my UAE visa status without leaving the country?',
+          a: 'Yes, in most cases. A status change (often called a change of status) lets you move from a tourist visa to a residence visa, or between residence sponsors, without an exit trip. Fees vary by visa type — confirm the current fee on the ICP portal.',
+        },
+        {
+          q: 'What happens if I overstay my UAE visa?',
+          a: 'Overstay fines accrue daily (AED 50 per day for most visit/residence cases) plus service fees. Pay fines through ICP or Amer channels before you exit or renew, or the fine will block your next transaction.',
+        },
+        {
+          q: 'How long is the grace period after a UAE residence visa is cancelled?',
+          a: 'The grace period is tiered by category — up to 180, 90, 60, or 30 days depending on the visa type — not a blanket six months. Check your category on the ICP portal and leave or renew before it expires.',
+        },
+      ],
+    },
+    ids: {
+      headline: 'UAE IDs & Licences: Emirates ID, Driving Licence & Police Clearance',
+      lead: 'Your Emirates ID is the key to life in the UAE; driving licences, passports, and police clearance certificates each run through their own authority.',
+      body: 'Every UAE resident must hold an Emirates ID issued by ICP — it proves identity, unlocks banking and tenancy, and is needed for most government transactions. Driving licences are issued by the RTA in Dubai and the police or transport authority in other emirates, with licence conversion available for many countries without a road test. Passports are renewed through your embassy or consulate, and police clearance certificates are issued by the Ministry of Interior or Dubai Police. Our guides cover applications, renewals, replacements, fees, and the documents to bring.',
+      agencyOverview: 'Official agencies: ICP (icp.gov.ae), RTA (rta.ae) in Dubai, Ministry of Interior (moi.gov.ae), and your embassy or consulate.',
+      faqs: [
+        {
+          q: 'How do I apply for or renew an Emirates ID?',
+          a: 'Apply or renew through ICP — online, via the ICP app, or at an Amer/typing centre. You will need your passport, residence visa details, and a photo; biometrics are taken at an ICP service centre for first-time applicants. Fees and validity vary by category — confirm on the ICP portal.',
+        },
+        {
+          q: 'Can I convert my foreign driving licence in the UAE?',
+          a: 'Licence holders from many countries can convert directly without a driving test; others must pass theory and road tests. Check whether your country is on the exemption list with the RTA (Dubai) or the licensing authority in your emirate.',
+        },
+        {
+          q: 'What do I do if I lose my Emirates ID?',
+          a: 'Report the loss and apply for a replacement through ICP as soon as possible. You will need your passport and a police report in some cases. Keep the replacement receipt — it works as temporary proof of identity.',
+        },
+        {
+          q: 'How do I get a UAE police clearance certificate?',
+          a: 'Apply through the Ministry of Interior app/website or Dubai Police if you live in Dubai. You need your Emirates ID and passport, and fingerprints if you are applying from outside the UAE.',
+        },
+      ],
+    },
+    benefits: {
+      headline: 'UAE Benefits & Worker Protections: Gratuity, ILOE & Health Insurance',
+      lead: 'UAE worker protections centre on end-of-service gratuity, the ILOE unemployment insurance scheme, and mandatory health insurance.',
+      body: 'Employees in the UAE accrue an end-of-service gratuity based on basic salary and years of service — 21 days\' wages per year for the first five years and 30 days per year after, capped at two years\' wages. The Involuntary Loss of Employment (ILOE) insurance scheme requires most employees to subscribe and pays a limited monthly benefit if they lose their job. Health insurance is mandatory for residents in Abu Dhabi and Dubai, with employer-provided cover for most workers. Our guides explain gratuity calculations, ILOE enrolment and claims, health insurance requirements, and what to do when a payment is delayed.',
+      agencyOverview: 'Official agencies: MOHRE (mohre.gov.ae), ILOE (iloe.ae), DHA (dha.gov.ae) in Dubai, and DOH in Abu Dhabi.',
+      faqs: [
+        {
+          q: 'How is UAE gratuity (end-of-service benefit) calculated?',
+          a: 'Gratuity is calculated on basic salary: 21 days\' wages for each of the first five years of service and 30 days\' wages for each additional year, capped at two years\' wages. Use our gratuity calculator guide for a worked example.',
+        },
+        {
+          q: 'Who must subscribe to ILOE unemployment insurance?',
+          a: 'Most employees in the UAE\'s private and federal government sectors must subscribe to ILOE. Premiums depend on salary band. Fines apply for late subscription, so enrol as soon as you start work.',
+        },
+        {
+          q: 'Is health insurance mandatory in the UAE?',
+          a: 'Yes, in Abu Dhabi and Dubai health insurance is mandatory for residents, and employers generally provide cover for employees. Other emirates have their own rules — confirm with your emirate\'s health authority.',
+        },
+        {
+          q: 'What can I do if my employer does not pay my gratuity?',
+          a: 'First raise it in writing with your employer. If it is unresolved, file a labour complaint with MOHRE — the ministry can mediate and, if needed, refer the case to the labour court.',
+        },
+      ],
+    },
+    business: {
+      headline: 'UAE Business Setup: Trade Licence, Free Zone vs Mainland & Corporate Tax',
+      lead: 'Starting a business in the UAE means choosing mainland or free zone, getting a trade licence, and registering for corporate tax and VAT.',
+      body: 'Mainland companies are licensed by the Department of Economic Development (DED) in each emirate and can trade anywhere in the UAE; free zone companies are licensed by their zone authority and offer 100% foreign ownership with zone-specific rules. Most businesses need a trade licence, an office or flexi-desk, Ejari or tenancy registration, and a corporate bank account. Since 2023, companies must also register for corporate tax with the FTA. Our guides compare mainland vs free zone, walk through licensing, and explain tax registration, VAT, and annual renewals.',
+      agencyOverview: 'Official agencies: DED in each emirate, free zone authorities, and the FTA (tax.gov.ae).',
+      faqs: [
+        {
+          q: 'Should I set up mainland or free zone in the UAE?',
+          a: 'Mainland suits businesses selling directly to the UAE market; free zone suits export-focused, consultancy, and holding businesses that want 100% foreign ownership. Compare licence costs, activity restrictions, and office requirements before deciding.',
+        },
+        {
+          q: 'How much does a UAE trade licence cost?',
+          a: 'Costs vary widely by emirate, activity, and free zone — from a few thousand dirhams for a freelancer permit to much more for a mainland commercial licence. Get a quote from the licensing authority, not a broker, before budgeting.',
+        },
+        {
+          q: 'Do UAE businesses need to register for corporate tax?',
+          a: 'Yes. Most businesses must register for corporate tax with the FTA even if they owe 0% tax. Registration is done on EmaraTax; penalties apply for late registration.',
+        },
+        {
+          q: 'What is Ejari and why does my business need it?',
+          a: 'Ejari is Dubai\'s tenancy registration system. A registered Ejari contract is required for trade licence renewals, visas, and many government services. Other emirates have equivalent systems (e.g. Tawtheeq in Abu Dhabi).',
+        },
+      ],
+    },
+    accidents: {
+      headline: 'UAE Accidents & Emergencies: Police Reports, Traffic Fines & Insurance Claims',
+      lead: 'Report accidents through Dubai Police or your emirate\'s police app, check and pay traffic fines online, and claim through your insurer.',
+      body: 'Minor traffic accidents in the UAE are usually reported through the Dubai Police app or the police app in your emirate, which issues the police report insurers require. Traffic fines can be checked and paid through RTA or police channels, often with seasonal discounts. If your Emirates ID, passport, or licence is lost or stolen, report it promptly and apply for a replacement. Our guides cover accident reporting, fine payment and disputes, insurance claims, and replacing lost documents.',
+      agencyOverview: 'Official agencies: Dubai Police (dubaipolice.gov.ae), RTA (rta.ae), and the police authority in your emirate.',
+      faqs: [
+        {
+          q: 'How do I report a minor car accident in Dubai?',
+          a: 'Report it through the Dubai Police app or website, which issues an accident report for insurance. Move to a safe location first, photograph the damage, and exchange details with the other driver.',
+        },
+        {
+          q: 'How do I check and pay Dubai traffic fines?',
+          a: 'Check fines on the RTA or Dubai Police apps/websites using your plate number or licence. You can often pay online and may qualify for seasonal discount campaigns — confirm the current campaign before paying.',
+        },
+        {
+          q: 'What do I do after a car accident in the UAE?',
+          a: 'Ensure everyone is safe and call 999 if anyone is injured. Get a police report, notify your insurer promptly, and keep photos, the report reference, and the other driver\'s details for the claim.',
+        },
+        {
+          q: 'What if my Emirates ID is lost or stolen?',
+          a: 'Apply for a replacement through ICP immediately and keep the receipt as temporary proof. If it was stolen, file a police report first — you may need the report reference for the replacement.',
+        },
+      ],
+    },
+    students: {
+      headline: 'UAE Student Guides: Student Visa, University Admission & Student Life',
+      lead: 'Studying in the UAE means a university-sponsored student visa, an Emirates ID, and — for many students — a local bank account.',
+      body: 'Universities in the UAE sponsor student visas for admitted students, typically valid for one year and renewable for the duration of the course. Students need an Emirates ID, medical fitness test, and health insurance, and many open a student bank account for daily expenses. Part-time work is possible under specific conditions and employer sponsorship rules. Our guides cover admission, student visa applications and renewals, Emirates ID for students, and the paperwork that comes with student life in the UAE.',
+      agencyOverview: 'Official agencies: ICP (icp.gov.ae), your university\'s admissions/visa office, and MOHRE for work permissions.',
+      faqs: [
+        {
+          q: 'Who sponsors a UAE student visa?',
+          a: 'Your university or educational institution sponsors your student visa once you are admitted. The institution handles the application with ICP; you provide your passport, admission letter, photos, and medical results.',
+        },
+        {
+          q: 'How long is a UAE student visa valid?',
+          a: 'Student visas are typically valid for one year and renewable for the duration of your course, as long as you remain enrolled. Confirm renewal timing with your university\'s visa office.',
+        },
+        {
+          q: 'Can students work part-time in the UAE?',
+          a: 'Part-time work is possible under specific conditions, usually requiring a work permit or employer arrangement. Check the current MOHRE rules and your university\'s policy before taking a job.',
+        },
+        {
+          q: 'Do students need an Emirates ID?',
+          a: 'Yes. Student visa holders must get an Emirates ID — it is required for banking, tenancy, health insurance, and most government services. Apply through ICP after your visa is issued.',
+        },
+      ],
+    },
+    civic: {
+      headline: 'UAE Civic Life: Document Attestation, Ejari, DEWA & Salik',
+      lead: 'Daily civic paperwork in the UAE runs through MOFA attestation, Ejari tenancy registration, DEWA utilities, and Salik tolls.',
+      body: 'Foreign documents used in the UAE — degrees, birth and marriage certificates, commercial papers — must be attested through the MOFA chain: home-country attestation, UAE embassy, then MOFA in the UAE. Tenancy contracts in Dubai are registered on Ejari, utilities are activated through DEWA, and the Salik toll system covers Dubai\'s tolled roads. Our guides walk through attestation, Ejari registration, DEWA activation and transfer, Salik tags and top-ups, and the civic paperwork residents handle most.',
+      agencyOverview: 'Official agencies: MOFA (mofa.gov.ae), DLD/Ejari (dubailand.gov.ae), DEWA (dewa.gov.ae), and RTA/Salik (rta.ae).',
+      faqs: [
+        {
+          q: 'How does document attestation work in the UAE?',
+          a: 'A document is attested in its home country, then by the UAE embassy there, then by MOFA in the UAE. Each step has its own fee and requirements — confirm the chain for your document type on the MOFA website.',
+        },
+        {
+          q: 'What is Ejari and how do I register?',
+          a: 'Ejari is Dubai\'s system for registering tenancy contracts. Your landlord or a typing centre registers the contract with DLD; the Ejari certificate is needed for DEWA, visas, and licence renewals.',
+        },
+        {
+          q: 'How do I activate DEWA for a new home?',
+          a: 'Activate DEWA through its website or app after your Ejari is registered. You pay a security deposit (refunded when you close the account) and the connection fee. Activation is usually completed within a day.',
+        },
+        {
+          q: 'What is Salik and how do I pay tolls?',
+          a: 'Salik is Dubai\'s electronic toll system. Buy a Salik tag, link it to your vehicle, and top up the balance online or at petrol stations. Tolls are deducted automatically as you pass a gate.',
+        },
+      ],
+    },
+    insurance: {
+      headline: 'UAE Insurance Guides: Health, Motor & ILOE Unemployment Insurance',
+      lead: 'Insurance in the UAE is mandatory in key areas: health cover for residents, third-party motor insurance for drivers, and ILOE for employees.',
+      body: 'Health insurance is mandatory for residents in Abu Dhabi and Dubai, with employers generally providing cover for employees and sponsors arranging cover for dependants. Motor insurance is mandatory for every registered vehicle — third-party cover is the legal minimum, with comprehensive cover optional. The ILOE scheme insures most employees against involuntary job loss for a small monthly premium. Our guides explain what each policy must cover, how to compare providers, how to claim, and what to do when a claim is rejected.',
+      agencyOverview: 'Official agencies: Central Bank of the UAE (centralbank.ae) regulates insurers; DHA/DOH set health insurance rules.',
+      faqs: [
+        {
+          q: 'Is health insurance mandatory in the UAE?',
+          a: 'Yes, in Abu Dhabi and Dubai health insurance is mandatory for residents. Employers generally provide cover for employees; sponsors arrange cover for dependants. Minimum benefit levels are set by the health authority.',
+        },
+        {
+          q: 'What motor insurance do I need in the UAE?',
+          a: 'Third-party liability insurance is the legal minimum for every registered vehicle. Comprehensive cover adds protection for your own vehicle against accidents, theft, and fire — compare excess, agency vs non-agency repair, and roadside assistance.',
+        },
+        {
+          q: 'What is ILOE and how much does it cost?',
+          a: 'ILOE (Involuntary Loss of Employment) insurance pays a limited monthly benefit if you lose your job. Premiums depend on your salary band. Most private and federal sector employees must subscribe — enrol early to avoid fines.',
+        },
+        {
+          q: 'How do I claim on UAE insurance?',
+          a: 'Notify your insurer as soon as possible, gather the required documents (police report for motor claims, medical reports for health claims), and submit through the insurer\'s app or portal. Keep copies of everything and note claim reference numbers.',
         },
       ],
     },
