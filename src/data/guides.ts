@@ -9,12 +9,16 @@ import { guides as usGuides } from './guides-us';
 import { guides as ukGuides } from './guides-uk';
 import { guides as caGuides } from './guides-ca';
 import { guides as aeGuides } from './guides-ae';
+import { guides as aeB2aGuides } from './guides-ae-b2a';
+import { guides as aeB2bGuides } from './guides-ae-b2b';
+import { guides as aeB2cGuides } from './guides-ae-b2c';
+import { guides as aeB2dGuides } from './guides-ae-b2d';
 
 export type { Step, Guide, CountryCode, Country } from './types';
 export { countries, categories, getGuideEditorial } from './types';
 
 /** All guides, every country, in a stable order (US first to preserve legacy listing order). */
-export const guides: Guide[] = [...usGuides, ...ukGuides, ...caGuides, ...aeGuides];
+export const guides: Guide[] = [...usGuides, ...ukGuides, ...caGuides, ...aeGuides, ...aeB2aGuides, ...aeB2bGuides, ...aeB2cGuides, ...aeB2dGuides];
 
 /** Total step count across all guides — used by hero/stats copy. */
 export const totalSteps = guides.reduce((n, g) => n + g.steps.length, 0);
