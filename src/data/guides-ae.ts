@@ -350,7 +350,20 @@ export const guides: Guide[] = [
             { q: 'Does resigning reduce my gratuity?', a: 'No — under current law all private-sector contracts are fixed-term and resignation does not reduce gratuity. The old limited/unlimited reduction rules are historical only (pre-February 2022).' },
             { q: 'Is gratuity based on basic or gross salary?', a: 'Basic salary only, per MOHRE and u.ae. Allowances are excluded; the 2-year cap, by contrast, is measured against total wage.' },
             { q: 'What if my employer does not pay?', a: 'File a complaint with MOHRE; unresolved disputes go to court.' },
-        ],
+        
+        {
+          q: 'How do I calculate UAE gratuity?',
+          a: 'Divide your last monthly basic salary by 30 to get your daily wage. Multiply by 21 days for each of the first 5 years of service and 30 days for each year after that, pro-rated for partial years. The total is capped at two years of basic wage. Example: AED 10,000 basic salary and 7 years gives about AED 55,000. Use the gratuity calculator on this page to run your exact numbers.',
+        },
+        {
+          q: 'Do unpaid leave days count toward UAE gratuity?',
+          a: 'No. Days of unpaid leave do not count toward your period of service. The calculator subtracts your unpaid-leave days (converted to years) from your total service before applying the formula.',
+        },
+        {
+          q: 'Is there a maximum gratuity in the UAE?',
+          a: 'Yes. Total end-of-service gratuity cannot exceed two years of wages. The calculator applies the cap against basic wage, following majority practice; the law says two years\' wage without specifying basic versus total wage.',
+        },
+      ],
         calculator: 'ae-gratuity',
     },
     {
@@ -420,7 +433,20 @@ export const guides: Guide[] = [
             { q: 'I expect to owe no tax — do I still register?', a: 'Yes. Registration applies regardless of expected liability; the 0% band up to AED 375,000 is a rate, not a registration exemption.' },
             { q: 'What is taxed — revenue or profit?', a: 'Taxable income (profit): accounting income adjusted per the law — 0% up to AED 375,000, 9% on the excess.' },
             { q: 'Do free-zone companies register?', a: 'Yes — free-zone businesses are in scope. Qualifying Free Zone Persons may get 0% on qualifying income if conditions are met; confirm the current conditions on tax.gov.ae.' },
-        ],
+        
+        {
+          q: 'How much corporate tax do I pay on AED 1 million profit?',
+          a: 'Taxable income up to AED 375,000 is taxed at 0%, and only the excess is taxed at 9%. On AED 1,000,000 of taxable income, the tax is (1,000,000 - 375,000) x 9% = AED 56,250. Enter your profit in the calculator above for your exact figure.',
+        },
+        {
+          q: 'What is Small Business Relief in UAE corporate tax?',
+          a: 'Businesses with revenue of AED 3 million or less can elect for Small Business Relief, under which they are treated as having no taxable income. Tick the Small Business Relief box in the calculator to see the zero-tax result.',
+        },
+        {
+          q: 'When is UAE corporate tax due?',
+          a: 'The corporate tax return and payment are due within 9 months of the end of your financial year. For example, the FTA announced 30 September 2026 as the filing and payment deadline for the financial year ended 31 December 2025. Confirm the current deadline on tax.gov.ae.',
+        },
+      ],
         calculator: 'ae-corporate-tax',
     },
     {

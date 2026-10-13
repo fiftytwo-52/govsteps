@@ -2101,7 +2101,20 @@ export const guides: Guide[] = [
             { q: 'I am a green card holder / on a work visa. Can I get an FHA loan?', a: 'Yes. FHA insures loans for lawful permanent residents and non-permanent residents with a valid SSN, 2-year US employment history, and residency documented (green card or EAD/H-1B with proper visa history). Foreign nationals without US residency cannot use FHA.' },
             { q: 'Can I use gift money for the down payment?', a: 'Yes — FHA allows the entire 3.5% down payment to be a gift from family, close friends, employers, or charities. The giver signs a gift letter stating no repayment is expected, and you document the transfer. This is one of FHA\'s biggest advantages over many conventional loans.' },
             { q: 'What credit score do I really need?', a: 'Technically 580 for 3.5% down, but many lenders overlay their own minimum of 620–640. If your score is 580–639, call lenders and ask their FHA overlay before applying — hard credit inquiries from multiple mortgage lenders within a 45-day window count as one for scoring.' },
-        ],
+        
+        {
+          q: 'How much is FHA mortgage insurance (MIP)?',
+          a: 'FHA loans carry two premiums: an upfront MIP of 1.75% of the base loan, which is usually financed into the loan, and an annual MIP paid monthly — 0.55% of the loan per year when the loan-to-value ratio is above 95%, or 0.50% at or below 95%, for loan terms over 15 years. The calculator applies these rates automatically.',
+        },
+        {
+          q: 'How long do I pay FHA MIP?',
+          a: 'It depends on your down payment. If your loan-to-value ratio is above 90%, you pay MIP for the life of the loan; at 90% or below, you pay it for 11 years. The calculator shows your MIP duration in the results.',
+        },
+        {
+          q: 'What does the FHA mortgage calculator include?',
+          a: 'It estimates principal and interest, monthly MIP, and optional property taxes and homeowners insurance. It excludes HOA dues and seller concessions. Your lender\'s quote governs the final numbers.',
+        },
+      ],
     },
     {
         slug: 'how-to-apply-for-va-benefits-and-va-loan',
@@ -2533,7 +2546,20 @@ export const guides: Guide[] = [
             { q: 'What credit score do I need?', a: 'Most mainstream lenders approve from around 580–600, but the best rates (below 12% APR) generally require 670–720+. Below 620, credit unions, secured loans, or a co-signer are the realistic routes — see our bad-credit loan guide.' },
             { q: 'Do personal loans hurt your credit?', a: 'Applying causes a small temporary dip from the hard inquiry (and prequalification does not — it is a soft pull). After that, on-time payments build your credit, and adding an installment loan can actually improve your credit mix. Missed payments hurt far more than the inquiry ever did.' },
             { q: 'Secured or unsecured — which is better?', a: 'Unsecured (standard personal loans) carry no collateral risk but higher rates. Secured loans — backed by a savings account or car — approve more easily and cost less, but the lender can take the asset if you default. Only pledge something you can afford to lose.' },
-        ],
+        
+        {
+          q: 'How is a personal loan monthly payment calculated?',
+          a: 'Payments use the standard loan amortization formula, based on the loan amount, the APR, and the term in months. A higher APR or shorter term raises the monthly payment; a longer term lowers it but increases total interest. The calculator shows your monthly payment, total interest, and payoff time.',
+        },
+        {
+          q: 'Do extra payments save money on a personal loan?',
+          a: 'Yes. Extra monthly payments go toward the principal, which cuts total interest and shortens the payoff time. Enter an extra payment in the calculator to see the effect. Check first that your lender charges no prepayment penalty.',
+        },
+        {
+          q: 'What is an origination fee on a personal loan?',
+          a: 'An origination fee is a one-time charge, usually a percentage of the loan amount, for processing the loan. The calculator adds it to your total cost so you can compare the true cost of offers with and without fees.',
+        },
+      ],
     },
     {
         slug: 'how-to-get-a-business-loan',

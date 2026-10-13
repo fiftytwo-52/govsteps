@@ -1289,7 +1289,20 @@ export const guides: Guide[] = [
             { q: 'Secured or unsecured loan — which should I pick?', a: 'Unsecured loans need no collateral and are the standard choice; rates are higher because the lender carries all the risk. Secured loans (against a car, savings, or home equity) approve more easily and cost less, but the asset is at stake if you default. If you qualify for an unsecured loan at a workable rate, keep your assets unencumbered.' },
             { q: 'What rate should I expect?', a: 'Rough guide for 2025: excellent credit (720+) can find roughly 7–13% at banks and credit unions; good credit (660–719) around 13–20%; fair credit (600–659) 20–30%+ at online lenders; below that, alternative lenders 30–46.96% — approaching territory where a secured or co-signed route usually beats the unsecured offer.' },
             { q: 'Is a line of credit better than a personal loan?', a: 'A personal line of credit offers flexibility (draw as needed, pay interest only on what you use) at a variable rate; a personal loan is a fixed lump sum with a fixed end date. For a one-time known expense and payment discipline, the loan\'s fixed payoff date wins. For ongoing or unpredictable needs with disciplined repayment, a LOC costs less in total interest.' },
-        ],
+        
+        {
+          q: 'How is a personal loan monthly payment calculated in Canada?',
+          a: 'Payments use the standard loan amortization formula, based on the loan amount, the APR, and the term in months. The calculator shows your monthly payment, total interest, payoff time, and total cost including any origination or admin fee.',
+        },
+        {
+          q: 'Do extra payments save interest on a Canadian personal loan?',
+          a: 'Yes. Extra monthly payments reduce the principal faster, which cuts total interest and shortens the payoff time. Enter an extra payment in the calculator to see the effect. Confirm with your lender that no prepayment penalty applies.',
+        },
+        {
+          q: 'What is an origination or admin fee on a personal loan?',
+          a: 'It is a one-time fee, usually a percentage of the loan amount, charged for setting up the loan. The calculator adds it to your total cost so you can compare offers fairly.',
+        },
+      ],
     },
     {
         slug: 'how-to-get-a-business-loan-canada',
@@ -1430,7 +1443,20 @@ export const guides: Guide[] = [
             { q: 'I was fired. Can I still get EI?', a: 'Only if the firing was not for misconduct. Service Canada investigates firings closely — poor performance is not misconduct, but theft, violence or deliberate rule-breaking is. If denied, you can request reconsideration with your side of the story.' },
             { q: 'How long do benefits last?', a: '14 to 45 weeks depending on your region\'s unemployment rate and how many hours you worked — more hours and higher regional unemployment both extend entitlement. Your MSCA shows your exact week count.' },
             { q: 'Can I leave Canada while on EI?', a: 'Generally no — you must be available for work in Canada. Short trips are possible if you remain reachable and job-searching, but report any absence; extended travel suspends benefits.' },
-        ],
+        
+        {
+          q: 'How much EI will I get in Canada?',
+          a: 'EI pays 55% of your average weekly insurable earnings, up to a maximum of $729 per week in 2026 ($695 in 2025). For example, $60,000 of annual earnings gives an estimated $634.62 per week. Enter your earnings in the calculator above for your estimate.',
+        },
+        {
+          q: 'How does the EI calculator estimate my benefit?',
+          a: 'It uses a simplified calculation: 55% of your annual insurable earnings divided by 52, capped at the yearly maximum. Service Canada actually uses your best 14 to 22 weeks of insurable earnings, depending on your region\'s unemployment rate, so the official figure may differ.',
+        },
+        {
+          q: 'What is the maximum insurable earnings for EI in 2026?',
+          a: 'Maximum annual insurable earnings are $68,900 in 2026 ($65,700 in 2025). The employee EI premium is 1.63% of insurable earnings in 2026 (1.64% in 2025), up to that maximum.',
+        },
+      ],
     },
     {
         slug: 'how-to-apply-for-cpp-oas-canada',

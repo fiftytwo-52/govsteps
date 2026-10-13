@@ -395,7 +395,20 @@ export const guides: Guide[] = [
             { q: 'What happens if I miss the 31 January deadline?', a: 'An automatic £100 penalty applies even if you owe nothing, plus £10/day fines after 3 months, percentage-based penalties after 6 and 12 months, and interest on unpaid tax. If you cannot pay, contact HMRC about a Time to Pay arrangement BEFORE the deadline — they are far more flexible when you approach them first.' },
             { q: 'I only earn a little from freelancing. Do I still need to file?', a: 'Under £1,000 self-employment income: no (trading allowance). Over £1,000: yes, register and file, though the trading allowance itself means the first £1,000 is tax-free. Claiming means-tested benefits can also be a reason to file regardless of income.' },
             { q: 'What are payments on account?', a: 'If your tax bill exceeds £1,000 and under 80% of your tax comes from PAYE, HMRC collects half of the current year\'s expected bill in advance — on 31 January and 31 July. First-time bills are often double what people expect. You can apply to reduce payments on account if your income is falling.' },
-        ],
+        
+        {
+          q: 'How much income tax will I pay on £60,000?',
+          a: 'For 2026/27 in England, Wales, or Northern Ireland: Income Tax of £11,432 plus employee National Insurance of £3,210.60, leaving take-home pay of about £45,357.40 before pension contributions or student loan repayments. Enter your salary in the calculator above for your exact figure.',
+        },
+        {
+          q: 'Does the UK income tax calculator include student loan repayments?',
+          a: 'No. The calculator covers the standard case — employment income, England/Wales/Northern Ireland, no Scotland, no student loan repayments, no Marriage Allowance, and no blind person\'s allowance. Your P60 and HMRC record govern.',
+        },
+        {
+          q: 'What is the Personal Allowance for 2026/27?',
+          a: 'The Personal Allowance is £12,570. It tapers by £1 for every £2 of income above £100,000, reaching zero at £125,140. The calculator applies the taper automatically.',
+        },
+      ],
     },
     {
         slug: 'how-to-apply-for-uk-driving-licence',
@@ -834,7 +847,20 @@ export const guides: Guide[] = [
             { q: 'I earn over £80,000. Is there any point claiming?', a: 'Yes. Claiming gives you National Insurance credits toward your State Pension if you are not working, and HMRC automatically issues your child an NI number shortly before their 16th birthday. You can opt out of receiving the payments and keep these protections without owing the charge.' },
             { q: 'We both work. Who should claim?', a: 'Only one person can receive Child Benefit per child. The higher earner is usually the one affected by the income charge, so the lower earner claiming (and receiving NI credits if not working) is often the better arrangement.' },
             { q: 'I am a new immigrant. Can I claim?', a: 'You can claim if you live in the UK and your immigration status allows access to public funds. Check your visa conditions — "no recourse to public funds" means claiming could affect your status. Irish citizens and those with settled status are generally eligible.' },
-        ],
+        
+        {
+          q: 'How much is Child Benefit in 2026/27?',
+          a: 'Child Benefit is £27.05 per week for the eldest or only child and £17.90 per week for each additional child. For two children that is £2,337.40 per year, paid every four weeks. The calculator shows your annual, weekly, and four-weekly amounts.',
+        },
+        {
+          q: 'What is the High Income Child Benefit Charge (HICBC)?',
+          a: 'When the highest earner in the household has adjusted net income over £60,000, a charge claws back 1% of the Child Benefit for every £100 over £60,000, up to the full amount at £80,000. The calculator applies the charge when you enter the highest earner\'s income.',
+        },
+        {
+          q: 'Does the Child Benefit calculator include the High Income charge?',
+          a: 'Yes. Enter the highest earner\'s adjusted net income and the calculator shows the HICBC and your net benefit after the charge. Leave the income at 0 if it is under £60,000, since no charge applies.',
+        },
+      ],
     },
     {
         slug: 'how-to-register-a-birth-in-the-uk',
