@@ -2,12 +2,14 @@
 import type { Step } from '../data/guides';
 import Icon from './Icon.astro';
 import { linkTerms } from '../data/glossary';
+import { getStepImage } from '../data/stepImages';
 
 interface Props {
   steps: Step[];
+  category: string;
 }
 
-const { steps } = Astro.props;
+const { steps, category } = Astro.props;
 
 const phaseLabels: Record<Step['phase'], string> = {
   before: 'Before You Go',
@@ -120,6 +122,9 @@ const phaseIcons: Record<Step['phase'], string> = {
           <!-- Phase accent rail: left edge of the card -->
           <span class="absolute inset-y-0 left-0 w-1" style={`background-color: var(--phase)`} aria-hidden="true"></span>
 
+          <!-- Card body: text + free-licensed photo (Wikimedia Commons, no watermark) -->
+          <div class="flex flex-col gap-3 sm:flex-row sm:gap-4">
+            <div class="min-w-0 flex-1">
           <div class="flex flex-wrap items-center gap-2">
             <span
               class="inline-flex items-center gap-1.5 rounded-md px-2 py-0.5 font-mono text-[11px] font-medium uppercase text-canvas dark:text-canvas-dark"
@@ -161,6 +166,25 @@ const phaseIcons: Record<Step['phase'], string> = {
               })}
             </div>
           )}
+            </div>
+            {(() => {
+              const img = getStepImage(category, step.phase, i === 0);
+              return (
+                <figure class="shrink-0 sm:w-44">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    decoding="async"
+                    class="aspect-[16/9] w-full rounded-md object-cover sm:aspect-[4/3]"
+                  />
+                  <figcaption class="mt-1 text-[10px] leading-tight text-mute dark:text-mute-dark">
+                    Photo: <a href={img.creditHref} target="_blank" rel="noopener noreferrer" class="underline decoration-dotted underline-offset-2 hover:text-link dark:hover:text-link-dark">{img.credit}</a>
+                  </figcaption>
+                </figure>
+              );
+            })()}
+          </div>
 
           <p class="mt-3 flex items-center gap-1.5 font-mono text-[11px] text-mute opacity-0 transition-opacity duration-300 dark:text-mute-dark" data-done-hint>
             <Icon name="check" class="size-3" /> Click to mark as done
