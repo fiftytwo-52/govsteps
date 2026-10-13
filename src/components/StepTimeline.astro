@@ -2,7 +2,7 @@
 import type { Step } from '../data/guides';
 import Icon from './Icon.astro';
 import { linkTerms } from '../data/glossary';
-import { getStepImage } from '../data/stepImages';
+import CategorySticker from './CategorySticker.astro';
 
 interface Props {
   steps: Step[];
@@ -122,7 +122,7 @@ const phaseIcons: Record<Step['phase'], string> = {
           <!-- Phase accent rail: left edge of the card -->
           <span class="absolute inset-y-0 left-0 w-1" style={`background-color: var(--phase)`} aria-hidden="true"></span>
 
-          <!-- Card body: text + free-licensed photo (Wikimedia Commons, no watermark) -->
+          <!-- Card body: text + flat corporate sticker (same navy/amber style as category stickers) -->
           <div class="flex flex-col gap-3 sm:flex-row sm:gap-4">
             <div class="min-w-0 flex-1">
           <div class="flex flex-wrap items-center gap-2">
@@ -167,23 +167,20 @@ const phaseIcons: Record<Step['phase'], string> = {
             </div>
           )}
             </div>
-            {(() => {
-              const img = getStepImage(category, step.phase, i === 0);
-              return (
-                <figure class="shrink-0 sm:w-44">
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    loading="lazy"
-                    decoding="async"
-                    class="aspect-[16/9] w-full rounded-md object-cover sm:aspect-[4/3]"
-                  />
-                  <figcaption class="mt-1 text-[10px] leading-tight text-mute dark:text-mute-dark">
-                    Photo: <a href={img.creditHref} target="_blank" rel="noopener noreferrer" class="underline decoration-dotted underline-offset-2 hover:text-link dark:hover:text-link-dark">{img.credit}</a>
-                  </figcaption>
-                </figure>
-              );
-            })()}
+            <div class="shrink-0 self-center">
+              {i === 0 ? (
+                <CategorySticker category={category} class="size-20 sm:size-24" />
+              ) : (
+                <img
+                  src={`/images/stickers/sticker-phase-${step.phase}.svg`}
+                  alt=""
+                  aria-hidden="true"
+                  class="size-20 sm:size-24"
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
+            </div>
           </div>
 
           <p class="mt-3 flex items-center gap-1.5 font-mono text-[11px] text-mute opacity-0 transition-opacity duration-300 dark:text-mute-dark" data-done-hint>

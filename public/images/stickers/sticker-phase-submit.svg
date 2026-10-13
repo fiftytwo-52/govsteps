@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Submit sticker">
+  <rect x="10" y="30" width="76" height="46" rx="6" fill="#0F2A5C"/>
+  <path d="M14 38 L48 60 L82 38" stroke="#FFFFFF" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="72" cy="22" r="15" fill="#FBBF24" stroke="#0F2A5C" stroke-width="3"/>
+  <path d="M64 30 L79 15 M71 15 h8 M79 15 v8" stroke="#0F2A5C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

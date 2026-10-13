@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Fill in sticker">
+  <rect x="18" y="10" width="46" height="76" rx="5" fill="#0F2A5C"/>
+  <line x1="28" y1="26" x2="54" y2="26" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+  <line x1="28" y1="40" x2="54" y2="40" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+  <line x1="28" y1="54" x2="44" y2="54" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+  <g transform="rotate(45 68 66)">
+    <rect x="62" y="44" width="12" height="34" rx="3" fill="#FBBF24" stroke="#0F2A5C" stroke-width="3"/>
+    <path d="M62 78l6 9 6-9z" fill="#0F2A5C"/>
+  </g>
+</svg>
