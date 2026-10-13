@@ -2,7 +2,7 @@
 // Guide content lives in country files: guides-us.ts, guides-uk.ts, guides-ca.ts.
 // guides.ts aggregates them and re-exports the public API used by pages.
 
-export type CountryCode = 'us' | 'uk' | 'ca';
+export type CountryCode = 'us' | 'uk' | 'ca' | 'ae';
 
 export interface Country {
     code: CountryCode;
@@ -40,6 +40,14 @@ export const countries: Country[] = [
         sources: 'canada.ca, ircc.canada.ca, cra-arc.gc.ca, or your provincial agency',
         flag: 'CAN',
     },
+    {
+        code: 'ae',
+        name: 'United Arab Emirates',
+        short: 'UAE',
+        pathPrefix: '/uae',
+        sources: 'u.ae, mohre.gov.ae, icp.gov.ae, tax.gov.ae, or your emirate authority',
+        flag: 'UAE',
+    },
 ];
 
 export interface Step {
@@ -67,6 +75,8 @@ export interface Guide {
     faqs: { q: string; a: string }[];
     /** Which country's process this guide covers */
     country: CountryCode;
+    /** Calculator id (see src/data/calculators.ts) rendered inside the guide when the guide's core task is a calculation */
+    calculator?: string;
     /** Year the data was last checked against official government sources (rendered as "YYYY-Latest") */
     updatedAt?: string;
     /** Specific date (YYYY-MM-DD) when facts, forms, and fees were last verified against official sources */

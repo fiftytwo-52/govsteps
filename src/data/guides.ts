@@ -8,12 +8,13 @@ import { countries, categories } from './types';
 import { guides as usGuides } from './guides-us';
 import { guides as ukGuides } from './guides-uk';
 import { guides as caGuides } from './guides-ca';
+import { guides as aeGuides } from './guides-ae';
 
 export type { Step, Guide, CountryCode, Country } from './types';
 export { countries, categories, getGuideEditorial } from './types';
 
 /** All guides, every country, in a stable order (US first to preserve legacy listing order). */
-export const guides: Guide[] = [...usGuides, ...ukGuides, ...caGuides];
+export const guides: Guide[] = [...usGuides, ...ukGuides, ...caGuides, ...aeGuides];
 
 /** Total step count across all guides — used by hero/stats copy. */
 export const totalSteps = guides.reduce((n, g) => n + g.steps.length, 0);

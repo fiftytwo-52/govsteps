@@ -1,5 +1,5 @@
 e---
-// Rectangular SVG flags for US, UK, and Canada — no emojis, crisp at any size.
+// Rectangular SVG flags for US, UK, Canada, and UAE — no emojis, crisp at any size.
 import type { CountryCode } from '../data/guides';
 
 interface Props {
@@ -51,6 +51,15 @@ const { code, class: className = 'h-4 w-6' } = Astro.props;
         d="M30 5 L31.6 9.4 L35.3 8.1 L34.5 12.4 L39.4 13.5 L36 16.8 L38.4 20.3 L33.6 20.1 L34.2 24.6 L30 21.8 L25.8 24.6 L26.4 20.1 L21.6 20.3 L24 16.8 L20.6 13.5 L25.5 12.4 L24.7 8.1 L28.4 9.4 Z"
         fill="#D80621"></path>
       <rect x="29.3" y="21.5" width="1.4" height="8" fill="#D80621"></rect>
+    </g>
+  )}
+
+  {code === 'ae' && (
+    <g>
+      <rect width="60" height="40" fill="#fff"></rect>
+      <rect x="15" width="45" height="13.4" fill="#00732F"></rect>
+      <rect x="15" y="26.6" width="45" height="13.4" fill="#000"></rect>
+      <rect width="15" height="40" fill="#FF0000"></rect>
     </g>
   )}
 </svg>

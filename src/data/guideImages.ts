@@ -71,7 +71,19 @@ const heroMappings: HeroMapping[] = [
     file: 'illustration-green-card',
     alt: 'Permanent resident green card and immigration paperwork',
     caption: 'Permanent resident card, adjustment of status, and immigration paperwork.',
-    slugPatterns: ['green-card', 'pr-card', 'permanent-resident', 'settled-status', 'euss', 'skilled-worker', 'share-code'],
+    slugPatterns: ['green-card', 'pr-card', 'permanent-resident', 'settled-status', 'euss', 'skilled-worker', 'share-code', 'residence-visa', 'golden-visa', 'tourist-visa', 'sponsor-family'],
+  },
+  {
+    file: 'illustration-real-id',
+    alt: 'REAL ID driver credential with security star emblem',
+    caption: 'Federal security compliant identification and travel credentials.',
+    slugPatterns: ['real-id', 'stolen-documents', 'change-your-address', 'address-change', 'emirates-id'],
+  },
+  {
+    file: 'illustration-unemployment',
+    alt: 'Unemployment benefits support and income assistance paperwork',
+    caption: 'Income support, disability assistance, and public benefit claims.',
+    slugPatterns: ['unemployment', 'universal-credit', 'ssdi', 'ssi', 'food-stamps', 'snap', 'wic', 'ei-canada', 'ei-benefits', 'pip', 'gratuity'],
   },
   {
     file: 'illustration-itin-document',
@@ -131,12 +143,6 @@ const heroMappings: HeroMapping[] = [
     categories: ['benefits'],
   },
   {
-    file: 'illustration-unemployment',
-    alt: 'Unemployment benefits support and income assistance paperwork',
-    caption: 'Income support, disability assistance, and public benefit claims.',
-    slugPatterns: ['unemployment', 'universal-credit', 'ssdi', 'ssi', 'food-stamps', 'snap', 'wic', 'ei-canada', 'ei-benefits', 'pip'],
-  },
-  {
     file: 'illustration-vote',
     alt: 'Official voter registration ballot box and ballot form',
     caption: 'Voter registration deadlines, polling rules, and civic record updates.',
@@ -156,12 +162,6 @@ const heroMappings: HeroMapping[] = [
     caption: 'Student aid applications, study permits, and university documentation.',
     slugPatterns: ['fafsa', 'student', 'study-permit', 'loan-forgiveness'],
     categories: ['students'],
-  },
-  {
-    file: 'illustration-real-id',
-    alt: 'REAL ID driver credential with security star emblem',
-    caption: 'Federal security compliant identification and travel credentials.',
-    slugPatterns: ['real-id', 'stolen-documents', 'change-your-address', 'address-change'],
   },
   {
     file: 'illustration-marriage-license',
