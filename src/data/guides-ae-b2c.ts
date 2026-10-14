@@ -286,7 +286,7 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'followup', title: 'Off-plan: Oqood provisional registration', detail: 'The developer registers units sold off-plan (or land plots not fully paid) in the provisional register via the Oqood portal: log in, select provisional sale registration, select the property, fill details, attach documents, select payment, submit online. Fees: seller 2% + purchaser 2% + Knowledge AED 10 + Innovation AED 10 + developer self-registration AED 1,000. The SPA must be signed by developer + purchaser and registered within 90 days of signing. Output: Provisional registration e-certificate. Service time: 1 business day.', duration: '1 business day', cost: '4% + AED 1,020',
+                phase: 'followup', title: 'Off-plan: Oqood provisional registration', detail: 'The developer registers units sold off-plan (or land plots not fully paid) in the provisional register via the Oqood portal: log in, select provisional sale registration, select the property, fill details, attach documents, select payment, submit online. Fees: seller 2% + purchaser 2% + Knowledge AED 10 + Innovation AED 10 + developer self-registration AED 1,000. The SPA must be signed by developer + purchaser and registered within 90 days of signing. Output: Provisional registration e-certificate. Service time: varies — confirm on the DLD Oqood portal.', duration: 'Varies — confirm on the DLD Oqood portal', cost: '4% + AED 1,020',
                 links: [
                     { label: 'Request to register the initial sale (Oqood)', href: 'https://dubailand.gov.ae/en/eservices/request-to-register-the-initial-sale/' },
                 ],
@@ -534,7 +534,7 @@ export const guides: Guide[] = [
         difficulty: 'Medium',
         totalTime: 'Varies — confirm with employer/insurer; Basic Scheme tied to residency permit issuance/renewal',
         totalCost: 'Federal Basic Scheme: AED 320/year; other plans vary — confirm with insurer',
-        summary: 'Health insurance is mandatory in the UAE. From 1 January 2025, the federal Basic Health Insurance Scheme covers private-sector employees and domestic workers in all emirates, and employers must purchase it as a prerequisite for issuing or renewing residency permits. The Basic Scheme costs AED 320/year. Dubai has its own Essential Benefits Plan (EBP) — confirm its current terms on dha.gov.ae.',
+        summary: 'Health insurance is mandatory in the UAE. From 1 January 2025, the federal Basic Health Insurance Scheme covers private-sector employees and domestic workers in Sharjah, Ajman, Fujairah, Ras Al Khaimah, and Umm Al Quwain, and employers must purchase it as a prerequisite for issuing or renewing residency permits (MOHRE). The Basic Scheme costs AED 320/year. Dubai has its own Essential Benefits Plan (EBP) and Abu Dhabi its own scheme — confirm their current terms with DHA / DOH.',
         documents: [
             'Emirates ID and employment details (confirm the exact document list with your employer/insurer — no document list was published on the official pages reviewed)',
             'Residency permit details (insurance is tied to permit issuance/renewal)',
@@ -545,7 +545,7 @@ export const guides: Guide[] = [
             'Previous policy details (if switching or renewing)'],
         steps: [
             {
-                phase: 'before', title: 'Confirm who covers you', detail: 'Under the federal Basic Scheme, employers bear the financial obligations for private-sector employees and domestic-worker employers on issuance/renewal of any residence permit from 1 January 2025. If you are self-employed, a dependent, or a visitor, arrange cover individually via an approved supplier.', duration: 'Self-check',
+                phase: 'before', title: 'Confirm who covers you', detail: 'Under the federal Basic Scheme, employers bear the financial obligations for private-sector employees and domestic-worker employers in Sharjah, Ajman, Fujairah, Ras Al Khaimah, and Umm Al Quwain, on issuance/renewal of any residence permit from 1 January 2025. Dubai and Abu Dhabi run separate schemes. If you are self-employed, a dependent, or a visitor, arrange cover individually via an approved supplier.', duration: 'Self-check',
                 links: [
                     { label: 'Basic Health Insurance Scheme (MOHRE)', href: 'https://www.mohre.gov.ae/en/guidance-and-awareness-portal-new/the-basic-health-insurance-scheme' },
                 ],

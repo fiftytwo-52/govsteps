@@ -65,9 +65,9 @@ export const guides: Guide[] = [
         category: 'ids',
         audience: ['Native', 'Immigrant'],
         difficulty: 'Medium',
-        totalTime: '3 weeks (renewal) to 6 weeks (first passport)',
+        totalTime: 'Usually within 3 weeks (UK applications)',
         totalCost: '£102 online adult (2026 fee)',
-        summary: 'Apply online at gov.uk — renewals take about 3 weeks and first adult passports about 6 weeks. You need a digital photo meeting strict rules, and first-time or replacement applicants need someone to countersign.',
+        summary: 'Apply online at gov.uk — HMPO says you will usually get your passport within 3 weeks of it receiving your documents; first applications can take longer if an interview or extra checks are needed. You need a digital photo meeting strict rules, and first-time or replacement applicants need someone to countersign.',
         documents: [
             'Digital passport photo (or photo code from a booth/shop)',
             'Any current or expired UK passport (renewals)',
@@ -97,9 +97,10 @@ export const guides: Guide[] = [
             { phase: 'fill', title: 'Arrange a countersignatory if required', detail: 'First adult passports (and lost/stolen/damaged replacements) need a countersignatory: a UK resident who has known you 2+ years, holds a current British or Irish passport, and is a professional or of good standing — not a relative, not living at your address. They confirm your photo and sign digitally or on paper.', duration: '1–2 days' },
             { phase: 'submit', title: 'Send supporting documents (first passports only)', detail: 'The form tells you what to post (birth or naturalisation certificate). Include a pre-paid return envelope for the original documents if you post from abroad. Renewals of undamaged adult passports usually need nothing posted.', duration: '1 day' },
             {
-                phase: 'wait', title: 'Track the application', detail: 'Standard service: about 3 weeks for renewals, 6 weeks for first adult passports (allow 10 weeks if applying from abroad). Track progress online — HMPO no longer gives phone updates.', duration: '3–6 weeks',
+                phase: 'wait', title: 'Track the application', detail: 'Standard service: HMPO says you will usually get your passport within 3 weeks of it receiving your documents. It may take longer if HMPO needs more information or an interview (it will tell you within 3 weeks), and different turnaround times apply if you are applying from abroad. Track progress online — HMPO no longer gives phone updates.', duration: 'Usually within 3 weeks',
                 links: [
                     { label: 'Track your passport (gov.uk)', href: 'https://www.gov.uk/track-passport-application' },
+                    { label: 'HMPO processing times (gov.uk)', href: 'https://www.gov.uk/government/organisations/hm-passport-office/about/about-our-services' },
                 ],
             },
             { phase: 'receive', title: 'Sign and store your passport', detail: 'Your new passport arrives by courier or post; old passports are cancelled and returned separately. Sign it immediately. Adult passports are valid 10 years (children 5). Note: for EU travel, your passport must be under 10 years old on the day you travel and valid 3+ months beyond your return.' },
@@ -126,7 +127,7 @@ export const guides: Guide[] = [
         difficulty: 'Easy',
         totalTime: 'Up to 3 weeks (standard)',
         totalCost: '£102 online adult (2026 fee)',
-        summary: 'Most adults renew online at gov.uk in 10–15 minutes: a compliant digital photo, the online form, and £102 (fees from 8 April 2026). Standard renewals take up to 3 weeks; undamaged adult passports usually need no countersignatory and nothing posted.',
+        summary: 'Most adults renew online at gov.uk in 10–15 minutes: a compliant digital photo, the online form, and £102 (fees from 8 April 2026). Standard renewals usually arrive within 3 weeks; undamaged adult passports usually need no countersignatory and nothing posted.',
         documents: [
             'Digital passport photo (or photo code from a booth/shop)',
             'Your current UK passport (details from the data page)',
@@ -135,7 +136,7 @@ export const guides: Guide[] = [
         ],
         steps: [
             {
-                phase: 'before', title: 'Confirm renewal is the right route', detail: 'Renewal covers undamaged adult passports, including expired ones. If your passport was lost, stolen, or is damaged, use the replacement route instead — it costs the same (£102 online) but takes up to 6 weeks with extra identity checks. First adult passports are a separate application (HMPO may ask you to attend an interview).', duration: '5 min',
+                phase: 'before', title: 'Confirm renewal is the right route', detail: 'Renewal covers undamaged adult passports, including expired ones. If your passport was lost, stolen, or is damaged, use the replacement route instead — it costs the same (£102 online) but takes longer because of extra identity checks. First adult passports are a separate application (HMPO may ask you to attend an interview).', duration: '5 min',
                 links: [
                     { label: 'Renew an adult passport (gov.uk)', href: 'https://www.gov.uk/renew-adult-passport' },
                 ],
@@ -153,9 +154,9 @@ export const guides: Guide[] = [
                 ],
             },
             { phase: 'submit', title: 'Send your old passport only if asked', detail: 'Straightforward online renewals of undamaged passports usually require nothing posted — the old passport is cancelled automatically. If HMPO asks for it (or for supporting documents), post them when requested. Keep travelling on your old passport until then if it is still valid.' },
-            { phase: 'go', title: 'Need it urgently? Use Fast Track or Premium', detail: 'Standard service is up to 3 weeks. The 1-week Fast Track costs £192 and needs a passport-office appointment; the Premium same-day service costs £239.50 and is for adult renewals only. Both are booked through gov.uk and are the only official urgent routes — avoid third-party sites charging extra.', duration: '1 day – 1 week', links: [{ label: 'Get a passport urgently (gov.uk)', href: 'https://www.gov.uk/get-a-passport-urgently' }] },
+            { phase: 'go', title: 'Need it urgently? Use Fast Track or Premium', detail: 'Standard service is usually within 3 weeks. The 1-week Fast Track costs £192 and needs a passport-office appointment; the Premium same-day service costs £239.50 and is for adult renewals only. Both are booked through gov.uk and are the only official urgent routes — avoid third-party sites charging extra.', duration: '1 day – 1 week', links: [{ label: 'Get a passport urgently (gov.uk)', href: 'https://www.gov.uk/get-a-passport-urgently' }] },
             {
-                phase: 'wait', title: 'Track the application', detail: 'HMPO advises allowing up to 3 weeks for a standard online renewal, though many arrive sooner. Track progress online — HMPO no longer gives phone updates. Apply well before travel in peak season (May–August), when demand is highest.', duration: 'Up to 3 weeks',
+                phase: 'wait', title: 'Track the application', detail: 'HMPO says you will usually get your passport within 3 weeks of it receiving your documents, though many arrive sooner. Track progress online — HMPO no longer gives phone updates. Apply well before travel.', duration: 'Usually within 3 weeks',
                 links: [
                     { label: 'Track your passport (gov.uk)', href: 'https://www.gov.uk/track-passport-application' },
                 ],
@@ -164,8 +165,8 @@ export const guides: Guide[] = [
         ],
         faqs: [
             { q: 'How much does it cost to renew a UK passport?', a: 'From 8 April 2026: £102 online or £115.50 by post for a standard adult passport (£116/£129.50 for the 54-page frequent-traveller version). Child renewals cost £66.50 online or £80 by post. Fees change occasionally — confirm on gov.uk before applying.' },
-            { q: 'How long does a UK passport renewal take?', a: 'HMPO advises allowing up to 3 weeks for a standard online renewal. If you need it sooner, the 1-week Fast Track (£192) and same-day Premium (£239.50, adults only) services are available by appointment at passport offices.' },
-            { q: 'Can I renew online if my passport is damaged?', a: 'No — a damaged passport cannot use the standard renewal route. Apply for a replacement instead: same £102 online fee, but allow up to 6 weeks because of extra identity checks, and do not travel on the damaged document.' },
+            { q: 'How long does a UK passport renewal take?', a: 'HMPO says you will usually get your passport within 3 weeks of it receiving your documents. If you need it sooner, the 1-week Fast Track (£192) and same-day Premium (£239.50, adults only) services are available by appointment at passport offices.' },
+            { q: 'Can I renew online if my passport is damaged?', a: 'No — a damaged passport cannot use the standard renewal route. Apply for a replacement instead: same £102 online fee, but allow longer because of extra identity checks, and do not travel on the damaged document.' },
             { q: 'Do I need a countersignatory to renew?', a: 'Not for a straightforward adult renewal. You need one only if your appearance has changed significantly and you cannot be recognised from your old photo — they must be a UK resident who has known you 2+ years and holds a current British or Irish passport.' },
             { q: 'Can I travel while my renewal is being processed?', a: 'If you applied online and your old passport is undamaged, you keep it until HMPO asks you to send it — you can travel on it while it remains valid. Once you submit it (or apply in a way that cancels it), do not book travel until the new one arrives.' },
             { q: 'When should I renew my passport?', a: 'Do not wait until it expires: many countries require 3–6 months of validity beyond your trip, and EU/Schengen entry needs the passport issued within the last 10 years plus 3 months validity after your return. Renew in the final year if you travel internationally.' },
@@ -512,6 +513,7 @@ export const guides: Guide[] = [
             { q: 'Is the advance payment free money?', a: 'No — it is an interest-free loan repaid through deductions from your monthly UC payments, spread over up to 24 months. Take only what you need: smaller advances mean smaller deductions later.' },
             { q: 'I am working. Can I still claim?', a: 'Yes — UC tops up low earnings. As your income rises, UC reduces gradually (the taper), and stops above a threshold. Report earnings through your journal; Real Time Information from HMRC usually updates it automatically.' },
             { q: 'How much is Universal Credit?', a: 'The standard allowance (2026/27) is £338.58/month if you are single and under 25, £424.90 if single and 25 or over, £528.34 for a couple both under 25, or £666.97 for a couple with one or both aged 25 or over. Extra elements for housing costs, children, disability, or caring are added on top, and earnings reduce the award through the taper.' },
+            { q: 'Can Universal Credit be backdated?', a: 'Yes, in limited circumstances. Per DWP backdating guidance, a claim can be backdated by up to one calendar month where it could not reasonably have been expected earlier — for example illness, disability, or the UC service being down — with evidence supplied within one calendar month of claiming. This is separate from the 28-day rule: you must complete your claim within 28 days of creating your account, or start again.' },
         ],
     },
     {
@@ -766,9 +768,9 @@ export const guides: Guide[] = [
         category: 'ids',
         audience: ['Native', 'Immigrant'],
         difficulty: 'Medium',
-        totalTime: 'Up to 6 weeks',
+        totalTime: 'Usually within 3 weeks; longer if extra checks are needed',
         totalCost: '£102 online adult (2026 fee)',
-        summary: 'Report the loss first (online or by phone) so the passport is cancelled, then apply for a replacement online. Replacements cost the same as renewals but take longer — up to 6 weeks — and you need a countersignatory if the passport was lost or stolen.',
+        summary: 'Report the loss first (online or by phone) so the passport is cancelled, then apply for a replacement online. Replacements cost the same as renewals but can take longer because of extra identity checks — and you need a countersignatory if the passport was lost or stolen.',
         documents: [
             'A digital passport photo meeting the rules',
             'Details of how the passport was lost or stolen',
@@ -791,7 +793,7 @@ export const guides: Guide[] = [
             { phase: 'fill', title: 'Arrange a countersignatory', detail: 'Unlike routine renewals, lost or stolen replacements require a countersignatory who has known you for 2+ years, holds a British or Irish passport, and is not a relative or partner. They confirm your identity and photo — digitally if you apply online.' },
             { phase: 'submit', title: 'Post any requested documents', detail: 'HMPO may ask for your naturalisation or birth certificate by post. Send copies only when asked for originals — the form tells you exactly what is needed. Include a return envelope if applying from abroad.' },
             {
-                phase: 'wait', title: 'Wait for the replacement', detail: 'Replacements take longer than renewals — allow up to 6 weeks (first-time-style checks apply). Track progress online. If you travel urgently, the 1-week Fast Track service covers lost/stolen replacements; book by phone.', duration: 'Up to 6 weeks',
+                phase: 'wait', title: 'Wait for the replacement', detail: 'Replacements can take longer than renewals because of extra identity checks. HMPO says you will usually get your passport within 3 weeks of it receiving your documents, and it will tell you within 3 weeks if it needs more information. Track progress online. If you travel urgently, the 1-week Fast Track service covers lost/stolen replacements; book by phone.', duration: 'Usually within 3 weeks',
                 links: [
                     { label: 'Track your application (gov.uk)', href: 'https://www.gov.uk/track-passport-application' },
                 ],
@@ -803,7 +805,7 @@ export const guides: Guide[] = [
             { q: 'I lost my passport abroad and need to fly home urgently.', a: 'Contact the nearest British embassy, high commission, or consulate. They can issue an emergency travel document valid for a single journey back to the UK, usually within 48 hours. You need a police report, a passport photo, proof of travel, and the fee (about £100).' },
             { q: 'Will a lost passport affect my next application?', a: 'Not usually — one loss is routine. Multiple losses can trigger extra identity checks and longer processing. Keep your passport number recorded somewhere safe so you can report a loss quickly.' },
             { q: 'How do I report a lost or stolen UK passport?', a: 'Report it online through the gov.uk \'Report a lost or stolen passport\' service, or by phone. Reporting cancels the passport immediately so it cannot be misused — do it before applying for the replacement, as you will need the report reference.' },
-            { q: 'Does a replacement cost more than a renewal?', a: 'No — replacing a lost or stolen passport costs the same as a standard renewal (£102 online for an adult). The difference is time: replacements can take up to 6 weeks because of extra identity checks, versus about 3 weeks for a straightforward renewal.' },
+            { q: 'Does a replacement cost more than a renewal?', a: 'No — replacing a lost or stolen passport costs the same as a standard renewal (£102 online for an adult). The difference is time: replacements can take longer because of extra identity checks, versus usually within 3 weeks for a straightforward renewal.' },
             { q: 'My passport was stolen. Should I report it to the police?', a: 'Yes — report the theft to the local police and get a crime reference number (and to local police abroad if it happened overseas). Cancelling the passport stops travel misuse, but a police report protects you if your identity details are used for fraud.' },
         ],
     },
@@ -818,7 +820,7 @@ export const guides: Guide[] = [
         category: 'benefits',
         audience: ['Native', 'Immigrant'],
         difficulty: 'Easy',
-        totalTime: '2–4 weeks to first payment',
+        totalTime: 'As little as 3 days (online) to 16 weeks (paper claim)',
         totalCost: 'Free',
         summary: 'Child Benefit pays £27.05 a week for your eldest child and £17.90 for each additional child (2026/27 rates). Apply through your HMRC online account or form CH2 — and claim even if the high income charge applies, because claiming protects your State Pension record and your child gets an NI number automatically at 16.',
         documents: [
@@ -840,7 +842,12 @@ export const guides: Guide[] = [
                     { label: 'Claim Child Benefit (gov.uk)', href: 'https://www.gov.uk/child-benefit/how-to-claim' },
                 ],
             },
-            { phase: 'wait', title: 'Wait for the decision and first payment', detail: 'HMRC usually processes claims within 2 weeks (up to 4 for postal claims). Payments go into your bank account every 4 weeks on a Monday or Tuesday (weekly payments possible for single parents or those on certain benefits).', duration: '2–4 weeks' },
+            { phase: 'wait', title: 'Wait for the decision and first payment', detail: 'Online claims can be paid in as little as 3 days, per HMRC; paper (CH2) claims can take up to 16 weeks, per HMRC and North Lanarkshire Council. Payments go into your bank account every 4 weeks on a Monday or Tuesday (weekly payments possible for single parents or those on certain benefits).', duration: '3 days (online) to 16 weeks (paper)',
+                links: [
+                    { label: 'Child Benefit goes digital (HMRC)', href: 'https://www.gov.uk/government/news/all-grown-up-child-benefit-goes-digital' },
+                    { label: 'Child Benefit processing times (North Lanarkshire Council)', href: 'https://www.northlanarkshire.gov.uk/benefits-and-money/children-and-family-benefits/child-benefit' },
+                ],
+            },
             { phase: 'followup', title: 'Decide how to handle the high income charge', detail: 'If you or your partner has "adjusted net income" above £60,000, the High Income Child Benefit Charge claws the benefit back (fully above £80,000). You can still claim and pay the charge via Self Assessment, or opt out of payments — but claiming either way builds NI credits and triggers your child\'s NI number at 16.', duration: '15 min' },
             { phase: 'receive', title: 'Keep your details updated', detail: 'Report changes in your bank details, address, or child\'s education through your online account. If your child stays in education past 16, you will get a letter in their final school year asking you to confirm it — reply or the payments stop in August.' },
         ],
@@ -977,9 +984,10 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'before', title: 'Check the salary threshold for your role', detail: 'The general threshold is £41,700/year or the "going rate" for the occupation, whichever is higher (discount floor £33,400). Lower thresholds apply if you are under 26, a recent graduate, or in health and care — and medium-skilled roles (RQF 3–5) only qualify if on the Immigration Salary List or Temporary Shortage List. Your sponsor\'s HR team will know which rate applies.', duration: '20 min',
+                phase: 'before', title: 'Check the salary threshold for your role', detail: 'The general threshold is £41,700/year or the "going rate" for the occupation, whichever is higher (discount floor £33,400). Lower thresholds apply if you are under 26, a recent graduate, or in health and care — and medium-skilled roles (RQF 3–5) only qualify if on the Immigration Salary List or Temporary Shortage List. The Temporary Shortage List is time-limited: under Appendix Skilled Worker, a TSL application must use a Certificate of Sponsorship issued before 31 December 2026 — after that the route closes unless the government extends it. Your sponsor\'s HR team will know which rate applies.', duration: '20 min',
                 links: [
                     { label: 'Skilled Worker eligibility (gov.uk)', href: 'https://www.gov.uk/skilled-worker-visa/your-job' },
+                    { label: 'Appendix Skilled Worker — Temporary Shortage List (gov.uk)', href: 'https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-skilled-worker' },
                 ],
             },
             { phase: 'go', title: 'Receive your Certificate of Sponsorship', detail: 'Once hired, the sponsor assigns a Certificate of Sponsorship (CoS) — a electronic record with a reference number. It costs them £525 and is valid for 3 months, so plan to apply for the visa promptly. The CoS states your role, salary, and dates.' },

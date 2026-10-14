@@ -1434,7 +1434,7 @@ export const guides: Guide[] = [
         steps: [
             { phase: 'before', title: 'Confirm you qualify', detail: 'You need insurable employment, 420–700 hours in the last 52 weeks (the exact number depends on your region\'s unemployment rate — higher unemployment means fewer hours needed), and a job loss through no fault of your own (shortage of work, layoff). Quitting voluntarily or being fired for misconduct generally disqualifies you.', duration: '15 min', links: [{ label: 'Canada.ca: EI eligibility', href: 'https://www.canada.ca/en/services/benefits/ei.html' }] },
             { phase: 'fill', title: 'Get your Record of Employment', detail: 'Employers must issue an ROE within 5 days of your last pay. Most file electronically straight to Service Canada — check your MSCA to confirm it arrived before you apply. Paper ROEs must be mailed or dropped off.', duration: 'up to 5 days' },
-            { phase: 'submit', title: 'Apply online immediately — do not wait', detail: 'Apply through My Service Canada Account as soon as you stop working, even if your ROE or severance details are not final. Waiting more than 4 weeks can reduce or cancel benefits. The application takes about an hour.', duration: '1 hour' },
+            { phase: 'submit', title: 'Apply online immediately — do not wait', detail: 'Apply through My Service Canada Account as soon as you stop working, even if your ROE or severance details are not final. Service Canada counts an application as on time if you apply no later than 4 calendar weeks after the week your earnings were interrupted (or your last day paid). File later and your benefit period starts later — you lose those weeks unless you are granted an antedate by showing good cause for the whole delay. The application takes about an hour.', duration: '1 hour', links: [{ label: 'Canada.ca: EI antedate and 4-week rule (Digest, Ch. 3)', href: 'https://www.canada.ca/en/employment-social-development/programs/ei/ei-list/reports/digest/chapter-3/antedate.html' }] },
             { phase: 'wait', title: 'Serve the 1-week waiting period', detail: 'EI has a 1-week unpaid waiting period (like a deductible). Your first payment usually arrives about 28 days after applying if there are no complications — set up direct deposit to avoid mail delays.', duration: '~28 days' },
             { phase: 'followup', title: 'File your reports every 2 weeks', detail: 'You must complete online reports confirming you are ready, willing and able to work and reporting any earnings. Miss a report and payments stop. Keep a job-search log — Service Canada can ask for it.', duration: '10 min biweekly' },
             { phase: 'receive', title: 'Get paid and report earnings', detail: 'Benefits pay 55% of average insurable weekly earnings up to the yearly maximum insurable amount. While on claim you keep 50 cents of EI benefits for every dollar you earn, up to 90% of your previous weekly insurable earnings; earnings above that reduce benefits dollar-for-dollar — always report gross earnings in the week worked.', duration: '—' },
@@ -1455,6 +1455,10 @@ export const guides: Guide[] = [
         {
           q: 'What is the maximum insurable earnings for EI in 2026?',
           a: 'Maximum annual insurable earnings are $68,900 in 2026 ($65,700 in 2025). The employee EI premium is 1.63% of insurable earnings in 2026 (1.64% in 2025), up to that maximum.',
+        },
+        {
+          q: 'What if I apply for EI more than 4 weeks after losing my job?',
+          a: 'You can still apply, but your benefit period starts when you apply, so you lose the earlier weeks — unless Service Canada grants an antedate. An antedate requires showing you qualified on the earlier date and had good cause for the entire delay. Not knowing about the 4-week rule does not count as good cause, so apply within 4 calendar weeks of the week your earnings stopped.',
         },
       ],
     },

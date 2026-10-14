@@ -42,7 +42,7 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'submit', title: 'Entry permit is issued', detail: 'Once the work permit is approved, an entry permit is issued. Enter the UAE within 60 days of issuance. If you are already inside the UAE, apply for a status change instead (AED 500 status-adjustment fee).', duration: 'Entry permit valid 60 days', cost: 'AED 500 status adjustment (if already in UAE)',
+                phase: 'submit', title: 'Entry permit is issued', detail: 'Once the work permit is approved, an entry permit is issued. Enter the UAE within 60 days of issuance — the standard entry-permit validity; some categories differ (e.g. transit permits and GCC residents’ e-visas have shorter windows), so check the validity printed on your permit. If you are already inside the UAE, apply for a status change instead (AED 500 status-adjustment fee).', duration: 'Entry permit valid 60 days', cost: 'AED 500 status adjustment (if already in UAE)',
                 links: [
                     { label: 'Recruiting on the mainland (u.ae)', href: 'https://u.ae/en/information-and-services/business/Doing-business/doing-business-on-the-mainland/recruiting-on-the-mainland-' },
                 ],
@@ -135,12 +135,14 @@ export const guides: Guide[] = [
                 phase: 'followup', title: 'Renew with your residence visa', detail: 'Renewal is filed together with the residence renewal on the unified form (except Dubai). Same fees as new issuance. Report any data changes promptly — unreported changes carry a fine of AED 20 per day, up to AED 1,000.', duration: 'With residence renewal', cost: 'Same as new issuance',
                 links: [
                     { label: 'Identity Card renewal (ICP)', href: 'https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e5d' },
+                    { label: 'Emirates ID (u.ae)', href: 'https://u.ae/en/information-and-services/visa-and-emirates-id/emirates-id' },
+                    { label: 'ID number lasts a lifetime (Gulf News)', href: 'http://gulfnews.com/uae/government/uae-national-id-card-number-lasts-a-lifetime-1.1065088' },
                 ],
             },
         ],
         faqs: [
             { q: 'Is the Emirates ID the same as my residence visa?', a: 'No, but they are linked: since 2022 the Emirates ID card serves as proof of residence (replacing the passport visa sticker), and the ID expires when the visa expires.' },
-            { q: 'Do I keep the same ID number when I renew?', a: 'Yes — your 15-digit ID number stays the same for life; only the card expiry date updates.' },
+            { q: 'Do I keep the same ID number when I renew?', a: 'Yes — your 15-digit ID number stays with you for life (u.ae: the identity number “sticks with its holder forever”). It is not cancelled if you leave the UAE; a returning resident is issued a new card under the same number (Emirates Identity Authority, reported by Gulf News).' },
             { q: 'What if I lose my card?', a: 'Apply for a replacement via ICP (AED 300 plus AED 100 smart fee). Urgent in-person service adds AED 150.' },
         ],
     },
@@ -155,7 +157,7 @@ export const guides: Guide[] = [
         category: 'immigration',
         audience: ['Expat', 'Investor'],
         difficulty: 'Hard',
-        totalTime: '2 days processing once documents are complete (eligibility varies)',
+        totalTime: 'Varies by category — confirm current processing times with ICP/GDRFA',
         totalCost: 'From ~AED 1,200 (10-year residence issuance) + category fees',
         summary: 'The Golden Visa is a long-term, renewable residence visa (5 or 10 years depending on category) that needs no sponsor, lets holders stay outside the UAE for more than 6 months without losing residency, and allows family sponsorship. Main routes: investors (AED 2M+), entrepreneurs, exceptional talent / specialised professionals, outstanding students, and humanitarian pioneers / frontline heroes.',
         documents: [
@@ -181,7 +183,7 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'submit', title: 'Apply through ICP', detail: 'Apply via the ICP Smart Services website/app (UAE Pass login), a Customer Happiness Centre, or an Amer centre — search for the category-specific Golden Residency service. Category entry services cost AED 100 application + AED 47–100 issuance + AED 100 smart services, varying by category.', duration: 'Service completion: 2 days', cost: 'From ~AED 300 (category service)',
+                phase: 'submit', title: 'Apply through ICP', detail: 'Apply via the ICP Smart Services website/app (UAE Pass login), a Customer Happiness Centre, or an Amer centre — search for the category-specific Golden Residency service. Category entry services cost AED 100 application + AED 47–100 issuance + AED 100 smart services, varying by category.', duration: 'Varies — confirm with ICP', cost: 'From ~AED 300 (category service)',
                 links: [
                     { label: 'Golden investor — public investments (ICP)', href: 'https://icp.gov.ae/en/services-details/?serviceid=68e34ed35ae59b00117383d1' },
                 ],
@@ -199,7 +201,7 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'receive', title: 'Golden Residence permit is issued', detail: 'The Golden Residence permit is issued for 10 years (investors in public investments, talent, professionals, top university students) or 5 years (entrepreneurs, high-school achievers, and real-estate investment per the u.ae table). Residence issuance costs AED 100 per year + AED 100 application + AED 100 smart fee (about AED 1,200 for 10 years). Confirm your category duration with ICP, as real-estate guidance differs between sources.', duration: '2 days', cost: '~AED 1,200 (10-year issuance)',
+                phase: 'receive', title: 'Golden Residence permit is issued', detail: 'The Golden Residence permit is issued for 10 years (investors in public investments, talent, professionals, top university students) or 5 years (entrepreneurs, high-school achievers, and real-estate investment per the u.ae table). Residence issuance costs AED 100 per year + AED 100 application + AED 100 smart fee (about AED 1,200 for 10 years). Confirm your category duration with ICP, as real-estate guidance differs between sources. Processing time varies by category — confirm with ICP/GDRFA.', duration: 'Varies — confirm with ICP', cost: '~AED 1,200 (10-year issuance)',
                 links: [
                     { label: 'Issuing Residency Permit (ICP)', href: 'https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64' },
                 ],
@@ -246,7 +248,7 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'submit', title: 'Apply for each dependent\'s entry permit', detail: 'Apply via ICP (or GDRFA in Dubai). If the dependent is already in the UAE, apply for a status change instead. Confirm the current entry-permit fee in the ICP portal at application time.', duration: '~2 days',
+                phase: 'submit', title: 'Apply for each dependent\'s entry permit', detail: 'Apply via ICP (or GDRFA in Dubai). If the dependent is already in the UAE, apply for a status change instead. Confirm the current entry-permit fee in the ICP portal at application time.', duration: 'Varies — confirm with ICP',
                 links: [
                     { label: 'Issuing Residency Permit (ICP)', href: 'https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64' },
                 ],
@@ -270,7 +272,7 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'submit', title: 'Residence permit is issued', detail: 'Submit the residence application with all documents. The dependent\'s visa validity will not exceed the sponsor\'s. ICP fees per dependent: AED 100 application + AED 100 per year issuance + AED 100 smart services + AED 20 financial security deposit.', duration: '~2 days', cost: 'From ~AED 320',
+                phase: 'submit', title: 'Residence permit is issued', detail: 'Submit the residence application with all documents. The dependent\'s visa validity will not exceed the sponsor\'s. ICP fees per dependent: AED 100 application + AED 100 per year issuance + AED 100 smart services + AED 20 financial security deposit.', duration: 'Varies — confirm with ICP', cost: 'From ~AED 320',
                 links: [
                     { label: 'Issuing Residency Permit (ICP)', href: 'https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64' },
                 ],
@@ -462,7 +464,7 @@ export const guides: Guide[] = [
         difficulty: 'Hard',
         totalTime: '15 minutes (Basher) to 14 working days (free zone); mainland varies',
         totalCost: 'Varies by emirate, activity & legal form (no fixed official schedule)',
-        summary: 'Choose between a mainland company (licensed by the emirate Department of Economic Development, e.g. Dubai DET) and a free-zone company (licensed by a free-zone authority such as DMCC). Mainland follows a 9-step conventional process; free-zone setup runs through the chosen authority, which issues a licence within about 14 working days. Costs vary by emirate, activity, and legal form — u.ae publishes no fixed fee schedule.',
+        summary: 'Choose between a mainland company (licensed by the emirate Department of Economic Development, e.g. Dubai DET) and a free-zone company (licensed by a free-zone authority such as DMCC). Mainland follows a 9-step conventional process; free-zone setup runs through the chosen authority, which issues a licence within 14 working days (u.ae). Costs vary by emirate, activity, and legal form — u.ae publishes no fixed fee schedule.',
         documents: [
             'Initial-approval receipt + all previously submitted documents',
             'Attested lease contract (RERA-attested in Dubai)',
@@ -527,7 +529,7 @@ export const guides: Guide[] = [
             },
         ],
         faqs: [
-            { q: 'Mainland or free zone — which should I choose?', a: 'Mainland licences are issued by the emirate DED/DET; free-zone licences by the zone authority. Per u.ae, the deciding factors are sector, where your customers are, and licence/office requirements. The free-zone route runs through the chosen authority and the licence is issued within about 14 working days.' },
+            { q: 'Mainland or free zone — which should I choose?', a: 'Mainland licences are issued by the emirate DED/DET; free-zone licences by the zone authority. Per u.ae, the deciding factors are sector, where your customers are, and licence/office requirements. The free-zone route runs through the chosen authority and the licence is issued within 14 working days (u.ae).' },
             { q: 'Can a foreigner own 100% of a mainland company?', a: 'Ownership rules depend on the activity and legal form, and u.ae notes local-service-agent requirements for certain wholly non-GCC-owned forms. Confirm the current position for your activity with DET / the DED before relying on it.' },
             { q: 'Can a free-zone company trade on the mainland?', a: 'This is not covered on the u.ae pages reviewed. Check with the free-zone authority and the DED before assuming mainland trading rights.' },
         ],
@@ -580,7 +582,7 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'receive', title: 'Account activation', detail: 'Account activated, debit card issued, online/mobile banking access enabled. Approval usually takes a few hours to a few days (u.ae); the regulatory backstop is 2 complete business days unless compliance checks require longer.', duration: 'A few hours to a few days',
+                phase: 'receive', title: 'Account activation', detail: 'Account activated, debit card issued, online/mobile banking access enabled. Approval usually takes a few hours to a few days (u.ae). Personal-account timing varies by bank and compliance checks — confirm with the bank; there is no fixed regulatory timeline for personal accounts.', duration: 'A few hours to a few days',
                 links: [
                     { label: 'Banking in the UAE (u.ae)', href: 'https://U.AE/en/information-and-services/finance-and-investment/banking-in-uae' },
                 ],
@@ -848,7 +850,7 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'receive', title: 'Get your entry permit', detail: 'Issued as an e-visa/entry permit by email. Enter the UAE within the entry-permit validity window.', duration: '~2 days (ICP 60-day category); commonly 2–5 working days',
+                phase: 'receive', title: 'Get your entry permit', detail: 'Issued as an e-visa/entry permit by email. Most entry permits give 60 days from issuance to enter the UAE; check the validity printed on your permit — exceptions apply, e.g. GCC residents’ e-visas give 30 days from issue (u.ae).', duration: 'Varies — confirm in the portal',
                 links: [
                     { label: 'Tourist visa (u.ae)', href: 'https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/tourist-visa' },
                 ],

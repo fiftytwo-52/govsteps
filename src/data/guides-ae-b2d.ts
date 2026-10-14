@@ -241,7 +241,7 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'submit', title: 'Apply for the business licence', detail: 'Apply online through the free-zone authority website. In most cases you provide basic company information and upload your documents. After review and approval, you get a licence within 14 working days.', duration: 'About 14 working days', cost: 'Varies by zone and package',
+                phase: 'submit', title: 'Apply for the business licence', detail: 'Apply online through the free-zone authority website. In most cases you provide basic company information and upload your documents. After review and approval, you will get a licence within 14 working days (u.ae).', duration: 'About 14 working days', cost: 'Varies by zone and package',
                 links: [
                     { label: 'Starting a business in a free zone (u.ae)', href: 'https://u.ae/en/information-and-services/business/Doing-business/doing-business-in-free-zones/starting-a-business-in-a-free-zone' },
                 ],
