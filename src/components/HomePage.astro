@@ -196,6 +196,44 @@ const orgSchema = {
     </div>
   </section>
 
+  <!-- Countries: in-body hub switcher. The header switcher is desktop-only
+       (hidden on mobile behind the menu button), so this visible section
+       makes every country hub one tap away on all devices, and gives
+       crawlers in-content links to all four hubs from every homepage. -->
+  <section id="countries" class="border-b border-hairline dark:border-hairline-dark">
+    <div class="container-geist py-6 sm:py-8">
+      <div class="max-w-2xl">
+        <p class="eyebrow">Countries</p>
+        <h2 class="heading-lg mt-2 text-ink dark:text-ink-dark">Guides for four countries</h2>
+        <p class="mt-2 text-sm text-body sm:mt-3 sm:text-base dark:text-body-dark">Each hub has its own guides, agencies, and local rules. Pick your country to see its guides.</p>
+      </div>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {countries.map((c) => {
+          const count = guides.filter((g) => g.country === c.code).length;
+          const isCurrent = c.code === code;
+          return (
+            <a
+              href={`${c.pathPrefix}/`}
+              aria-current={isCurrent ? 'page' : undefined}
+              class={`group relative flex items-center gap-3 rounded-md border p-4 transition-shadow hover:shadow-[0px_2px_2px_rgba(0,0,0,0.04)] ${isCurrent ? 'border-link bg-link-soft/50 dark:border-link-dark dark:bg-link-soft-dark/40' : 'border-hairline bg-canvas-elevated dark:border-hairline-dark dark:bg-canvas-elevated-dark'}`}
+            >
+              <CountryFlag code={c.code} class="h-5 w-8 shrink-0" />
+              <span class="min-w-0">
+                <span class="block truncate text-base font-semibold text-ink group-hover:text-link dark:text-ink-dark dark:group-hover:text-link-dark">
+                  {c.name}
+                </span>
+                <span class="mt-0.5 block font-mono text-xs text-mute dark:text-mute-dark">
+                  {count} guides{isCurrent ? ' · you are here' : ''}
+                </span>
+              </span>
+              <Icon name="arrowright" class="ml-auto size-4 shrink-0 text-mute opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-link group-hover:opacity-100 dark:text-mute-dark dark:group-hover:text-link-dark" />
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
   <!-- Categories: full-bleed grey panel band, hairline feature-card grid -->
   <section id="categories" class="border-b border-hairline bg-hairline-soft/60 dark:border-hairline-dark dark:bg-hairline-soft-dark/40">
     <div class="container-geist py-6 sm:py-8 lg:py-10">
