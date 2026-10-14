@@ -41,4 +41,4 @@ This watchlist defines the regulatory and agency feeds monitored by the GovSteps
 
 ## Corrections Submissions Channel
 
-Community and user reports submitted to `gun-yes@proton.me` are triaged against this watchlist by the domain lead within 48 business hours.
+Community and user reports submitted through the feedback form (https://docs.google.com/forms/d/e/1FAIpQLSd5axd_WutBQh8vmJtxVifLUc1Q-wL-oONCYYQF46PTUH1Czg/viewform, linked in the site footer and on the contact page) are triaged against this watchlist by the domain lead within 48 business hours.
