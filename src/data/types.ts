@@ -100,11 +100,33 @@ export function getGuideEditorial(guide: Guide): {
         // of the slug, which published fake "Reviewed: March 2026" lines
         // (and fake overdue banners) on 131 guides. A missing date is
         // honest; a fabricated one violates the accuracy rule.
+        //
+        // But "no date" must not mean "never overdue": the About page
+        // promises an alert when a guide exceeds its review window, and
+        // 131 guides have no lastReviewed at all, so the banner was
+        // effectively inert for most of the site. Fall back to the coarse
+        // updatedAt year, conservatively treating Dec 31 of that year as
+        // the last known update point: this can only UNDER-flag (a guide
+        // updated in January looks fresh until mid-next-year), never
+        // over-flag, and guides with no usable year still report false.
+        const yearMatch = /^(\d{4})/.exec(guide.updatedAt ?? '');
+        if (!yearMatch) {
+            return {
+                lastReviewedDate: null,
+                lastReviewed: null,
+                formattedReviewDate: null,
+                isOverdue: false,
+            };
+        }
+        const baseline = new Date(`${yearMatch[1]}-12-31T00:00:00Z`);
+        const now = new Date();
+        const ageDays = (now.getTime() - baseline.getTime()) / (1000 * 60 * 60 * 24);
+        const maxAgeDays = ['immigration', 'taxes', 'benefits'].includes(guide.category) ? 180 : 365;
         return {
             lastReviewedDate: null,
             lastReviewed: null,
             formattedReviewDate: null,
-            isOverdue: false,
+            isOverdue: ageDays > maxAgeDays,
         };
     }
 

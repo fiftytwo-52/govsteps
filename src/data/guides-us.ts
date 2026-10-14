@@ -11,6 +11,7 @@ export const guides: Guide[] = [
         slug: 'how-to-apply-for-itin',
         country: 'us',
         updatedAt: '2025',
+        lastReviewed: '2026-10-15',
         title: 'How to Apply for an ITIN (Individual Taxpayer Identification Number)',
         metaTitle: 'How to Apply for an ITIN: Step-by-Step Guide (Form W-7)',
         description: 'Apply for an ITIN step by step: which documents to gather, where to submit Form W-7, fees, processing times, and how to follow up with the IRS.',
@@ -19,11 +20,11 @@ export const guides: Guide[] = [
         difficulty: 'Medium',
         totalTime: '7–11 weeks',
         totalCost: 'Free (IRS does not charge)',
-        summary: 'An ITIN lets you file US taxes and open bank accounts even without a Social Security number. You fill out Form W-7, prove your identity with original documents, and mail everything to the IRS.',
+        summary: 'An ITIN lets you file US taxes even without a Social Security number. Many US banks also accept it to open an account, but acceptance varies by bank — and an ITIN is issued for federal tax purposes only, not as an ID. You fill out Form W-7, prove your identity with original documents, and mail everything to the IRS — with a tax return attached, unless you qualify for one of the IRS exceptions.',
         documents: [
             'Completed Form W-7',
             'Original passport (or certified copy from issuing agency)',
-            'Your US federal tax return (Form 1040)',
+            'Your US federal tax return (Form 1040) — unless you qualify for an IRS exception (see the tax-return step)',
             'If no passport: notarized combinations of ID documents (2+ required)',
         ],
         steps: [
@@ -36,19 +37,19 @@ export const guides: Guide[] = [
             },
             { phase: 'before', title: 'Gather identity documents', detail: 'Original passport is the strongest single document. Without it, you need certified copies of multiple documents (foreign birth certificate, national ID, driver\'s license, etc.).', duration: '1–2 days' },
             {
-                phase: 'fill', title: 'Fill out Form W-7', detail: 'Download Form W-7 from irs.gov. Complete all required fields: name, foreign address, reason for applying (usually exception category). Do not leave the reason blank.', duration: '30 min',
+                phase: 'fill', title: 'Fill out Form W-7', detail: 'Download Form W-7 from irs.gov. Complete all required fields: name, foreign address, and the reason you are applying (the form lists reasons a–h, including the exception cases). Do not leave the reason blank.', duration: '30 min',
                 links: [
                     { label: 'Download Form W-7 (irs.gov)', href: 'https://www.irs.gov/forms-pubs/about-form-w-7' },
                 ],
             },
             {
-                phase: 'fill', title: 'Prepare your tax return', detail: 'Complete Form 1040 for the current tax year. The IRS will reject a W-7 that arrives without a tax return attached.', duration: '1–2 hours',
+                phase: 'fill', title: 'Prepare your tax return — or check the exceptions', detail: 'In most cases, complete Form 1040 for the current tax year and attach it to your W-7: the IRS rejects a W-7 filed without a tax return unless you qualify for one of five exceptions — passive income / third-party withholding or treaty benefits, wages / scholarships / grants, mortgage interest reporting, disposition of US real property, or T.D. 9363 reporting. If you qualify, attach the exception documentation listed in the W-7 instructions instead.', duration: '1–2 hours',
                 links: [
                     { label: 'First time filing taxes?', href: '/guides/how-to-file-taxes-first-time/' },
                 ],
             },
             { phase: 'submit', title: 'Mail everything to the IRS', detail: 'Send the W-7, tax return, and ORIGINAL identity documents to the IRS ITIN Operation address in Austin, TX. Use a trackable mail service.', duration: '1 day' },
-            { phase: 'wait', title: 'Wait for processing', detail: 'Normal processing takes 7–11 weeks. The IRS will mail your original documents back separately from your ITIN letter.', duration: '7–11 weeks' },
+            { phase: 'wait', title: 'Wait for processing', detail: 'Allow 7 weeks for the IRS to notify you. It can take 9–11 weeks during tax season (January 15 to April 30) or if you applied from overseas. The IRS will mail your original documents back separately from your ITIN letter.', duration: '7–11 weeks' },
             {
                 phase: 'followup', title: 'Follow up if delayed', detail: 'If you have not heard back after 11 weeks, call the IRS ITIN hotline with your mailing receipt handy.', duration: '30 min',
                 links: [
@@ -61,6 +62,7 @@ export const guides: Guide[] = [
             { q: 'Does an ITIN cost money?', a: 'No. The IRS never charges a fee for an ITIN. Beware of paid services charging large amounts — you can also apply in person for free at IRS Taxpayer Assistance Centers or use IRS-certified acceptance agents.' },
             { q: 'Can I get an ITIN with a photocopy of my passport?', a: 'No. The IRS requires original documents or copies certified by the issuing agency. Regular notarized photocopies are not accepted for the passport alone.' },
             { q: 'Does an ITIN give me the right to work?', a: 'No. An ITIN is for tax filing only. It does not authorize work in the US or make you eligible for Social Security benefits.' },
+            { q: 'Can I get an ITIN without filing a tax return?', a: 'Yes, if you qualify for one of the five IRS exceptions: passive income / third-party withholding or treaty benefits, wages / scholarships / grants, mortgage interest reporting, disposition of US real property, or T.D. 9363 reporting. You must attach the exception documentation listed in the W-7 instructions. If none of the exceptions applies, a tax return must accompany your W-7.' },
         ],
     },
     {
