@@ -27,7 +27,7 @@ export const guides: Guide[] = [
         ],
         steps: [
             {
-                phase: 'before', title: 'Check whether you need one', detail: 'You need a SIN to work in Canada, file taxes, or receive benefits (like the Canada Child Benefit or GST/HST credit). If you had a SIN before and forgot it, check old tax returns (Notice of Assessment) or your T4 slips before applying for a confirmation letter. You cannot start work without either the number or proof you have applied in some cases — employers must record it within 3 days of your start date.', duration: '10 min',
+                phase: 'before', title: 'Check whether you need one', detail: 'You need a SIN to work in Canada, file taxes, or receive benefits (like the Canada Child Benefit or Canada Groceries and Essentials Benefit). If you had a SIN before and forgot it, check old tax returns (Notice of Assessment) or your T4 slips before applying for a confirmation letter. You cannot start work without either the number or proof you have applied in some cases — employers must record it within 3 days of your start date.', duration: '10 min',
                 links: [
                     { label: 'SIN overview (canada.ca)', href: 'https://www.canada.ca/en/employment-social-development/services/sin.html' },
                 ],
@@ -325,7 +325,7 @@ export const guides: Guide[] = [
         difficulty: 'Medium',
         totalTime: '1–3 hours with software',
         totalCost: 'Free (CRA-certified software) or $0–$40 for paid tiers',
-        summary: 'Most residents file a T1 income tax return each spring (deadline April 30; self-employed June 15). Even with no income you should file — the GST/HST credit, Canada Child Benefit, and other payments only flow once you file. NETFILE-certified software walks you through it and sends directly to the CRA.',
+        summary: 'Most residents file a T1 income tax return each spring (deadline April 30; self-employed June 15). Even with no income you should file — the Canada Groceries and Essentials Benefit (CGEB), Canada Child Benefit, and other payments only flow once you file. NETFILE-certified software walks you through it and sends directly to the CRA.',
         documents: [
             'SIN (Social Insurance Number)',
             'All T4 slips (employment), T4A (contract/scholarships), T5 (investment income)',
@@ -336,7 +336,7 @@ export const guides: Guide[] = [
         ],
         steps: [
             {
-                phase: 'before', title: 'Know whether you must (or should) file', detail: 'You MUST file if you owe tax, are self-employed, or received capital gains. You SHOULD file anyway if you had no income: benefits like the GST/HST credit, Canada Child Benefit, and climate action incentive payments require a return, and newcomers create a "staircase" of residency-part-year filings. The filing deadline is April 30 (June 15 for self-employed, but interest on balances still starts May 1).', duration: '15 min',
+                phase: 'before', title: 'Know whether you must (or should) file', detail: 'You MUST file if you owe tax, are self-employed, or received capital gains. You SHOULD file anyway if you had no income: benefits like the CGEB, Canada Child Benefit, and climate action incentive payments require a return, and newcomers create a "staircase" of residency-part-year filings. The filing deadline is April 30 (June 15 for self-employed, but interest on balances still starts May 1).', duration: '15 min',
                 links: [
                     { label: 'Who must file (canada.ca)', href: 'https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/filing-return.html' },
                 ],
@@ -366,7 +366,7 @@ export const guides: Guide[] = [
         ],
         faqs: [
             { q: 'I arrived mid-year. Do I report foreign income?', a: 'Only income received AFTER you became a tax resident (established residential ties — a home, spouse, or dependants in Canada). Earlier foreign income is excluded but still disclosed on the "world income" line for benefit calculations. Report foreign-source income after arrival even if not remitted to Canada.' },
-            { q: 'I have no income. Do I still file?', a: 'Yes — filing unlocks the GST/HST credit, Canada Child Benefit, and other refundable credits. Around 40% of returns are filed for benefits rather than tax owed.' },
+            { q: 'I have no income. Do I still file?', a: 'Yes — filing unlocks the CGEB, Canada Child Benefit, and other refundable credits. Around 40% of returns are filed for benefits rather than tax owed.' },
             { q: 'What about free clinics?', a: 'Community Volunteer Income Tax Program (CVITP) clinics file simple returns free for people with modest income and a simple situation (no rental, no capital gains). Find one near you through the CRA website or 211.' },
         ],
     },
@@ -673,7 +673,7 @@ export const guides: Guide[] = [
             {
                 phase: 'submit', title: 'Enter the code and unlock full access', detail: 'Sign back in, enter the code, and the account unlocks permanently. Enable multi-factor authentication (passcode to your phone) — the CRA added this after a spate of phishing-related account takeovers, and it now prompts on new devices.', duration: '5 min'
             },
-            { phase: 'followup', title: 'Use it: auto-fill, track, and fix', detail: 'At tax time, use Auto-fill My Return in your NETFILE software to import every T4/T5/T2202. Year-round: track benefit payments (CCB, GST/HST credit), check RRSP/TFSA room before contributing, view your Notice of Assessment for citizenship applications, and correct returns with ReFILE or a T1 adjustment.', duration: 'Ongoing' },
+            { phase: 'followup', title: 'Use it: auto-fill, track, and fix', detail: 'At tax time, use Auto-fill My Return in your NETFILE software to import every T4/T5/T2202. Year-round: track benefit payments (CCB, CGEB), check RRSP/TFSA room before contributing, view your Notice of Assessment for citizenship applications, and correct returns with ReFILE or a T1 adjustment.', duration: 'Ongoing' },
             { phase: 'receive', title: 'Stay secure', detail: 'The CRA NEVER texts links or asks for prepaid cards. Phishing texts about "CRA refunds" surge every tax season — report them (30-40 fraud reporting) and never enter your credentials from an emailed link. Sign in only by typing canada.ca yourself or using a bookmark.', duration: '—' },
         ],
         faqs: [
@@ -947,7 +947,7 @@ export const guides: Guide[] = [
         updatedAt: '2025',
         title: 'How to File Your First Canadian Tax Return as a Newcomer',
         metaTitle: 'How to File Your First Tax Return in Canada: Newcomer Guide',
-        description: 'File your first Canadian tax return: who must file, the newcomer (part-year resident) return, free filing software, GST/HST credit claims, and deadlines.',
+        description: 'File your first Canadian tax return: who must file, the newcomer (part-year resident) return, free filing software, CGEB claims, and deadlines.',
         category: 'taxes',
         audience: ['Immigrant'],
         difficulty: 'Medium',

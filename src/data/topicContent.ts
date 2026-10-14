@@ -353,7 +353,7 @@ export const topicData: Record<CountryCode, Record<string, TopicContent>> = {
     taxes: {
       headline: 'Canadian Tax Filing Guides: CRA Returns, GST Credits, and Deadlines',
       lead: 'Complying with the Canada Revenue Agency (CRA) requires understanding personal tax returns, credits, and provincial deductions.',
-      body: 'In Canada, residents file their annual T1 Income Tax and Benefit Return by April 30. Self-employed individuals have until June 15 to file, though any balance owing must still be paid by April 30 to avoid interest charges. Filing an annual return is essential even with zero income to trigger federal and provincial benefit payments, including the Canada Child Benefit (CCB), the GST/HST credit, and the Canada Carbon Rebate. Our step-by-step guides explain setting up CRA My Account, understanding T4 and T5 tax slips, deducting eligible expenses, and claiming provincial credits.',
+      body: 'In Canada, residents file their annual T1 Income Tax and Benefit Return by April 30. Self-employed individuals have until June 15 to file, though any balance owing must still be paid by April 30 to avoid interest charges. Filing an annual return is essential even with zero income to trigger federal and provincial benefit payments, including the Canada Child Benefit (CCB), the Canada Groceries and Essentials Benefit (CGEB, formerly the GST/HST credit), and the Canada Carbon Rebate. Our step-by-step guides explain setting up CRA My Account, understanding T4 and T5 tax slips, deducting eligible expenses, and claiming provincial credits.',
       agencyOverview: 'Official agencies: Canada Revenue Agency (canada.ca/cra) and Revenu Québec for QC residents.',
       faqs: [
         {
@@ -362,7 +362,7 @@ export const topicData: Record<CountryCode, Record<string, TopicContent>> = {
         },
         {
           q: 'Why should new immigrants file a tax return in Canada with no income?',
-          a: 'Filing your first tax return registers your residency with the CRA and automatically calculates your entitlement to federal and provincial quarterly benefit payments, such as the GST/HST credit and Canada Child Benefit.',
+          a: 'Filing your first tax return registers your residency with the CRA and automatically calculates your entitlement to federal and provincial quarterly benefit payments, such as the Canada Groceries and Essentials Benefit (CGEB) and Canada Child Benefit.',
         },
         {
           q: 'How do I access CRA My Account online?',

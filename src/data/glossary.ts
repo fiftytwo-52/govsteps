@@ -79,7 +79,7 @@ export const glossary: Record<string, GlossaryEntry> = {
 
     // ---- Canada ----
     'IRCC': { full: 'Immigration, Refugees and Citizenship Canada', def: 'The Canadian government department that runs Express Entry, work and study permits, PR cards, and citizenship.', href: 'https://www.canada.ca/en/immigration-refugees-citizenship.html' },
-    'CRA': { full: 'Canada Revenue Agency', def: 'Canada\'s tax agency. It administers income tax, benefits like the GST/HST credit, and CRA My Account.', href: 'https://www.canada.ca/en/revenue-agency.html' },
+    'CRA': { full: 'Canada Revenue Agency', def: 'Canada\'s tax agency. It administers income tax, benefits like the Canada Groceries and Essentials Benefit (formerly the GST/HST credit), and CRA My Account.', href: 'https://www.canada.ca/en/revenue-agency.html' },
     'Service Canada': { full: 'Service Canada', def: 'The government service counter network for SIN applications, passports, EI, and other federal programs.', href: 'https://www.servicecanada.gc.ca/' },
     'SIN': { full: 'Social Insurance Number', def: 'Your 9-digit Canadian work and tax number. You need it to work, open accounts, and receive benefits.', href: 'https://www.canada.ca/en/employment-social-development/services/sin.html' },
     'PR card': { full: 'Permanent Resident Card', def: 'The official proof of Canadian permanent resident status, needed for travel back to Canada on commercial vehicles.', href: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants/pr-card.html' },
