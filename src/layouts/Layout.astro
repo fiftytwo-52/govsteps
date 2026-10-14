@@ -21,7 +21,15 @@ const {
   robots = 'index, follow',
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const rawPath = Astro.url.pathname;
+// Site uses trailingSlash: 'always' — normalize the canonical to the slash
+// version so /guides/x and /guides/x/ never split ranking signals with
+// two different canonicals. File paths (with an extension) are left alone.
+const canonicalPath =
+  rawPath === '/' || rawPath.endsWith('/') || /\.[a-zA-Z0-9]+$/.test(rawPath)
+    ? rawPath
+    : `${rawPath}/`;
+const canonicalURL = new URL(canonicalPath, Astro.site);
 const siteName = 'GovSteps';
 const formattedTitle = title.includes('GovSteps') ? title : `${title} - GovSteps`;
 const resolvedOgImage = ogImage

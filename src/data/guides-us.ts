@@ -31,7 +31,7 @@ export const guides: Guide[] = [
                 phase: 'before', title: 'Confirm you actually need an ITIN', detail: 'You need an ITIN only if you do NOT qualify for a Social Security number but must file US taxes. Check the IRS eligibility list first.', duration: '15 min',
                 links: [
                     { label: 'IRS: ITIN overview', href: 'https://www.irs.gov/individuals/individual-taxpayer-identification-number' },
-                    { label: 'Do you need an SSN instead?', href: '/guides/how-to-replace-social-security-card' },
+                    { label: 'Do you need an SSN instead?', href: '/guides/how-to-replace-social-security-card/' },
                 ],
             },
             { phase: 'before', title: 'Gather identity documents', detail: 'Original passport is the strongest single document. Without it, you need certified copies of multiple documents (foreign birth certificate, national ID, driver\'s license, etc.).', duration: '1–2 days' },
@@ -44,7 +44,7 @@ export const guides: Guide[] = [
             {
                 phase: 'fill', title: 'Prepare your tax return', detail: 'Complete Form 1040 for the current tax year. The IRS will reject a W-7 that arrives without a tax return attached.', duration: '1–2 hours',
                 links: [
-                    { label: 'First time filing taxes?', href: '/guides/how-to-file-taxes-first-time' },
+                    { label: 'First time filing taxes?', href: '/guides/how-to-file-taxes-first-time/' },
                 ],
             },
             { phase: 'submit', title: 'Mail everything to the IRS', detail: 'Send the W-7, tax return, and ORIGINAL identity documents to the IRS ITIN Operation address in Austin, TX. Use a trackable mail service.', duration: '1 day' },
@@ -89,8 +89,8 @@ export const guides: Guide[] = [
                 phase: 'before', title: 'Gather proof of citizenship', detail: 'Get your original birth certificate (the long-form with parents\' names) or naturalization certificate. Order a certified copy from your state vital records office if you don\'t have one.', duration: '1–4 weeks if ordering',
                 links: [
                     { label: "Need state ID for travel? REAL ID guide", href: "/guides/how-to-get-a-real-id" },
-                    { label: 'Naturalized citizen? How to apply for citizenship', href: '/guides/how-to-apply-for-citizenship' },
-                    { label: 'How to get your birth certificate', href: '/guides/how-to-get-a-copy-of-birth-certificate' },
+                    { label: 'Naturalized citizen? How to apply for citizenship', href: '/guides/how-to-apply-for-citizenship/' },
+                    { label: 'How to get your birth certificate', href: '/guides/how-to-get-a-copy-of-birth-certificate/' },
                 ],
             },
             {
@@ -154,7 +154,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Get your SSN or SSN denial letter', detail: 'If you have an SSN, bring the card. If you are not eligible for one, visit a Social Security office and get an official denial letter — the DMV accepts this.', duration: '1–2 weeks',
                 links: [
-                    { label: 'How to get your Social Security card', href: '/guides/how-to-replace-social-security-card' },
+                    { label: 'How to get your Social Security card', href: '/guides/how-to-replace-social-security-card/' },
                 ],
             },
             { phase: 'before', title: 'Collect two proofs of residency', detail: 'Utility bills, bank statements, a lease, or pay stubs with your name and address. These must usually be less than 60 days old.', duration: '1 day' },
@@ -212,7 +212,7 @@ export const guides: Guide[] = [
             },
             { phase: 'wait', title: 'Wait for your card by mail', detail: 'The replacement card arrives in 2–4 weeks. Your number never changes — only the card is reissued.', duration: '2–4 weeks',
                 links: [
-                    { label: "Using your SSN for a driver's license", href: '/guides/how-to-get-drivers-license-new-immigrant' },
+                    { label: "Using your SSN for a driver's license", href: '/guides/how-to-get-drivers-license-new-immigrant/' },
                 ],
             },
             {
@@ -250,7 +250,7 @@ export const guides: Guide[] = [
         steps: [
             { phase: 'before', title: 'Learn your enrollment window', detail: 'Your Initial Enrollment Period spans 7 months: your 65th birthday month, plus 3 months before and 3 months after. Enrolling late means lifetime penalties.', duration: '20 min',
                 links: [
-                    { label: 'Under 65? Apply for ACA health insurance marketplace coverage', href: '/guides/how-to-apply-for-aca-health-insurance' },
+                    { label: 'Under 65? Apply for ACA health insurance marketplace coverage', href: '/guides/how-to-apply-for-aca-health-insurance/' },
                 ],
             },
             { phase: 'before', title: 'Check if you already have Part A', detail: 'If you or your spouse worked 10+ years in the US and paid Medicare taxes, you likely get Part A automatically if already receiving Social Security benefits.', duration: '15 min' },
@@ -266,7 +266,7 @@ export const guides: Guide[] = [
                 links: [
                     { label: 'Compare Part D plans (medicare.gov)', href: 'https://www.medicare.gov/plan-compare/' },
                     { label: 'Part D premiums 2026 (KFF)', href: 'https://www.kff.org/medicare/medicare-part-d-enrollment-premiums-and-cost-sharing-in-2026/' },
-                    { label: 'Marketplace insurance guide', href: '/guides/how-to-apply-for-aca-health-insurance' },
+                    { label: 'Marketplace insurance guide', href: '/guides/how-to-apply-for-aca-health-insurance/' },
                 ],
             },
             { phase: 'followup', title: 'Verify coverage with your doctors', detail: 'Confirm your doctors accept Medicare and your pharmacies are in your Part D network. Keep your card in your wallet and the number private.', duration: '30 min' },
@@ -352,7 +352,7 @@ export const guides: Guide[] = [
         steps: [
             { phase: 'before', title: 'Check eligibility requirements', detail: 'Generally: 18+, green card for 5 years (3 if married to a US citizen), continuous residence, 50% of time physically in the US, good moral character, and English basics.', duration: '30 min',
                 links: [
-                    { label: 'Fast-track 3-year rule: Green card through marriage', href: '/guides/how-to-get-green-card-through-marriage' },
+                    { label: 'Fast-track 3-year rule: Green card through marriage', href: '/guides/how-to-get-green-card-through-marriage/' },
                 ],
             },
             {
@@ -380,7 +380,7 @@ export const guides: Guide[] = [
             {
                 phase: 'receive', title: 'Take the Oath and get your certificate', detail: 'Attend the oath ceremony (weeks to months later), surrender your green card, receive your Certificate of Naturalization, and apply for a US passport.', duration: '2 hours',
                 links: [
-                    { label: 'How to get your US passport', href: '/guides/how-to-get-a-passport' },
+                    { label: 'How to get your US passport', href: '/guides/how-to-get-a-passport/' },
                 ],
             },
         ],
@@ -424,7 +424,7 @@ export const guides: Guide[] = [
             {
                 phase: 'submit', title: 'E-file and choose direct deposit', detail: 'Submit electronically — refunds arrive in about 21 days versus 6+ weeks on paper. Choose direct deposit, not a paper check or refund card.', duration: '15 min',
                 links: [
-                    { label: 'Need an ITIN first?', href: '/guides/how-to-apply-for-itin' },
+                    { label: 'Need an ITIN first?', href: '/guides/how-to-apply-for-itin/' },
                 ],
             },
             {
@@ -475,9 +475,9 @@ export const guides: Guide[] = [
             {
                 phase: 'fill', title: 'Get an EIN from the IRS', detail: 'Apply free at irs.gov/ein (takes 10 minutes, number issued instantly). Never pay a third party for this. Non-citizens without an SSN can still get an EIN by faxing Form SS-4.', duration: '15 min',
                 links: [
-                    { label: 'Foreign business owners: How to get an ITIN', href: '/guides/how-to-apply-for-itin' },
+                    { label: 'Foreign business owners: How to get an ITIN', href: '/guides/how-to-apply-for-itin/' },
                     { label: 'Get an EIN free (irs.gov)', href: 'https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number' },
-                    { label: 'No SSN? Apply for an ITIN', href: '/guides/how-to-apply-for-itin' },
+                    { label: 'No SSN? Apply for an ITIN', href: '/guides/how-to-apply-for-itin/' },
                 ],
             },
             { phase: 'fill', title: 'Sign an operating agreement', detail: 'Even for single-member LLCs, this document proves your LLC is a separate entity — critical for liability protection. Free templates are widely available.', duration: '1 hour' },
@@ -514,7 +514,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Check if you already have one', detail: 'Look at your license — a gold or black star in the top corner means it is already REAL ID compliant. Also note: a valid passport works for flights instead of REAL ID.', duration: '5 min',
                 links: [
-                    { label: "New immigrant? How to get a driver's license", href: '/guides/how-to-get-drivers-license-new-immigrant' },
+                    { label: "New immigrant? How to get a driver's license", href: '/guides/how-to-get-drivers-license-new-immigrant/' },
                     { label: 'DHS: REAL ID basics', href: 'https://www.dhs.gov/real-id' },
                 ],
             },
@@ -522,8 +522,8 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Gather the exact documents', detail: 'The #1 reason for DMV rejection is wrong paperwork: photocopies are never accepted, and residency documents usually must be dated within 60–90 days.', duration: '1 day',
                 links: [
-                    { label: 'Need a birth certificate first?', href: '/guides/how-to-get-a-copy-of-birth-certificate' },
-                    { label: 'Need a Social Security card?', href: '/guides/how-to-replace-social-security-card' },
+                    { label: 'Need a birth certificate first?', href: '/guides/how-to-get-a-copy-of-birth-certificate/' },
+                    { label: 'Need a Social Security card?', href: '/guides/how-to-replace-social-security-card/' },
                 ],
             },
             {
@@ -563,7 +563,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Check country eligibility', detail: 'Your country of birth must have low US immigration (under 50,000 immigrants in 5 years). Countries like India, China, Mexico, and Canada are excluded — but you may qualify through a spouse\'s or parent\'s country of birth.', duration: '15 min',
                 links: [
-                    { label: 'Married to a US citizen? Green card through marriage', href: '/guides/how-to-get-green-card-through-marriage' },
+                    { label: 'Married to a US citizen? Green card through marriage', href: '/guides/how-to-get-green-card-through-marriage/' },
                     { label: 'Eligible countries list (travel.state.gov)', href: 'https://travel.state.gov/content/travel/en/us-visas/immigrate/diversity-visa-program-entry/diversity-visa-submit-entry.html' },
                 ],
             },
@@ -613,7 +613,7 @@ export const guides: Guide[] = [
         steps: [
             { phase: 'before', title: 'Confirm you qualify', detail: 'You must be unemployed through no fault of your own (laid off, hours cut — not fired for cause or quit without good reason), meet your state\'s earnings minimums, and be able, available, and actively seeking work.', duration: '30 min',
                 links: [
-                    { label: 'Lost job coverage? Special enrollment for ACA health insurance', href: '/guides/how-to-apply-for-aca-health-insurance' },
+                    { label: 'Lost job coverage? Special enrollment for ACA health insurance', href: '/guides/how-to-apply-for-aca-health-insurance/' },
                 ],
             },
             { phase: 'before', title: 'Gather employment records', detail: 'List every employer from the last 18 months with exact dates, pay, and reason for separation. Your state\'s claim form will ask for all of it.', duration: '1 hour' },
@@ -658,14 +658,14 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Check your expiration date', detail: 'File within 6 months of expiration — earlier filing is allowed but the new card\'s clock starts from approval. If your card is already expired, your permanent resident status has NOT expired — only the card.', duration: '10 min',
                 links: [
-                    { label: 'Conditional marriage green card rules', href: '/guides/how-to-get-green-card-through-marriage' },
+                    { label: 'Conditional marriage green card rules', href: '/guides/how-to-get-green-card-through-marriage/' },
                     { label: 'USCIS: green card renewal', href: 'https://www.uscis.gov/i-90' },
                 ],
             },
             {
                 phase: 'fill', title: 'File Form I-90 online', detail: 'Create an account at my.uscis.gov and complete the I-90 (~30 minutes). Online filing gives you case status alerts and faster processing than paper.', duration: '30 min',
                 links: [
-                    { label: 'Eligible for citizenship? Apply for US citizenship', href: '/guides/how-to-apply-for-citizenship' },
+                    { label: 'Eligible for citizenship? Apply for US citizenship', href: '/guides/how-to-apply-for-citizenship/' },
                     { label: 'Form I-90 (uscis.gov)', href: 'https://www.uscis.gov/i-90' },
                 ],
             },
@@ -716,7 +716,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Check if you qualify for Medicaid instead', detail: 'In expansion states, incomes under ~$21,000 (single) qualify for free Medicaid — the marketplace automatically routes you there. In non-expansion states there is a coverage gap.', duration: '15 min',
                 links: [
-                    { label: 'Turning 65? Medicare guide', href: '/guides/how-to-apply-for-medicare' },
+                    { label: 'Turning 65? Medicare guide', href: '/guides/how-to-apply-for-medicare/' },
                 ],
             },
             { phase: 'fill', title: 'Create an account and apply', detail: 'At healthcare.gov (or your state exchange like Covered California, NY State of Health). The application asks household, income, and citizenship/immigration details. Lawfully present immigrants qualify regardless of status duration.', duration: '45–60 min' },
@@ -760,13 +760,13 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Check if you can renew by mail instead', detail: 'If your old passport is simply expired but in your possession, you may renew by mail with Form DS-82 — faster and no in-person visit. Replacement of a LOST passport always requires in-person DS-11.', duration: '10 min',
                 links: [
-                    { label: 'First-time passport guide', href: '/guides/how-to-get-a-passport' },
+                    { label: 'First-time passport guide', href: '/guides/how-to-get-a-passport/' },
                 ],
             },
             {
                 phase: 'fill', title: 'Complete DS-11 and DS-64', detail: 'Fill both forms. DS-64 asks when and where the loss happened — approximate answers are fine. Sign DS-11 only at the acceptance facility.', duration: '30 min',
                 links: [
-                    { label: 'Standard US passport application steps', href: '/guides/how-to-get-a-passport' },
+                    { label: 'Standard US passport application steps', href: '/guides/how-to-get-a-passport/' },
                     { label: 'Passport forms (travel.state.gov)', href: 'https://travel.state.gov/content/travel/en/passports/how-apply/forms.html' },
                 ],
             },
@@ -774,7 +774,7 @@ export const guides: Guide[] = [
                 phase: 'go', title: 'Apply in person at an acceptance facility', detail: 'Post office or library passport desk. Bring proof of citizenship, photo, both forms, and payment. If abroad, go to the nearest US embassy or consulate instead.', duration: '1 hour',
                 links: [
                     { label: 'Find an acceptance facility', href: 'https://iafdb.travel.state.gov/' },
-                    { label: 'Need your birth certificate?', href: '/guides/how-to-get-a-copy-of-birth-certificate' },
+                    { label: 'Need your birth certificate?', href: '/guides/how-to-get-a-copy-of-birth-certificate/' },
                 ],
             },
             { phase: 'wait', title: 'Wait for the replacement', detail: 'Routine: 6–8 weeks. Expedited: 2–3 weeks for +$60. Emergency travel within 14 days? Make an appointment at a regional passport agency.', duration: '6–8 weeks' },
@@ -812,7 +812,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Get your legal name-change document', detail: 'Marriage: the certified marriage certificate from vital records (not the decorative one). Divorce: the decree with the name-restoration clause. Otherwise: petition your county court (fees $150–$500, sometimes waived).', duration: '1 day–2 months',
                 links: [
-                    { label: 'Need a birth certificate copy?', href: '/guides/how-to-get-a-copy-of-birth-certificate' },
+                    { label: 'Need a birth certificate copy?', href: '/guides/how-to-get-a-copy-of-birth-certificate/' },
                 ],
             },
             {
@@ -836,7 +836,7 @@ export const guides: Guide[] = [
             {
                 phase: 'followup', title: 'Notify everyone else', detail: 'Banks, employer/payroll, IRS (next tax return), immigration/USCIS if you are a green card holder (file Form I-90 for a corrected card), insurance, voter registration, utilities, and professional licenses.', duration: '2–4 weeks of calls',
                 links: [
-                    { label: 'Green card renewal (I-90) guide', href: '/guides/how-to-renew-a-green-card' },
+                    { label: 'Green card renewal (I-90) guide', href: '/guides/how-to-renew-a-green-card/' },
                 ],
             },
             { phase: 'receive', title: 'Order extra certified copies', detail: 'Get 3–5 certified copies of your marriage certificate or court order upfront — every agency wants to see or keep one, and reordering later costs more.', duration: '—' },
@@ -886,9 +886,9 @@ export const guides: Guide[] = [
             {
                 phase: 'followup', title: 'Order extra copies for the future', detail: 'Agencies keep certified copies when you apply for passports or name changes. Having 2–3 spares saves repeat trips. Store them in a fireproof place — never laminate them.', duration: '—',
                 links: [
-                    { label: 'Using your birth certificate for REAL ID', href: '/guides/how-to-get-a-real-id' },
-                    { label: 'Applying for a passport?', href: '/guides/how-to-get-a-passport' },
-                    { label: 'Getting a REAL ID?', href: '/guides/how-to-get-a-real-id' },
+                    { label: 'Using your birth certificate for REAL ID', href: '/guides/how-to-get-a-real-id/' },
+                    { label: 'Applying for a passport?', href: '/guides/how-to-get-a-passport/' },
+                    { label: 'Getting a REAL ID?', href: '/guides/how-to-get-a-real-id/' },
                 ],
             },
         ],
@@ -965,7 +965,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Get your three pieces of info ready', detail: 'The tool requires your SSN or ITIN, your filing status, and the EXACT refund amount in whole dollars from your filed return. If you do not know the amount, open the PDF of your return — guessing wrong locks you out for 24 hours.', duration: '5 min',
                 links: [
-                    { label: 'New to filing taxes? Step-by-step tax return guide', href: '/guides/how-to-file-taxes-first-time' },
+                    { label: 'New to filing taxes? Step-by-step tax return guide', href: '/guides/how-to-file-taxes-first-time/' },
                 ],
             },
             {
@@ -1006,14 +1006,14 @@ export const guides: Guide[] = [
         steps: [
             { phase: 'before', title: 'Confirm you actually owe estimates', detail: 'You must pay estimates if you expect to owe $1,000+ at tax time AND your withholding covers less than 90% of this year\'s tax or 100% of last year\'s tax (110% if your income was over $150,000). Salaried with a small side gig? Increasing your W-4 withholding instead can be simpler.', duration: '15 min',
                 links: [
-                    { label: 'Need a tax ID? ITIN application guide', href: '/guides/how-to-apply-for-itin' },
+                    { label: 'Need a tax ID? ITIN application guide', href: '/guides/how-to-apply-for-itin/' },
                 ],
             },
             { phase: 'before', title: 'Learn the four due dates', detail: 'Q1: April 15. Q2: June 15. Q3: September 15. Q4: January 15 of the next year. Yes, they are unevenly spaced — Q2 covers only two months. Mark all four in your calendar with a reminder one week ahead.', duration: '5 min' },
             {
                 phase: 'fill', title: 'Calculate your payment with Form 1040-ES', detail: 'The worksheet in Form 1040-ES walks you through it: estimate this year\'s income, subtract deductions, apply your tax rate plus ~15.3% self-employment tax, then divide by four. A simpler shortcut: pay 100% of last year\'s total tax in four equal chunks (the "safe harbor") and you cannot be penalized no matter what you earn this year.', duration: '30–45 min',
                 links: [
-                    { label: 'LLC taxation and business setup guide', href: '/guides/how-to-start-an-llc' },
+                    { label: 'LLC taxation and business setup guide', href: '/guides/how-to-start-an-llc/' },
                     { label: 'Form 1040-ES (with worksheet)', href: 'https://www.irs.gov/forms-pubs/about-form-1040-es' },
                 ],
             },
@@ -1153,7 +1153,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Confirm you actually need an EIN', detail: 'You need one if you: hire employees, operate as an LLC, partnership, or corporation, open a business bank account, file excise taxes, or withhold taxes for a household employee. Sole proprietors with no employees can use their SSN — but an EIN keeps your SSN off W-9s and reduces identity-theft risk.', duration: '10 min',
                 links: [
-                    { label: 'Forming an entity? How to start an LLC', href: '/guides/how-to-start-an-llc' },
+                    { label: 'Forming an entity? How to start an LLC', href: '/guides/how-to-start-an-llc/' },
                     { label: 'IRS: Do you need an EIN?', href: 'https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers' },
                 ],
             },
@@ -1203,7 +1203,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Learn the exact test format', detail: 'At your interview a USCIS officer asks 10 civics questions from the official list of 100 — you must answer 6 correctly. You then read one sentence aloud in English and write one sentence from dictation. The officer also reviews your N-400 application line by line and asks questions about your background.', duration: '30 min',
                 links: [
-                    { label: 'Complete Form N-400 citizenship application guide', href: '/guides/how-to-apply-for-citizenship' },
+                    { label: 'Complete Form N-400 citizenship application guide', href: '/guides/how-to-apply-for-citizenship/' },
                     { label: 'USCIS: Civics test study materials', href: 'https://www.uscis.gov/citizenship/find-study-materials-and-resources' },
                 ],
             },
@@ -1220,7 +1220,7 @@ export const guides: Guide[] = [
             { phase: 'followup', title: 'If you fail, retake the failed part', detail: 'You get two chances. If you fail civics or English, you are rescheduled for a second attempt (usually 60–90 days later) on only the failed portion. Fail twice and the application is denied — but you can reapply and pay the fee again. Most people who study the official materials pass on the first try.', duration: '60–90 days' },
             { phase: 'receive', title: 'Attend the oath ceremony and get your certificate', detail: 'After passing, you receive an oath ceremony notice (same-day ceremonies exist at some offices, otherwise weeks to months later). You surrender your green card, take the Oath of Allegiance, and receive your Certificate of Naturalization — then you can apply for a US passport the same week.', duration: 'Weeks to months',
                 links: [
-                    { label: 'After naturalization: How to get a US passport', href: '/guides/how-to-get-a-passport' },
+                    { label: 'After naturalization: How to get a US passport', href: '/guides/how-to-get-a-passport/' },
                 ],
             },
         ],
@@ -1254,7 +1254,7 @@ export const guides: Guide[] = [
                 phase: 'before', title: 'Confirm you qualify for renewal by mail', detail: 'You can renew by mail if your current passport: is undamaged, was issued when you were 16 or older, was issued within the last 15 years, and has your current name (or you can document a name change). Mail renewal has no 5-year expiry limit — a passport expired 10 years ago still qualifies if it was issued within the last 15 years. If ANY of these fail — damaged, issued as a child, issued more than 15 years ago — you must apply in person with Form DS-11 like a first-time applicant.', duration: '10 min',
                 links: [
                     { label: "REAL ID identification requirements", href: "/guides/how-to-get-a-real-id" },
-                    { label: 'First time applying? US passport application guide', href: '/guides/how-to-get-a-passport' },
+                    { label: 'First time applying? US passport application guide', href: '/guides/how-to-get-a-passport/' },
                     { label: 'State Dept: renew by mail', href: 'https://travel.state.gov/content/travel/en/passports/have-passport/renew.html' },
                 ],
             },
@@ -1360,14 +1360,15 @@ export const guides: Guide[] = [
             {
                 phase: 'followup', title: 'Use the report to trigger replacements and protections', detail: 'Send the report number to: your bank and card issuers (fraud flags), insurers (claim), the State Department (lost/stolen passport), the SSA (replacement card, where required), and credit bureaus (a free fraud alert or credit freeze). If the incident might touch your immigration file, keep a copy with your records — some applications ask about police contact.', duration: '1–2 hours',
                 links: [
-                    { label: 'Replace a lost passport', href: '/guides/how-to-replace-a-lost-passport' },
-                    { label: 'Replace a Social Security card', href: '/guides/how-to-replace-social-security-card' },
-                    { label: 'Wallet stolen? Replace all stolen documents in the right order', href: '/guides/how-to-replace-stolen-documents' },
+                    { label: 'Replace a lost passport', href: '/guides/how-to-replace-a-lost-passport/' },
+                    { label: 'Replace a Social Security card', href: '/guides/how-to-replace-social-security-card/' },
+                    { label: 'Wallet stolen? Replace all stolen documents in the right order', href: '/guides/how-to-replace-stolen-documents/' },
                 ],
             },
             { phase: 'receive', title: 'Add the report to your permanent file', detail: 'Keep the certified copy (plus a phone scan backed up to cloud storage) for at least 7 years. It is your proof of the incident for future insurance questions, identity-theft disputes, or official document replacements — and the one document you cannot re-order from memory years later.', duration: '10 min' },
         ],
         faqs: [
+            { q: 'How do I file a police report?', a: 'First, confirm which department has jurisdiction where the incident happened. For crimes in progress or emergencies, call 911. For non-emergencies, file online if your department offers it, or call the non-emergency line / visit the station with your ID and the facts (what happened, when, where, what was taken or damaged). Always get the report number before you leave — you will need it for insurance and document replacements.' },
             { q: 'Where do I file a police report?', a: 'File with the department that has jurisdiction where the incident occurred — not necessarily the station nearest your home. For non-emergencies, most large departments accept reports online or through the non-emergency line; for crimes in progress or emergencies, call 911.' },
             { q: 'What do I need to file a police report?', a: 'Your photo ID, a list of what was stolen, damaged, or lost (with serial numbers if you have them), photos of damage or the scene, the approximate date, time, and location, and any evidence such as receipts or witness contact info.' },
             { q: 'Do I have to be a citizen or have legal status to file a police report?', a: 'No. Police accept reports from anyone, regardless of immigration status, and many departments prohibit officers from asking about it. Being unable to show ID does not prevent filing — give your name, date of birth, and contact information.' },
@@ -1399,7 +1400,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'File a police report and freeze your credit — today', detail: 'The police report is the multiplier for everything that follows: it waives some fees, speeds up replacements, and is required for some stolen-document forms. Then contact the three credit bureaus (Equifax, Experian, TransUnion) for a free credit freeze — the strongest identity-theft protection. Call your bank and card issuers to cancel stolen cards and report a stolen Social Security number to the IRS and FTC at IdentityTheft.gov.', duration: '2 hours',
                 links: [
-                    { label: 'How to file a police report', href: '/guides/how-to-file-a-police-report' },
+                    { label: 'How to file a police report', href: '/guides/how-to-file-a-police-report/' },
                     { label: 'FTC: IdentityTheft.gov', href: 'https://www.identitytheft.gov' },
                 ],
             },
@@ -1407,7 +1408,7 @@ export const guides: Guide[] = [
                 phase: 'before', title: 'Order your foundation document: the birth certificate', detail: 'If your birth certificate was stolen or lost, it is a prerequisite for other replacements. Order from the vital records office of the state where you were born, usually $15–30. If you were born abroad, order from the State Department ( Consular Report of Birth Abroad) or your country\'s consulate. Expedited shipping is worth it — you will be asked for this copy repeatedly.', duration: '30 min',
                 links: [
                     { label: 'Order a birth certificate (CDC directory)', href: 'https://www.cdc.gov/nchs/w2w/index.htm' },
-                    { label: 'How to get a birth certificate copy', href: '/guides/how-to-get-a-copy-of-birth-certificate' },
+                    { label: 'How to get a birth certificate copy', href: '/guides/how-to-get-a-copy-of-birth-certificate/' },
                 ],
             },
             {
@@ -1419,7 +1420,7 @@ export const guides: Guide[] = [
             {
                 phase: 'submit', title: 'Replace your Social Security card', detail: 'Complete the SSA application (SS-5) and bring proof of citizenship or immigration status plus proof of identity to a Social Security office — appointments beat walk-ins. The card is free, and you can get up to 3 replacement cards per year (10 per lifetime). Your number never changes, so the card is mostly needed for hiring paperwork; take the receipt SSA gives you as temporary proof while the card comes in 2–4 weeks.', duration: '2–4 weeks',
                 links: [
-                    { label: 'Full guide: replacing an SSN card', href: '/guides/how-to-replace-social-security-card' },
+                    { label: 'Full guide: replacing an SSN card', href: '/guides/how-to-replace-social-security-card/' },
                 ],
             },
             {
@@ -1432,7 +1433,7 @@ export const guides: Guide[] = [
             {
                 phase: 'submit', title: 'Immigrants: replace your green card, EAD, or visa documents', detail: 'Green card: file Form I-90 ($415 online or $465 paper, fee waived if the card was issued with errors). Lost/stolen EAD (work permit): file Form I-765 again with a cover letter referencing the theft — replacement is often fee-exempt when tied to a pending case or the fee is $470 online / $520 paper. Stolen or lost visa foil or I-94: you do not replace the visa inside the US; instead apply for a new one at a consulate abroad or retrieve your I-94 record online at the CBP website. Always carry the police report with you until replacements arrive.', duration: '5–12 months (green card)',
                 links: [
-                    { label: 'Green card renewal/replacement (I-90)', href: '/guides/how-to-renew-a-green-card' },
+                    { label: 'Green card renewal/replacement (I-90)', href: '/guides/how-to-renew-a-green-card/' },
                 ],
             },
             { phase: 'wait', title: 'Track each replacement separately', detail: 'Passport: State Department online status checker. Social Security card: your local SSA office or 800-772-1213. License: state DMV tracking. Green card/EAD: USCIS case status online with your receipt number. Expect a 2-week "not found" window on all of them. Save every receipt number in one place — they are your proof of pending status.', duration: 'Ongoing' },
@@ -1550,7 +1551,7 @@ export const guides: Guide[] = [
             {
                 phase: 'receive', title: 'Enter the US (no earlier than 30 days before your I-20 start)', detail: 'F-1 students may enter up to 30 days before the program start date on the I-20 — earlier entry is not allowed on the student visa. At the border, carry your passport with visa, I-20 (signed), and financial proof; the CBP officer will issue an electronic I-94 record admitting you for "D/S" (duration of status). After arrival, report to your school\'s international office within the program reporting window — failing to register triggers SEVIS termination.', duration: 'Travel day',
                 links: [
-                    { label: "Getting a driver's license as an international student", href: '/guides/how-to-get-drivers-license-new-immigrant' },
+                    { label: "Getting a driver's license as an international student", href: '/guides/how-to-get-drivers-license-new-immigrant/' },
                     { label: 'CBP: arriving students', href: 'https://studyinthestates.dhs.gov/students' },
                 ],
             },
@@ -1630,7 +1631,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Confirm you are eligible', detail: 'You must be: a US citizen (green card holders and visa holders cannot vote — doing so is a deportable offense and a bar to future citizenship), 18 years old by election day (many states let 17-year-olds pre-register), a resident of the state where you register, and not currently serving a felony sentence in states that disenfranchise (rules vary widely; many states restore rights after sentence completion, some immediately).', duration: '10 min',
                 links: [
-                    { label: 'Must be a US citizen: How to apply for citizenship', href: '/guides/how-to-apply-for-citizenship' },
+                    { label: 'Must be a US citizen: How to apply for citizenship', href: '/guides/how-to-apply-for-citizenship/' },
                     { label: 'Check registration rules by state', href: 'https://www.usa.gov/voting' },
                 ],
             },
@@ -1777,11 +1778,12 @@ export const guides: Guide[] = [
                 detail: 'Verify that the child\'s name is spelled correctly on the card. Keep the physical paper card in a safe or locked box at home — do NOT carry it in your wallet or child\'s backpack. Provide the SSN to your tax preparer or software by the tax filing deadline to claim the Child Tax Credit (worth up to $2,000 per child), add them to medical insurance, and open a 529 college savings account.',
                 duration: '10 min',
                 links: [
-                    { label: 'Filing taxes for the first time', href: '/guides/how-to-file-taxes-first-time' },
+                    { label: 'Filing taxes for the first time', href: '/guides/how-to-file-taxes-first-time/' },
                 ],
             },
         ],
         faqs: [
+            { q: 'How do I get my child\'s Social Security number?', a: 'If your child was just born, check "YES" to request a Social Security number on the hospital birth-certificate worksheet — the card arrives by mail in 1–2 weeks with no office visit. If you missed that, start the application online at SSA.gov, then bring the required original documents to a local Social Security office; the card then takes 7–14 business days to arrive. Applying is free.' },
             { q: 'What is the fastest way to get my child\'s Social Security number?', a: 'Request it at the hospital when you fill out the birth certificate worksheet — the card arrives by mail in 1–2 weeks with no office visit. If you missed that, starting the application online at SSA.gov saves time at the office, but you still need an in-person visit with original documents, and the card then takes 7–14 business days to arrive.' },
             { q: 'Why does SSA need another document besides the birth certificate for my child?', a: 'SSA policy requires two distinct proofs: one for age/citizenship (birth certificate) and one for identity. Under SSA regulations, a birth certificate proves birth occurred, but does not prove the child\'s current identity. Acceptable child identity documents include an official doctor/clinic/hospital medical record, an immunization record certified by a clinic, a daycare/preschool/school record, or an unexpired U.S. passport.' },
             { q: 'Does my child need to accompany me to the Social Security office?', a: 'If your child is under age 12, they generally do not need to attend if the parent or legal guardian brings all required original documents. However, federal law requires that any applicant age 12 or older applying for an original SSN must attend an in-person interview at the SSA office.' },
@@ -1857,7 +1859,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Check income and eligibility basics', detail: 'Gross monthly income generally must be under 130% of poverty (about $3,575/month for a family of 4 in FY2027, $1,729 for a household of 1; net limit $2,750 for a family of 4), with deductions for housing and childcare often raising the qualifying income. Maximum allotment is $1,023/month for a family of 4 ($306 for one person). Asset limits: $3,000 ($4,750 if a household member is 60+ or disabled). Able-bodied adults 18–64 without dependents face a 3-month time limit unless working 80 hours/month or in a work program.', duration: '15 min',
                 links: [
-                    { label: 'Healthcare coverage: How to apply for ACA insurance', href: '/guides/how-to-apply-for-aca-health-insurance' },
+                    { label: 'Healthcare coverage: How to apply for ACA insurance', href: '/guides/how-to-apply-for-aca-health-insurance/' },
                     { label: 'SNAP eligibility (USDA)', href: 'https://www.fns.usda.gov/snap/recipient/eligibility' },
                     { label: 'SNAP average benefit (CBPP analysis of USDA data)', href: 'https://www.cbpp.org/research/food-assistance/a-quick-guide-to-snap-eligibility-and-benefits' },
                     { label: 'Public charge rule change, Sept 18, 2026 (Boundless)', href: 'https://www.boundless.com/blog/public-charge-rule-faq' },
@@ -1904,7 +1906,7 @@ export const guides: Guide[] = [
                 phase: 'before', title: 'Confirm you need to file I-90', detail: 'File I-90 to renew a card expiring within 6 months, or to replace a lost/stolen/damaged card, correct a USCIS error, or update your name (after marriage, etc.). Do NOT file I-90 if you are a conditional resident (2-year card) — you file I-751 or I-829 instead. Cards expiring do not mean status expiring: your permanent residence continues.', duration: '15 min',
                 links: [
                     { label: "Eligible to naturalize instead? How to apply for citizenship", href: "/guides/how-to-apply-for-citizenship" },
-                    { label: 'Applying through spouse? Green card through marriage guide', href: '/guides/how-to-get-green-card-through-marriage' },
+                    { label: 'Applying through spouse? Green card through marriage guide', href: '/guides/how-to-get-green-card-through-marriage/' },
                     { label: 'I-90 overview (USCIS)', href: 'https://www.uscis.gov/i-90' },
                 ],
             },
@@ -2008,7 +2010,7 @@ export const guides: Guide[] = [
             { phase: 'submit', title: 'Return the signed license', detail: 'The officiant (or you, in some counties) must return the signed license to the clerk within days of the ceremony — the deadline is printed on it. The county records it and issues the official marriage certificate. Order 2–3 certified copies ($10–$30 each) — you will need them repeatedly.' },
             { phase: 'receive', title: 'Use the certificate for everything downstream', detail: 'Certified copies drive the paperwork chain: Social Security name change, driver\'s license update, passport, employer benefits, insurance, and immigration petitions (I-130 spousal cases require it). Keep the certificate with your permanent records — it is proof for life.',
                 links: [
-                    { label: 'Immigration steps: Green card through marriage', href: '/guides/how-to-get-green-card-through-marriage' },
+                    { label: 'Immigration steps: Green card through marriage', href: '/guides/how-to-get-green-card-through-marriage/' },
                 ],
             },
         ],
@@ -2286,7 +2288,7 @@ export const guides: Guide[] = [
         steps: [
             { phase: 'before', title: 'Confirm Schedule C is right for you', detail: 'Use Schedule C if you are a sole proprietor, freelancer, gig worker, or single-member LLC. Partners and multi-member LLCs use Schedule K-1 (Form 1065) instead; S-corp owners take wages plus a K-1.', duration: '15 min',
                 links: [
-                    { label: 'Forming an LLC for your business', href: '/guides/how-to-start-an-llc' },
+                    { label: 'Forming an LLC for your business', href: '/guides/how-to-start-an-llc/' },
                 ],
             },
             { phase: 'before', title: 'Total your business income', detail: 'Add up all 1099-NECs, 1099-Ks (payment platforms), and any income paid without a form. The IRS matches reported 1099s to your return automatically — unreported income generates a CP2000 notice with penalties.', duration: '30–60 min' },
@@ -2323,13 +2325,13 @@ export const guides: Guide[] = [
         steps: [
             { phase: 'before', title: 'Collect every 1099 — including ones you forgot about', detail: 'Payers must send 1099s by January 31 (1099-B/DIV/INT brokers by mid-February). Log into each bank, brokerage, and gig platform and download the tax forms section — paper copies get lost in the mail, but the IRS copy does not.', duration: '30 min',
                 links: [
-                    { label: 'Protect personal assets: Start an LLC', href: '/guides/how-to-start-an-llc' },
+                    { label: 'Protect personal assets: Start an LLC', href: '/guides/how-to-start-an-llc/' },
                 ],
             },
             { phase: 'before', title: 'Identify which 1099 you have', detail: 'NEC = freelance/self-employment pay ($600+). K = payment card and third-party network transactions (platforms like PayPal, Venmo, Stripe). INT = bank interest ($10+). DIV = dividends and capital gains distributions. B = investment sales. R = retirement distributions. MISC = rents, royalties, prizes.', duration: '10 min' },
             { phase: 'fill', title: '1099-NEC → Schedule C', detail: 'Freelance income goes on Schedule C, where you can subtract business expenses before it hits your 1040. You owe income tax plus self-employment tax (15.3%) on the net profit.', duration: '15 min',
                 links: [
-                    { label: 'First time filing income taxes? Beginner guide', href: '/guides/how-to-file-taxes-first-time' },
+                    { label: 'First time filing income taxes? Beginner guide', href: '/guides/how-to-file-taxes-first-time/' },
                 ],
             },
             { phase: 'fill', title: '1099-K → Schedule C (business) or already-reported (personal)', detail: 'For business income, add the 1099-K amount to your Schedule C gross receipts — but do not double-count payments that also appear on a 1099-NEC. Personal transfers (friends reimbursing dinner) are not income; the form just reports gross platform activity.', duration: '20 min' },
@@ -2445,7 +2447,7 @@ export const guides: Guide[] = [
             { phase: 'before', title: 'Decide: liability-only vs full coverage', detail: 'If your car is worth less than ~10x the extra premium, liability-only usually makes sense. If the car is financed or leased, the lender requires comprehensive + collision. Check your car\'s current value (KBB.com) before deciding.', duration: '15 min' },
             { phase: 'before', title: 'Immigrants: convert to a US license ASAP', detail: 'Insurers price foreign licenses and no US driving history as high risk — sometimes 2–3x the rate. A US license (you can convert in most states without a road test if your country has reciprocity) plus 6 months of clean history drops rates sharply. Some insurers accept your foreign no-claims letter (in English) for a discount.', duration: 'varies',
                 links: [
-                    { label: "Step-by-step immigrant driver's license guide", href: '/guides/how-to-get-drivers-license-new-immigrant' },
+                    { label: "Step-by-step immigrant driver's license guide", href: '/guides/how-to-get-drivers-license-new-immigrant/' },
                 ],
             },
             { phase: 'fill', title: 'Gather quotes from at least 5 insurers', detail: 'Get quotes from a mix: large national brands (Geico, Progressive, State Farm), a regional player, and an independent agent who shops multiple companies. Rates for identical coverage vary by 100%+ between insurers — the single biggest saving is simply comparing. Use each insurer\'s site directly rather than lead-generation sites that sell your data.', duration: '1 hour' },
@@ -2601,7 +2603,7 @@ export const guides: Guide[] = [
         steps: [
             { phase: 'before', title: 'Define the amount and the exact purpose', detail: 'Lenders reject vague requests. "Working capital to cover inventory purchases through Q4" or "$80,000 of kitchen equipment" gets underwritten; "growth money" does not. Your amount should map to a specific plan and a specific repayment source — the revenue the loan generates or your proven cash flow.', duration: '1–2 hours',
                 links: [
-                    { label: 'Form your business structure: How to start an LLC', href: '/guides/how-to-start-an-llc' },
+                    { label: 'Form your business structure: How to start an LLC', href: '/guides/how-to-start-an-llc/' },
                 ],
             },
             { phase: 'before', title: 'Check whether you clear the standard bar', detail: 'Typical bank/SBA requirements: 640+ personal credit (SBA microloans go lower), 2+ years in business, roughly $100k+ annual revenue, and no recent bankruptcies. Stronger on one axis can offset weakness on another — excellent cash flow can carry a 620 score, but startups under 2 years should target microloans, credit unions, or the SBA Small Loan exception rather than a standard 7(a).', duration: '30 min' },

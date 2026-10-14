@@ -12,9 +12,9 @@ export const guides: Guide[] = [
         updatedAt: '2025',
         title: 'How to Apply for a SIN (Social Insurance Number)',
         metaTitle: 'How to Apply for a Social Insurance Number (SIN): Step-by-Step Guide',
-        description: 'Get a Canadian Social Insurance Number step by step: who needs one, where to apply, the documents newcomers need, and how long it takes to arrive.',
+        description: 'Get a Canadian SIN step by step: who needs one, where to apply, documents newcomers need, and how to get a SIN for your child.',
         category: 'ids',
-        audience: ['Immigrant'],
+        audience: ['Native', 'Immigrant'],
         difficulty: 'Easy',
         totalTime: 'Same day (in person) to 10+ business days (by mail)',
         totalCost: 'Free (Service Canada never charges)',
@@ -39,6 +39,12 @@ export const guides: Guide[] = [
                 ],
             },
             {
+                phase: 'go', title: 'If you are applying for a child, bring the child\'s documents plus your own', detail: 'A parent or legal guardian can apply for a SIN on behalf of a child under the age of majority in their province or territory. Children 12 or older can also apply for their own SIN. Bring the child\'s original proof-of-identity document plus your own SIN or your original identity documents; legal guardians also need a document confirming guardianship. The exact document list varies by your and the child\'s status, so use the Canada.ca tool to get the list for your combination before you go.', duration: '15 min',
+                links: [
+                    { label: 'Apply for a SIN — parent/guardian (canada.ca)', href: 'https://www.canada.ca/en/employment-social-development/services/sin/apply.html' },
+                ],
+            },
+            {
                 phase: 'go', title: 'Apply in person at a Service Canada office', detail: 'Walk in with your originals to any Service Canada Centre (find your nearest at servicecanada.gc.ca). Staff verify your documents and issue a paper SIN confirmation on the spot — most visits take under an hour. Bring your documents even if you book an appointment online.', duration: '1 hour + travel',
                 links: [
                     { label: 'Find a Service Canada office', href: 'https://www.servicecanada.gc.ca/tbsc-fsco/sc-hme.jsp?lang=eng' },
@@ -55,7 +61,9 @@ export const guides: Guide[] = [
             { phase: 'receive', title: 'Store it securely', detail: 'Your SIN is confidential — give it ONLY to employers, banks (for interest-bearing accounts), CRA, and benefit programs. Never carry the card in your wallet, never email it, and never put it on a résumé or rental application. Identity theft with a SIN can take months to untangle.', duration: '—' },
         ],
         faqs: [
-            { q: 'Does a SIN cost anything?', a: 'No. Service Canada issues SINs free. Any private site charging a "processing fee" is a middleman — the official application is only through Service Canada in person or by mail.' },
+            { q: 'How do I get a SIN for my child?', a: 'A parent or legal guardian can apply for a SIN on behalf of a child under the age of majority — online, by mail, or in person at a Service Canada office. Bring the child\'s original proof-of-identity document plus your own SIN or original identity documents; legal guardians also need proof of guardianship. The exact document list depends on your and the child\'s status, so check the Canada.ca application tool for your combination.' },
+            { q: 'Can my 12-year-old apply for their own SIN?', a: 'Yes. Anyone 12 or older can apply for their own SIN. A parent or legal guardian can still apply on their behalf if the child is under the age of majority in their province or territory.' },
+            { q: 'Does a SIN cost anything?', a: 'No. Service Canada issues SINs free. Any private site charging a "processing fee" is a middleman — the official application is only through Service Canada, online, in person, or by mail depending on your situation.' },
             { q: 'My study permit says I can work 20 hours a week. Do I still need a SIN?', a: 'Yes. Any paid work in Canada requires a SIN, and your study permit with an off-campus work condition is an accepted status document. The SIN expires with the permit.' },
             { q: 'I lost my SIN confirmation. How do I get it again?', a: 'Visit a Service Canada office with your original documents — they print a new confirmation letter. Check old tax documents first (T4, Notice of Assessment) as the number may be printed there.' },
         ],

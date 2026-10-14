@@ -287,7 +287,7 @@ export const guides: Guide[] = [
             {
                 phase: 'receive', title: 'Attend the ceremony and apply for a passport', detail: 'At the ceremony (usually your local council, £130) you take the Oath (or Affirmation) of Allegiance and receive your certificate of naturalisation — your proof of citizenship. You can then apply for a British passport. Keep the certificate safe forever; replacements are slow and costly.', duration: '1–2 hours',
                 links: [
-                    { label: 'Apply for a British passport', href: '/uk/guides/how-to-apply-for-uk-passport' },
+                    { label: 'Apply for a British passport', href: '/uk/guides/how-to-apply-for-uk-passport/' },
                 ],
             },
         ],
