@@ -9,7 +9,7 @@ export const guides: Guide[] = [
         slug: 'how-to-apply-for-a-uae-residence-visa',
         country: 'ae',
         updatedAt: '2026',
-        lastReviewed: '2026-10-13',
+        lastReviewed: '2026-10-14',
         title: 'How to Apply for a UAE Residence Visa (Employment-Based)',
         metaTitle: 'How to Get a UAE Employment Residence Visa: Steps, Fees & Timeline (2026)',
         description: 'Employer-sponsored residence visa: MOHRE work permit, entry permit, medical test, Emirates ID biometrics, and residence issuance — fees, documents, and timelines.',
@@ -17,7 +17,7 @@ export const guides: Guide[] = [
         audience: ['Expat'],
         difficulty: 'Medium',
         totalTime: '1–3 weeks (end to end)',
-        totalCost: 'Employer-paid; ICP residence fees from ~AED 320',
+        totalCost: 'Employer-paid; ICP residence fees AED 420 (2-year visa)',
         summary: 'An employment residence visa is employer-sponsored and follows a fixed sequence: job offer, MOHRE work permit, entry permit, medical fitness test, Emirates ID biometrics, then residence permit issuance. The standard visa is valid 2 years and renewable. The employer drives most steps — the employee cannot self-sponsor this route.',
         documents: [
             'Valid passport (at least 6 months remaining)',
@@ -60,7 +60,7 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'submit', title: 'Residence permit is issued', detail: 'Your employer applies online once the medical is cleared. The permit is issued within about 48 hours. ICP fees: AED 100 application + AED 100 per year issuance + AED 100 smart services + AED 20 financial security deposit.', duration: '~48 hours after medical clearance', cost: 'From ~AED 320',
+                phase: 'submit', title: 'Residence permit is issued', detail: 'Your employer applies online once the medical is cleared. The permit is issued within about 48 hours. ICP fees: AED 100 application + AED 100 per year issuance + AED 100 smart services + AED 20 financial security deposit — for the standard 2-year visa that totals AED 420 (100 + 2×100 + 100 + 20).', duration: '~48 hours after medical clearance', cost: 'AED 420 (2-year visa)',
                 links: [
                     { label: 'Issuing Residency Permit (ICP)', href: 'https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64' },
                 ],
@@ -82,7 +82,7 @@ export const guides: Guide[] = [
         slug: 'how-to-apply-for-an-emirates-id',
         country: 'ae',
         updatedAt: '2026',
-        lastReviewed: '2026-10-13',
+        lastReviewed: '2026-10-14',
         title: 'How to Apply for an Emirates ID (New Application & Renewal)',
         metaTitle: 'Emirates ID: How to Apply, Renew & Replace It — Fees & Steps (2026)',
         description: 'The mandatory UAE identity card: unified application with your residence permit, biometrics, fees, delivery, renewal, and replacement for a lost card.',
@@ -93,7 +93,7 @@ export const guides: Guide[] = [
         totalCost: 'From AED 300 (2-year card)',
         summary: 'The Emirates ID is the mandatory identity card for everyone living in the UAE, issued by ICP. For expatriate residents it is applied for together with the residence permit through a unified form (except in Dubai, which uses GDRFA). The card validity matches the residence visa, and the same 15-digit ID number is kept for life across renewals.',
         documents: [
-            'Passport (valid at least 6 months)',
+            'Passport (valid at least 3 months)',
             'Personal photo meeting ICAO standards',
             'Valid residence permit (or residence under issuance/renewal)',
             'Proof of residence category where applicable (employment contract, trade licence, property proof, study certificate)',
@@ -804,7 +804,7 @@ export const guides: Guide[] = [
         slug: 'how-to-apply-for-a-uae-tourist-visa',
         country: 'ae',
         updatedAt: '2026',
-        lastReviewed: '2026-10-13',
+        lastReviewed: '2026-10-14',
         title: 'How to Apply for a UAE Tourist Visa (Types, Fees & Overstay Fines)',
         metaTitle: 'UAE Tourist Visa: Types, Fees, Extension & Overstay Fines (2026)',
         description: '30/60/90-day tourist visas and the self-sponsored 5-year multiple-entry visa: channels, documents, fees, extensions, and the AED 50/day overstay fine.',
@@ -842,7 +842,7 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'submit', title: 'Pay the government fees', detail: 'Pay online by card. Agency/airline/hotel prices include their service charges on top of government fees. One verified ICP category (60-day visa): AED 250 issuance + AED 100 smart services. Confirm the current fee for your exact visa type in the portal before paying.', duration: 'At application', cost: 'Varies by type (one ICP 60-day category: AED 350)',
+                phase: 'submit', title: 'Pay the government fees', detail: 'Pay online by card. Agency/airline/hotel prices include their service charges on top of government fees. One verified ICP category — a 60-day visa for nationals of certain countries (India, Kenya, Indonesia, Vietnam, Thailand, Philippines, South Africa) holding a US/EU/UK visa or specified residence permit: AED 250 issuance + AED 100 smart services, and this category is non-extendable. Confirm the current fee for your exact visa type in the portal before paying.', duration: 'At application', cost: 'Varies by type (one ICP 60-day category: AED 350)',
                 links: [
                     { label: 'ICP visa service', href: 'https://icp.gov.ae/en/services-details/?serviceid=68f5bcdb8c587a0011cb16d5' },
                 ],
@@ -854,7 +854,7 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'followup', title: 'Extend before expiry if needed', detail: 'Tourist/visit visas can generally be extended from inside the UAE. Apply via ICP/GDRFA or your issuing sponsor, and confirm the current extension fee in the portal.', duration: 'Before expiry',
+                phase: 'followup', title: 'Extend before expiry if needed', detail: 'Most standard tourist/visit visas can be extended from inside the UAE — but the 60-day ICP category above is non-extendable, so check your visa type first. Apply via ICP/GDRFA or your issuing sponsor, and confirm the current extension fee in the portal.', duration: 'Before expiry',
                 links: [
                     { label: 'Tourist visa (u.ae)', href: 'https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/tourist-visa' },
                 ],

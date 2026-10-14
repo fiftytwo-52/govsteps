@@ -66,16 +66,16 @@ export const guides: Guide[] = [
     {
         slug: 'how-to-get-a-passport',
         country: 'us',
-        updatedAt: '2025',
+        updatedAt: '2026',
         title: 'How to Get a US Passport (First-Time Applicant)',
         metaTitle: 'How to Get a US Passport: Step-by-Step Guide for First-Time Applicants',
         description: 'First-time US passport application guide: Form DS-11, proof of citizenship, photo requirements, fees, where to apply, and how to track your application.',
         category: 'ids',
         audience: ['Native', 'Immigrant'],
         difficulty: 'Easy',
-        totalTime: '6–8 weeks routine',
+        totalTime: '4–6 weeks processing (routine)',
         totalCost: '$130 application + $35 execution = $165 (adult book)',
-        summary: 'First-time applicants apply in person with Form DS-11, proof of citizenship, a photo, and fees. Routine service takes 6–8 weeks; expedited service costs extra.',
+        summary: 'First-time applicants apply in person with Form DS-11, proof of citizenship, a photo, and fees. Routine processing takes 4–6 weeks (plus mailing time each way); expedited service costs extra.',
         documents: [
             'Form DS-11 (filled but unsigned — sign at the acceptance facility)',
             'Original proof of citizenship (birth certificate or naturalization certificate)',
@@ -108,7 +108,7 @@ export const guides: Guide[] = [
             },
             { phase: 'submit', title: 'Sign and submit in front of the agent', detail: 'The agent verifies your documents, watches you sign DS-11, takes your payment, and seals everything in an envelope. Pay the $130 by check/money order and $35 separately.', duration: '30 min' },
             {
-                phase: 'wait', title: 'Track your application', detail: 'Wait about 2 weeks, then track online at travel.state.gov using your last name, DOB, and the last 4 digits of your SSN.', duration: '6–8 weeks routine',
+                phase: 'wait', title: 'Track your application', detail: 'Wait about 2 weeks, then track online at travel.state.gov using your last name, DOB, and the last 4 digits of your SSN.', duration: '4–6 weeks processing',
                 links: [
                     { label: 'Check passport status', href: 'https://passportstatus.travel.state.gov/' },
                 ],
@@ -231,7 +231,7 @@ export const guides: Guide[] = [
     {
         slug: 'how-to-apply-for-medicare',
         country: 'us',
-        updatedAt: '2025',
+        updatedAt: '2026',
         title: 'How to Enroll in Medicare (Turning 65)',
         metaTitle: 'How to Apply for Medicare at 65: Step-by-Step Enrollment Guide',
         description: 'Medicare enrollment at 65: when your Initial Enrollment Period starts, Part B sign-up, avoiding late penalties, and the documents to prepare.',
@@ -239,7 +239,7 @@ export const guides: Guide[] = [
         audience: ['Native', 'Immigrant'],
         difficulty: 'Medium',
         totalTime: '45 min application',
-        totalCost: 'Part A usually free; Part B ~$185/month (2025)',
+        totalCost: 'Part A usually free; Part B $202.90/month standard (2026)',
         summary: 'Enroll during your 7-month Initial Enrollment Period (3 months before to 3 months after your 65th birthday). Most people apply online through Social Security in under an hour.',
         documents: [
             'Social Security number',
@@ -273,7 +273,7 @@ export const guides: Guide[] = [
         faqs: [
             { q: 'What if I am still working at 65 with employer insurance?', a: 'You may be able to delay Part B without penalty if your employer has 20+ employees and its coverage is primary. Talk to HR before deciding — the penalty is 10% per year of delay, forever.' },
             { q: 'What is the Part B late penalty?', a: 'For every full 12 months you were eligible but did not enroll, you pay 10% extra on your Part B premium permanently. This is why timing matters.' },
-            { q: 'Is Medicare free?', a: 'Part A is premium-free for most people. Part B has a monthly premium (about $185 in 2025, income-dependent), and Part D drug plans vary from $0 to $100+ per month.' },
+            { q: 'Is Medicare free?', a: 'Part A is premium-free for most people. Part B has a monthly premium (standard $202.90 in 2026, income-dependent) plus a $283 annual deductible, and Part D drug plans vary from $0 to $100+ per month.' },
         ],
     },
     {
@@ -1232,14 +1232,14 @@ export const guides: Guide[] = [
     {
         slug: 'how-to-renew-a-passport',
         country: 'us',
-        updatedAt: '2025',
+        updatedAt: '2026',
         title: 'How to Renew a US Passport',
         metaTitle: 'How to Renew a US Passport: Form DS-82, Fees & Timeline',
         description: 'Renew a US passport by mail with Form DS-82: eligibility rules, current fees, photo requirements, processing times, and expediting or tracking.',
         category: 'ids',
         audience: ['Native', 'Immigrant', 'Expat'],
         difficulty: 'Easy',
-        totalTime: '6–11 weeks (routine)',
+        totalTime: '4–6 weeks processing (routine)',
         totalCost: '$130 book + $35 acceptance fee waived by mail',
         summary: 'Most adults can renew a passport by mail with Form DS-82 — no appointment, no line at the passport office. Here is who qualifies, what it costs, and how to not mess up the photo.',
         documents: [
@@ -1250,7 +1250,7 @@ export const guides: Guide[] = [
         ],
         steps: [
             {
-                phase: 'before', title: 'Confirm you qualify for renewal by mail', detail: 'You can renew by mail if your current passport: is undamaged, was issued when you were 16 or older, was issued within the last 15 years, and has your current name (or you can document a name change). If ANY of these fail — damaged, issued as a child, expired more than 5 years ago — you must apply in person with Form DS-11 like a first-time applicant.', duration: '10 min',
+                phase: 'before', title: 'Confirm you qualify for renewal by mail', detail: 'You can renew by mail if your current passport: is undamaged, was issued when you were 16 or older, was issued within the last 15 years, and has your current name (or you can document a name change). Mail renewal has no 5-year expiry limit — a passport expired 10 years ago still qualifies if it was issued within the last 15 years. If ANY of these fail — damaged, issued as a child, issued more than 15 years ago — you must apply in person with Form DS-11 like a first-time applicant.', duration: '10 min',
                 links: [
                     { label: "REAL ID identification requirements", href: "/guides/how-to-get-a-real-id" },
                     { label: 'First time applying? US passport application guide', href: '/guides/how-to-get-a-passport' },
@@ -1265,14 +1265,14 @@ export const guides: Guide[] = [
             },
             { phase: 'fill', title: 'Get a compliant photo', detail: '2x2 inches, taken within 6 months, white or off-white background, neutral expression, no glasses, normal street clothes (no uniforms or hats). Drugstores (CVS, Walgreens, Walmart) take them for about $10–15 and know the specs. Home photos work if the lighting is even and the head size is correct (1–1⅜ inch from chin to crown).', duration: '30 min' },
             { phase: 'submit', title: 'Mail the package correctly', detail: 'Send your old passport, signed DS-82, photo, and payment (check or money order payable to "U.S. Department of State" — no cash or cards by mail) in a padded envelope. Use a traceable mailing method (USPS Priority with tracking). Mail to the address on the DS-82 instructions for routine or expedited service. Your old passport comes back, usually marked canceled.', duration: '1 hour' },
-            { phase: 'wait', title: 'Track it online', detail: 'Routine processing runs about 6–8 weeks; expedited (add $60) about 2–3 weeks — these times shift seasonally, so check the current estimates. Track status at the State Department\'s online status checker about 2 weeks after mailing. "Not Found" for the first 2 weeks is normal.', duration: '6–11 weeks' },
+            { phase: 'wait', title: 'Track it online', detail: 'Routine processing runs about 4–6 weeks (plus up to 2 weeks mailing each way); expedited (add $60) about 2–3 weeks — these times shift seasonally, so check the current estimates. Track status at the State Department\'s online status checker about 2 weeks after mailing. "Not Found" for the first 2 weeks is normal.', duration: '4–6 weeks processing' },
             { phase: 'followup', title: 'If your trip is within 2 weeks', detail: 'Life-or-death emergencies (within 72 hours) qualify for emergency service. Urgent travel within 14 days: call 877-487-2778 to try to book an in-person appointment at a passport agency — you must have proof of travel. Otherwise, expedited-by-mail is the fastest routine option.', duration: '—' },
             { phase: 'receive', title: 'Check the new passport when it arrives', detail: 'Verify the name, date of birth, and expiration date immediately. Adults get 10-year passports. Sign it in ink, fill the emergency contact page, and note that many countries require 6 months of validity beyond your travel dates — renew when you hit the 9-year mark to stay safe.', duration: '10 min' },
         ],
         faqs: [
             { q: 'Do I get my old passport back?', a: 'Yes — it is returned with your new one, usually canceled (holes punched or stamped). Keep it: it proves your travel history and is backup evidence of citizenship for naturalization records and some visa applications.' },
-            { q: 'Can I renew online instead of by mail?', a: 'The State Department has an online renewal pilot for eligible adults renewing a regular tourist passport — check travel.state.gov for current availability. Eligibility mirrors the DS-82 mail rules, and you upload a digital photo and pay by card.' },
-            { q: 'My passport expired years ago. Can I still renew by mail?', a: 'Only if it expired within the last 5 years and was issued when you were 16+. Expired longer than that, or issued as a minor, means applying in person with DS-11 — full first-time process with an acceptance facility appointment.' },
+            { q: 'Can I renew online instead of by mail?', a: 'Yes — online renewal is fully available for eligible adults. You must be 25 or older, hold a 10-year passport that expires within 1 year or expired less than 5 years ago, have no name or sex-marker change, not be travelling for at least 6 weeks, be in a US state or territory, and hold an undamaged passport. You upload a digital photo and pay by card. Online renewal offers routine service only, not expedited.' },
+            { q: 'My passport expired years ago. Can I still renew by mail?', a: 'Yes, as long as it was issued within the last 15 years and when you were 16+. Mail renewal has no 5-year expiry limit (that limit applies only to online renewal). Issued more than 15 years ago, or issued as a minor, means applying in person with DS-11 — full first-time process with an acceptance facility appointment.' },
             { q: 'My passport is damaged. Can I still renew by mail?', a: 'No — damaged passports are not eligible for DS-82 mail renewal. Apply in person with Form DS-11 as if for a new passport, and bring the damaged passport with you. Water damage, torn pages, or an unreadable data page always require the in-person route.' },
             { q: 'Can I reuse my old passport photo?', a: 'No. Every application needs a new photo taken within the last 6 months meeting current State Department specs (2x2 inches, plain white background, no glasses). Photo problems are the most common reason renewals get delayed — when in doubt, have it taken professionally.' },
             { q: 'Where do I check current processing times?', a: 'At travel.state.gov — the State Department updates routine and expedited times regularly and they shift with seasonal demand. Check before you apply, and pay for expedited service plus overnight delivery both ways if your trip is within a few months.' },
@@ -1441,20 +1441,20 @@ export const guides: Guide[] = [
     {
         slug: 'how-to-file-the-fafsa',
         country: 'us',
-        updatedAt: '2025',
+        updatedAt: '2026',
         title: 'How to File the FAFSA (Free Application for Federal Student Aid)',
         metaTitle: 'How to File the FAFSA: Step-by-Step Guide, Deadlines & Common Mistakes',
-        description: 'File the FAFSA step by step: FSA ID creation, parent vs student sections, IRS Data Retrieval, school selection, deadlines, and the Student Aid Index.',
+        description: 'File the FAFSA step by step: FSA ID creation, parent vs student sections, automatic IRS tax-data transfer, school selection, deadlines, and the Student Aid Index.',
         category: 'students',
         audience: ['Native', 'Immigrant', 'Expat'],
         difficulty: 'Medium',
         totalTime: '30–60 min (plus 3–5 days processing)',
         totalCost: 'Free',
-        summary: 'The FAFSA is the single application that unlocks federal grants, loans, and work-study — plus most state and college aid. It opens October 1 each year, takes under an hour, and is free. The families who lose money are the ones who skip it, miss deadlines, or make fixable errors. Here is the exact path.',
+        summary: 'The FAFSA is the single application that unlocks federal grants, loans, and work-study — plus most state and college aid. The 2026–27 form (using 2024 tax returns) is open now through June 30, 2027; file as early as possible, since state and college deadlines come much earlier. It takes under an hour and is free. The families who lose money are the ones who skip it, miss deadlines, or make fixable errors. Here is the exact path.',
         documents: [
             'Your Social Security number (student, and parents if dependent)',
             'FSA ID username/password for student and one parent',
-            '2023 federal tax returns (for the 2025–26 form) or IRS Data Retrieval access',
+            '2024 federal tax returns (for the 2026–27 form); tax data transfers automatically from the IRS with your consent',
             'Records of untaxed income: child support, untaxed retirement contributions',
             'Current bank and investment account balances',
             'List of schools to send the application to (up to 20)',
@@ -1462,20 +1462,20 @@ export const guides: Guide[] = [
         steps: [
             { phase: 'before', title: 'Understand who is the "student" and who is the "parent"', detail: 'The FAFSA is the student\'s application — parents of dependent students fill a section, not a separate form. Dependency status is federal: being self-supporting, living apart, or being claimed (or not) on taxes does NOT make you independent. You are dependent unless you are 24+, married, a veteran, a grad student, have dependents, or meet other rare criteria. Same-sex parents and step-parents count if married to the student\'s parent at filing time.', duration: '10 min' },
             {
-                phase: 'before', title: 'Create FSA IDs (student and parent, separately)', detail: 'Each person needs their own Federal Student Aid ID at studentaid.gov — a username/password pair tied to their own SSN, email, and phone. Parents without an SSN can still get an FSA ID and sign: they enter their name and DOB and sign a printed signature page instead. Do not share FSA IDs; each signer must use their own. Create these days ahead — verification can take up to 3 days.', duration: '10 min',
+                phase: 'before', title: 'Create FSA IDs (student and parent, separately)', detail: 'Each person needs their own Federal Student Aid ID at studentaid.gov — a username/password pair tied to their own SSN, email, and phone. Parents without an SSN can still create a StudentAid.gov account and complete their section, consent, and signature electronically — no printed signature page needed. Do not share FSA IDs; each signer must use their own. Create these days ahead — verification can take up to 3 days.', duration: '10 min',
                 links: [
                     { label: 'Create your FSA ID', href: 'https://studentaid.gov/fsa-id/create-account/launch' },
                 ],
             },
             {
-                phase: 'fill', title: 'Fill out the FAFSA form', detail: 'Start at fafsa.gov (never pay — "FAFSA" with a fee is a scam site). Pick the right aid year: file the 2025–26 form in fall 2024 through June 2026. The form walks through student demographics, school selection, and parent finances. Use the IRS Data Retrieval Tool whenever offered — it imports tax data directly, reduces errors, and lowers your audit odds. Answer household size and number in college carefully; these drive the aid formula.', duration: '30–45 min',
+                phase: 'fill', title: 'Fill out the FAFSA form', detail: 'Start at fafsa.gov (never pay — "FAFSA" with a fee is a scam site). Pick the right aid year: file the 2026–27 form (for school year July 2026–June 2027) by June 30, 2027. The form walks through student demographics, school selection, and parent finances. Consent to the automatic transfer of federal tax information from the IRS whenever offered — it imports tax data directly, reduces errors, and lowers your audit odds. Answer household size and number in college carefully; these drive the aid formula.', duration: '30–45 min',
                 links: [
                     { label: 'File the FAFSA (official site)', href: 'https://studentaid.gov/h/apply-for-aid/fafsa' },
                 ],
             },
             { phase: 'fill', title: 'List your schools (up to 20)', detail: 'Add every school you are seriously considering — listing a school does not hurt you anywhere, and aid offers differ wildly. Order does not matter for federal aid (some state grants have their own ordering rules — check yours). Schools you list receive your data automatically and use it to build your aid offer. You can add or remove schools later by editing a processed form.', duration: '10 min' },
-            { phase: 'submit', title: 'Sign and submit with both FSA IDs', detail: 'The student signs with their FSA ID; one parent of a dependent student signs with theirs. Missing parent signatures are the #1 processing delay. If a parent cannot sign electronically, print, sign, and mail the signature page, or the school can fix it later. You will get a confirmation page and email — screenshot it. Every listed school also needs to admit you before aid can be finalized.', duration: '5 min' },
-            { phase: 'wait', title: 'Watch for your FAFSA Submission Summary', detail: 'In 3–5 days (up to 2 weeks with a paper signature) you get the FAFSA Submission Summary by email — check every line for errors. It shows your Student Aid Index (SAI), the number schools use to compute need. A wildly wrong SSI usually means a data-entry error (a $50,000 typo becomes $50). Fix errors by logging back in and submitting a correction; schools you listed get the update automatically.', duration: '3–5 days' },
+            { phase: 'submit', title: 'Sign and submit with both FSA IDs', detail: 'The student signs with their FSA ID; one parent of a dependent student signs with theirs. Missing parent signatures are the #1 processing delay. Every required contributor must complete their section, give consent for the tax-data transfer, and sign — the form is not complete until all have done so. You will get a confirmation page and email — screenshot it. Every listed school also needs to admit you before aid can be finalized.', duration: '5 min' },
+            { phase: 'wait', title: 'Watch for your FAFSA Submission Summary', detail: 'In 3–5 days you get the FAFSA Submission Summary by email — check every line for errors. It shows your Student Aid Index (SAI), the number schools use to compute need. A wildly wrong SSI usually means a data-entry error (a $50,000 typo becomes $50). Fix errors by logging back in and submitting a correction; schools you listed get the update automatically.', duration: '3–5 days' },
             { phase: 'followup', title: 'Respond to verification — fast', detail: 'Schools can select your file for "verification" and request tax transcripts, W-2 forms, or household proof. It is routine (about 1 in 5 files) and not an accusation — but aid is held until you respond. Upload documents through each school\'s portal, not email. Complete this within weeks or your offer can shrink or expire.', duration: '1–2 hours' },
             {
                 phase: 'receive', title: 'Compare aid offers and accept the right pieces', detail: 'Each school sends an aid offer: grants (free money — Pell up to ~$7,395/year), scholarships, work-study, and loans (subsidized first — interest-free while in school; then unsubsidized). Accept all grants and scholarships, take work-study if you want a campus job, and borrow only what you need — accept subsidized before unsubsidized. Compare offers by "gift aid minus cost", not by total loan availability.', duration: '2–3 hours',
@@ -1483,12 +1483,12 @@ export const guides: Guide[] = [
                     { label: 'Compare aid offers (official tool)', href: 'https://studentaid.gov/aid-understanding/compare' },
                 ],
             },
-            { phase: 'followup', title: 'Renewal is easy — file every year', detail: 'Aid does not roll over. Each October 1, file a renewal FAFSA: most answers carry forward, you refresh the tax year, and your SAI recalculates. Changes — a sibling entering college, job loss, divorce — can change aid substantially, and you can appeal to the financial aid office with documentation if your situation worsens after filing.', duration: '20 min/year' },
+            { phase: 'followup', title: 'Renewal is easy — file every year', detail: 'Aid does not roll over. Each year, file a renewal FAFSA as soon as it opens: most answers carry forward, you refresh the tax year, and your SAI recalculates. Changes — a sibling entering college, job loss, divorce — can change aid substantially, and you can appeal to the financial aid office with documentation if your situation worsens after filing.', duration: '20 min/year' },
         ],
         faqs: [
-            { q: 'My parents are undocumented. Can I still get aid?', a: 'If YOU are a US citizen or eligible non-citizen, yes — file normally with your own SSN. Your parents can get an FSA ID without an SSN and sign with alternative processing (name/DOB plus a printed or electronic signature option). Their status does not disqualify you, and the FAFSA never asks about parents\' citizenship.' },
+            { q: 'My parents are undocumented. Can I still get aid?', a: 'If YOU are a US citizen or eligible non-citizen, yes — file normally with your own SSN. Your parents can get a StudentAid.gov account without an SSN and complete their section, consent, and signature electronically. Their status does not disqualify you, and the FAFSA never asks about parents\' citizenship.' },
             { q: 'Is the FAFSA worth it if my family is middle-income?', a: 'Almost always yes. Federal aid extends well past low incomes — unsubsidized loans are available regardless of need, many schools give merit aid only to FAFSA filers, and some state grants go to families earning over $100,000. It costs an hour and nothing to file.' },
-            { q: 'What is the deadline?', a: 'Federal: June 30 of the school year, but that is nearly useless as a guide — states and colleges have much earlier deadlines, some as early as December for fall entry, and many award first-come-first-served. Treat October 1 (opening day) as your deadline and you will never miss money to timing.' },
+            { q: 'What is the deadline?', a: 'Federal: June 30, 2027 for the 2026–27 form (June 30, 2028 for the 2027–28 form), but that is nearly useless as a guide — states and colleges have much earlier deadlines, some as early as December for fall entry, and many award first-come-first-served. File as early as possible and treat your earliest state/college deadline as the real one.' },
         ],
     },
     {
@@ -1822,9 +1822,9 @@ export const guides: Guide[] = [
     {
         slug: 'how-to-apply-for-snap-food-stamps',
         country: 'us',
-        updatedAt: '2025',
+        updatedAt: '2026',
         title: 'How to Apply for SNAP (Food Stamps)',
-        metaTitle: 'How to Apply for SNAP Food Stamps: Step-by-Step Guide (2025)',
+        metaTitle: 'How to Apply for SNAP Food Stamps: Step-by-Step Guide (FY2027)',
         description: 'Apply for SNAP food benefits: income limits, the online or office application, the interview, EBT cards, what you can buy, and immigrant rules.',
         category: 'benefits',
         audience: ['Native', 'Immigrant'],
@@ -1841,7 +1841,7 @@ export const guides: Guide[] = [
         ],
         steps: [
             {
-                phase: 'before', title: 'Check income and eligibility basics', detail: 'Gross monthly income generally must be under 130% of poverty (about $3,445/month for a family of 4 in 2025), with deductions for housing and childcare often raising the qualifying income. Able-bodied adults 18–52 without dependents face a 3-month time limit unless working 80 hours/month or in a work program.', duration: '15 min',
+                phase: 'before', title: 'Check income and eligibility basics', detail: 'Gross monthly income generally must be under 130% of poverty (about $3,575/month for a family of 4 in FY2027, $1,729 for a household of 1; net limit $2,750 for a family of 4), with deductions for housing and childcare often raising the qualifying income. Maximum allotment is $1,023/month for a family of 4 ($306 for one person). Asset limits: $3,000 ($4,750 if a household member is 60+ or disabled). Able-bodied adults 18–64 without dependents face a 3-month time limit unless working 80 hours/month or in a work program.', duration: '15 min',
                 links: [
                     { label: 'Healthcare coverage: How to apply for ACA insurance', href: '/guides/how-to-apply-for-aca-health-insurance' },
                     { label: 'SNAP eligibility (USDA)', href: 'https://www.fns.usda.gov/snap/recipient/eligibility' },
