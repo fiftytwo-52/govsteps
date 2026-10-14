@@ -49,7 +49,6 @@ export const glossary: Record<string, GlossaryEntry> = {
     'Medicare': { full: 'Federal health insurance for 65+', def: 'The federal health insurance program mainly for people 65 and older, plus some younger people with disabilities.', href: 'https://www.medicare.gov/' },
     'Medicaid': { full: 'State + federal health coverage for low income', def: 'Free or very low-cost health coverage run by states with federal money. Eligibility varies by state.', href: 'https://www.medicaid.gov/' },
     'green card': { full: 'Permanent Resident Card', def: 'The ID card proving lawful permanent resident status — live and work in the US permanently.', href: 'https://www.uscis.gov/green-card' },
-    'Green Card': { full: 'Permanent Resident Card', def: 'The ID card proving lawful permanent resident status — live and work in the US permanently.', href: 'https://www.uscis.gov/green-card' },
     'naturalization': { full: 'Becoming a US citizen by application', def: 'The process a green card holder goes through to become a US citizen — application, interview, test, and oath.', href: 'https://www.uscis.gov/citizenship' },
 
     // ---- United Kingdom ----
@@ -64,7 +63,6 @@ export const glossary: Record<string, GlossaryEntry> = {
     'BRP': { full: 'Biometric Residence Permit', def: 'The card proving your UK immigration status, permission length, and right to work. Being replaced by eVisas.', href: 'https://www.gov.uk/biometric-residence-permits' },
     'eVisa': { full: 'UK eVisa', def: 'The digital record of UK immigration status, accessed through a UKVI account. Replaces BRPs.', href: 'https://www.gov.uk/evisa' },
     'share code': { full: 'UK immigration share code', def: 'A 9-character code that proves your UK immigration status to an employer or landlord. Generated online, valid 90 days.', href: 'https://www.gov.uk/view-prove-immigration-status' },
-    'Share code': { full: 'UK immigration share code', def: 'A 9-character code that proves your UK immigration status to an employer or landlord. Generated online, valid 90 days.', href: 'https://www.gov.uk/view-prove-immigration-status' },
     'EUSS': { full: 'EU Settlement Scheme', def: 'The scheme that granted settled or pre-settled status to EU, EEA, and Swiss citizens living in the UK before 31 December 2020.', href: 'https://www.gov.uk/settled-status-eu-citizens-families' },
     'Life in the UK test': { full: 'Life in the UK Test', def: 'The 24-question computer test on British history, traditions, and government required for most citizenship and settlement applications.', href: 'https://www.gov.uk/life-in-the-uk-test' },
     'Companies House': { full: 'UK Companies House', def: 'The official register of UK companies. You incorporate a limited company and file annual accounts through it.', href: 'https://www.gov.uk/government/organisations/companies-house' },
@@ -75,7 +73,6 @@ export const glossary: Record<string, GlossaryEntry> = {
     'CAS': { full: 'Confirmation of Acceptance for Studies', def: 'The electronic number a UK licensed sponsor (university) issues so you can apply for a Student visa.', href: 'https://www.gov.uk/student-visa' },
     'Skilled Worker visa': { full: 'UK Skilled Worker visa', def: 'The main UK work visa. You need a job offer from a licensed sponsor at the required skill and salary level.', href: 'https://www.gov.uk/skilled-worker-visa' },
     'immigration health surcharge': { full: 'IHS', def: 'The fee most UK visa applicants pay upfront to use the NHS — £1,035 per year for most adults (2025 rate).', href: 'https://www.gov.uk/healthcare-immigration-application' },
-    'Immigration health surcharge': { full: 'IHS', def: 'The fee most UK visa applicants pay upfront to use the NHS — £1,035 per year for most adults (2025 rate).', href: 'https://www.gov.uk/healthcare-immigration-application' },
 
     // ---- Canada ----
     'IRCC': { full: 'Immigration, Refugees and Citizenship Canada', def: 'The Canadian government department that runs Express Entry, work and study permits, PR cards, and citizenship.', href: 'https://www.canada.ca/en/immigration-refugees-citizenship.html' },
@@ -83,7 +80,6 @@ export const glossary: Record<string, GlossaryEntry> = {
     'Service Canada': { full: 'Service Canada', def: 'The government service counter network for SIN applications, passports, EI, and other federal programs.', href: 'https://www.servicecanada.gc.ca/' },
     'SIN': { full: 'Social Insurance Number', def: 'Your 9-digit Canadian work and tax number. You need it to work, open accounts, and receive benefits.', href: 'https://www.canada.ca/en/employment-social-development/services/sin.html' },
     'PR card': { full: 'Permanent Resident Card', def: 'The official proof of Canadian permanent resident status, needed for travel back to Canada on commercial vehicles.', href: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants/pr-card.html' },
-    'PR Card': { full: 'Permanent Resident Card', def: 'The official proof of Canadian permanent resident status, needed for travel back to Canada on commercial vehicles.', href: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants/pr-card.html' },
     'permanent resident': { full: 'Canadian permanent resident', def: 'Someone granted the right to live and work anywhere in Canada permanently, without being a citizen.', href: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants/pr-card.html' },
     'COPR': { full: 'Confirmation of Permanent Residence', def: 'The document (now usually electronic, eCOPR) proving you were approved for Canadian permanent residence.', href: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants/confirm-pr-status.html' },
     'Express Entry': { full: 'Express Entry', def: 'Canada\'s online system for managing skilled-worker PR applications — Federal Skilled Worker, Canadian Experience Class, and Federal Skilled Trades.', href: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry.html' },
@@ -118,12 +114,20 @@ const TIP_CLASS =
     'pointer-events-none fixed left-0 top-0 z-[60] w-60 max-w-[90vw] rounded-md border border-hairline bg-canvas-elevated p-3 text-left text-xs font-normal leading-relaxed text-body opacity-0 shadow-[0px_12px_40px_rgba(0,0,0,0.18)] transition-opacity duration-150 group-hover/term:opacity-100 group-focus/term:opacity-100 dark:border-hairline-dark dark:bg-canvas-elevated-dark dark:text-body-dark';
 
 // Longest-first alternation so "USCIS" wins over "USC", etc.
+// Matching is case-INSENSITIVE (flag 'i'): one entry covers "green card",
+// "Green Card", "GREEN CARD", etc., so no case-variant duplicate entries
+// are needed. Lookups resolve through `glossaryByLower` below.
 const pattern = new RegExp(
     `\\b(${Object.keys(glossary)
         .sort((a, b) => b.length - a.length)
         .map(escapeRegExp)
         .join('|')})\\b`,
-    'g',
+    'gi',
+);
+
+// Case-insensitive entry lookup (keys are mixed-case: 'eVisa', 'REAL ID'…).
+const glossaryByLower = new Map<string, GlossaryEntry>(
+    Object.entries(glossary).map(([k, v]) => [k.toLowerCase(), v]),
 );
 
 // Set of terms already defined on the active page (emits full tooltip on 1st occurrence, <abbr> on later occurrences)
@@ -142,7 +146,7 @@ export function resetPageGlossary(): void {
 export function linkTerms(text: string, seenSet?: Set<string>): string {
     const seen = seenSet ?? activePageSeen;
     const linked = text.replace(pattern, (match) => {
-        const entry = glossary[match];
+        const entry = glossary[match] ?? glossaryByLower.get(match.toLowerCase());
         if (!entry) return match;
 
         const termKey = match.toLowerCase();

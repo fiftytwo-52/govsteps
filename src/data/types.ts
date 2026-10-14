@@ -88,30 +88,24 @@ export interface Guide {
 }
 
 export function getGuideEditorial(guide: Guide): {
-    lastReviewedDate: string; // ISO format e.g. "2026-03-12"
-    lastReviewed: string; // e.g. "March 2026"
-    formattedReviewDate: string; // e.g. "March 2026"
+    lastReviewedDate: string | null; // ISO format e.g. "2026-03-12"; null when no review was ever recorded
+    lastReviewed: string | null; // e.g. "March 2026"; null when no review was ever recorded
+    formattedReviewDate: string | null; // e.g. "March 2026"; null when no review was ever recorded
     isOverdue: boolean;
 } {
-    let lastReviewedDate = guide.lastReviewed;
+    const lastReviewedDate = guide.lastReviewed ?? null;
     if (!lastReviewedDate) {
-        const hash = guide.slug.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0);
-        const day = 1 + (hash % 25);
-        const dayStr = day < 10 ? `0${day}` : `${day}`;
-        if (['immigration', 'taxes', 'benefits'].includes(guide.category)) {
-            const month = (hash % 3) + 1; // 1, 2, or 3 (Jan-Mar 2026)
-            const monthStr = month < 10 ? `0${month}` : `${month}`;
-            if (hash % 19 === 0) {
-                // Occasional overdue guide (> 6 months) to exercise the overdue warning banner logic
-                lastReviewedDate = `2025-08-${dayStr}`;
-            } else {
-                lastReviewedDate = `2026-${monthStr}-${dayStr}`;
-            }
-        } else {
-            const month = (hash % 3) + 1;
-            const monthStr = month < 10 ? `0${month}` : `${month}`;
-            lastReviewedDate = `2026-${monthStr}-${dayStr}`;
-        }
+        // No recorded review date: report none. NEVER invent one — an
+        // earlier version derived a plausible-looking date from a hash
+        // of the slug, which published fake "Reviewed: March 2026" lines
+        // (and fake overdue banners) on 131 guides. A missing date is
+        // honest; a fabricated one violates the accuracy rule.
+        return {
+            lastReviewedDate: null,
+            lastReviewed: null,
+            formattedReviewDate: null,
+            isOverdue: false,
+        };
     }
 
     const dateObj = new Date(lastReviewedDate);
@@ -119,7 +113,7 @@ export function getGuideEditorial(guide: Guide): {
     const formattedReviewDate = `${months[dateObj.getMonth()]} ${dateObj.getFullYear()}`;
 
     // Review cycle: immigration, taxes, benefits every 6 months (180 days); rest annually (365 days)
-    const now = new Date('2026-09-26T00:00:00Z');
+    const now = new Date();
     const ageDays = (now.getTime() - dateObj.getTime()) / (1000 * 60 * 60 * 24);
     const maxAgeDays = ['immigration', 'taxes', 'benefits'].includes(guide.category) ? 180 : 365;
     const isOverdue = ageDays > maxAgeDays;

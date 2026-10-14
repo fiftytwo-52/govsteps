@@ -80,5 +80,73 @@ r = f('ca-personal-loan', { amount: 15000, apr: 9, termMonths: 48, originationFe
 check('monthlyPayment', r.monthlyPayment, 373.28);
 check('totalInterest', r.totalInterest, 2917.44, 0.5);
 
+// --- Edge cases (added 2026-10-14): branch boundaries the basic tests never hit ---
+
+console.log('EDGE uk-income-tax: PA taper (>100k), 45% band boundary (125,140), additional rate');
+r = f('uk-income-tax', { grossIncome: 110000, pension: 0, taxYear: '2026/27' });
+check('110k tax (PA tapered to 7,570)', r.incomeTax, 33432);
+check('110k NI', r.nationalInsurance, 4210.60);
+check('110k take-home', r.takeHome, 72357.40);
+r = f('uk-income-tax', { grossIncome: 125140, pension: 0, taxYear: '2026/27' });
+check('125,140 tax (PA fully tapered, no 45% yet)', r.incomeTax, 37488);
+check('125,140 NI', r.nationalInsurance, 4513.40);
+check('125,140 take-home', r.takeHome, 83138.60);
+r = f('uk-income-tax', { grossIncome: 150000, pension: 0, taxYear: '2026/27' });
+check('150k tax (45% band)', r.incomeTax, 48675);
+check('150k NI', r.nationalInsurance, 5010.60);
+check('150k take-home', r.takeHome, 96314.40);
+
+console.log('EDGE ae-gratuity: partial year, unpaid leave, 2-year cap, 1-year boundary');
+r = f('ae-gratuity', { basicSalary: 10000, serviceYears: 7.5, unpaidLeaveDays: 0 });
+check('7.5y gratuity', r.gratuity, 60000);
+check('7.5y beyondFive', r.beyondFive, 25000);
+r = f('ae-gratuity', { basicSalary: 10000, serviceYears: 7, unpaidLeaveDays: 365 });
+check('365 unpaid-leave days -> 6 effective years', r.effectiveYears, 6);
+check('365 unpaid-leave gratuity', r.gratuity, 45000);
+r = f('ae-gratuity', { basicSalary: 10000, serviceYears: 30, unpaidLeaveDays: 0 });
+check('30y gratuity capped at 2y wage', r.gratuity, 240000);
+r = f('ae-gratuity', { basicSalary: 10000, serviceYears: 1, unpaidLeaveDays: 0 });
+check('exactly 1y -> eligible, 21 days', r.gratuity, 7000);
+r = f('ae-gratuity', { basicSalary: 10000, serviceYears: 0.99, unpaidLeaveDays: 0 });
+check('0.99y -> 0', r.gratuity, 0);
+
+console.log('EDGE us-fha-mortgage: 20% down -> 0.50% MIP, 11-year MIP duration');
+r = f('us-fha-mortgage', { homePrice: 310880, downPaymentPct: 20, interestRate: 6.5, termYears: '30', annualTax: 0, annualInsurance: 0, financeUfmip: false });
+check('20% down MIP', r.monthlyMip, 103.63, 0.5);
+check('20% down P&I', r.monthlyPI, 1571.98, 1);
+check('20% down MIP duration', r.mipDuration, '11 years (LTV 90% or below)');
+check('20% down UFMIP', r.ufmip, 4352.32, 1);
+
+console.log('EDGE loans: extra payments shorten payoff, origination fee adds to total cost');
+r = f('us-personal-loan', { amount: 10000, apr: 10, termMonths: 36, originationFeePct: 0, extraPayment: 100 });
+check('US +$100 extra monthly', r.monthlyPayment, 422.67);
+check('US +$100 extra payoff months', r.payoffMonths, 27);
+check('US +$100 extra total interest', r.totalInterest, 1412.09, 0.5);
+r = f('us-personal-loan', { amount: 10000, apr: 10, termMonths: 36, originationFeePct: 5, extraPayment: 0 });
+check('US 5% fee total cost', r.totalCost, 12116.12, 1);
+check('US 5% fee leaves interest unchanged', r.totalInterest, 1616.12, 0.5);
+r = f('ca-personal-loan', { amount: 15000, apr: 9, termMonths: 48, originationFeePct: 0, extraPayment: 100 });
+check('CA +$100 extra monthly', r.monthlyPayment, 473.28);
+check('CA +$100 extra payoff months', r.payoffMonths, 37);
+check('CA +$100 extra total interest', r.totalInterest, 2511.36, 0.5);
+
+console.log('EDGE uk-child-benefit: HICBC boundaries 60k (no charge) and 80k (full charge)');
+r = f('uk-child-benefit', { children: 2, taxYear: '2026/27', highestIncome: 60000 });
+check('60k HICBC', r.hicbc, 0);
+check('60k net', r.netAnnual, 2337.40);
+r = f('uk-child-benefit', { children: 2, taxYear: '2026/27', highestIncome: 80000 });
+check('80k HICBC = full benefit', r.hicbc, 2337.40);
+check('80k net = 0', r.netAnnual, 0);
+
+console.log('EDGE ca-ei: caps + premiums for both benefit years');
+r = f('ca-ei', { annualEarnings: 100000, benefitYear: '2025' });
+check('2025 capped at 695', r.weeklyBenefit, 695);
+check('2025 premium at MIE', r.annualPremium, 1077.48);
+r = f('ca-ei', { annualEarnings: 100000, benefitYear: '2026' });
+check('2026 premium at MIE', r.annualPremium, 1123.07);
+r = f('ca-ei', { annualEarnings: 26000, benefitYear: '2026' });
+check('below-cap weekly', r.weeklyBenefit, 275);
+check('below-cap premium', r.annualPremium, 423.80);
+
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

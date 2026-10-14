@@ -587,7 +587,7 @@ export const topicData: Record<CountryCode, Record<string, TopicContent>> = {
     benefits: {
       headline: 'UAE Benefits & Worker Protections: Gratuity, ILOE & Health Insurance',
       lead: 'UAE worker protections centre on end-of-service gratuity, the ILOE unemployment insurance scheme, and mandatory health insurance.',
-      body: 'Employees in the UAE accrue an end-of-service gratuity based on basic salary and years of service — 21 days\' wages per year for the first five years and 30 days per year after, capped at two years\' wages. The Involuntary Loss of Employment (ILOE) insurance scheme requires most employees to subscribe and pays a limited monthly benefit if they lose their job. Health insurance is mandatory for residents in Abu Dhabi and Dubai, with employer-provided cover for most workers. Our guides explain gratuity calculations, ILOE enrolment and claims, health insurance requirements, and what to do when a payment is delayed.',
+      body: 'Employees in the UAE accrue an end-of-service gratuity based on basic salary and years of service — 21 days\' wages per year for the first five years and 30 days per year after, capped at two years\' wages. The Involuntary Loss of Employment (ILOE) insurance scheme requires most employees to subscribe and pays a limited monthly benefit if they lose their job. Health insurance is mandatory across the UAE: Abu Dhabi and Dubai run their own schemes, and since 1 January 2025 the federal Basic Health Insurance Scheme covers private-sector employees and domestic workers in the five northern emirates, with employers required to provide it. Our guides explain gratuity calculations, ILOE enrolment and claims, health insurance requirements, and what to do when a payment is delayed.',
       agencyOverview: 'Official agencies: MOHRE (mohre.gov.ae), ILOE (iloe.ae), DHA (dha.gov.ae) in Dubai, and DOH in Abu Dhabi.',
       faqs: [
         {
@@ -600,7 +600,7 @@ export const topicData: Record<CountryCode, Record<string, TopicContent>> = {
         },
         {
           q: 'Is health insurance mandatory in the UAE?',
-          a: 'Yes, in Abu Dhabi and Dubai health insurance is mandatory for residents, and employers generally provide cover for employees. Other emirates have their own rules — confirm with your emirate\'s health authority.',
+          a: 'Yes — health insurance is mandatory across the UAE. Abu Dhabi and Dubai run their own schemes; in the five northern emirates (Sharjah, Ajman, Fujairah, Ras Al Khaimah, Umm Al Quwain) the federal Basic Health Insurance Scheme applies since 1 January 2025, with employers required to cover private-sector employees and domestic workers (AED 320/year basic package).',
         },
         {
           q: 'What can I do if my employer does not pay my gratuity?',
@@ -616,7 +616,7 @@ export const topicData: Record<CountryCode, Record<string, TopicContent>> = {
       faqs: [
         {
           q: 'Should I set up mainland or free zone in the UAE?',
-          a: 'Mainland suits businesses selling directly to the UAE market; free zone suits export-focused, consultancy, and holding businesses that want 100% foreign ownership. Compare licence costs, activity restrictions, and office requirements before deciding.',
+          a: 'Mainland suits businesses selling directly to the UAE market; free zone suits export-focused, consultancy, and holding businesses. Whether 100% foreign ownership is available on the mainland depends on your activity and legal form — confirm the position for your activity with DET / the DED before deciding. Compare licence costs, activity restrictions, and office requirements as well.',
         },
         {
           q: 'How much does a UAE trade licence cost?',
@@ -707,12 +707,12 @@ export const topicData: Record<CountryCode, Record<string, TopicContent>> = {
     insurance: {
       headline: 'UAE Insurance Guides: Health, Motor & ILOE Unemployment Insurance',
       lead: 'Insurance in the UAE is mandatory in key areas: health cover for residents, third-party motor insurance for drivers, and ILOE for employees.',
-      body: 'Health insurance is mandatory for residents in Abu Dhabi and Dubai, with employers generally providing cover for employees and sponsors arranging cover for dependants. Motor insurance is mandatory for every registered vehicle — third-party cover is the legal minimum, with comprehensive cover optional. The ILOE scheme insures most employees against involuntary job loss for a small monthly premium. Our guides explain what each policy must cover, how to compare providers, how to claim, and what to do when a claim is rejected.',
+      body: 'Health insurance is mandatory across the UAE — Abu Dhabi and Dubai run their own schemes, and the five northern emirates are covered by the federal Basic Health Insurance Scheme since 1 January 2025 — with employers generally providing cover for employees and sponsors arranging cover for dependants. Motor insurance is mandatory for every registered vehicle — third-party cover is the legal minimum, with comprehensive cover optional. The ILOE scheme insures most employees against involuntary job loss for a small monthly premium. Our guides explain what each policy must cover, how to compare providers, how to claim, and what to do when a claim is rejected.',
       agencyOverview: 'Official agencies: Central Bank of the UAE (centralbank.ae) regulates insurers; DHA/DOH set health insurance rules.',
       faqs: [
         {
           q: 'Is health insurance mandatory in the UAE?',
-          a: 'Yes, in Abu Dhabi and Dubai health insurance is mandatory for residents. Employers generally provide cover for employees; sponsors arrange cover for dependants. Minimum benefit levels are set by the health authority.',
+          a: 'Yes — health insurance is mandatory across the UAE. Abu Dhabi and Dubai run their own schemes; in the five northern emirates the federal Basic Health Insurance Scheme applies since 1 January 2025, with employers required to cover private-sector employees and domestic workers. Sponsors generally arrange cover for dependants; minimum benefit levels are set by the health authority.',
         },
         {
           q: 'What motor insurance do I need in the UAE?',
