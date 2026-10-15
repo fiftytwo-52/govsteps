@@ -64,6 +64,32 @@ const officialLink = guide.steps
   .flatMap((s) => s.links ?? [])
   .find((l) => /^https?:\/\//.test(l.href));
 
+// --- Answer-first / review-cycle helpers -------------------------------
+// Review cycle mirrors getGuideEditorial: volatile categories (immigration,
+// taxes, benefits) are re-checked every 6 months, all others annually.
+// Next review due is pure arithmetic on the recorded review date — never
+// a fabricated claim. Guides with no recorded date show the cycle only.
+const isVolatileCategory = ['immigration', 'taxes', 'benefits'].includes(guide.category);
+const reviewCycleDays = isVolatileCategory ? 180 : 365;
+const reviewCycleLabel = isVolatileCategory ? 'every 6 months' : 'annually';
+const reviewMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const nextReviewDue = editorial.lastReviewedDate
+  ? (() => {
+      const due = new Date(`${editorial.lastReviewedDate}T00:00:00Z`);
+      due.setTime(due.getTime() + reviewCycleDays * 24 * 60 * 60 * 1000);
+      return `${reviewMonths[due.getUTCMonth()]} ${due.getUTCFullYear()}`;
+    })()
+  : null;
+
+// Hostname of the official site this guide points to (derived from the
+// guide's own first external link — never invented).
+let officialHost: string | null = null;
+try {
+  officialHost = officialLink ? new URL(officialLink.href).hostname.replace(/^www\./, '') : null;
+} catch {
+  officialHost = null;
+}
+
 const stepToHowToStep = (step: (typeof guide.steps)[number], i: number) => {
   const durationIso = toIso8601Duration(step.duration);
   return {
@@ -221,6 +247,42 @@ const breadcrumbSchema = {
         )}
 
         <p class="mt-3 max-w-2xl text-base leading-relaxed text-body dark:text-body-dark" set:html={linkTerms(guide.summary)} />
+
+        <!-- At a glance: answer-first box — what it costs, how long it takes,
+             where to apply, and how fresh this guide is. Every value comes
+             from this guide's own verified fields; nothing is invented. -->
+        <div class="mt-4 max-w-2xl rounded-md border border-hairline bg-canvas-elevated p-4 dark:border-hairline-dark dark:bg-canvas-elevated-dark">
+          <p class="font-mono text-[11px] font-semibold uppercase tracking-wider text-mute dark:text-mute-dark">At a glance</p>
+          <dl class="mt-2 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
+            <div class="flex gap-2">
+              <dt class="shrink-0 font-medium text-mute dark:text-mute-dark">Cost:</dt>
+              <dd class="text-ink dark:text-ink-dark">{guide.totalCost}</dd>
+            </div>
+            <div class="flex gap-2">
+              <dt class="shrink-0 font-medium text-mute dark:text-mute-dark">Total time:</dt>
+              <dd class="text-ink dark:text-ink-dark">{guide.totalTime}</dd>
+            </div>
+            <div class="flex gap-2">
+              <dt class="shrink-0 font-medium text-mute dark:text-mute-dark">Steps:</dt>
+              <dd class="text-ink dark:text-ink-dark">{guide.steps.length} steps</dd>
+            </div>
+            <div class="flex gap-2">
+              <dt class="shrink-0 font-medium text-mute dark:text-mute-dark">Where to apply:</dt>
+              <dd class="text-ink dark:text-ink-dark">
+                {officialLink ? (
+                  <a href={officialLink.href} target="_blank" rel="noopener" class="font-medium text-link underline decoration-hairline hover:text-link-deep dark:text-link-dark">{officialHost}</a>
+                ) : (
+                  <span>{country.sources}</span>
+                )}
+              </dd>
+            </div>
+          </dl>
+          <p class="mt-2.5 border-t border-hairline/60 pt-2.5 text-xs leading-relaxed text-mute dark:border-hairline-dark/60 dark:text-mute-dark">
+            {editorial.lastReviewed
+              ? <>Last reviewed <strong class="font-medium text-ink dark:text-ink-dark">{editorial.lastReviewed}</strong> against official sources. Re-checked {reviewCycleLabel}{nextReviewDue && (<> · next review due <strong class="font-medium text-ink dark:text-ink-dark">{nextReviewDue}</strong></>)}.</>
+              : <>Review cycle: {reviewCycleLabel}. <a href="/about/#standards" class="font-medium text-ink underline decoration-hairline hover:text-link dark:text-ink-dark">How we review guides</a></>}
+          </p>
+        </div>
           </div>
           <CategorySticker category={guide.category} class="hidden size-20 shrink-0 sm:block" />
         </div>

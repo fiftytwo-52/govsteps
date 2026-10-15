@@ -30,17 +30,30 @@ const SITE = 'https://govsteps.com';
 // Static core pages (404 is excluded — never indexed).
 const staticPaths = ['/', '/uk/', '/can/', '/uae/', '/about/', '/contact/', '/privacy/', '/terms/'];
 
-// Topic Category Pages (all categories x 4 countries)
+// Topic Category Pages (all categories x 4 countries).
+// lastmod = the most recent recorded review date among that topic's guides
+// in that country. Topics with no recorded review date get NO lastmod —
+// never a fabricated one. (An earlier version hardcoded '2026-03-01',
+// which predates the govsteps.com domain itself, 2026-09-12.)
+const topicLastmod = (countryCode, categoryId) => {
+  const dates = guides
+    .filter((g) => g.country === countryCode && g.category === categoryId)
+    .map((g) => getGuideEditorial(g).lastReviewedDate)
+    .filter((d) => d !== null);
+  if (dates.length === 0) return undefined;
+  return dates.sort().at(-1);
+};
+
 const topicPaths = [
-  ...categories.map((c) => `/topics/${c.id}/`),
-  ...categories.map((c) => `/uk/topics/${c.id}/`),
-  ...categories.map((c) => `/can/topics/${c.id}/`),
-  ...categories.map((c) => `/uae/topics/${c.id}/`),
+  ...categories.map((c) => ({ loc: `/topics/${c.id}/`, lastmod: topicLastmod('us', c.id) })),
+  ...categories.map((c) => ({ loc: `/uk/topics/${c.id}/`, lastmod: topicLastmod('uk', c.id) })),
+  ...categories.map((c) => ({ loc: `/can/topics/${c.id}/`, lastmod: topicLastmod('ca', c.id) })),
+  ...categories.map((c) => ({ loc: `/uae/topics/${c.id}/`, lastmod: topicLastmod('ae', c.id) })),
 ];
 
 const entries = [
   ...staticPaths.map((loc) => ({ loc })),
-  ...topicPaths.map((loc) => ({ loc, lastmod: '2026-03-01' })),
+  ...topicPaths.map((t) => ({ loc: t.loc, lastmod: t.lastmod })),
   ...guides.map((g) => {
     const editorial = getGuideEditorial(g);
     const hero = getGuideHero(g);

@@ -58,7 +58,7 @@ const siteSchema = [
     name: siteName,
     url: Astro.site?.toString() ?? canonicalURL.origin,
     logo: new URL('/images/logos/logo.svg', Astro.site).toString(),
-    description: 'Plain-language, step-by-step guides for US, UK, and Canadian government paperwork.',
+    description: 'Plain-language, step-by-step guides for US, UK, Canadian, and UAE government paperwork.',
   },
 ];
 const allSchema = [...siteSchema, ...schema];
@@ -226,7 +226,7 @@ const allSchema = [...siteSchema, ...schema];
                 </text>
               </svg>
             </a>
-            <p class="mt-2 max-w-xs text-sm text-body dark:text-body-dark">Plain-language, step-by-step guides for US, UK, and Canadian government paperwork.</p>
+            <p class="mt-2 max-w-xs text-sm text-body dark:text-body-dark">Plain-language, step-by-step guides for US, UK, Canadian, and UAE government paperwork.</p>
           </div>
           <div class="text-sm">
             <p class="eyebrow">Countries</p>
