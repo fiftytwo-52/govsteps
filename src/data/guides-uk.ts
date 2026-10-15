@@ -352,8 +352,8 @@ export const guides: Guide[] = [
         country: 'uk',
         updatedAt: '2025',
         lastReviewed: '2026-10-15',
-        title: 'How to File a UK Self Assessment Tax Return',
-        metaTitle: 'UK Self Assessment: Step-by-Step Filing Guide (HMRC)',
+        title: 'How to File a UK Self Assessment Tax Return in 2026',
+        metaTitle: 'UK Self Assessment: Filing Guide (2026)',
         description: 'HMRC Self Assessment guide: who must register, the UTR, the 31 January deadline, filing online, payments on account, and penalties.',
         category: 'taxes',
         audience: ['Native', 'Immigrant', 'Expat'],
@@ -405,6 +405,7 @@ export const guides: Guide[] = [
             { q: 'What happens if I miss the 31 January deadline?', a: 'An automatic £100 penalty applies even if you owe nothing, plus £10/day fines after 3 months, percentage-based penalties after 6 and 12 months, and interest on unpaid tax. If you cannot pay, contact HMRC about a Time to Pay arrangement BEFORE the deadline — they are far more flexible when you approach them first.' },
             { q: 'I only earn a little from freelancing. Do I still need to file?', a: 'Under £1,000 self-employment income: no (trading allowance). Over £1,000: yes, register and file, though the trading allowance itself means the first £1,000 is tax-free. Claiming means-tested benefits can also be a reason to file regardless of income.' },
             { q: 'What are payments on account?', a: 'If your tax bill exceeds £1,000 and under 80% of your tax comes from PAYE, HMRC collects half of the current year\'s expected bill in advance — on 31 January and 31 July. First-time bills are often double what people expect. You can apply to reduce payments on account if your income is falling.' },
+            { q: 'How do I file Self Assessment in 2026?', a: 'For the 2025/26 tax year (6 April 2025 to 5 April 2026): register by 5 October 2026 if you are new, then file online and pay by 31 January 2027. From 6 April 2026, sole traders and landlords with qualifying income over £50,000 must also use Making Tax Digital-compatible software for quarterly updates. The personal allowance is £12,570.' },
         
         {
           q: 'How much income tax will I pay on £60,000?',

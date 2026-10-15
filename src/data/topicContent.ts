@@ -34,7 +34,7 @@ export const topicData: Record<CountryCode, Record<string, TopicContent>> = {
         },
         {
           q: 'How can I file my US federal taxes for free?',
-          a: 'Eligible taxpayers can file free through IRS Free File partners (typically if your Adjusted Gross Income is below the annual threshold), through the IRS Direct File portal if available in your state, or using IRS Free File Fillable Forms.',
+          a: 'Eligible taxpayers can file free through IRS Free File partners (typically if your Adjusted Gross Income is below the annual threshold), or using IRS Free File Fillable Forms. IRS Direct File was discontinued and is not available for filing season 2026.',
         },
         {
           q: 'How do I check the status of my tax refund?',

@@ -12,8 +12,8 @@ export const guides: Guide[] = [
         country: 'us',
         updatedAt: '2025',
         lastReviewed: '2026-10-15',
-        title: 'How to Apply for an ITIN (Individual Taxpayer Identification Number)',
-        metaTitle: 'How to Apply for an ITIN: Step-by-Step Guide (Form W-7)',
+        title: 'How to Apply for an ITIN in 2026 (Individual Taxpayer Identification Number)',
+        metaTitle: 'How to Apply for an ITIN: Form W-7 Guide (2026)',
         description: 'Apply for an ITIN step by step: which documents to gather, where to submit Form W-7, fees, processing times, and how to follow up with the IRS.',
         category: 'taxes',
         audience: ['Immigrant', 'Expat'],
@@ -63,6 +63,7 @@ export const guides: Guide[] = [
             { q: 'Can I get an ITIN with a photocopy of my passport?', a: 'No. The IRS requires original documents or copies certified by the issuing agency. Regular notarized photocopies are not accepted for the passport alone.' },
             { q: 'Does an ITIN give me the right to work?', a: 'No. An ITIN is for tax filing only. It does not authorize work in the US or make you eligible for Social Security benefits.' },
             { q: 'Can I get an ITIN without filing a tax return?', a: 'Yes, if you qualify for one of the five IRS exceptions: passive income / third-party withholding or treaty benefits, wages / scholarships / grants, mortgage interest reporting, disposition of US real property, or T.D. 9363 reporting. You must attach the exception documentation listed in the W-7 instructions. If none of the exceptions applies, a tax return must accompany your W-7.' },
+            { q: 'How do I file Form W-7 in 2026?', a: 'File Form W-7 with your 2025 federal tax return (or exception documentation if you qualify for one of the five IRS exceptions) by mailing it to the IRS ITIN Operation in Austin. Allow 7 weeks for processing, or 9 to 11 weeks during tax season or if you applied from overseas. The IRS does not charge a fee for an ITIN.' }
         ],
     },
     {
@@ -398,8 +399,9 @@ export const guides: Guide[] = [
         slug: 'how-to-file-taxes-first-time',
         country: 'us',
         updatedAt: '2025',
-        title: 'How to File US Taxes for the First Time (Form 1040)',
-        metaTitle: 'How to File US Taxes for the First Time: Step-by-Step 1040 Guide',
+        lastReviewed: '2026-10-15',
+        title: 'How to File US Taxes for the First Time in 2026 (Form 1040)',
+        metaTitle: 'How to File US Taxes for the First Time (2026)',
         description: 'First-time US tax filing guide: gathering documents, choosing free filing software, filling Form 1040, claiming credits, and tracking your refund.',
         category: 'taxes',
         audience: ['Native', 'Immigrant', 'Expat'],
@@ -419,12 +421,12 @@ export const guides: Guide[] = [
             { phase: 'before', title: 'Wait for and collect all income forms', detail: 'Employers send W-2s by January 31; banks and clients send 1099s around the same time. Make a list of every job and income source so nothing is missed — the IRS gets copies too.', duration: '2–6 weeks' },
             { phase: 'before', title: 'Decide your filing status', detail: 'Single, Married Filing Jointly, Married Filing Separately, Head of Household, or Qualifying Surviving Spouse. Joint filing usually saves money for married couples.', duration: '15 min' },
             {
-                phase: 'fill', title: 'Choose free filing software', detail: 'If your income is under ~$84,000, use IRS Free File (irs.gov) for brand-name software at no cost. Above that, Free File Fillable Forms or paid software like TurboTax works.', duration: '20 min',
+                phase: 'fill', title: 'Choose free filing software', detail: 'If your income is under $89,000, use IRS Free File (irs.gov) for brand-name software at no cost. Above that, Free File Fillable Forms or paid software like TurboTax works.', duration: '20 min',
                 links: [
                     { label: 'IRS Free File (irs.gov)', href: 'https://www.irs.gov/filing/irs-free-file-do-your-taxes-for-free' },
                 ],
             },
-            { phase: 'fill', title: 'Complete Form 1040', detail: 'The software asks questions and fills the 1040 for you. Report all income, claim deductions (standard deduction is $14,600 single / $29,200 joint for 2024), and check credits like the Earned Income Tax Credit.', duration: '1–3 hours' },
+            { phase: 'fill', title: 'Complete Form 1040', detail: 'The software asks questions and fills the 1040 for you. Report all income, claim deductions (standard deduction is $15,750 single / $31,500 joint for 2025 (the return you file in 2026)), and check credits like the Earned Income Tax Credit.', duration: '1–3 hours' },
             {
                 phase: 'submit', title: 'E-file and choose direct deposit', detail: 'Submit electronically — refunds arrive in about 21 days versus 6+ weeks on paper. Choose direct deposit, not a paper check or refund card.', duration: '15 min',
                 links: [
@@ -443,6 +445,7 @@ export const guides: Guide[] = [
             { q: 'Do I have to file if I made very little money?', a: 'Maybe not, but you should anyway — filing is how you get a refund of withheld taxes or claim refundable credits like the EITC, which can be worth thousands.' },
             { q: 'What if I owe money I cannot pay?', a: 'File anyway. The failure-to-file penalty is 10x harsher than the failure-to-pay penalty. Set up an IRS payment plan online starting at ~$30/month.' },
             { q: 'I am undocumented. Can I file taxes?', a: 'Yes — the IRS treats tax filing separately from immigration enforcement. File with an ITIN. Paying taxes is often viewed favorably in future immigration cases.' },
+            { q: 'How do I file Form 1040 in 2026?', a: 'In 2026 you file your 2025 tax-year return, due April 15, 2026. Gather your W-2s and 1099s, use IRS Free File if your AGI is under $89,000, and e-file with direct deposit — most refunds arrive within 21 days. The 2025 standard deduction is $15,750 single or $31,500 married filing jointly.' }
         ],
     },
     {
@@ -907,15 +910,16 @@ export const guides: Guide[] = [
         slug: 'how-to-file-taxes-for-free',
         country: 'us',
         updatedAt: '2025',
-        title: 'How to File Your Federal Taxes for Free (IRS Free File)',
-        metaTitle: 'How to File Taxes for Free: IRS Free File Guide (2025)',
-        description: 'File your federal taxes 100% free with IRS Free File: eligibility rules, guided software options, the Direct File pilot, and avoiding fake-free traps.',
+        lastReviewed: '2026-10-15',
+        title: 'How to File Your Federal Taxes for Free in 2026 (IRS Free File)',
+        metaTitle: 'How to File Taxes for Free: IRS Free File (2026)',
+        description: 'File your federal taxes 100% free with IRS Free File: eligibility rules, guided software options, and avoiding fake-free traps.',
         category: 'taxes',
         audience: ['Native', 'Immigrant', 'Expat'],
         difficulty: 'Easy',
         totalTime: '1–3 hours',
         totalCost: '$0 federal (state may vary)',
-        summary: 'If your adjusted gross income is under ~$84,000, brand-name tax software (TurboTax, H&R Block, etc.) is genuinely free through IRS Free File — the version the companies hide from search results. Here is how to find the real free door.',
+        summary: 'If your adjusted gross income is under $89,000, brand-name tax software (TurboTax, H&R Block, etc.) is genuinely free through IRS Free File — the version the companies hide from search results. Here is how to find the real free door.',
         documents: [
             'Social Security number or ITIN for yourself, spouse, and dependents',
             'W-2s, 1099s, and any other income forms',
@@ -925,7 +929,7 @@ export const guides: Guide[] = [
         ],
         steps: [
             {
-                phase: 'before', title: 'Check your eligibility', detail: 'IRS Free File is available to taxpayers with an adjusted gross income (AGI) of about $84,000 or less (the threshold adjusts yearly). Active-duty military with AGI under ~$79,000 get it regardless of the general cap. Some providers set their own lower limits.', duration: '10 min',
+                phase: 'before', title: 'Check your eligibility', detail: 'IRS Free File is available to taxpayers with an adjusted gross income (AGI) of $89,000 or less for filing season 2026. Active-duty military get a free federal return through any Guided Tax provider when their AGI is within the program threshold. Some providers set their own lower limits.', duration: '10 min',
                 links: [
                     { label: 'IRS Free File eligibility', href: 'https://www.irs.gov/filing/irs-free-file-do-your-taxes-for-free' },
                 ],
@@ -937,15 +941,16 @@ export const guides: Guide[] = [
                     { label: 'IRS Free File portal', href: 'https://www.irs.gov/filing/irs-free-file-do-your-taxes-for-free' },
                 ],
             },
-            { phase: 'fill', title: 'Pick a provider and answer the interview questions', detail: 'The tool matches you to 2–3 participating software brands. Pick one and work through the guided interview — it asks about your life (job, kids, school, housing) and fills the right forms automatically. You can also try IRS Direct File (free, no income cap, in participating states) for simple W-2-only returns.', duration: '1–2 hours' },
+            { phase: 'fill', title: 'Pick a provider and answer the interview questions', detail: 'The tool matches you to 2–3 participating software brands. Pick one and work through the guided interview — it asks about your life (job, kids, school, housing) and fills the right forms automatically. Note: IRS Direct File, the free-filing pilot built by the IRS itself, was discontinued and is not available for filing season 2026 — Free File is the free option.', duration: '1–2 hours' },
             { phase: 'submit', title: 'E-file and choose direct deposit', detail: 'Submit electronically and pick direct deposit — refunds arrive in about 21 days versus 6+ weeks by paper check. Double-check your bank routing and account numbers before submitting; a wrong digit means a mailed check and weeks of delay.', duration: '15 min' },
             { phase: 'wait', title: 'Track your refund', detail: 'Use the "Where\'s My Refund?" tool 24 hours after e-filing. Have your SSN, filing status, and exact refund amount ready. Do not call the IRS to ask about refunds before 21 days — phone agents see the same system you do.', duration: 'Up to 21 days' },
             { phase: 'followup', title: 'Save a PDF of your return', detail: 'Download the completed return before closing the software. You need last year\'s AGI to e-file next year, and lenders/colleges constantly ask for tax return transcripts. Store it in a folder you can find.', duration: '5 min' },
         ],
         faqs: [
             { q: 'Why does TurboTax say I have to pay when the IRS says it\'s free?', a: 'You are on the commercial product, not the Free File version. Free File is only accessible through the IRS.gov portal link. Go back to IRS.gov/freefile and start again from there.' },
-            { q: 'What is IRS Direct File?', a: 'A newer IRS-built free filing tool for simple returns (W-2 wages, standard deduction, common credits) in participating states. No income cap, no upsells. Check irs.gov/directfile for current state coverage.' },
+            { q: 'What is IRS Direct File?', a: 'It was the free-filing tool built by the IRS itself for simple returns, run as a pilot in participating states. It was discontinued and is not available for filing season 2026. To file free in 2026, use IRS Free File (AGI $89,000 or less) or Free File Fillable Forms at any income.' },
             { q: 'Can I use Free File if I live abroad?', a: 'Yes — US citizens abroad with AGI under the threshold can use Free File and still claim the Foreign Earned Income Exclusion, though not every provider supports Form 2555. Check each provider\'s form list before choosing.' },
+            { q: 'How do I file taxes for free in 2026?', a: 'Enter through IRS.gov/freefile — never a tax company homepage — and use the Find your trusted partner tool. With AGI of $89,000 or less you get guided brand-name software free for your federal return. Over the cap, use Free File Fillable Forms. IRS Direct File is no longer available.' }
         ],
     },
     {
@@ -993,8 +998,9 @@ export const guides: Guide[] = [
         slug: 'how-to-file-quarterly-estimated-taxes',
         country: 'us',
         updatedAt: '2025',
-        title: 'How to File Quarterly Estimated Taxes (Freelancers & Self-Employed)',
-        metaTitle: 'How to Pay Quarterly Estimated Taxes: Form 1040-ES Guide',
+        lastReviewed: '2026-10-15',
+        title: 'How to File Quarterly Estimated Taxes in 2026 (Freelancers & Self-Employed)',
+        metaTitle: 'Quarterly Estimated Taxes: Form 1040-ES (2026)',
         description: 'Quarterly estimated taxes for freelancers and the self-employed: who must pay, the four due dates, Form 1040-ES math, and paying online.',
         category: 'taxes',
         audience: ['Native', 'Immigrant'],
@@ -1014,7 +1020,7 @@ export const guides: Guide[] = [
                     { label: 'Need a tax ID? ITIN application guide', href: '/guides/how-to-apply-for-itin/' },
                 ],
             },
-            { phase: 'before', title: 'Learn the four due dates', detail: 'Q1: April 15. Q2: June 15. Q3: September 15. Q4: January 15 of the next year. Yes, they are unevenly spaced — Q2 covers only two months. Mark all four in your calendar with a reminder one week ahead.', duration: '5 min' },
+            { phase: 'before', title: 'Learn the four due dates', detail: 'For 2026: Q1 April 15, 2026. Q2 June 15, 2026. Q3 September 15, 2026. Q4 January 15, 2027. Yes, they are unevenly spaced — Q2 covers only two months. Mark all four in your calendar with a reminder one week ahead.', duration: '5 min' },
             {
                 phase: 'fill', title: 'Calculate your payment with Form 1040-ES', detail: 'The worksheet in Form 1040-ES walks you through it: estimate this year\'s income, subtract deductions, apply your tax rate plus ~15.3% self-employment tax, then divide by four. A simpler shortcut: pay 100% of last year\'s total tax in four equal chunks (the "safe harbor") and you cannot be penalized no matter what you earn this year.', duration: '30–45 min',
                 links: [
@@ -1036,6 +1042,7 @@ export const guides: Guide[] = [
             { q: 'What happens if I miss a quarterly deadline?', a: 'The IRS charges an underpayment penalty (currently around 7–8% annualized, on the shortfall for the days it was late). It is calculated automatically — you do not need to file a separate form. One late quarter on a small amount is usually just a few dollars.' },
             { q: 'I just started freelancing and have no idea what I\'ll earn. What do I do?', a: 'Use last year\'s safe harbor if you had a job, or estimate from your first months of income and set aside 25–30% of every payment in a separate savings account as a buffer.' },
             { q: 'Do I have to pay estimates on investment income?', a: 'Not usually — you can cover investment income by increasing W-4 withholding or making one big Q4 estimate. Withholding is treated as paid evenly through the year, which estimates are not, so it is more forgiving.' },
+            { q: 'How do I file quarterly estimated taxes in 2026?', a: 'Pay four instalments with Form 1040-ES: April 15, June 15, and September 15, 2026, and January 15, 2027. You must pay if you expect to owe $1,000 or more and your withholding covers less than 90% of the current year tax or 100% of the prior year tax (110% if prior year income was over $150,000). Pay free via IRS Direct Pay.' }
         ],
     },
     {
@@ -1456,8 +1463,9 @@ export const guides: Guide[] = [
         slug: 'how-to-file-the-fafsa',
         country: 'us',
         updatedAt: '2026',
-        title: 'How to File the FAFSA (Free Application for Federal Student Aid)',
-        metaTitle: 'How to File the FAFSA: Step-by-Step Guide, Deadlines & Common Mistakes',
+        lastReviewed: '2026-10-15',
+        title: 'How to File the FAFSA in 2026 (Free Application for Federal Student Aid)',
+        metaTitle: 'How to File the FAFSA: Deadlines & Guide (2026)',
         description: 'File the FAFSA step by step: FSA ID creation, parent vs student sections, automatic IRS tax-data transfer, school selection, deadlines, and the Student Aid Index.',
         category: 'students',
         audience: ['Native', 'Immigrant', 'Expat'],
@@ -1506,6 +1514,7 @@ export const guides: Guide[] = [
             { q: 'My parents are undocumented. Can I still get aid?', a: 'If YOU are a US citizen or eligible non-citizen, yes — file normally with your own SSN. Your parents can get a StudentAid.gov account without an SSN and complete their section, consent, and signature electronically. Their status does not disqualify you, and the FAFSA never asks about parents\' citizenship.' },
             { q: 'Is the FAFSA worth it if my family is middle-income?', a: 'Almost always yes. Federal aid extends well past low incomes — unsubsidized loans are available regardless of need, many schools give merit aid only to FAFSA filers, and some state grants go to families earning over $100,000. It costs an hour and nothing to file.' },
             { q: 'What is the deadline?', a: 'Federal: June 30, 2027 for the 2026–27 form (June 30, 2028 for the 2027–28 form), but that is nearly useless as a guide — states and colleges have much earlier deadlines, some as early as December for fall entry, and many award first-come-first-served. File as early as possible and treat your earliest state/college deadline as the real one.' },
+            { q: 'How do I file the FAFSA in 2026?', a: 'File the 2026-27 form at fafsa.gov (using 2024 tax returns) — the federal deadline is June 30, 2027, but state and college deadlines are much earlier, some as early as December. The maximum Pell Grant for 2026-27 is $7,395. Every contributor must complete their section, consent to the IRS tax-data transfer, and sign with their own FSA ID.' }
         ],
     },
     {
@@ -2240,15 +2249,16 @@ export const guides: Guide[] = [
         slug: 'how-to-fill-out-a-w9-tax-form',
         country: 'us',
         updatedAt: '2025',
-        title: 'How to Fill Out a W-9 Tax Form (Step by Step)',
-        metaTitle: 'How to Fill Out a W-9 Tax Form: Line-by-Line Guide',
+        lastReviewed: '2026-10-15',
+        title: 'How to Fill Out a W-9 Tax Form in 2026 (Step by Step)',
+        metaTitle: 'How to Fill Out a W-9 Tax Form (2026)',
         description: 'W-9 form guide: who must fill it out, what each line means (name, business type, TIN, backup withholding), common mistakes, and safe delivery.',
         category: 'taxes',
         audience: ['Native', 'Immigrant'],
         difficulty: 'Easy',
         totalTime: '10 minutes',
         totalCost: 'Free',
-        summary: 'Form W-9 is a one-page request for your Taxpayer Identification Number. Freelancers and contractors fill it out for clients who pay them $600+ per year — it takes 10 minutes if you know your entity type and TIN.',
+        summary: 'Form W-9 is a one-page request for your Taxpayer Identification Number. Freelancers and contractors fill it out for clients who pay them $2,000+ in 2026 — it takes 10 minutes if you know your entity type and TIN.',
         documents: [
             'Your Social Security number (SSN) or Employer Identification Number (EIN)',
             'Your legal name exactly as it appears on your tax return',
@@ -2263,20 +2273,22 @@ export const guides: Guide[] = [
             { phase: 'fill', title: 'Line 3a: exempt payee (usually leave blank)', detail: 'Most people skip this. Check it only if you are exempt from backup withholding (corporations, IRAs, tax-exempt orgs). Individuals and sole proprietors are never exempt.', duration: '1 min' },
             { phase: 'fill', title: 'Part I: enter your TIN', detail: 'Write your SSN or EIN carefully — a mismatched TIN is the #1 W-9 error and triggers backup withholding (24% of your payments sent to the IRS). If you are a non-resident awaiting an ITIN, write "Applied For" — you have 60 days before backup withholding starts.', duration: '2 min' },
             { phase: 'submit', title: 'Sign, date, and send securely', detail: 'Sign and date Part II. Send it by encrypted email, a client portal, or hand delivery — a W-9 in a plain email exposes your SSN. Never fax it to a number you have not verified.', duration: '2 min' },
-            { phase: 'followup', title: 'Expect a 1099-NEC in January', detail: 'If a client paid you $600+ during the year, they use your W-9 to issue a 1099-NEC by January 31. Check that the name and TIN on it match your return — the IRS gets a copy and matches them automatically.', duration: '—' },
+            { phase: 'followup', title: 'Expect a 1099-NEC in January', detail: 'If a client paid you $2,000+ during 2026 (the threshold was $600 for 2025 payments), they use your W-9 to issue a 1099-NEC by January 31. Check that the name and TIN on it match your return — the IRS gets a copy and matches them automatically.', duration: '—' },
         ],
         faqs: [
             { q: 'Is filling out a W-9 safe?', a: 'Yes, when the requester genuinely pays you. The form exists so they can report your income to the IRS. The risk is fake requesters — verify who is asking before sending, and use a secure channel, not plain email.' },
             { q: 'What is backup withholding on a W-9?', a: 'If you refuse to give a TIN, give a wrong one, or owe the IRS back taxes, the payer must withhold 24% of your payments and send it to the IRS. It is not a penalty — it counts as tax already paid when you file.' },
             { q: 'I am not a US citizen. Do I fill out a W-9?', a: 'No. Non-resident aliens use Form W-8BEN instead — the W-9 is only for US persons (citizens, residents, and US entities). Filling out the wrong form can cause serious tax problems later.' },
+            { q: 'How do I fill out a W-9 in 2026?', a: 'Use the same one-page form: your legal name, business name if any, federal tax classification, address, and SSN or EIN, then sign and date it and send it securely to the requester — never by plain email. The only 2026 change is on the payer side: the 1099-NEC reporting threshold for 2026 payments is $2,000, up from $600.' }
         ],
     },
     {
         slug: 'how-to-file-schedule-c-tax-form',
         country: 'us',
         updatedAt: '2025',
-        title: 'How to File Schedule C (Self-Employment Tax Form)',
-        metaTitle: 'How to File Schedule C: Step-by-Step Guide for Freelancers',
+        lastReviewed: '2026-10-15',
+        title: 'How to File Schedule C in 2026 (Self-Employment Tax Form)',
+        metaTitle: 'How to File Schedule C: Freelancer Guide (2026)',
         description: 'Schedule C guide for freelancers: reporting income, claiming business expenses, the home office deduction, self-employment tax, and audit-proof records.',
         category: 'taxes',
         audience: ['Native', 'Immigrant'],
@@ -2308,14 +2320,16 @@ export const guides: Guide[] = [
             { q: 'Can I deduct my phone and internet on Schedule C?', a: 'Yes, but only the business-use percentage. If you use your phone 60% for work, deduct 60% of the bill. Keep a usage log for at least a month to back up your estimate.' },
             { q: 'What happens if I report a loss?', a: 'Losses are legitimate and often deductible against other income — but repeated losses year after year make the IRS question whether it is a business or a hobby. The hobby-loss rule presumes profit in 3 of 5 years; keep records showing a genuine profit motive.' },
             { q: 'Do DoorDash and Uber drivers file Schedule C?', a: 'Yes. Platform work is self-employment income. The platform issues a 1099-NEC and/or 1099-K, and you report it on Schedule C — where you can deduct mileage (67¢/mile for 2024), which usually saves more than the standard vehicle expense method.' },
+            { q: 'How do I file Schedule C in 2026?', a: 'File it with your 2025 federal return, due April 15, 2026. Report all business income (1099s plus income paid without a form), subtract business expenses, and pay self-employment tax of 15.3% on net profit of $400 or more. The home-office simplified method is still $5 per sq ft up to 300 sq ft ($1,500 max).' }
         ],
     },
     {
         slug: 'how-to-understand-1099-tax-forms',
         country: 'us',
         updatedAt: '2025',
-        title: 'How to Understand Your 1099 Tax Forms (NEC, K, INT, DIV, B)',
-        metaTitle: '1099 Tax Forms Explained: Which One You Got and What to Do',
+        lastReviewed: '2026-10-15',
+        title: 'How to Understand Your 1099 Tax Forms in 2026 (NEC, K, INT, DIV, B)',
+        metaTitle: '1099 Tax Forms Explained: What to Do (2026)',
         description: '1099 forms explained: 1099-NEC for freelancers, 1099-K for platforms, 1099-INT, 1099-DIV, 1099-B — what each means and where it goes on your return.',
         category: 'taxes',
         audience: ['Native', 'Immigrant', 'Expat'],
@@ -2334,7 +2348,7 @@ export const guides: Guide[] = [
                     { label: 'Protect personal assets: Start an LLC', href: '/guides/how-to-start-an-llc/' },
                 ],
             },
-            { phase: 'before', title: 'Identify which 1099 you have', detail: 'NEC = freelance/self-employment pay ($600+). K = payment card and third-party network transactions (platforms like PayPal, Venmo, Stripe). INT = bank interest ($10+). DIV = dividends and capital gains distributions. B = investment sales. R = retirement distributions. MISC = rents, royalties, prizes.', duration: '10 min' },
+            { phase: 'before', title: 'Identify which 1099 you have', detail: 'NEC = freelance/self-employment pay ($600+ for 2025 payments; $2,000+ for 2026 payments). K = payment card and third-party network transactions (platforms like PayPal, Venmo, Stripe). INT = bank interest ($10+). DIV = dividends and capital gains distributions. B = investment sales. R = retirement distributions. MISC = rents, royalties, prizes.', duration: '10 min' },
             { phase: 'fill', title: '1099-NEC → Schedule C', detail: 'Freelance income goes on Schedule C, where you can subtract business expenses before it hits your 1040. You owe income tax plus self-employment tax (15.3%) on the net profit.', duration: '15 min',
                 links: [
                     { label: 'First time filing income taxes? Beginner guide', href: '/guides/how-to-file-taxes-first-time/' },
@@ -2347,8 +2361,9 @@ export const guides: Guide[] = [
         ],
         faqs: [
             { q: 'I got a 1099-K from Venmo/PayPal for personal payments. Do I owe tax?', a: 'No — a 1099-K reports gross platform transactions, not taxable income. Money from selling personal items at a loss or friends paying you back is not taxable. Only business income is; report that on Schedule C and exclude the rest with an explanation if needed.' },
-            { q: 'What if a 1099 never arrives but I had income?', a: 'You still must report the income — the filing obligation does not depend on receiving a form. Payers are only required to issue 1099s above thresholds ($600 for NEC); below that, report it anyway on Schedule C.' },
+            { q: 'What if a 1099 never arrives but I had income?', a: 'You still must report the income — the filing obligation does not depend on receiving a form. Payers are only required to issue 1099s above thresholds ($600 for NEC on 2025 payments; $2,000 on 2026 payments); below that, report it anyway on Schedule C.' },
             { q: 'Which 1099 do I get for DoorDash or Uber?', a: 'Typically a 1099-NEC (platform payments) plus possibly a 1099-K if passengers paid through a card processor. Both go on Schedule C, where mileage and other expenses offset them.' },
+            { q: 'How do I file 1099s in 2026?', a: 'In 2026 you deal with 1099s for 2025 payments: NEC at $600 or more, and 1099-K at $20,000 plus 200 or more transactions. For payments made in 2026, the 1099-NEC and 1099-MISC thresholds rise to $2,000, while 1099-K stays at $20,000 plus 200 transactions. Income is taxable whether or not you receive a form — report it on Schedule C.' }
         ],
     },
     {

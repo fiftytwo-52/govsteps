@@ -1137,8 +1137,9 @@ export const guides: Guide[] = [
         slug: 'how-to-file-t1-tax-return-canada',
         country: 'ca',
         updatedAt: '2025',
-        title: 'How to File a T1 Tax Return in Canada (Step by Step)',
-        metaTitle: 'How to File a T1 Tax Return: Canada Income Tax Guide',
+        lastReviewed: '2026-10-15',
+        title: 'How to File a T1 Tax Return in Canada in 2026 (Step by Step)',
+        metaTitle: 'How to File a T1 Tax Return in Canada (2026)',
         description: 'T1 income tax return guide: who must file, the slips you need (T4, T4A, T5), free NETFILE software, deductions and credits, and tracking refunds.',
         category: 'taxes',
         audience: ['Native', 'Immigrant'],
@@ -1157,7 +1158,7 @@ export const guides: Guide[] = [
             { phase: 'before', title: 'Confirm you need to file', detail: 'You must file if you owe tax, have capital gains, or want to trigger benefits — the GST/HST credit, Canada Child Benefit, and GST/HST refund all require a filed return even with zero income. Newcomers file for the part-year they were resident; the CRA applies prorated benefit amounts.', duration: '15 min' },
             { phase: 'before', title: 'Gather every slip (they arrive Feb–March)', detail: 'Employers send T4s by end of February; banks and brokers send T5s and T3s by then too. Log into CRA My Account and use Auto-fill my return — it downloads every slip the CRA already has, eliminating the most common error (missed slips). Slips you get that CRA does not have (self-employment income) you enter manually.', duration: '30 min' },
             { phase: 'fill', title: 'Pick CRA-certified software', detail: 'Only certified software can NETFILE. Free options for simple returns: Wealthsimple Tax (pay-what-you-want), GenuTax, StudioTax. Paid tiers (TurboTax, H&R Block) add self-employment, rental, and investment schedules. All do the math and check for errors before filing.', duration: '15 min', links: [{ label: 'NETFILE-certified software list (CRA)', href: 'https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/netfile-overview/certified-software-netfile-program.html' }] },
-            { phase: 'fill', title: 'Enter income and claim deductions', detail: 'Income: employment, self-employment (Form T2125), investment, rental, foreign income. Deductions reduce taxable income: RRSP contributions (until March 1 for the prior year), childcare, moving expenses, union dues. Credits reduce tax owing: basic personal amount (~$15,705), tuition (T2202), medical over 3% of net income, donations, Canada Workers Benefit.', duration: '1–2 hours' },
+            { phase: 'fill', title: 'Enter income and claim deductions', detail: 'Income: employment, self-employment (Form T2125), investment, rental, foreign income. Deductions reduce taxable income: RRSP contributions (until March 1 for the prior year), childcare, moving expenses, union dues. Credits reduce tax owing: basic personal amount ($16,129 for 2025 if net income is $177,882 or less), tuition (T2202), medical over 3% of net income, donations, Canada Workers Benefit.', duration: '1–2 hours' },
             { phase: 'fill', title: 'Newcomers: complete Form T4145 or answer residency questions', detail: 'Your software asks your date of arrival — this prorates the basic personal amount and benefits. Report foreign income from before arrival? Generally not taxable in Canada, but world income after arrival is. Claiming the GST/HST credit and CCB requires filing even with partial-year income.', duration: '20 min' },
             { phase: 'submit', title: 'NETFILE and keep the confirmation', detail: 'Submit electronically — you get an immediate confirmation number and typically a Notice of Assessment within 2 weeks. Refunds with direct deposit arrive in about 8 business days. Keep the confirmation and a PDF of the return for 6 years (CRA record-keeping rule).', duration: '15 min' },
             { phase: 'followup', title: 'Check your Notice of Assessment', detail: 'The NOA confirms your assessment and shows your RRSP contribution room for next year — the number to plan around. If the CRA adjusts anything (common with carry-forwards), the NOA explains why. Disagree? File a Notice of Objection within 90 days.', duration: '10 min' },
@@ -1166,6 +1167,7 @@ export const guides: Guide[] = [
             { q: 'What happens if I file late?', a: 'A 5% penalty on the balance owing plus 1% per full month late (max 12 months), and interest compounds daily on unpaid amounts. If you cannot pay, file anyway — the penalty for late filing is much worse than the interest on late payment, and payment plans are available.' },
             { q: 'Can I file without CRA My Account?', a: 'Yes — you can enter slips manually from paper copies. But My Account is worth setting up: Auto-fill my return, express NOA, online change requests, and benefit letters all live there, and registration takes one session with your SIN and documents.' },
             { q: 'I had no income. Do I still file a T1?', a: 'Yes, if you want benefits — the GST/HST credit and Canada Child Benefit are only paid to people who file. Students should also file to bank tuition credits for future years even with no tax owing.' },
+            { q: 'How do I file a T1 in 2026?', a: 'In 2026 you file your 2025 return, due April 30, 2026 (June 15 for self-employed, but any balance is still due April 30). Use CRA-certified NETFILE software and Auto-fill my return to pull your slips. The 2025 federal basic personal amount is $16,129 if your net income is $177,882 or less.' }
         ],
     },
     {
