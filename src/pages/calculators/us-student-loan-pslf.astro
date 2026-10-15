@@ -1,0 +1,56 @@
+---
+import CalculatorPage from '../../components/CalculatorPage.astro';
+
+const steps = [
+  { phase: 'before', title: 'List your federal loans', detail: 'Check your servicer dashboard or studentaid.gov for each loan’s current balance, interest rate, and disbursement date. Only Direct Loans qualify for PSLF; FFEL and Perkins loans must be consolidated into a Direct Consolidation Loan first. Private loans qualify for nothing here.', duration: '20 min' },
+  { phase: 'fill', title: 'Enter your income and household', detail: 'Your adjusted gross income (AGI) — joint income if you file jointly — plus family size and dependents. Family size drives the poverty-line calculation for IBR, PAYE, and ICR; dependents drive the $50/month reduction in RAP.', duration: '2 min' },
+  { phase: 'fill', title: 'Say when your loans were disbursed', detail: 'Loans disbursed before 1 July 2026 can use IBR, PAYE, ICR, and RAP. Loans disbursed on or after 1 July 2026 can only use RAP or the Tiered Standard plan — PAYE and ICR are closed to you. Pick your era so the calculator shows the right plans.', duration: '1 min' },
+  { phase: 'fill', title: 'Enter your PSLF progress', detail: 'If you are pursuing Public Service Loan Forgiveness, enter your qualifying payment count from your servicer dashboard or the PSLF Help Tool. 0 if you have not started — the calculator shows the full 120-payment path.', duration: '2 min' },
+  { phase: 'fill', title: 'Calculate and compare all five plans', detail: 'Enter your figures in the calculator below — it works out the monthly payment, total paid, and amount forgiven under Standard, IBR, PAYE, ICR, and RAP, plus what PSLF would forgive under the cheapest qualifying plan for your era.', duration: '2 min' },
+  { phase: 'followup', title: 'Pick the plan and apply', detail: 'If you are pursuing PSLF, the cheapest qualifying plan maximizes forgiveness. Otherwise compare total paid: the Standard plan is usually cheapest overall if you can afford the payment. Apply at studentaid.gov with your income documentation.', duration: '30 min' },
+  { phase: 'followup', title: 'Recertify every year', detail: 'IDR payments are recertified annually against your latest income and family size — your payment changes with your income. Missing recertification can capitalize interest and pause PSLF progress. Set a yearly reminder.', duration: '30 min/year' },
+] as const;
+
+const faqs = [
+  { q: 'What is PSLF?', a: 'Public Service Loan Forgiveness cancels the remaining balance on your Direct Loans after you make 120 qualifying monthly payments (about 10 years) while working full-time for a qualifying employer — government at any level, a 501(c)(3) nonprofit, or certain other qualifying nonprofits. The forgiven amount is not treated as taxable income.' },
+  { q: 'What is an income-driven repayment (IDR) plan?', a: 'A federal repayment plan that sets your monthly payment from your income and family size rather than from your balance. Standard, IBR, PAYE, ICR, and RAP are the five plans this calculator compares. At the end of the plan’s term (20, 25, or 30 years depending on the plan), any remaining balance is forgiven — but unlike PSLF, that IDR forgiveness may be treated as taxable income.' },
+  { q: 'Which plan gives the lowest monthly payment?', a: 'Usually RAP or PAYE/IBR, depending on your income, family size, and dependents — the calculator shows all five on your numbers. For PSLF purposes the cheapest qualifying plan maximizes the amount forgiven, because you pay less across the same 120 payments.' },
+  { q: 'What changed on 1 July 2026?', a: 'Under the 2025 reconciliation law (One Big Beautiful Bill Act), the Repayment Assistance Plan (RAP) became the IDR plan for loans disbursed on or after 1 July 2026, alongside a Tiered Standard plan. PAYE and ICR are closed to those new loans. For loans disbursed before 1 July 2026, the legacy plans remain available until 1 July 2028 — confirm the current deadline with your servicer, as transition rules have moved before.' },
+  { q: 'What is RAP and how is its payment calculated?', a: 'RAP sets your monthly payment as a percentage of your adjusted gross income — 1% to 10% by $10,000 income bands, divided by 12 — minus $50 per dependent, with a $10 monthly minimum. Any balance left after 30 years of qualifying payments is forgiven, and that forgiveness may be taxable.' },
+  { q: 'Why does the calculator assume my income stays constant?', a: 'Because it is a comparison tool, not your servicer’s quote. Real IDR payments are recertified yearly and rise or fall with your income. Use the official Repayment Calculator on StudentAid.gov for binding figures based on your actual loans.' },
+  { q: 'Is this financial advice?', a: 'No. This calculator is informational only, not financial or tax advice. It covers the standard case — Direct Loans, constant income, no capitalization events, no spousal-loan adjustments. Confirm your plan choice and PSLF count with your servicer.' },
+];
+
+const officialRules = [
+  { rule: 'PSLF: 120 qualifying monthly payments while working full-time for a qualifying employer (government at any level, 501(c)(3) nonprofit, or other qualifying nonprofit), on Direct Loans, under a qualifying repayment plan. Forgiven balances are not considered taxable income by the IRS.', source: 'Federal Student Aid — Public Service Loan Forgiveness', href: 'https://studentaid.gov/articles/manage-your-pslf-progress/' },
+  { rule: 'IDR plans base payments on income and family size. PAYE: 20-year term. IBR: 20 years for new borrowers on/after 1 July 2014 (10% of discretionary income), 25 years otherwise (15%). ICR: 25-year term; payment is the lesser of 20% of discretionary income (AGI − 100% of the poverty guideline) or a 12-year amortized payment adjusted by an income percentage factor. RAP: 30-year term.', source: 'Federal Student Aid — IDR plan FAQs', href: 'https://studentaid.gov/articles/faqs-idr-plan/' },
+  { rule: 'Discretionary income for IBR and PAYE = AGI minus 150% of the HHS poverty guideline for your family size. ICR uses 100% of the guideline. The calculator uses the 2026 HHS guidelines for the 48 contiguous states (family of 1: $15,960; family of 4: $33,000). Alaska and Hawaii have higher guidelines.', source: 'HHS poverty guidelines 2026 (Federal Register)', href: 'https://www.federalregister.gov/documents/2026/01/15/2026-00755/annual-update-of-the-hhs-poverty-guidelines' },
+  { rule: 'RAP (from 1 July 2026): monthly payment = a percentage of AGI (1%–10% by income band) divided by 12, minus $50 per dependent, with a $10 monthly minimum. Any balance left after 30 years of qualifying payments is forgiven; the forgiven amount may be considered income for tax purposes.', source: 'Federal Student Aid servicer — Repayment Assistance Plan (RAP) terms', href: 'http://edfinancial.studentaid.gov/income-driven-repaymentinformation-center/rap' },
+  { rule: 'Loans disbursed on or after 1 July 2026: only RAP or the Tiered Standard plan. Legacy plans (SAVE, PAYE, ICR) are being wound down for earlier loans — PAYE and ICR close on 1 July 2028 under the transition schedule. SAVE has ended. Confirm the current deadlines with your servicer before choosing.', source: 'Federal Student Aid — IDR plan FAQs (confirm current transition dates)', href: 'https://studentaid.gov/articles/faqs-idr-plan/' },
+  { rule: 'IDR forgiveness after the plan term (20/25/30 years) may be treated as taxable income. The American Rescue Plan’s tax-free treatment of IDR forgiveness expired at the end of 2025. PSLF forgiveness remains tax-free.', source: 'Federal Student Aid — IDR plan FAQs (taxation of forgiveness)', href: 'https://studentaid.gov/articles/faqs-idr-plan/' },
+];
+
+const related = [
+  { href: '/guides/how-to-apply-for-loan-forgiveness/', label: 'How to Apply for Student Loan Forgiveness (PSLF & IDR)', note: 'The full guide — qualifying employers, the certification form, and the 120-payment path.' },
+  { href: '/guides/how-to-get-a-federal-student-loan/', label: 'How to Get a Federal Student Loan', note: 'Borrowing, entrance counseling, and picking a repayment plan before grace ends.' },
+  { href: '/guides/how-to-file-the-fafsa/', label: 'How to File the FAFSA', note: 'The free aid application that starts federal student aid.' },
+  { href: '/calculators/us-import-duty/', label: 'US Import Duty / Landed Cost Calculator', note: 'Our other new calculator — true landed cost on imports.' },
+];
+---
+
+<CalculatorPage
+  title="US Student Loan / PSLF Repayment Calculator"
+  metaTitle="Student Loan Repayment Calculator: Standard vs IBR vs PAYE vs ICR vs RAP + PSLF (2026)"
+  description="Compare all five federal repayment plans side by side — Standard, IBR, PAYE, ICR, and the new RAP — and see what PSLF would forgive after 120 qualifying payments."
+  category="students"
+  calculatorId="us-student-loan-pslf"
+  calculatorStepIndex={4}
+  steps={steps}
+  faqs={faqs}
+  officialRulesIntro="Every formula this calculator applies comes from the Federal Student Aid rules named below. Poverty guidelines are the 2026 HHS figures; RAP terms are the published servicer terms."
+  officialRules={officialRules}
+  related={related}
+  lastReviewed="15 October 2026"
+  breadcrumbCountry="Students"
+  breadcrumbHref="/topics/students/"
+/>

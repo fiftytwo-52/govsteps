@@ -1,0 +1,55 @@
+---
+import CalculatorPage from '../../components/CalculatorPage.astro';
+
+const steps = [
+  { phase: 'before', title: 'Decide the take-home you need', detail: 'Start from the annual take-home pay you want — after platform fees, processing, expenses, and tax — not from a rate you saw someone else charge. Your rent, savings goals, and country’s cost of living set this number, not the market average.', duration: '15 min' },
+  { phase: 'fill', title: 'Count your real billable hours', detail: 'Enter the hours clients actually pay for per week, working weeks per year (52 minus holidays, sick time, and gaps between contracts), and the share of your working time you cannot bill — admin, marketing, proposals, learning.', duration: '5 min' },
+  { phase: 'fill', title: 'Add business expenses', detail: 'Annual business costs: software, equipment, insurance, coworking, accountant, courses. These come out before tax, so they lower the gross you need — but you still have to earn them back.', duration: '5 min' },
+  { phase: 'fill', title: 'Enter platform, processing, and tax rates', detail: 'Your platform fee (Upwork: variable 0–15% per contract since May 2025; Fiverr: flat 20%; direct clients: 0%), your payment processing fee (Stripe US: 2.9% + 30¢ per domestic card charge), and your effective income-tax rate on profit. Enter your own figures — the examples are reference points, not your terms.', duration: '5 min' },
+  { phase: 'fill', title: 'Calculate your true rate', detail: 'Enter your figures in the calculator below — it grosses your target take-home back up through tax, expenses, processing, and platform fees, then divides by your real billable hours to give the hourly and day rate you must charge.', duration: '2 min' },
+  { phase: 'followup', title: 'Quote the gross rate, not the net', detail: 'Clients pay the gross rate. If your true rate is $77/hour, quoting $60 because “$60 feels like enough” leaves you short after fees and tax. Quote the calculator’s rate — and raise it if your billable hours drop.', duration: '5 min' },
+  { phase: 'followup', title: 'Re-check every quarter', detail: 'Fees, tax rates, and billable hours move. Re-run the calculator when a platform changes its fee, your tax situation changes, or your pipeline dries up — a rate set a year ago is probably wrong now.', duration: '10 min/quarter' },
+] as const;
+
+const faqs = [
+  { q: 'What is a freelancer true rate?', a: 'The hourly (or day) rate you must charge so that, after platform fees, payment processing, business expenses, and tax, you keep the take-home pay you targeted. It is almost always higher than the rate people guess — because fees and non-billable time eat a large share of gross billing.' },
+  { q: 'Why is my true rate so much higher than my target hourly pay?', a: 'Three layers sit between gross billing and take-home: the platform’s cut, the payment processor’s cut, and tax — plus the hours you work but cannot bill. Example: targeting $60,000 take-home with 10% platform fee, ~3% processing, 20% tax, $2,000 expenses, and 1,152 billable hours needs about $77/hour gross, not $52/hour.' },
+  { q: 'What fee does Upwork charge freelancers?', a: 'Since 1 May 2025, Upwork charges a variable freelancer service fee of 0–15% per contract, set when you submit a proposal and fixed for that contract. Before that it was a flat 10% (since May 2023), and before that a tiered 20%/10%/5%. Check the rate shown on each contract — it is not one number for everyone.' },
+  { q: 'What fee does Fiverr charge?', a: 'Fiverr charges sellers a flat 20% commission on every order, including tips. Freelancer.com charges 10% or $5 (whichever is greater) on fixed-price projects and 10% on hourly. Direct clients through your own invoicing pay no platform fee — but you still pay payment processing.' },
+  { q: 'What does Stripe charge?', a: 'Stripe US standard pricing is 2.9% + 30¢ per successful domestic card charge, +1.5% for international cards, +1% if currency conversion is required. For typical invoice sizes that works out near 3% — the calculator takes your own processing figure, so enter your processor’s real rate.' },
+  { q: 'Does the calculator include self-employment tax?', a: 'No — US self-employment tax (15.3% on net earnings) is not included. Fold it into your tax rate or add it separately. The model also assumes one flat tax rate on profit; real income tax is progressive.' },
+  { q: 'Is this financial advice?', a: 'No. This calculator is informational only, not financial or tax advice. Tax rates, platform fees, and deductions vary by country and situation — confirm your figures with an accountant.' },
+];
+
+const officialRules = [
+  { rule: 'Upwork freelancer service fee: variable 0–15% per contract for contracts formed on or after 1 May 2025, fixed for the contract and disclosed before you bid. Earlier contracts: flat 10% (May 2023 – April 2025). Clients pay a separate marketplace fee — it does not come out of your earnings.', source: 'Upwork fee terms (via platform comparison checked Aug 2026)', href: 'https://flexiple.com/compare/freelancer-vs-upwork' },
+  { rule: 'Fiverr seller fee: flat 20% commission on all order earnings, including tips. Freelancer.com: 10% or $5 minimum (fixed-price), 10% (hourly). Direct invoicing: no platform fee.', source: 'Fiverr / Freelancer.com fee terms (via platform comparison checked Aug 2026)', href: 'https://flexiple.com/compare/freelancer-vs-upwork' },
+  { rule: 'Stripe US standard pricing: 2.9% + 30¢ per successful domestic card charge; +1.5% for international cards; +1% if currency conversion is required. Rates vary by country — the calculator takes your own processing figure.', source: 'Stripe — Pricing (stripe.com/pricing)' },
+  { rule: 'US self-employment tax is 15.3% on net earnings (Social Security + Medicare) and is separate from income tax. This calculator does NOT include it — fold it into your tax rate or add it separately. Other countries have their own equivalents (e.g. UK Class 2/4 National Insurance).', source: 'IRS — Self-employment tax (confirm your own rate)' },
+  { rule: 'The gross-up formula: net = ((gross × (1 − platform fee) × (1 − processing fee)) − expenses) × (1 − tax rate). The calculator inverts it: gross = (target ÷ (1 − tax rate) + expenses) ÷ ((1 − platform fee) × (1 − processing fee)), then divides by billable hours.', source: 'Calculator formula (derived; verify with your accountant)' },
+];
+
+const related = [
+  { href: '/guides/how-to-file-schedule-c-tax-form/', label: 'How to File Schedule C (Self-Employment Tax Form)', note: 'Where freelance income, expenses, and self-employment tax go on the US return.' },
+  { href: '/guides/how-to-file-quarterly-estimated-taxes/', label: 'How to File Quarterly Estimated Taxes', note: 'Freelancers pay tax quarterly — the 1040-ES schedule and safe harbor.' },
+  { href: '/guides/how-to-fill-out-a-w9-tax-form/', label: 'How to Fill Out a W-9 Tax Form', note: 'The form clients ask for before they pay you.' },
+  { href: '/calculators/digital-nomad/', label: 'Digital Nomad Visa + Cost-of-Living Calculator', note: 'Working remotely from abroad? Check the visa income bar and living costs.' },
+];
+---
+
+<CalculatorPage
+  title="Freelancer True-Rate Calculator"
+  metaTitle="Freelancer Rate Calculator: True Hourly Rate After Fees & Tax (2026)"
+  description="Work backwards from the take-home pay you want to the hourly rate you must charge — after platform fees, payment processing, business expenses, tax, and the hours you cannot bill."
+  category="taxes"
+  calculatorId="freelancer-true-rate"
+  calculatorStepIndex={4}
+  steps={steps}
+  faqs={faqs}
+  officialRulesIntro="Platform and processing fees below are the published reference points — the calculator takes your own rates, because your contract’s fee is what matters, not the average."
+  officialRules={officialRules}
+  related={related}
+  lastReviewed="15 October 2026"
+  breadcrumbCountry="Taxes"
+  breadcrumbHref="/topics/taxes/"
+/>

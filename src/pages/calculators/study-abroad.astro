@@ -1,0 +1,54 @@
+---
+import CalculatorPage from '../../components/CalculatorPage.astro';
+
+const steps = [
+  { phase: 'before', title: 'Get your real cost figures', detail: 'Use the school’s official cost estimate — your offer letter or, for the US, the I-20 cost breakdown — not a blog average. Tuition and living costs vary hugely by school and city, and the visa interview tests you on these exact numbers.', duration: '1–2 hours' },
+  { phase: 'fill', title: 'Enter tuition, living, insurance, and travel', detail: 'Annual tuition plus annual living costs (rent, food, transport), health insurance, and flights/travel home. Enter each year’s figure — first-year costs are often higher than later years.', duration: '2 min' },
+  { phase: 'fill', title: 'Subtract scholarships and work income', detail: 'Enter scholarships and grants per year, plus realistic part-time or campus work income. Respect visa work limits — for example, F-1 students may work on campus up to 20 hours/week during term. Do not budget income you are not legally allowed to earn.', duration: '2 min' },
+  { phase: 'fill', title: 'Add visa fees and savings', detail: 'Enter one-time visa + SEVIS-type fees (US F-1 example: $535 = $350 SEVIS I-901 + $185 MRV visa fee — confirm the current total before paying) and the savings you already have set aside.', duration: '2 min' },
+  { phase: 'fill', title: 'Calculate total cost and ROI', detail: 'Enter your figures in the calculator below — it totals the full program cost, what comes out of pocket after savings, your monthly budget while studying, and how many years of higher pay it takes to earn the cost back.', duration: '2 min' },
+  { phase: 'followup', title: 'Prove funds for the visa', detail: 'Most student visas require proof of funds covering at least the first year (US: the full first-year cost on the I-20). Bank statements, sponsor affidavits, scholarship letters, and loan sanction letters are the usual evidence — the calculator’s first-year figure is the number to cover.', duration: '1–2 weeks' },
+  { phase: 'followup', title: 'Re-run if the offer changes', detail: 'A new scholarship, a different city, a tuition rise, or a currency move changes the answer. Re-run the calculator with the new figures before committing — and again before each year’s visa renewal.', duration: '10 min' },
+] as const;
+
+const faqs = [
+  { q: 'What is the total cost of studying abroad?', a: 'More than tuition: tuition plus living costs (rent, food, transport), health insurance, flights and travel, visa and SEVIS-type fees, and books/supplies — minus scholarships, grants, and legal part-time work income. This calculator adds all of those over the full program length, not just year one.' },
+  { q: 'How much does a US student visa (F-1) cost?', a: 'The core government fees are $535: a $350 I-901 SEVIS fee plus a $185 MRV visa application fee. Some nationalities also pay a visa issuance/reciprocity fee, and a $250 Visa Integrity Fee may apply under 2025 legislation — confirm the current total on the official visa site before you pay, as fee rules are still settling.' },
+  { q: 'How do I calculate ROI on studying abroad?', a: 'Compare the out-of-pocket program cost with the salary uplift: expected starting salary after graduation minus what you would earn without the degree. Payback years = out-of-pocket cost ÷ annual uplift. The calculator also shows the 10-year net gain (10 years of uplift minus the cost). Salaries are starting figures only — the model ignores raises, taxes, and loan interest.' },
+  { q: 'Can I work while studying abroad?', a: 'It depends on the visa. US F-1 students may work on campus up to 20 hours/week during term (and full-time in breaks), with off-campus work only under specific authorization (CPT/OPT). Other countries set their own limits — never budget income from work your visa does not allow.' },
+  { q: 'What proof of funds do I need for the visa?', a: 'Usually proof covering at least the first academic year: bank statements, sponsor affidavits, scholarship letters, or a loan sanction letter, matching the school’s cost estimate. The calculator’s first-year net cost is a starting point — the consulate’s figure is the one that counts.' },
+  { q: 'What does the calculator leave out?', a: 'Books and supplies, exchange-rate moves, loan interest, earnings given up beyond your baseline salary, taxes on the new salary, and post-study visa/OPT costs. Treat the result as a planning estimate, not a promise.' },
+  { q: 'Is this financial advice?', a: 'No. This calculator is informational only, not financial, immigration, or tax advice. Confirm tuition, fees, and visa rules with the school and the consulate before committing.' },
+];
+
+const officialRules = [
+  { rule: 'US F-1 visa fees (confirm before paying): $350 I-901 SEVIS fee (paid at fmjfee.com after receiving the I-20, before the interview) + $185 MRV visa application fee (DS-160). Dependents on F-2 do not pay a separate SEVIS fee. A $250 Visa Integrity Fee may also apply under 2025 legislation — collection details are still settling.', source: 'F-1/M-1 fee breakdown (SEVIS $350 + MRV $185) — confirm on official sites', href: 'https://www.aaptaxlaw.com/VISA/USA/How-to-apply-Student-VISA-for-USA-F-1-Visa-M-1-Application-Procedure.html' },
+  { rule: 'US F-1 work limits: on-campus work up to 20 hours per week during term; off-campus work only with authorization (CPT during studies, OPT after). Budget only the work your visa allows.', source: 'US student visa (F-1) guide — work rules (confirm with your school’s international office)' },
+  { rule: 'Proof of funds: F-1 applicants must show they can pay at least the first academic year of tuition and living costs as listed on the I-20. The calculator’s first-year net cost maps to this figure.', source: 'US student visa (F-1) financial requirements (confirm with the consulate)' },
+  { rule: 'Tuition, living costs, scholarships, and work income are all your own figures from your offer letter and destination — no official source publishes a single “cost of studying abroad”, because it varies by school, city, and program. Enter your real numbers; ranges on other sites are averages, not your costs.', source: 'Your offer letter / I-20 cost estimate (school-issued)' },
+];
+
+const related = [
+  { href: '/guides/how-to-get-a-student-visa/', label: 'How to Get a US Student Visa (F-1)', note: 'The full F-1 guide — SEVIS fee, DS-160, interview evidence, entry rules.' },
+  { href: '/guides/how-to-file-the-fafsa/', label: 'How to File the FAFSA', note: 'Free federal aid application — grants, work-study, and federal loans.' },
+  { href: '/guides/how-to-get-a-federal-student-loan/', label: 'How to Get a Federal Student Loan', note: 'Borrowing for study — and the repayment plans after graduation.' },
+  { href: '/calculators/us-student-loan-pslf/', label: 'US Student Loan / PSLF Calculator', note: 'After graduation: compare all five repayment plans + PSLF.' },
+];
+---
+
+<CalculatorPage
+  title="Study-Abroad Total Cost + ROI Calculator"
+  metaTitle="Study Abroad Cost Calculator: Total Cost + ROI / Payback (2026)"
+  description="Add up the full cost of studying abroad — tuition, living, insurance, travel, visa fees, minus scholarships and part-time work — then see how many years of higher pay it takes to earn it back."
+  category="students"
+  calculatorId="study-abroad"
+  calculatorStepIndex={4}
+  steps={steps}
+  faqs={faqs}
+  officialRulesIntro="There is no single official “cost of studying abroad” — it varies by school and city. The calculator takes your own figures from your offer letter; the fee figures below are the US F-1 example to enter, confirmed before paying."
+  officialRules={officialRules}
+  related={related}
+  lastReviewed="15 October 2026"
+  breadcrumbCountry="Students"
+  breadcrumbHref="/topics/students/"
+/>

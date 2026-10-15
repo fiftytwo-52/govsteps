@@ -1,0 +1,54 @@
+---
+import CalculatorPage from '../../components/CalculatorPage.astro';
+
+const steps = [
+  { phase: 'before', title: 'Pick your destination and visa', detail: 'Each country runs its own digital nomad visa — Portugal D8, Spain Digital Nomad Visa, Italy, Estonia, Croatia, Greece, UAE Virtual Working Programme, and others — with different income thresholds, durations, and tax rules. Shortlist one before running numbers.', duration: '1–2 hours' },
+  { phase: 'fill', title: 'Confirm the visa income threshold', detail: 'Find the current minimum monthly income from the consulate or immigration authority — it is usually a multiple of the national minimum wage, so it moves when the wage moves. Portugal D8 (2026): 4× the minimum wage ≈ €3,680/month. Spain (2026): 200% of the minimum wage ≈ €2,849/month. Convert to USD at your bank’s rate and enter it.', duration: '30 min' },
+  { phase: 'fill', title: 'Price your monthly life', detail: 'Enter realistic monthly costs for your destination city — rent, utilities + internet + phone, food, transport, health insurance, and everything else. Use local rental listings and expat cost-of-living reports, not a global average: Lisbon rent and rural Portugal rent are different budgets.', duration: '30 min' },
+  { phase: 'fill', title: 'Add visa fees and your emergency buffer', detail: 'Enter annual visa + permit fees, and how many months of costs you want held as an emergency fund (3 months is a common floor — you are far from home with no local safety net).', duration: '5 min' },
+  { phase: 'fill', title: 'Calculate: do you clear the bar?', detail: 'Enter your figures in the calculator below — it checks your income against the visa minimum, totals your monthly and annual cost of living, shows your surplus and savings rate, and sizes your emergency fund.', duration: '2 min' },
+  { phase: 'followup', title: 'Apply with proof of income', detail: 'Consulates typically want contracts plus matching bank statements over the last 3–6 months showing consistent remote income, not a single closing balance. Portugal also expects savings (12× the minimum wage ≈ €11,040 for a single applicant in 2026) in a Portuguese bank account at the residence-permit stage.', duration: '2–4 weeks' },
+  { phase: 'followup', title: 'Sort tax residency before you go', detail: 'Staying past a country’s residency threshold (often 183 days) can make you tax-resident there, and some visas come with special tax regimes (Portugal IFICI, Spain Beckham Law) with strict deadlines. Get tax advice before the move, not after.', duration: '2–4 weeks' },
+] as const;
+
+const faqs = [
+  { q: 'What is a digital nomad visa?', a: 'A residence permit that lets you live in a country while working remotely for clients or an employer based elsewhere. It is not a work permit for the local job market — your income must come from outside the country. Most last 1–3 years and are renewable.' },
+  { q: 'How much income do I need for a digital nomad visa?', a: 'It depends on the country — each sets its own threshold, usually as a multiple of its national minimum wage. 2026 examples: Portugal D8 ≈ €3,680/month (4× minimum wage), Spain ≈ €2,849/month (200% of the minimum wage), Italy ≈ €2,066/month (€24,789.93/year). Thresholds move with minimum-wage changes — confirm the current figure with the consulate.' },
+  { q: 'Does the threshold use gross or net income?', a: 'It depends on the country. Most (including Portugal and Spain) test gross income; Greece tests net income, which is a higher bar in practice. Ask the consulate which figure it uses before you apply.' },
+  { q: 'Do I need savings on top of income?', a: 'Some countries do. Portugal expects savings of about €11,040 (12× the minimum wage) for a single applicant at the residence-permit stage. Spain does not mandate a separate savings deposit for standard approvals. Check your destination’s rules.' },
+  { q: 'Can I bring my family?', a: 'Most nomad visas allow dependents, with a higher income threshold per person. Portugal adds roughly 50% of the minimum wage for a spouse and 30% per child; Spain adds 75% of the minimum wage for the first dependent and 25% for each further one (2026 figures — confirm current amounts).' },
+  { q: 'Will I pay tax in the destination country?', a: 'Possibly. Many countries treat 183+ days of presence as tax residency, and freelancers may owe local social security too. Some offer special regimes for newcomers with deadlines measured in months. Get advice from a tax adviser familiar with both countries before you move.' },
+  { q: 'Is this immigration advice?', a: 'No. This calculator is informational only, not immigration, tax, or legal advice. Visa rules change — confirm thresholds, documents, and tax treatment with the consulate and a qualified adviser before applying.' },
+];
+
+const officialRules = [
+  { rule: 'Portugal D8 (2026): minimum income of 4× the Portuguese minimum wage — about €3,680/month for the main applicant — plus savings of about €11,040 (12× the minimum wage). Family: roughly +50% of the minimum wage for a spouse, +30% per child. Apply at a Portuguese consulate, then convert to a residence permit through AIMA.', source: 'Portugal D8 requirements, 2026 (reported; confirm with the consulate)', href: 'https://remoteworkeurope.eu/insights/portugal-vs-spain-digital-nomad-visa/' },
+  { rule: 'Spain Digital Nomad Visa (2026): minimum income of 200% of the Spanish minimum wage (SMI) — about €2,849/month for the main applicant, plus 75% of the SMI for the first dependent and 25% for each further one. Requires a degree or 3+ years of relevant experience and at least 3 months working for the current foreign employer/client. Applications can be filed at a consulate or from within Spain via the UGE.', source: 'Spain digital nomad visa requirements, 2026 (reported; confirm with the consulate)', href: 'https://remoteworkeurope.eu/insights/portugal-vs-spain-digital-nomad-visa/' },
+  { rule: 'Italy Digital Nomad Visa: minimum income of at least €24,789.93 per year (about €2,066/month), set by law at 3× the healthcare-exemption threshold. Applicants must qualify as highly skilled workers.', source: 'Italy digital nomad visa threshold, 2026 (reported; confirm with the consulate)', href: 'https://relovisa.co/blog/digital-nomad-visas-in-southern-europe-comparing-spain-portugal-and-italy-for-it-professionals-2025' },
+  { rule: 'Health insurance is a standard requirement: Schengen destinations typically require private cover of at least €30,000. The calculator takes your own insurance cost — confirm the coverage minimum for your destination.', source: 'Portugal D8 / Spain DNV document checklists (reported; confirm with the consulate)', href: 'https://remoteworkeurope.eu/insights/portugal-vs-spain-digital-nomad-visa/' },
+  { rule: 'Thresholds above are 2026 figures tied to national minimum wages, which rise most years. A threshold quoted in one year’s guide can be out of date the next — always confirm the current figure, currency, and gross-vs-net basis with the consulate before applying.', source: 'Consulate of your destination country (confirm before applying)' },
+];
+
+const related = [
+  { href: '/guides/how-to-get-a-student-visa/', label: 'How to Get a US Student Visa (F-1)', note: 'A different long-stay path — study in the US, with its own funds proof.' },
+  { href: '/calculators/study-abroad/', label: 'Study-Abroad Total Cost + ROI Calculator', note: 'Planning to study instead of working remotely? Total the full cost and payback.' },
+  { href: '/calculators/freelancer-true-rate/', label: 'Freelancer True-Rate Calculator', note: 'Earning as a freelancer? Work out the rate that actually pays you.' },
+];
+---
+
+<CalculatorPage
+  title="Digital Nomad Visa + Cost-of-Living Calculator"
+  metaTitle="Digital Nomad Visa Calculator: Income Check + Cost of Living (2026)"
+  description="Check whether your remote income clears a digital nomad visa’s minimum — and what life there actually costs per month, per year, and with an emergency buffer."
+  category="immigration"
+  calculatorId="digital-nomad"
+  calculatorStepIndex={4}
+  steps={steps}
+  faqs={faqs}
+  officialRulesIntro="Visa thresholds below are 2026 figures tied to national minimum wages — they move when the wage moves. The calculator takes the threshold as your input, so it stays right even when a country raises theirs."
+  officialRules={officialRules}
+  related={related}
+  lastReviewed="15 October 2026"
+  breadcrumbCountry="Immigration"
+  breadcrumbHref="/topics/immigration/"
+/>

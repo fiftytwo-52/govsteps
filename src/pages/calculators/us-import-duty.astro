@@ -1,0 +1,55 @@
+---
+import CalculatorPage from '../../components/CalculatorPage.astro';
+
+const steps = [
+  { phase: 'before', title: 'Classify your product — find the HTS rate', detail: 'Look up your product’s Harmonized Tariff Schedule (HTS) code and its column-1 duty rate at hts.usitc.gov. The rate depends on the exact product and its country of origin. If your goods qualify under a trade agreement (e.g. USMCA), the duty rate may be 0 — confirm the rules of origin and certificate before assuming it.', duration: '30–60 min' },
+  { phase: 'fill', title: 'Enter customs value, freight, and insurance', detail: 'Customs value is the price actually paid for the goods, excluding international freight and insurance. Enter freight and insurance separately — they count toward landed cost but not toward dutiable value.', duration: '2 min' },
+  { phase: 'fill', title: 'Enter the duty rate and any extra tariffs', detail: 'Enter your HTS rate, plus any extra tariffs stacked on top (Section 301, Section 232, IEEPA) for your product + origin. Tariff rates change often — verify the current rate for your exact HTS code and origin before ordering. Enter 0 if none apply.', duration: '2 min' },
+  { phase: 'fill', title: 'Pick entry type and shipment mode', detail: 'Formal entry ($2,500+) pays MPF ad valorem; informal entry (under $2,500) pays a flat MPF. Tick ocean shipment only if the goods arrive by sea — the Harbor Maintenance Fee applies to ocean cargo only, not air.', duration: '1 min' },
+  { phase: 'fill', title: 'Calculate your landed cost', detail: 'Enter your figures in the calculator below — it works out duty, extra tariffs, MPF, HMF, brokerage, total import charges, and the landed cost per shipment and per unit.', duration: '2 min' },
+  { phase: 'followup', title: 'Get a broker quote and compare', detail: 'A customs broker’s quote covers brokerage, entry filing, and any bond you need (formal entries over $2,500 generally need a bond). Compare their total with the calculator — differences usually mean a different HTS classification or a missed extra tariff.', duration: '30 min' },
+  { phase: 'followup', title: 'Check partner-agency requirements', detail: 'Some products need another agency’s clearance on top of CBP — FDA for food/cosmetics, USDA for plants/animals, EPA, CPSC, and others. Those filings (PGA fees) are not in this calculator; confirm whether your product needs one before it ships.', duration: '30 min' },
+] as const;
+
+const faqs = [
+  { q: 'What is landed cost?', a: 'The full cost of getting imported goods to your door: the price of the goods, international freight, insurance, customs duty, any extra tariffs, CBP fees (MPF, and HMF for ocean freight), brokerage, and domestic transport. Comparing suppliers on product price alone hides the import charges — landed cost is the number your margin actually depends on.' },
+  { q: 'What is the de minimis exemption — and does it still exist?', a: 'De minimis used to let shipments valued at $800 or less enter the US duty-free. That treatment was suspended for all countries effective 29 August 2025 (Executive Order 14324). Do not assume a sub-$800 shipment enters duty-free — it now needs an entry and pays applicable duties, taxes, and fees.' },
+  { q: 'How do I find my product’s HTS duty rate?', a: 'Search the USITC Harmonized Tariff Schedule at hts.usitc.gov by product description. The column-1 (general) rate is the standard rate; column 2 applies to a small list of countries. The rate depends on the exact classification — a wrong HTS code means the wrong duty.' },
+  { q: 'What is the Merchandise Processing Fee (MPF)?', a: 'A CBP user fee on entries. For formal entries it is 0.3464% of the merchandise value, with a floor and cap adjusted yearly for inflation (FY2027: minimum $34.58, maximum $670.86). For informal entries it is a flat fee ($2.69 / $8.06 / $12.09 depending on tier). It is charged on value excluding duty, freight, and insurance.' },
+  { q: 'What is the Harbor Maintenance Fee (HMF)?', a: 'A 0.125% fee on the value of commercial cargo loaded or unloaded at US ports — ocean shipments only. Air shipments do not pay HMF. There is no minimum or maximum.' },
+  { q: 'What does the calculator leave out?', a: 'Domestic transport after arrival, warehousing, partner-agency (PGA) filing fees, demurrage/detention if a container sits at port, exam fees if CBP inspects the shipment, and duty drawback. Brokerage is your own quote — CBP does not set it.' },
+  { q: 'Is this legal or tax advice?', a: 'No. This calculator is informational only, not legal, tax, or customs advice. Tariff rates and fee tiers change — verify your HTS rate and any extra tariffs for your exact product and origin before ordering. Your broker’s entry summary governs.' },
+];
+
+const officialRules = [
+  { rule: 'De minimis suspended: duty-free treatment for shipments valued at $800 or less was suspended for all countries effective 29 August 2025 (Executive Order 14324). Shipments now require an entry and pay applicable duties, taxes, and fees. The old Entry Type 86 (de minimis) is no longer permitted.', source: 'CBP notice implementing EO 14324; KPMG summary of the CBP notice', href: 'https://kpmg.com/us/en/taxnewsflash/news/2025/08/us-cbp-implements-eo-suspending-duty-free-de-minimis-treatment.html' },
+  { rule: 'Merchandise Processing Fee (formal entries): 0.3464% ad valorem, with a minimum and maximum adjusted for inflation each fiscal year. FY2027 (from 1 October 2026): minimum $34.58, maximum $670.86. Informal entries: flat fees of $2.69 / $8.06 / $12.09 by tier.', source: 'CBP — Customs user fee table; 19 CFR 24.23', href: 'https://cbp.gov/trade/basic-import-export/user-fee-table' },
+  { rule: 'Harbor Maintenance Fee: 0.125% of the value of commercial cargo on ocean shipments. Not collected on air cargo. No minimum or maximum.', source: '19 CFR 24.24 — Harbor maintenance fee', href: 'https://cbp.gov/trade/basic-import-export/user-fee-table' },
+  { rule: 'Customs value = the price actually paid or payable for the merchandise, excluding international transportation, insurance, and related services. Duty is calculated on this value.', source: '19 U.S.C. §1401a — Value' },
+  { rule: 'HTS duty rates and any additional tariffs (Section 301, Section 232, IEEPA) depend on the exact HTS classification and country of origin. Trade agreements (e.g. USMCA) can reduce the duty rate to zero for qualifying goods meeting rules of origin — the calculator applies whatever rate you enter, so verify yours.', source: 'USITC — Harmonized Tariff Schedule (hts.usitc.gov)' },
+  { rule: 'Entry types: shipments under $2,500 generally use an informal entry; $2,500 and above require a formal entry (and generally a customs bond). Your broker confirms the entry type for your shipment.', source: 'CBP — Basic import/export guidance' },
+];
+
+const related = [
+  { href: '/guides/how-to-start-an-llc/', label: 'How to Start an LLC', note: 'If importing as a business, the entity behind the entry.' },
+  { href: '/guides/how-to-get-a-business-loan/', label: 'How to Get a Business Loan', note: 'Financing inventory and import orders.' },
+  { href: '/calculators/us-student-loan-pslf/', label: 'US Student Loan / PSLF Calculator', note: 'Our other new calculator — compare all five federal repayment plans.' },
+];
+---
+
+<CalculatorPage
+  title="US Import Duty / Landed Cost Calculator"
+  metaTitle="Import Duty Calculator: Landed Cost, MPF, HMF, Tariffs (2026)"
+  description="Work out the true landed cost of an import: HTS duty, extra tariffs, Merchandise Processing Fee, Harbor Maintenance Fee, and brokerage — per shipment and per unit."
+  category="business"
+  calculatorId="us-import-duty"
+  calculatorStepIndex={4}
+  steps={steps}
+  faqs={faqs}
+  officialRulesIntro="Every fee this calculator applies comes from the CBP rules named below. Duty rates and extra tariffs are yours to enter — they depend on your exact product and origin."
+  officialRules={officialRules}
+  related={related}
+  lastReviewed="15 October 2026"
+  breadcrumbCountry="Business"
+  breadcrumbHref="/topics/business/"
+/>
