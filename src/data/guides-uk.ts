@@ -10,15 +10,16 @@ export const guides: Guide[] = [
         slug: 'how-to-apply-for-a-national-insurance-number',
         country: 'uk',
         updatedAt: '2025',
+        lastReviewed: '2026-10-15',
         title: 'How to Apply for a National Insurance Number (UK)',
         metaTitle: 'How to Apply for a National Insurance Number: Step-by-Step Guide',
-        description: 'Apply for a UK National Insurance number step by step: who needs one, how to call the application line, the Identity Interview, and how long it takes to arrive.',
+        description: 'Apply for a UK National Insurance number step by step: who needs one, how to apply online, proving your identity, and how long it takes to arrive.',
         category: 'ids',
         audience: ['Immigrant'],
         difficulty: 'Medium',
-        totalTime: 'Up to 16 weeks',
+        totalTime: 'Up to 4 weeks after proving identity',
         totalCost: 'Free (HMRC never charges)',
-        summary: 'A National Insurance (NI) number is your UK tax and benefits ID. You apply by phone, prove your identity at a Jobcentre Plus interview (if required), and the number arrives by post — you can start working before it arrives.',
+        summary: 'A National Insurance (NI) number is your UK tax and benefits ID. You apply online, prove your identity, and the number arrives by post — you can start working before it arrives.',
         documents: [
             'Passport or national identity card',
             'Proof of right to work (visa, share code, or residence permit)',
@@ -27,21 +28,21 @@ export const guides: Guide[] = [
         ],
         steps: [
             {
-                phase: 'before', title: 'Check whether you need one', detail: 'You need an NI number if you want to work, open a Help to Save account, or claim benefits in the UK. If you were born in the UK you may already have one (check a payslip, P60, or HMRC app). You can start work before your number arrives — employers use your share code and a temporary note from HMRC meanwhile.', duration: '10 min',
+                phase: 'before', title: 'Check whether you need one', detail: 'You need an NI number if you want to work, open a Help to Save account, or claim benefits in the UK. If you were born in the UK you may already have one (check a payslip, P60, or HMRC app). You can start work before your number arrives — employers use your share code meanwhile.', duration: '10 min',
                 links: [
                     { label: 'NI number overview (gov.uk)', href: 'https://www.gov.uk/apply-national-insurance-number' },
                 ],
             },
             {
-                phase: 'go', title: 'Call the NI number application line', detail: 'Ring 0800 141 2075 (Monday to Friday, 8am to 6pm). The adviser checks your eligibility and either posts you an application form to sign and return or books you an Identity Interview. Textphone: 0800 141 2438. There is no online application — sites charging a fee are private middlemen, not HMRC.', duration: '15–30 min',
+                phase: 'go', title: 'Apply online and prove your identity', detail: 'Apply online at gov.uk. You will need to prove your identity — usually a photo of yourself holding your passport plus photos of your documents; an in-person appointment is only needed if you cannot upload photos. There is no fee — sites charging one are private middlemen, not HMRC. Application helpline: 0800 141 2079 (Monday to Friday, 8am to 5pm); Relay UK: 18001 then 0800 141 2079.', duration: '15–30 min',
                 links: [
-                    { label: 'Application line details (gov.uk)', href: 'https://www.gov.uk/apply-national-insurance-number' },
+                    { label: 'Apply online (gov.uk)', href: 'https://www.gov.uk/apply-national-insurance-number' },
                 ],
             },
-            { phase: 'go', title: 'Attend the Identity Interview (if asked)', detail: 'Most non-UK nationals are asked to prove their identity and right to work at a Jobcentre Plus office. Bring your passport, visa/BRP or share code, and proof of address. You will be asked why you need the number and about your job search or employment.', duration: '1 hour + travel' },
-            { phase: 'wait', title: 'Wait for the decision letter', detail: 'If your application is accepted, HMRC sends a letter with your NI number. Processing commonly takes up to 16 weeks; EU Settlement Scheme and visa applicants are sometimes allocated a number automatically when they receive their BRP.', duration: 'Up to 16 weeks' },
+            { phase: 'go', title: 'Attend an in-person appointment (only if asked)', detail: 'If you cannot upload photos, you may be asked to prove your identity and right to work in person. Bring your passport, visa/eVisa or share code, and proof of address. You will be asked why you need the number and about your job search or employment.', duration: '1 hour + travel' },
+            { phase: 'wait', title: 'Wait for the decision letter', detail: 'If your application is accepted, HMRC sends a letter with your NI number. It can take up to 4 weeks to get your number after proving your identity. BRP/eVisa holders might already have an NI number (check the back of a BRP or your UKVI account).', duration: 'Up to 4 weeks' },
             {
-                phase: 'followup', title: 'Chase it if it is delayed', detail: 'If you have heard nothing after 16 weeks, call the application line again with your reference details. If you start a job in the meantime, tell your employer you have applied — they can confirm with HMRC.', duration: '20 min',
+                phase: 'followup', title: 'Chase it if it is delayed', detail: 'If you applied more than 4 weeks ago and have heard nothing, call the application helpline with your reference details. If you start a job in the meantime, tell your employer you have applied — they can confirm with HMRC.', duration: '20 min',
                 links: [
                     { label: 'Contact HMRC (gov.uk)', href: 'https://www.gov.uk/government/organisations/hm-revenue-customs/contact/national-insurance-enquiries-for-employees-and-individuals' },
                 ],
@@ -50,7 +51,7 @@ export const guides: Guide[] = [
         ],
         faqs: [
             { q: 'Can I work before my NI number arrives?', a: 'Yes. You can legally start work while waiting. Your employer can verify your right to work with a share code and record your details; HMRC tells them how to handle payroll before the number arrives.' },
-            { q: 'Do I have to pay for an NI number?', a: 'No. HMRC never charges. Any website selling "NI number registration" for £50–£100 is a private company forwarding the same free phone application — apply directly yourself.' },
+            { q: 'Do I have to pay for an NI number?', a: 'No. HMRC never charges. Any website selling "NI number registration" for £50–£100 is a private company forwarding the same free application — apply directly yourself.' },
             { q: 'I lost my NI number. How do I find it again?', a: 'Check a payslip, P60, HMRC app, or your Personal Tax Account at gov.uk. If you still cannot find it, fill in form CA5403 and post it to HMRC — they will confirm it by post within 15 days.' },
         ],
     },
@@ -301,13 +302,14 @@ export const guides: Guide[] = [
         slug: 'how-to-apply-for-eu-settlement-scheme',
         country: 'uk',
         updatedAt: '2025',
+        lastReviewed: '2026-10-15',
         title: 'How to Apply to the EU Settlement Scheme (Settled Status)',
         metaTitle: 'EU Settlement Scheme: Settled & Pre-Settled Status Step-by-Step',
         description: 'EU Settlement Scheme guide: who can still apply late, proving residence, the app-based application, and switching from pre-settled to settled status.',
         category: 'immigration',
         audience: ['Immigrant'],
         difficulty: 'Easy',
-        totalTime: 'Usually days, up to 5 days for complex cases',
+        totalTime: 'Usually days; complex cases can take longer',
         totalCost: 'Free',
         summary: 'The deadline for most EU citizens was 30 June 2021, but you can still make a LATE application with a valid reason. The application is app-based: prove identity, verify residence, and get settled (5+ years) or pre-settled status.',
         documents: [
@@ -323,15 +325,15 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'fill', title: 'Start the application online', detail: 'The application is at: apply.eu-settled-status.homeoffice.gov.uk — free, and done in the "EU Exit: ID Document Check" app. Scan your passport/ID chip, take a selfie, and answer the residence questions. Non-EU family members send their BRP/passport details instead.', duration: '30 min',
+                phase: 'fill', title: 'Start the application online', detail: 'The application is free, started from gov.uk, and done in the "EU Exit: ID Document Check" app. Scan your passport/ID chip, take a selfie, and answer the residence questions. Non-EU family members use their eVisa/UKVI account + passport details instead.', duration: '30 min',
                 links: [
-                    { label: 'Apply (EU Settlement Scheme)', href: 'https://apply.eu-settled-status.homeoffice.gov.uk/start' },
+                    { label: 'Apply (EU Settlement Scheme)', href: 'https://apply-to-visit-or-stay-in-the-uk.homeoffice.gov.uk' },
                 ],
             },
-            { phase: 'fill', title: 'Verify your UK residence', detail: 'For settled status you need 5 years of continuous residence; the system usually auto-checks HMRC and DWP records (a National Insurance number speeds this up). If the records are missing, upload documents: P60s, payslips, bank statements, utility bills — one per year (or per 6 months for pre-settled).', duration: '30 min' },
-            { phase: 'wait', title: 'Wait for the decision', detail: 'Most straightforward cases are decided within 5 working days, often faster. You get an email decision letter; your status is digital (viewable in your UKVI account and shareable via a "share code" for employers and landlords).', duration: 'Days to 5 weeks' },
+            { phase: 'fill', title: 'Verify your UK residence', detail: 'For settled status you need 5 years of continuous residence; the system usually auto-checks HMRC and DWP records (a National Insurance number speeds this up). If the records are missing, upload documents such as P60s, payslips, bank statements, or utility bills.', duration: '30 min' },
+            { phase: 'wait', title: 'Wait for the decision', detail: 'Straightforward cases are often decided within days; complex cases take longer. You get an email decision letter; your status is digital (viewable in your UKVI account and shareable via a "share code" for employers and landlords).', duration: 'Days to weeks' },
             {
-                phase: 'followup', title: 'Pre-settled? Upgrade to settled status', detail: 'Pre-settled status (under 5 years residence) lasts 5 years. Under the 2023 court ruling and Home Office policy, it is extended automatically until you qualify, but apply for settled status once you reach 5 years — you must do this BEFORE your status window closes.', duration: '30 min when eligible',
+                phase: 'followup', title: 'Pre-settled? Upgrade to settled status', detail: 'Pre-settled status (under 5 years residence) lasts 5 years and is extended automatically until you qualify. Your status may be automatically converted to settled status once you reach 5 years — check your UKVI account; if it has not been converted, apply for settled status as soon as you are eligible.', duration: '30 min when eligible',
                 links: [
                     { label: 'Switch to settled status (gov.uk)', href: 'https://www.gov.uk/settled-status-eu-citizens-families/switching-to-settled-status' },
                 ],
@@ -339,9 +341,9 @@ export const guides: Guide[] = [
             { phase: 'receive', title: 'Use your status with share codes', detail: 'Prove your rights to employers, landlords, and the NHS with a share code from your UKVI account (view-and-prove service). Unlike a BRP, there is no physical card — the digital record is the legal proof.', duration: '5 min' },
         ],
         faqs: [
-            { q: 'What counts as "reasonable grounds" for applying late?', a: 'The list is generous: not knowing about the scheme, serious illness, being a child whose parent failed to apply, domestic abuse, and modern slavery are all accepted. The Home Office decides case by case and grants discretion widely — apply rather than assume you missed out.' },
+            { q: 'What counts as "reasonable grounds" for applying late?', a: 'The list is generous: not knowing about the scheme, serious illness, being a child whose parent failed to apply, domestic abuse, and modern slavery are all accepted. The Home Office decides case by case — and late applicants must give evidence of their reasonable grounds covering the whole period since the deadline passed — so apply rather than assume you missed out.' },
             { q: 'Can I count time outside the UK?', a: 'Continuous residence allows absences under 6 months in any 12 (12 months for one important reason like childbirth, study, or a posting). A single absence of over 12 months breaks continuity and resets the clock.' },
-            { q: 'Does settled status expire?', a: 'Settled status lapses only after 5 consecutive years outside the UK. Pre-settled status lasts 5 years and is being extended automatically, but you should switch to settled status as soon as you have 5 years of residence.' },
+            { q: 'Does settled status expire?', a: 'Settled status lapses only after 5 consecutive years outside the UK. Pre-settled status lasts 5 years, is extended automatically, and may be automatically converted to settled status once you have 5 years of residence — check your UKVI account and apply manually if it has not converted.' },
         ],
     },
     {
@@ -349,6 +351,7 @@ export const guides: Guide[] = [
         calculator: 'uk-income-tax',
         country: 'uk',
         updatedAt: '2025',
+        lastReviewed: '2026-10-15',
         title: 'How to File a UK Self Assessment Tax Return',
         metaTitle: 'UK Self Assessment: Step-by-Step Filing Guide (HMRC)',
         description: 'HMRC Self Assessment guide: who must register, the UTR, the 31 January deadline, filing online, payments on account, and penalties.',
@@ -368,9 +371,15 @@ export const guides: Guide[] = [
         ],
         steps: [
             {
-                phase: 'before', title: 'Check whether you must file', detail: 'You must file if self-employed with income over £1,000, a landlord earning £1,000+ rent, a company director, or you have untaxed income over £2,500 (savings, foreign income, tips). Higher-rate earners claiming child benefit must also file. The threshold changes — check the current rules each year.', duration: '15 min',
+                phase: 'before', title: 'Check whether you must file', detail: 'You must file if self-employed with income over £1,000, a landlord earning £1,000+ rent, a company director with untaxed income (e.g. dividends above the allowance), or you have untaxed income (savings, foreign income, tips). Those liable for the High Income Child Benefit Charge (adjusted net income over £60,000) must also file. The threshold changes — check the current rules each year.', duration: '15 min',
                 links: [
                     { label: 'Who must send a return (gov.uk)', href: 'https://www.gov.uk/self-assessment-tax-returns/who-must-send-a-return' },
+                ],
+            },
+            {
+                phase: 'before', title: 'Check Making Tax Digital for Income Tax', detail: 'From 6 April 2026, sole traders and landlords with qualifying income (self-employment + property, before expenses) over £50,000 must also use Making Tax Digital-compatible software for quarterly updates plus a final declaration. The threshold drops to £30,000 from 6 April 2027 and £20,000 from 6 April 2028.', duration: '15 min',
+                links: [
+                    { label: 'Making Tax Digital for Income Tax (gov.uk)', href: 'https://www.gov.uk/guidance/find-out-if-and-when-you-need-to-use-making-tax-digital-for-income-tax' },
                 ],
             },
             {
@@ -380,16 +389,16 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'fill', title: 'Gather income and expense records', detail: 'For the 2024/25 tax year (6 April 2024 to 5 April 2025): employment income (P60), self-employment invoices and allowable expenses, rental income, savings interest, dividends, pension contributions, and Gift Aid. The tax-free personal allowance is £12,570 (2024/25).', duration: '2–4 hours'
+                phase: 'fill', title: 'Gather income and expense records', detail: 'For the 2025/26 tax year (6 April 2025 to 5 April 2026): employment income (P60), self-employment invoices and allowable expenses, rental income, savings interest, dividends, pension contributions, and Gift Aid. The tax-free personal allowance is £12,570 (2025/26).', duration: '2–4 hours'
             },
             {
-                phase: 'fill', title: 'File the return online', detail: 'Sign in with your Government Gateway at tax.service.gov.uk. The online form walks through each section and calculates the tax for you. Paper returns (deadline 31 October) miss automatic calculation. Save as you go; submit before 31 January midnight.', duration: '1–2 hours',
+                phase: 'fill', title: 'File the return online', detail: 'Sign in with your Government Gateway at tax.service.gov.uk. The online form walks through each section and calculates the tax for you. For 2025/26: paper returns by 31 October 2026, online filing and payment by 31 January 2027. Paper returns miss automatic calculation. Save as you go; submit before the deadline.', duration: '1–2 hours',
                 links: [
                     { label: 'File your return (HMRC)', href: 'https://www.tax.service.gov.uk/self-assessment' },
                 ],
             },
             { phase: 'submit', title: 'Pay what you owe', detail: 'Tax owed for the year is due 31 January (online filing). HMRC also collects "payments on account" — advance instalments towards next year (each 50% of your bill) due 31 January and 31 July. Pay by bank transfer, debit card, or Direct Debit; budget for the on-account amounts.', duration: '15 min' },
-            { phase: 'followup', title: 'Check your bill and keep records', detail: 'Your online account shows payments, statements, and future deadlines. Keep records 5 years after the 31 January submission deadline. Late filing: £100 immediately, then escalating; late payment: interest plus 5% surcharges at 30 and 6 months.', duration: 'Ongoing' },
+            { phase: 'followup', title: 'Check your bill and keep records', detail: 'Your online account shows payments, statements, and future deadlines. Keep records 5 years after the 31 January submission deadline. Late filing: £100 immediately, then escalating; late payment: interest plus 5% surcharges at 30 days, 6 months, and 12 months.', duration: 'Ongoing' },
             { phase: 'receive', title: 'Confirmation and refunds', detail: 'You get an on-screen confirmation and email receipt when filing. Overpaid tax is refunded to your bank within days (or held against future bills if you prefer). HMRC never phones threatening arrest — that is a scam.', duration: '—' },
         ],
         faqs: [
@@ -415,9 +424,10 @@ export const guides: Guide[] = [
         slug: 'how-to-apply-for-uk-driving-licence',
         country: 'uk',
         updatedAt: '2025',
+        lastReviewed: '2026-10-15',
         title: 'How to Get a UK Driving Licence',
         metaTitle: 'How to Apply for a UK Driving Licence: Step-by-Step Guide',
-        description: 'UK driving licence guide: provisional licence, theory test, driving test, rules for licence holders from abroad, and 2025 costs.',
+        description: 'UK driving licence guide: provisional licence, theory test, driving test, rules for licence holders from abroad, and current costs.',
         category: 'ids',
         audience: ['Native', 'Immigrant'],
         difficulty: 'Medium',
@@ -432,7 +442,7 @@ export const guides: Guide[] = [
         ],
         steps: [
             {
-                phase: 'before', title: 'Check your eligibility and foreign-licence options', detail: 'Minimum age 17 for cars (16 for mopeds). If you hold an EU/EEA or "designated country" licence (e.g. Canada, Australia, Japan, South Korea, and more) you may be able to EXCHANGE it for a UK licence without tests. Other foreign licences are valid for 12 months, after which you must pass both UK tests.', duration: '20 min',
+                phase: 'before', title: 'Check your eligibility and foreign-licence options', detail: 'Minimum age 17 for cars (16 for mopeds). EU/EEA licences are valid until age 70 (or 3 years from becoming resident if aged 67+) and exchange is optional. If you hold a "designated country" licence (e.g. Canada, Australia, Japan, South Korea, and more) you may be able to EXCHANGE it for a UK licence without tests. Other foreign licences are valid for 12 months, after which you must pass both UK tests to keep driving.', duration: '20 min',
                 links: [
                     { label: 'Exchanging a foreign licence (gov.uk)', href: 'https://www.gov.uk/exchange-foreign-driving-licence' },
                 ],
@@ -450,21 +460,22 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'go', title: 'Take driving lessons and the practical test', detail: 'Take lessons with an ADI instructor or practise with a qualified accompanying driver (L plates, aged 21+, held a licence 3+ years, insured car). The practical test costs £62 (weekday) or £75 (evening/weekend) and lasts about 40 minutes including independent driving and one show-me/tell-me safety question.', duration: '2–6 months typical',
+                phase: 'go', title: 'Take driving lessons and the practical test', detail: 'Take lessons with an ADI instructor or practise with a qualified accompanying driver (L plates, aged 21+, held a licence 3+ years, insured car). The practical test costs £62 (weekday) or £75 (evening/weekend). You will drive for around 35 minutes including independent driving, and answer 2 vehicle safety questions (one "tell me" before driving, one "show me" while driving). Only the learner may book or manage their practical car test; bookings can be changed at most twice, and since 9 June 2026 tests may only be moved to one of the 3 nearest test centres.', duration: '2–6 months typical',
                 links: [
                     { label: 'Book the practical test', href: 'https://www.gov.uk/book-driving-test' },
+                    { label: 'Driving test booking rules (gov.uk)', href: 'https://www.gov.uk/government/news/end-of-the-road-for-unofficial-driving-test-booking-services' },
                 ],
             },
-            { phase: 'receive', title: 'Receive your full licence', detail: 'The examiner gives you a pass certificate; your full licence arrives by post within a week (examiner sends your details automatically). New rules for the first 2 years: 6 penalty points (rather than 12) means your licence is revoked and you retake both tests.', duration: '1 week' },
+            { phase: 'receive', title: 'Receive your full licence', detail: 'The examiner gives you a pass certificate; your full licence arrives by post (the examiner sends your details automatically). New rules for the first 2 years: 6 penalty points (rather than 12) means your licence is revoked and you retake both tests.', duration: 'By post' },
             {
-                phase: 'followup', title: 'Exchange your foreign licence if eligible', detail: 'Designated-country licence holders: apply online or with form D1, send your foreign licence (returned or destroyed), pay £43, and receive a UK licence without tests — do this within the 12-month validity window or you must start as a learner.', duration: '2–3 weeks',
+                phase: 'followup', title: 'Exchange your foreign licence if eligible', detail: 'Designated-country licence holders: apply by post with form D1 from a Post Office, send your foreign licence, pay £43, and receive a UK licence without tests — usually within 3 weeks. Designated-country holders have 5 years from becoming resident to exchange without tests; after 12 months you must stop driving on the foreign licence until exchanged.', duration: 'Usually within 3 weeks',
                 links: [
                     { label: 'Exchange a foreign licence', href: 'https://www.gov.uk/exchange-foreign-driving-licence' },
                 ],
             },
         ],
         faqs: [
-            { q: 'How long can I drive on my foreign licence in the UK?', a: 'Any valid foreign licence covers you for 12 months from becoming a resident. After that: EU/designated licences must be exchanged, and all others require passing the UK theory and practical tests as a new driver.' },
+            { q: 'How long can I drive on my foreign licence in the UK?', a: 'Any valid foreign licence covers you for 12 months from becoming a resident. After that: EU/EEA licences remain valid until age 70 (exchange is optional, no test); designated-country licences must be exchanged to keep driving; all others require passing the UK theory and practical tests as a new driver.' },
             { q: 'Do I need lessons to pass the practical test?', a: 'There is no legal minimum number of lessons, but the average learner needs around 40–45 hours with an instructor plus private practice. Going straight to test without preparation almost always ends in a £62 rebooking fee.' },
             { q: 'I lost my licence. How do I replace it?', a: 'Replace online at gov.uk for £20 with your Government Gateway details — it arrives within a week. If you have a paper licence issued before 1998, apply for a photocard replacement instead.' },
         ],

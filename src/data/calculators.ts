@@ -109,7 +109,7 @@ export const CALCULATORS: Record<string, CalculatorDef> = {
                 effectiveYears: round2(effective),
             };
         },
-        disclaimer: 'Estimate only. Covers federal private-sector employees. Excludes DIFC/ADGM, government, and domestic workers (separate regimes). The 2-year cap is applied against basic wage, following majority practice; the law says "two years’ wage" without specifying basic vs total.',
+        disclaimer: 'Estimate only. Covers federal private-sector employees. Excludes DIFC/ADGM, government, and domestic workers (separate regimes). The cap is applied against basic wage because the calculator takes basic salary only; under Art. 51(6) the legal cap is two years\' total Wage (basic + allowances).',
         sourceLabel: 'Federal Decree-Law 33/2021, Art. 51 (MOHRE)',
         sourceHref: 'https://mohre.gov.ae/en/media-center/news/15/11/2021/uae-president-issues-federal-decree-law-on-regulation-of-labour-relations-in-private-sector',
     },

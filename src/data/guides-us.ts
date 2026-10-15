@@ -283,14 +283,15 @@ export const guides: Guide[] = [
         slug: 'how-to-get-green-card-through-marriage',
         country: 'us',
         updatedAt: '2025',
+        lastReviewed: '2026-10-15',
         title: 'How to Get a Green Card Through Marriage (US Citizen Spouse)',
         metaTitle: 'How to Get a Marriage Green Card: Step-by-Step Process',
         description: 'Marriage green card guide: Form I-130 petition, I-485 adjustment of status, interview prep, processing times, and fees for spouses of US citizens.',
         category: 'immigration',
         audience: ['Immigrant'],
         difficulty: 'Hard',
-        totalTime: '10–14 months typical',
-        totalCost: '$2,115–$2,375+ in government fees',
+        totalTime: 'Varies widely by office — check USCIS processing times',
+        totalCost: '$2,115 base; up to $3,005 with work + travel permits',
         summary: 'A US citizen spouse files Form I-130 (petition) and the immigrant files I-485 (green card application), attends biometrics and an interview, then receives a conditional or permanent green card.',
         documents: [
             'Marriage certificate',
@@ -306,16 +307,16 @@ export const guides: Guide[] = [
             { phase: 'before', title: 'Collect proof of a genuine marriage', detail: 'USCIS screens for fraud. Gather joint bank statements, lease or mortgage in both names, insurance beneficiaries, photos over time, and letters from friends/family.', duration: '2–4 weeks' },
             { phase: 'before', title: 'Translate foreign-language documents (if any)', detail: 'Every document not in English — birth certificates, marriage or police records from your home country — must be submitted with a full English translation and a translator\'s certification ("I certify that I am competent to translate from [language] to English..."). You can translate it yourself if you are fluent (a friend or family member can too — they cannot be the petitioner), but a certified translation service ($20–$40 per page) is safer for legal documents. Never alter or summarize: every stamp and seal must be translated. Use the language dropdown at the top of this page to read this guide in Hindi, Nepali, Português (Brasil), or Español.', duration: '1–2 weeks' },
             {
-                phase: 'fill', title: 'Prepare Forms I-130 and I-485', detail: 'The citizen spouse completes I-130 (petition) with the G-325A biographic info. The immigrant completes I-485, I-864 (affidavit of support), and I-693 (medical exam). File them together in one package for concurrent processing.', duration: '2–3 weeks',
+                phase: 'fill', title: 'Prepare Forms I-130 and I-485', detail: 'The citizen spouse files I-130 (petition) with Form I-130A (Supplemental Information for Spouse Beneficiary). The immigrant completes I-485 and I-693 (medical exam); the sponsor completes and signs I-864 (affidavit of support). File them together in one package for concurrent processing.', duration: '2–3 weeks',
                 links: [
                     { label: 'Form I-130 (uscis.gov)', href: 'https://www.uscis.gov/i-130' },
                     { label: 'Form I-485 (uscis.gov)', href: 'https://www.uscis.gov/i-485' },
                 ],
             },
-            { phase: 'submit', title: 'File with USCIS and pay fees', detail: 'Mail the complete package with payment (I-130: $675 paper; I-485: $1,440). You will receive receipt notices (I-797) within 2–3 weeks. The work permit (I-765) and travel permit (I-131) now require additional fees ($260 and $630) when filed with I-485.', duration: '1 day' },
+            { phase: 'submit', title: 'File with USCIS and pay fees', detail: 'Mail the complete package with payment (I-130: $675 paper / $625 online; I-485: $1,440). USCIS sends receipt notices (I-797); timing varies. The work permit (I-765) and travel permit (I-131) now require additional fees ($260 and $630) when filed with I-485, bringing the all-in total to $3,005 with both optionals.', duration: '1 day' },
             { phase: 'wait', title: 'Attend biometrics appointment', detail: 'USCIS mails an appointment notice for fingerprints and photo at an Application Support Center. Bring the notice and photo ID.', duration: '5–8 weeks after filing' },
             {
-                phase: 'wait', title: 'Wait for the interview notice', detail: 'Processing takes 10–14 months total. Check your case status online with your receipt number.', duration: '8–12 months',
+                phase: 'wait', title: 'Wait for the interview notice', detail: 'Processing varies widely by service center and field office — check the USCIS processing-times tool for your office. Check your case status online with your receipt number.', duration: 'Varies by office',
                 links: [
                     { label: 'Check case status (USCIS)', href: 'https://egov.uscis.gov/casestatus' },
                 ],
@@ -324,7 +325,7 @@ export const guides: Guide[] = [
             { phase: 'receive', title: 'Receive the green card', detail: 'If approved, the green card arrives by mail within weeks. If married under 2 years at approval, you get a 2-year conditional card and must file I-751 to remove conditions later.', duration: '2–4 weeks' },
         ],
         faqs: [
-            { q: 'Can I work while the application is pending?', a: 'Yes, if you filed Form I-765 with your package. The work permit (EAD) usually arrives in 3–5 months and lets you work for any employer.' },
+            { q: 'Can I work while the application is pending?', a: 'Yes, if you filed Form I-765 with your package. The work permit (EAD) lets you work for any employer; processing times vary — check the USCIS processing-times tool.' },
             { q: 'Can I travel outside the US while waiting?', a: 'Only with an approved advance parole document (Form I-131). Leaving without it means your application is considered abandoned.' },
             { q: 'What if we divorce before the interview?', a: 'The I-130 petition can no longer be approved based on marriage. Some immigrants may self-petition under VAWA if there was abuse; otherwise the process ends.' },
         ],
@@ -333,19 +334,20 @@ export const guides: Guide[] = [
         slug: 'how-to-apply-for-citizenship',
         country: 'us',
         updatedAt: '2025',
+        lastReviewed: '2026-10-15',
         title: 'How to Apply for US Citizenship (Naturalization)',
         metaTitle: 'How to Become a US Citizen: Step-by-Step Naturalization Guide',
         description: 'US citizenship application guide: Form N-400 eligibility, English and civics tests, interview process, naturalization oath ceremony, and current fees.',
         category: 'immigration',
         audience: ['Immigrant'],
         difficulty: 'Hard',
-        totalTime: '8–14 months',
-        totalCost: '$710 online / $760 paper (N-400 fee, 2025)',
+        totalTime: 'Varies by field office — check USCIS processing times',
+        totalCost: '$710 online / $760 paper (N-400 fee); $380 reduced fee / fee waiver available',
         summary: 'After 3–5 years as a green card holder, file Form N-400, pass the English and civics tests at your interview, and take the Oath of Allegiance to become a US citizen.',
         documents: [
             'Green card (front and back copies)',
             'Form N-400 completed',
-            'Tax returns for the last 5 years',
+            'Tax records (transcripts if you owe taxes or USCIS requests them)',
             'Proof of continuous residence and physical presence',
             'Marriage certificate (if applying through marriage)',
             'Selective Service registration proof (males 18–25)',
@@ -358,7 +360,7 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'before', title: 'Gather records', detail: 'Collect 5 years of tax returns, travel dates (from passport stamps), employment history, and addresses. Gaps or errors here cause delays.', duration: '1–2 weeks',
+                phase: 'before', title: 'Gather records', detail: 'Collect tax records, travel dates (from passport stamps), employment history, and addresses. Gaps or errors here cause delays.', duration: '1–2 weeks',
                 links: [
                     { label: 'Get your IRS tax transcripts (irs.gov)', href: 'https://www.irs.gov/individuals/get-transcript' },
                 ],
@@ -370,15 +372,15 @@ export const guides: Guide[] = [
                     { label: 'Form N-400 (uscis.gov)', href: 'https://www.uscis.gov/n-400' },
                 ],
             },
-            { phase: 'submit', title: 'Submit and pay the fee', detail: 'Pay $710 online or $760 by mail. You will get a receipt notice and then a biometrics appointment notice.', duration: '1 day' },
+            { phase: 'submit', title: 'Submit and pay the fee', detail: 'Pay $710 online or $760 by mail. A reduced fee of $380 (paper only, household income at or below 400% of the Federal Poverty Guidelines) and a fee waiver via Form I-912 are available if you qualify. You will get a receipt notice and then a biometrics appointment notice.', duration: '1 day' },
             { phase: 'go', title: 'Attend biometrics', detail: 'Fingerprints and photo at an Application Support Center. This starts your background check.', duration: '30 min' },
             {
-                phase: 'before', title: 'Study for the tests', detail: 'Study the 100 civics questions (uscis.gov has flashcards and practice tests) and practice English reading/writing. You get two chances within the interview process.', duration: '2–6 months',
+                phase: 'before', title: 'Study for the tests', detail: 'For N-400s filed on or after 20 October 2025, USCIS gives the 2025 civics test: 20 questions drawn from a bank of 128, with 12 correct to pass (uscis.gov has study materials and practice tests). Earlier filers take the 100-question test (6 of 10 correct). Practice English reading/writing too. You get two chances within the interview process.', duration: '2–6 months',
                 links: [
                     { label: 'Civics practice test (uscis.gov)', href: 'https://www.uscis.gov/citizenship/find-study-materials-and-resources' },
                 ],
             },
-            { phase: 'go', title: 'Attend the naturalization interview', detail: 'A USCIS officer reviews your N-400, tests your English (read/write a sentence) and civics (6 of 10 questions must be correct), and makes a decision — often same day.', duration: '1–2 hours' },
+            { phase: 'go', title: 'Attend the naturalization interview', detail: 'A USCIS officer reviews your N-400, tests your English (read/write a sentence) and civics (12 of 20 correct under the 2025 test; 6 of 10 for N-400s filed before 20 October 2025), and makes a decision — sometimes the same day.', duration: '1–2 hours' },
             {
                 phase: 'receive', title: 'Take the Oath and get your certificate', detail: 'Attend the oath ceremony (weeks to months later), surrender your green card, receive your Certificate of Naturalization, and apply for a US passport.', duration: '2 hours',
                 links: [
@@ -387,7 +389,7 @@ export const guides: Guide[] = [
             },
         ],
         faqs: [
-            { q: 'What if I fail the English or civics test?', a: 'You get one free retake of the failed portion, scheduled 60–120 days later. If you fail twice, your application is denied — but you can reapply.' },
+            { q: 'What if I fail the English or civics test?', a: 'You get one free retake of the failed portion, scheduled 60–90 days later. If you fail twice, your application is denied — but you can reapply.' },
             { q: 'Can I get the test in my own language?', a: 'Yes, if you are 50+ with 20 years as a permanent resident, or 55+ with 15 years, you may take the civics test in your native language. Age 65+ with 20 years gets easier civics questions.' },
             { q: 'Does a trip abroad break my continuous residence?', a: 'Trips under 6 months usually do not. Trips of 6–12 months raise a presumption of breaking residence (you can rebut with evidence), and trips over 12 months break it.' },
         ],
@@ -447,6 +449,7 @@ export const guides: Guide[] = [
         slug: 'how-to-start-an-llc',
         country: 'us',
         updatedAt: '2025',
+        lastReviewed: '2026-10-15',
         title: 'How to Start an LLC',
         metaTitle: 'How to Start an LLC: Step-by-Step Guide (EIN, Registration, Costs)',
         description: 'Start an LLC step by step: choose a state and name, file Articles of Organization, get an EIN from the IRS, and write an operating agreement.',
@@ -466,10 +469,9 @@ export const guides: Guide[] = [
         steps: [
             { phase: 'before', title: 'Choose your state', detail: 'Form the LLC in the state where you will do business. Delaware/Wyoming only make sense for investors or specific cases — otherwise your home state is cheapest and simplest.', duration: '30 min' },
             {
-                phase: 'before', title: 'Pick and check a name', detail: 'Your name must include "LLC" or "Limited Liability Company" and be unique in your state. Search the Secretary of State\'s business name database. Also check the USPTO trademark database.', duration: '1 hour',
+                phase: 'before', title: 'Pick and check a name', detail: 'Your name must include "LLC" or "Limited Liability Company" and be unique in your state. Search your Secretary of State\'s business name database (find it via your state government\'s official .gov site). Also check the USPTO trademark database.', duration: '1 hour',
                 links: [
                     { label: 'USPTO trademark search', href: 'https://www.uspto.gov/trademarks/search' },
-                    { label: 'Find your Secretary of State (usa.gov)', href: 'https://www.usa.gov/state-motor-vehicle-services' },
                 ],
             },
             { phase: 'before', title: 'Choose a registered agent', detail: 'This person/company receives legal mail for the LLC. You can be your own agent (you must have a physical state address), or pay a service ~$100–$300/year.', duration: '30 min' },
@@ -484,7 +486,7 @@ export const guides: Guide[] = [
             },
             { phase: 'fill', title: 'Sign an operating agreement', detail: 'Even for single-member LLCs, this document proves your LLC is a separate entity — critical for liability protection. Free templates are widely available.', duration: '1 hour' },
             { phase: 'submit', title: 'Handle licenses, banking, and taxes', detail: 'Open a dedicated LLC bank account (never mix personal and business money), check if your industry needs licenses, and register for state sales tax if selling goods.', duration: '1–2 weeks' },
-            { phase: 'followup', title: 'Stay compliant annually', detail: 'Most states require an annual report or franchise tax ($0–$800 — California is the priciest). Miss it and your LLC can be dissolved.', duration: 'yearly' },
+            { phase: 'followup', title: 'Stay compliant annually', detail: 'Most states require an annual report or franchise tax ($0–$800 — California charges $800/year). Miss it and your LLC can be dissolved.', duration: 'yearly' },
         ],
         faqs: [
             { q: 'Can a non-US resident form an LLC?', a: 'Yes. There is no citizenship or residency requirement. You need a registered agent in the state and can get an EIN without an SSN (by fax or mail using Form SS-4).' },
@@ -496,6 +498,7 @@ export const guides: Guide[] = [
         slug: 'how-to-get-a-real-id',
         country: 'us',
         updatedAt: '2025',
+        lastReviewed: '2026-10-15',
         title: 'How to Get a REAL ID (for Domestic Flights)',
         metaTitle: 'How to Get a REAL ID: Step-by-Step DMV Guide',
         description: 'REAL ID application guide: required documents (proof of identity, SSN, residency), DMV appointment, fees, and the star marking for domestic flights.',
@@ -514,7 +517,7 @@ export const guides: Guide[] = [
         ],
         steps: [
             {
-                phase: 'before', title: 'Check if you already have one', detail: 'Look at your license — a gold or black star in the top corner means it is already REAL ID compliant. Also note: a valid passport works for flights instead of REAL ID.', duration: '5 min',
+                phase: 'before', title: 'Check if you already have one', detail: 'Look at your license — a star (and/or flag) marking, or an "Enhanced" designation, means it is already REAL ID compliant. Also note: a valid passport works for flights instead of REAL ID.', duration: '5 min',
                 links: [
                     { label: "New immigrant? How to get a driver's license", href: '/guides/how-to-get-drivers-license-new-immigrant/' },
                     { label: 'DHS: REAL ID basics', href: 'https://www.dhs.gov/real-id' },
@@ -534,10 +537,10 @@ export const guides: Guide[] = [
                     { label: 'Find your state DMV (usa.gov)', href: 'https://www.usa.gov/motor-vehicle-services' },
                 ],
             },
-            { phase: 'receive', title: 'Receive your REAL ID by mail', detail: 'You get a temporary paper ID same-day; the REAL ID arrives in 1–3 weeks with the star marking. It is valid for the same period as a standard license.', duration: '1–3 weeks' },
+            { phase: 'receive', title: 'Receive your REAL ID by mail', detail: 'You get a temporary paper ID same-day; the REAL ID arrives in 1–3 weeks with the star marking. It is valid for the same period as a standard license. Note: a temporary paper ID is NOT accepted at TSA checkpoints — do not rely on it for flights.', duration: '1–3 weeks' },
         ],
         faqs: [
-            { q: 'Do I need a REAL ID to fly?', a: 'Yes, for domestic flights you now need a REAL ID-compliant license, a valid passport, or another accepted federal ID. A standard license alone is no longer enough at TSA checkpoints.' },
+            { q: 'Do I need a REAL ID to fly?', a: 'Yes, for domestic flights you now need a REAL ID-compliant license, a valid passport, or another accepted federal ID. A standard license alone is no longer enough at TSA checkpoints. Two exceptions: children under 18 do not need ID for domestic US flights, and since 1 February 2026 travellers without an acceptable ID may use TSA ConfirmID for a $45 fee (covers a 10-day travel period, verification not guaranteed, expect delays).' },
             { q: 'Can I use a foreign passport instead?', a: 'Yes, a valid foreign passport is accepted for domestic flights and is the common workaround for undocumented residents who cannot obtain a REAL ID.' },
             { q: 'Does a REAL ID work as a passport?', a: 'No. REAL ID is for domestic flights and federal buildings only. You still need a passport book for international travel — see our passport guide.' },
         ],

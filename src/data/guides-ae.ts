@@ -150,7 +150,7 @@ export const guides: Guide[] = [
         slug: 'how-to-apply-for-a-uae-golden-visa',
         country: 'ae',
         updatedAt: '2026',
-        lastReviewed: '2026-10-13',
+        lastReviewed: '2026-10-15',
         title: 'How to Apply for a UAE Golden Visa (10-Year Long-Term Residency)',
         metaTitle: 'UAE Golden Visa: Who Qualifies, How to Apply, Fees (2026)',
         description: 'Long-term residency without a sponsor: investor, entrepreneur, talent, professional, and student routes — eligibility thresholds, documents, fees, and the application steps.',
@@ -159,7 +159,7 @@ export const guides: Guide[] = [
         difficulty: 'Hard',
         totalTime: 'Varies by category — confirm current processing times with ICP/GDRFA',
         totalCost: 'From ~AED 1,200 (10-year residence issuance) + category fees',
-        summary: 'The Golden Visa is a long-term, renewable residence visa (5 or 10 years depending on category) that needs no sponsor, lets holders stay outside the UAE for more than 6 months without losing residency, and allows family sponsorship. Main routes: investors (AED 2M+), entrepreneurs, exceptional talent / specialised professionals, outstanding students, and humanitarian pioneers / frontline heroes.',
+        summary: 'The Golden Visa is a long-term, renewable residence visa (10 years per ICP\'s Golden Residency guide) that needs no sponsor, lets holders stay outside the UAE for more than 6 months without losing residency, and allows family sponsorship. Main routes: investors (AED 2M+), entrepreneurs, exceptional talent / specialised professionals, outstanding students, and humanitarian pioneers / frontline heroes.',
         documents: [
             'Passport (at least 6 months remaining)',
             'Personal photo',
@@ -183,7 +183,7 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'submit', title: 'Apply through ICP', detail: 'Apply via the ICP Smart Services website/app (UAE Pass login), a Customer Happiness Centre, or an Amer centre — search for the category-specific Golden Residency service. Category entry services cost AED 100 application + AED 47–100 issuance + AED 100 smart services, varying by category.', duration: 'Varies — confirm with ICP', cost: 'From ~AED 300 (category service)',
+                phase: 'submit', title: 'Apply through ICP', detail: 'Apply via the ICP Smart Services website/app (UAE Pass login), a Customer Happiness Centre, or an Amer centre — search for the category-specific Golden Residency service. Category entry services cost AED 100 application + AED 100 issuance + AED 100 smart services, varying by category.', duration: 'Varies — confirm with ICP', cost: 'From ~AED 300 (category service)',
                 links: [
                     { label: 'Golden investor — public investments (ICP)', href: 'https://icp.gov.ae/en/services-details/?serviceid=68e34ed35ae59b00117383d1' },
                 ],
@@ -195,13 +195,13 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'go', title: 'Complete Emirates ID issuance', detail: 'Emirates ID issuance and biometrics are part of the residence process (AED 100 per year plus AED 100 smart fee).', duration: 'Same-day appointment', cost: 'From AED 300 (2-year card)',
+                phase: 'go', title: 'Complete Emirates ID issuance', detail: 'Emirates ID issuance and biometrics are part of the residence process (AED 100 per year plus AED 100 smart fee — about AED 1,100 for a 10-year card).', duration: 'Same-day appointment', cost: 'About AED 1,100 (10-year card)',
                 links: [
                     { label: 'New Identity Card issuance (ICP)', href: 'https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e5a' },
                 ],
             },
             {
-                phase: 'receive', title: 'Golden Residence permit is issued', detail: 'The Golden Residence permit is issued for 10 years (investors in public investments, talent, professionals, top university students) or 5 years (entrepreneurs, high-school achievers, and real-estate investment per the u.ae table). Residence issuance costs AED 100 per year + AED 100 application + AED 100 smart fee (about AED 1,200 for 10 years). Confirm your category duration with ICP, as real-estate guidance differs between sources. Processing time varies by category — confirm with ICP/GDRFA.', duration: 'Varies — confirm with ICP', cost: '~AED 1,200 (10-year issuance)',
+                phase: 'receive', title: 'Golden Residence permit is issued', detail: 'The Golden Residence permit is issued for 10 years for the main categories (investors, entrepreneurs, talent, professionals, students, real-estate) per ICP\'s Golden Residency guide. Note: the u.ae overview table still lists 5 years for some categories — ICP is the issuing authority, so its 10-year figure is followed here. Residence issuance costs AED 100 per year + AED 100 application + AED 100 smart fee (about AED 1,200 for 10 years). Confirm your category duration with ICP at application time. Processing time varies by category — confirm with ICP/GDRFA.', duration: 'Varies — confirm with ICP', cost: '~AED 1,200 (10-year issuance)',
                 links: [
                     { label: 'Issuing Residency Permit (ICP)', href: 'https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64' },
                 ],
@@ -217,7 +217,7 @@ export const guides: Guide[] = [
         slug: 'how-to-sponsor-family-residence-visa-uae',
         country: 'ae',
         updatedAt: '2026',
-        lastReviewed: '2026-10-13',
+        lastReviewed: '2026-10-15',
         title: 'How to Sponsor Your Family\'s Residence Visa in the UAE',
         metaTitle: 'Sponsor Family Residence Visa in UAE: Salary, Fees & Steps (2026)',
         description: 'Sponsor your spouse, children, and dependents: salary thresholds, documents per dependent, entry permit, medical, Emirates ID, and residence issuance.',
@@ -266,13 +266,13 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'go', title: 'Emirates ID for each dependent', detail: 'Apply for each dependent\'s Emirates ID (biometrics for ages 15+). Cost: AED 100 per year plus AED 100 smart fee per dependent.', duration: 'Same-day appointment', cost: 'From AED 300 (2-year card)',
+                phase: 'go', title: 'Emirates ID for each dependent', detail: 'Apply for each dependent\'s Emirates ID (biometrics included). Cost: AED 100 per year plus AED 100 smart fee per dependent.', duration: 'Same-day appointment', cost: 'From AED 300 (2-year card)',
                 links: [
                     { label: 'New Identity Card issuance (ICP)', href: 'https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e5a' },
                 ],
             },
             {
-                phase: 'submit', title: 'Residence permit is issued', detail: 'Submit the residence application with all documents. The dependent\'s visa validity will not exceed the sponsor\'s. ICP fees per dependent: AED 100 application + AED 100 per year issuance + AED 100 smart services + AED 20 financial security deposit.', duration: 'Varies — confirm with ICP', cost: 'From ~AED 320',
+                phase: 'submit', title: 'Residence permit is issued', detail: 'Submit the residence application with all documents. The dependent\'s visa validity will not exceed the sponsor\'s. ICP fees per dependent: AED 100 application + AED 100 per year issuance + AED 100 smart services.', duration: 'Varies — confirm with ICP', cost: 'From ~AED 320',
                 links: [
                     { label: 'Issuing Residency Permit (ICP)', href: 'https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64' },
                 ],
@@ -294,7 +294,7 @@ export const guides: Guide[] = [
         slug: 'how-to-calculate-uae-gratuity-end-of-service',
         country: 'ae',
         updatedAt: '2026',
-        lastReviewed: '2026-10-13',
+        lastReviewed: '2026-10-15',
         title: 'How to Calculate Your UAE Gratuity (End-of-Service Benefit)',
         metaTitle: 'UAE Gratuity Calculator Guide: Formula, Rules & Payout (2026)',
         description: 'Private-sector gratuity under Federal Decree-Law 33/2021: 21 days for the first five years, 30 days after, on your last basic salary — eligibility, formula, cap, and disputes.',
@@ -355,7 +355,7 @@ export const guides: Guide[] = [
         
         {
           q: 'How do I calculate UAE gratuity?',
-          a: 'Divide your last monthly basic salary by 30 to get your daily wage. Multiply by 21 days for each of the first 5 years of service and 30 days for each year after that, pro-rated for partial years. The total is capped at two years of basic wage. Example: AED 10,000 basic salary and 7 years gives about AED 55,000. Use the gratuity calculator on this page to run your exact numbers.',
+          a: 'Divide your last monthly basic salary by 30 to get your daily wage. Multiply by 21 days for each of the first 5 years of service and 30 days for each year after that, pro-rated for partial years. The total is capped at two years\' total Wage (basic + allowances) under Art. 51(6). Example: AED 10,000 basic salary and 7 years gives about AED 55,000. Use the gratuity calculator on this page to run your exact numbers.',
         },
         {
           q: 'Do unpaid leave days count toward UAE gratuity?',
@@ -363,7 +363,7 @@ export const guides: Guide[] = [
         },
         {
           q: 'Is there a maximum gratuity in the UAE?',
-          a: 'Yes. Total end-of-service gratuity cannot exceed two years of wages. The calculator applies the cap against basic wage, following majority practice; the law says two years\' wage without specifying basic versus total wage.',
+          a: 'Yes. Total end-of-service gratuity cannot exceed two years\' Wage — the decree\'s defined term for total wage (basic + allowances), distinct from "Basic Wage" used elsewhere in Art. 51. Note: the calculator on this page caps against basic wage because it only takes basic salary as an input; if you receive allowances, your true legal cap is higher.',
         },
       ],
         calculator: 'ae-gratuity',
