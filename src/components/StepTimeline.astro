@@ -3,13 +3,22 @@ import type { Step } from '../data/guides';
 import Icon from './Icon.astro';
 import { linkTerms } from '../data/glossary';
 import CategorySticker from './CategorySticker.astro';
+import Calculator from './Calculator.astro';
 
 interface Props {
   steps: Step[];
   category: string;
+  /**
+   * Optional: render a calculator inside one step (used by CalculatorPage).
+   * Steps come first; the calculator lives in the designated step, never
+   * as a separate block above the steps. Guides use StepTimeline without
+   * these props and are unaffected.
+   */
+  calculatorId?: string;
+  calculatorStepIndex?: number;
 }
 
-const { steps, category } = Astro.props;
+const { steps, category, calculatorId, calculatorStepIndex } = Astro.props;
 
 const phaseLabels: Record<Step['phase'], string> = {
   before: 'Before You Go',
@@ -183,6 +192,12 @@ const phaseIcons: Record<Step['phase'], string> = {
             </div>
           </div>
 
+          {calculatorId && calculatorStepIndex === i && (
+            <div class="mt-4">
+              <Calculator id={calculatorId} />
+            </div>
+          )}
+
           <p class="mt-3 flex items-center gap-1.5 font-mono text-[11px] text-mute opacity-0 transition-opacity duration-300 dark:text-mute-dark" data-done-hint>
             <Icon name="check" class="size-3" /> Click to mark as done
           </p>
@@ -355,11 +370,15 @@ const phaseIcons: Record<Step['phase'], string> = {
         const card = item.querySelector<HTMLElement>('[data-step-card]');
         if (!card) return;
         card.addEventListener('click', (e) => {
-          // Don't toggle when clicking a link inside the card
-          if ((e.target as HTMLElement).closest('a')) return;
+          // Don't toggle when clicking a link, a form control, or anything
+          // inside an embedded calculator within the card
+          if ((e.target as HTMLElement).closest('a, input, select, textarea, button, label, [data-calculator]')) return;
           setDone(index, !done.has(index));
         });
         card.addEventListener('keydown', (e) => {
+          // Space/Enter inside a form control (e.g. a calculator input)
+          // must not toggle the step
+          if ((e.target as HTMLElement).closest('input, select, textarea, [data-calculator]')) return;
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             setDone(index, !done.has(index));

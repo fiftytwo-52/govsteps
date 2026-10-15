@@ -130,18 +130,28 @@ const calc = getCalculator(id);
 <script>
   import { CALCULATORS } from '../data/calculators';
 
-  const localeFor: Record<string, string> = { AED: 'en-AE', USD: 'en-US', GBP: 'en-GB', CAD: 'en-CA' };
+  const localeFor: Record<string, string> = { AED: 'en-AE', USD: 'en-US', GBP: 'en-GB', CAD: 'en-CA', SAR: 'en-SA', QAR: 'en-QA', KWD: 'en-KW', OMR: 'en-OM', BHD: 'en-BH' };
 
   document.querySelectorAll('[data-calculator]').forEach((section) => {
     const calcId = section.getAttribute('data-calculator');
     const calc = calcId ? CALCULATORS[calcId] : undefined;
     if (!calc) return;
 
-    const money = new Intl.NumberFormat(localeFor[calc.currency] ?? 'en-US', {
-      style: 'currency',
-      currency: calc.currency,
-      maximumFractionDigits: 2,
-    });
+    // Multi-currency calculators (e.g. GCC gratuity) re-read the currency
+    // from the currencyInput select on every render.
+    const moneyFor = () => {
+      let cur = calc.currency;
+      if (calc.currencyInput && calc.currencyMap) {
+        const sel = section.querySelector(`[data-calc-input="${calc.currencyInput}"]`) as HTMLSelectElement | null;
+        const mapped = sel ? calc.currencyMap[sel.value] : undefined;
+        if (mapped) cur = mapped;
+      }
+      return new Intl.NumberFormat(localeFor[cur] ?? 'en-US', {
+        style: 'currency',
+        currency: cur,
+        maximumFractionDigits: 2,
+      });
+    };
 
     const readValues = () => {
       const values: Record<string, number | string | boolean> = {};
@@ -161,6 +171,7 @@ const calc = getCalculator(id);
     };
 
     const render = () => {
+      const money = moneyFor();
       const result = calc.formula(readValues());
       calc.outputs.forEach((out) => {
         const el = section.querySelector(`[data-calc-output="${out.key}"]`);

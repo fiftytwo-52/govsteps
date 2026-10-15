@@ -28,7 +28,7 @@ const { getGuideHero } = await import('../src/data/guideImages.ts');
 const SITE = 'https://govsteps.com';
 
 // Static core pages (404 is excluded — never indexed).
-const staticPaths = ['/', '/uk/', '/can/', '/uae/', '/about/', '/contact/', '/privacy/', '/terms/'];
+const staticPaths = ['/', '/uk/', '/can/', '/uae/', '/about/', '/contact/', '/privacy/', '/terms/', '/calculators/gcc-gratuity/', '/calculators/uk-ir35/'];
 
 // Topic Category Pages (all categories x 4 countries).
 // lastmod = the most recent recorded review date among that topic's guides

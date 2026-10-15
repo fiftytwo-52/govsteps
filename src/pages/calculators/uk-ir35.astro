@@ -1,0 +1,52 @@
+---
+import CalculatorPage from '../../components/CalculatorPage.astro';
+
+const steps = [
+  { phase: 'before', title: 'Enter your day rate and billable days', detail: 'Your day rate times your billable days is the contract value both columns start from. 220 days ≈ 44 weeks × 5 days, allowing for holidays and gaps between contracts.', duration: '1 min' },
+  { phase: 'fill', title: 'Enter your umbrella margin', detail: 'Inside IR35, the umbrella company takes its margin from your assignment rate before PAYE. Enter your umbrella company’s actual monthly margin (typically £20–£30).', duration: '1 min' },
+  { phase: 'fill', title: 'Enter your limited-company costs', detail: 'Outside IR35, accountancy fees and business costs come out of company profit before Corporation Tax and dividends. Enter your real figures — defaults are typical values, not yours.', duration: '2 min' },
+  { phase: 'fill', title: 'Pick your tax year and director salary', detail: 'Dividend tax rates changed in 2026/27 (10.75% / 35.75% vs 8.75% / 33.75% in 2025/26). Compare the £12,570 and £5,000 salary options — £12,570 usually wins because it uses the full Personal Allowance.', duration: '1 min' },
+  { phase: 'fill', title: 'Calculate your take-home', detail: 'Enter your figures in the calculator below — it works out inside vs outside take-home, every tax and deduction, and the inside day rate you would need to match your outside take-home.', duration: '2 min' },
+  { phase: 'followup', title: 'Compare — and negotiate the inside rate', detail: 'If an inside-IR35 offer pays less take-home than your outside rate, use the “inside day rate to match” figure as your negotiation target. Employer NI comes out of the inside rate, not on top of it.', duration: '10 min' },
+] as const;
+
+const faqs = [
+  { q: 'What is IR35?', a: 'IR35 is the off-payroll working rules. If you work through your own limited company (or another intermediary) but would have been an employee if you worked directly for the client, the rules tax you broadly like an employee: Income Tax and National Insurance through PAYE, with employer National Insurance coming out of the contract rate.' },
+  { q: 'Who decides if I am inside or outside IR35?', a: 'For public-sector clients and medium or large private-sector clients, the client decides and issues a Status Determination Statement. For small private-sector clients (and wholly overseas clients), your own company decides under the original Chapter 8 rules. HMRC’s CEST tool can help assess a specific engagement.' },
+  { q: 'Why is inside-IR35 take-home lower than outside?', a: 'Inside IR35, employer National Insurance (15% above £5,000) is deducted from your assignment rate before PAYE, and you pay Income Tax plus employee NI on the rest. Outside IR35, the company pays Corporation Tax on profit and you take the rest as dividends — dividends carry no National Insurance and lower rates than PAYE income tax.' },
+  { q: 'Is there a 5% expenses allowance inside IR35?', a: 'Not under the off-payroll (Chapter 10) rules, where the client determines your status — there is no 5% allowance. It survives only under Chapter 8, where a small or wholly overseas client is involved and your own company works out the deemed employment payment.' },
+  { q: 'Should I take a £5,000 or £12,570 director salary in my limited company?', a: 'Usually £12,570 wins: it uses the full Personal Allowance, and the extra £7,570 costs only 15% employer NI (£1,135.50), which is itself deductible for Corporation Tax. Use the calculator’s salary option to compare both on your own numbers.' },
+  { q: 'Is this financial advice?', a: 'No. This calculator is informational only, not tax or financial advice. It covers the standard case — England, Wales or Northern Ireland, single-director company, no pension, student loan, or other income. Confirm your position with your accountant or umbrella company, and check your Status Determination Statement for each engagement.' },
+];
+
+const officialRules = [
+  { rule: 'Off-payroll working (IR35): if you would have been an employee without the intermediary, you are taxed broadly like one. Medium/large private-sector and all public-sector clients determine status; small private-sector clients leave it to your company.', source: 'Understanding off-payroll working (IR35) — GOV.UK', href: 'https://www.gov.uk/guidance/understanding-off-payroll-working-ir35' },
+  { rule: 'Dividend tax: £500 dividend allowance. 2026/27 rates on dividends above the allowance: 10.75% basic, 35.75% higher, 39.35% additional. 2025/26 rates: 8.75% / 33.75% / 39.35%. Dividends stack on top of your other income (salary first).', source: 'Tax on dividends — GOV.UK', href: 'https://www.gov.uk/tax-on-dividends/print' },
+  { rule: 'Corporation Tax: 19% small profits rate (profits ≤ £50,000), 25% main rate (profits > £250,000), marginal relief with standard fraction 3/200 between — an effective 26.5% on the slice inside the band.', source: 'Corporation Tax rates and allowances — GOV.UK', href: 'https://www.gov.uk/government/publications/rates-and-allowances-corporation-tax/rates-and-allowances-corporation-tax' },
+  { rule: 'National Insurance (2026/27): employee 8% between the Primary Threshold (£12,570) and the Upper Earnings Limit (£50,270), 2% above; employer 15% above the Secondary Threshold (£5,000). Same thresholds in 2025/26.', source: 'Rates and thresholds for employers 2026 to 2027 — GOV.UK', href: 'https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027' },
+  { rule: 'Income Tax: Personal Allowance £12,570, tapering £1 per £2 above £100,000; bands 20% to £37,700, 40% to £125,140, 45% above (England, Wales, Northern Ireland). No Employment Allowance for single-director companies — the employer NI on the director salary is a real cost.', source: 'Income Tax rates and allowances — GOV.UK', href: 'https://www.gov.uk/guidance/rates-and-allowances-income-tax-personal-allowances-and-reliefs' },
+];
+
+const related = [
+  { href: '/uk/guides/how-to-file-uk-self-assessment/', label: 'How to File UK Self Assessment', note: 'Directors taking dividends usually file Self Assessment.' },
+  { href: '/uk/guides/how-to-register-a-uk-limited-company/', label: 'How to Register a UK Limited Company', note: 'Setting up the company behind the outside-IR35 column.' },
+  { href: '/calculators/gcc-gratuity/', label: 'GCC Gratuity Calculator', note: 'Our other new calculator — end-of-service gratuity across the Gulf.' },
+];
+---
+
+<CalculatorPage
+  title="IR35 Take-Home Calculator"
+  metaTitle="IR35 Calculator: Inside vs Outside Take-Home Pay (2026/27)"
+  description="Compare take-home pay inside IR35 (umbrella) vs outside IR35 (limited company) for the same day rate — plus the inside rate to match it."
+  category="taxes"
+  calculatorId="uk-ir35"
+  calculatorStepIndex={4}
+  steps={steps}
+  faqs={faqs}
+  officialRulesIntro="Every rate and threshold this calculator applies comes from HMRC guidance named below. Dividend rates changed on 6 April 2026 — the calculator applies the right year’s rates for the tax year you pick."
+  officialRules={officialRules}
+  related={related}
+  lastReviewed="15 October 2026"
+  breadcrumbCountry="United Kingdom"
+  breadcrumbHref="/uk/"
+/>

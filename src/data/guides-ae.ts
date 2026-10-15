@@ -333,6 +333,7 @@ export const guides: Guide[] = [
                 phase: 'fill', title: 'Apply the formula', detail: 'Daily basic wage = last monthly basic wage divided by 30. Gratuity = (21/30 × basic × first 5 years) + (30/30 × basic × years beyond 5), pro-rated for partial years. The total may not exceed 2 years of total wage (Federal Decree-Law 33/2021, Art. 51). Use the calculator below to run your numbers.', duration: '5 min',
                 links: [
                     { label: 'Labour Law decree (MOHRE)', href: 'https://mohre.gov.ae/en/media-center/news/15/11/2021/uae-president-issues-federal-decree-law-on-regulation-of-labour-relations-in-private-sector' },
+                    { label: 'GCC gratuity calculator (Saudi, Qatar, Kuwait, Oman)', href: '/calculators/gcc-gratuity/' },
                 ],
             },
             {

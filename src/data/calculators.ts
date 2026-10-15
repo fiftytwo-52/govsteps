@@ -32,6 +32,9 @@ export interface CalculatorDef {
     title: string;
     description: string;
     currency: 'AED' | 'USD' | 'GBP' | 'CAD';
+    /** Optional: derive the display currency from a select input (e.g. country). */
+    currencyInput?: string;
+    currencyMap?: Record<string, string>;
     inputs: CalcInput[];
     outputs: CalcOutput[];
     formula: (v: Record<string, number | string | boolean>) => Record<string, number | string>;
@@ -68,6 +71,56 @@ function loanWithExtra(principal: number, annualRatePct: number, months: number,
     }
     const totalPaid = round2(pay * payoffMonths);
     return { monthly: round2(pay), months: payoffMonths, totalPaid, fee: round2(fee), totalInterest: round2(totalPaid - principal) };
+}
+
+/** UK Income Tax on gross employment income (England/Wales/NI bands, PA taper). */
+function ukIncomeTax(gross: number): number {
+    const pa = Math.max(0, 12570 - Math.max(0, (gross - 100000) / 2));
+    const taxable = Math.max(0, gross - pa);
+    const b1 = Math.min(taxable, 37700);
+    const b2 = Math.min(Math.max(0, taxable - 37700), 87440);
+    const b3 = Math.max(0, taxable - 125140);
+    return b1 * 0.2 + b2 * 0.4 + b3 * 0.45;
+}
+
+/** UK Class 1 employee NI (8% PT–UEL, 2% above UEL). */
+function ukEmployeeNI(gross: number): number {
+    return Math.min(Math.max(0, gross - 12570), 37700) * 0.08 + Math.max(0, gross - 50270) * 0.02;
+}
+
+/** UK Corporation Tax: 19% ≤ £50k, 25% ≥ £250k, marginal relief (3/200) between. */
+function ukCorporationTax(profit: number): number {
+    if (profit <= 0) return 0;
+    if (profit <= 50000) return profit * 0.19;
+    if (profit >= 250000) return profit * 0.25;
+    return profit * 0.25 - (250000 - profit) * 0.015;
+}
+
+/** UK dividend tax: £500 allowance, then dividends stacked on top of salary.
+ *  2026/27: 10.75% / 35.75% / 39.35%. 2025/26: 8.75% / 33.75% / 39.35%. */
+function ukDividendTax(dividends: number, salary: number, taxYear: string): number {
+    const rates = taxYear === '2026/27' ? [0.1075, 0.3575, 0.3935] : [0.0875, 0.3375, 0.3935];
+    const taxable = Math.max(0, dividends - 500);
+    const basicRoom = Math.max(0, 50270 - salary);
+    const higherRoom = Math.max(0, 125140 - Math.max(salary, 50270));
+    const inBasic = Math.min(taxable, basicRoom);
+    const inHigher = Math.min(Math.max(0, taxable - inBasic), higherRoom);
+    const inAdditional = Math.max(0, taxable - inBasic - inHigher);
+    return inBasic * rates[0] + inHigher * rates[1] + inAdditional * rates[2];
+}
+
+/** Inside-IR35 (umbrella) take-home for a gross assignment rate.
+ *  Employer NI (15% above £5,000) comes out of the assignment rate, so the
+ *  gross taxable pay is solved: gross = (assignment − margin + 750) / 1.15. */
+function ir35InsideTakeHome(assignment: number, marginAnnual: number) {
+    const net = assignment - marginAnnual;
+    if (net <= 0) return { grossPay: 0, employerNI: 0, incomeTax: 0, employeeNI: 0, takeHome: 0 };
+    const solved = (net + 750) / 1.15;
+    const grossPay = solved > 5000 ? solved : net;
+    const employerNI = 0.15 * Math.max(0, grossPay - 5000);
+    const incomeTax = ukIncomeTax(grossPay);
+    const employeeNI = ukEmployeeNI(grossPay);
+    return { grossPay, employerNI, incomeTax, employeeNI, takeHome: grossPay - incomeTax - employeeNI };
 }
 
 export const CALCULATORS: Record<string, CalculatorDef> = {
@@ -343,6 +396,196 @@ export const CALCULATORS: Record<string, CalculatorDef> = {
         disclaimer: 'Estimate only. Assumes fixed APR, monthly payments, and no prepayment penalty. Your lender quote governs.',
         sourceLabel: 'Standard loan amortization formula',
         sourceHref: 'https://www.canada.ca/en/financial-consumer-agency/services/loans/personal-loans.html',
+    },
+    'gcc-gratuity': {
+        id: 'gcc-gratuity',
+        title: 'GCC Gratuity Calculator',
+        description: 'Estimate your end-of-service gratuity in the UAE, Saudi Arabia, Qatar, Kuwait, or Oman — each country uses its own formula, wage base, and resignation rules. Pick your country to apply the right one.',
+        currency: 'AED',
+        currencyInput: 'country',
+        currencyMap: { ae: 'AED', sa: 'SAR', qa: 'QAR', kw: 'KWD', om: 'OMR' },
+        inputs: [
+            { id: 'country', label: 'Country of employment', type: 'select', defaultValue: 'ae', options: [
+                { value: 'ae', label: 'United Arab Emirates (AED)' },
+                { value: 'sa', label: 'Saudi Arabia (SAR)' },
+                { value: 'qa', label: 'Qatar (QAR)' },
+                { value: 'kw', label: 'Kuwait (KWD)' },
+                { value: 'om', label: 'Oman (OMR)' },
+            ] },
+            { id: 'monthlyWage', label: 'Last monthly wage', type: 'number', min: 0, step: 100, defaultValue: 10000, hint: 'Wage base differs by country: UAE / Qatar / Oman use basic wage only; Kuwait uses last total wage (basic + regular allowances); Saudi uses last wage — check your contract for which allowances count.' },
+            { id: 'serviceYears', label: 'Years of service', type: 'number', min: 0, max: 50, step: 0.25, defaultValue: 7, hint: 'Full years + partial year as a decimal, e.g. 7.5. Enter service time net of unpaid-leave days.' },
+            { id: 'leavingType', label: 'How did the job end?', type: 'select', defaultValue: 'employer', options: [
+                { value: 'employer', label: 'Employer ended it / contract expired' },
+                { value: 'resign', label: 'I resigned' },
+            ] },
+            { id: 'qatarDaysPerYear', label: 'Qatar only: days per year in your contract', type: 'number', min: 21, max: 60, step: 1, defaultValue: 21, hint: 'Only used for Qatar. The legal minimum is 21 days; your contract may give more.' },
+            { id: 'omanOldLawYears', label: 'Oman only: years under the old law (before 31 July 2023)', type: 'number', min: 0, max: 50, step: 0.25, defaultValue: 0, hint: 'Only used for Oman. Service before 31 July 2023 uses the old formula; later service uses one full month per year.' },
+        ],
+        outputs: [
+            { key: 'gratuity', label: 'Estimated gratuity', format: 'money', highlight: true },
+            { key: 'fullEntitlement', label: 'Full entitlement before resignation share', format: 'money' },
+            { key: 'resignationShare', label: 'Resignation share applied', format: 'text' },
+            { key: 'wageBase', label: 'Wage base used', format: 'text' },
+            { key: 'ruleSummary', label: 'Rule applied', format: 'text' },
+            { key: 'eligibility', label: 'Eligibility', format: 'text' },
+        ],
+        formula: (v) => {
+            const country = String(v.country ?? 'ae');
+            const wage = Number(v.monthlyWage) || 0;
+            const years = Number(v.serviceYears) || 0;
+            const resigned = v.leavingType === 'resign';
+            const qDays = Math.max(21, Number(v.qatarDaysPerYear) || 21);
+            const omOld = Math.min(Math.max(0, Number(v.omanOldLawYears) || 0), years);
+            let full = 0;
+            let share = 1;
+            let shareLabel = 'Full (100%)';
+            let wageBase = '';
+            let rule = '';
+            let eligibility = '';
+            let gated = false;
+            if (country === 'ae') {
+                // Federal Decree-Law 33/2021, Art. 51: 21 days/yr first 5 yrs,
+                // 30 days/yr after; cap 2 years' total wage. Cap applied here
+                // against basic wage (the only input); legal cap uses total wage.
+                const daily = wage / 30;
+                full = (21 * Math.min(years, 5) + 30 * Math.max(0, years - 5)) * daily;
+                full = Math.min(full, wage * 24);
+                wageBase = 'Basic wage ÷ 30 = daily wage';
+                rule = 'UAE: 21 days/yr first 5 yrs, 30 days/yr after; capped at 2 years\u2019 wage (cap applied against basic wage — see note)';
+                eligibility = years < 1 ? 'Not yet eligible — 1+ year of continuous service required' : 'Eligible (1+ year of service). Resignation does not reduce the award.';
+                gated = years < 1;
+            } else if (country === 'sa') {
+                // Saudi Labour Law, Art. 84: half a month/yr first 5 yrs, one
+                // month/yr after, on last wage. Art. 85 resignation shares:
+                // <2y none; 2–5y one-third; >5–<10y two-thirds; 10y+ full.
+                full = (0.5 * Math.min(years, 5) + Math.max(0, years - 5)) * wage;
+                wageBase = 'Last wage, monthly basis';
+                rule = 'Saudi Arabia: ½ month/yr first 5 yrs, 1 month/yr after (Labour Law Art. 84)';
+                if (resigned) {
+                    if (years < 2) { share = 0; shareLabel = 'None — resigned under 2 years (Art. 85)'; }
+                    else if (years <= 5) { share = 1 / 3; shareLabel = 'One-third (1/3) — resigned after 2–5 years (Art. 85)'; }
+                    else if (years < 10) { share = 2 / 3; shareLabel = 'Two-thirds (2/3) — resigned after 5–10 years (Art. 85)'; }
+                    else { shareLabel = 'Full (100%) — resigned after 10+ years (Art. 85)'; }
+                }
+                eligibility = 'Eligible. Employer-ended: no minimum service period in Art. 84; resignation shares per Art. 85.';
+            } else if (country === 'qa') {
+                // Labour Law No. 14 of 2004, Art. 54: minimum 3 weeks'
+                // (21 days) basic wage per year; 1+ year; last basic wage.
+                // No resignation reduction, no cap.
+                full = (wage / 30) * qDays * years;
+                wageBase = 'Basic wage ÷ 30 = daily wage';
+                rule = `Qatar: ${qDays} days/yr, every year (Labour Law No. 14 of 2004, Art. 54 — legal minimum 21 days)`;
+                eligibility = years < 1 ? 'Not yet eligible — 1+ year of continuous service required' : 'Eligible (1+ year). Resignation does not reduce the award.';
+                gated = years < 1;
+            } else if (country === 'kw') {
+                // Labour Law No. 6 of 2010, Art. 51: 15 days/yr first 5 yrs,
+                // 30 days/yr after; daily wage = wage ÷ 26 (Art. 67);
+                // cap 18 months' wage. Art. 53 resignation shares.
+                const days = 15 * Math.min(years, 5) + 30 * Math.max(0, years - 5);
+                full = Math.min(days * (wage / 26), wage * 18);
+                wageBase = 'Last total wage (basic + regular allowances) ÷ 26 = daily wage';
+                rule = 'Kuwait: 15 days/yr first 5 yrs, 30 days/yr after; daily wage = wage ÷ 26; capped at 18 months\u2019 wage (Labour Law No. 6 of 2010, Art. 51)';
+                if (resigned) {
+                    if (years < 3) { share = 0; shareLabel = 'None — resigned under 3 years (Art. 53)'; }
+                    else if (years < 5) { share = 1 / 2; shareLabel = 'Half (1/2) — resigned after 3–5 years (Art. 53)'; }
+                    else if (years < 10) { share = 2 / 3; shareLabel = 'Two-thirds (2/3) — resigned after 5–10 years (Art. 53)'; }
+                    else { shareLabel = 'Full (100%) — resigned after 10+ years (Art. 53)'; }
+                }
+                eligibility = years < 1 ? 'Not yet eligible — 1+ year of continuous service required' : 'Eligible (1+ year of service).';
+                gated = years < 1;
+            } else {
+                // Oman, Labour Law RD 53/2023, Art. 61: not less than one
+                // basic wage per year of service. Pre-31 Jul 2023 service
+                // under the old law: 15 days/yr (½ month) first 3 yrs,
+                // one month/yr after. No resignation reduction verified.
+                const oldPart = (0.5 * Math.min(omOld, 3) + Math.max(0, omOld - 3)) * wage;
+                const newPart = (years - omOld) * wage;
+                full = oldPart + newPart;
+                wageBase = 'Basic wage, monthly basis';
+                rule = 'Oman: pre-31 Jul 2023 years at ½ month/yr first 3 yrs then 1 month/yr; later years at 1 month/yr (Labour Law RD 53/2023, Art. 61)';
+                eligibility = 'Check your contract: a savings/provident system is being phased in for expats — confirm whether gratuity or the fund applies to you.';
+            }
+            return {
+                gratuity: round2(gated ? 0 : full * share),
+                fullEntitlement: round2(gated ? 0 : full),
+                resignationShare: resigned ? shareLabel : 'Not applicable — employer ended the contract',
+                wageBase,
+                ruleSummary: rule,
+                eligibility,
+            };
+        },
+        disclaimer: 'Estimate only. Bahrain is not included: since 1 March 2024 expat gratuity there is paid through the SIO fund system, not the old lump-sum formula — use the SIO portal. Private-sector only; domestic workers, government staff, and DIFC/ADGM (UAE) have separate regimes. Contract terms can be more generous than the legal minimum — check your contract. Your settlement statement and the labour authority govern.',
+        sourceLabel: 'UAE Federal Decree-Law 33/2021 + GCC labour laws — see Official rules below',
+        sourceHref: 'https://mohre.gov.ae/en/media-center/news/15/11/2021/uae-president-issues-federal-decree-law-on-regulation-of-labour-relations-in-private-sector',
+    },
+    'uk-ir35': {
+        id: 'uk-ir35',
+        title: 'IR35 Take-Home Calculator',
+        description: 'Compare take-home pay inside IR35 (umbrella) vs outside IR35 (your own limited company) for the same contract — and the inside day rate you would need to match the outside take-home.',
+        currency: 'GBP',
+        inputs: [
+            { id: 'dayRate', label: 'Day rate', type: 'number', min: 0, step: 5, defaultValue: 500, prefix: '£' },
+            { id: 'daysPerYear', label: 'Billable days per year', type: 'number', min: 0, max: 365, step: 1, defaultValue: 220, hint: '220 ≈ 44 weeks × 5 days, allowing for holidays and gaps between contracts' },
+            { id: 'taxYear', label: 'Tax year', type: 'select', defaultValue: '2026/27', options: [{ value: '2026/27', label: '2026/27' }, { value: '2025/26', label: '2025/26' }] },
+            { id: 'umbrellaMarginMonthly', label: 'Umbrella margin per month', type: 'number', min: 0, step: 1, defaultValue: 25, prefix: '£', hint: 'Typical £20–£30/month. Enter your umbrella company’s actual margin.' },
+            { id: 'accountancyAnnual', label: 'Accountancy cost per year (Ltd only)', type: 'number', min: 0, step: 50, defaultValue: 1800, prefix: '£', hint: 'Typical £1,200–£2,400/year. Enter your accountant’s actual fee.' },
+            { id: 'businessCostsAnnual', label: 'Other business costs per year (Ltd only)', type: 'number', min: 0, step: 50, defaultValue: 0, prefix: '£', hint: 'Insurance, software, equipment, training — costs the company pays before profit.' },
+            { id: 'directorSalary', label: 'Director salary (Ltd)', type: 'select', defaultValue: '12570', options: [{ value: '12570', label: '£12,570 — use the full Personal Allowance' }, { value: '5000', label: '£5,000 — no employer NI' }] },
+        ],
+        outputs: [
+            { key: 'takeHomeInsideAnnual', label: 'Inside IR35 — take-home (annual)', format: 'money', highlight: true },
+            { key: 'takeHomeInsideMonthly', label: 'Inside IR35 — take-home (monthly)', format: 'money' },
+            { key: 'insideEmployerNI', label: 'Inside — employer NI (from your rate)', format: 'money' },
+            { key: 'insideIncomeTax', label: 'Inside — Income Tax', format: 'money' },
+            { key: 'insideEmployeeNI', label: 'Inside — employee NI', format: 'money' },
+            { key: 'takeHomeOutsideAnnual', label: 'Outside IR35 — take-home (annual)', format: 'money', highlight: true },
+            { key: 'takeHomeOutsideMonthly', label: 'Outside IR35 — take-home (monthly)', format: 'money' },
+            { key: 'corporationTax', label: 'Outside — Corporation Tax', format: 'money' },
+            { key: 'dividendTax', label: 'Outside — dividend tax', format: 'money' },
+            { key: 'difference', label: 'Extra take-home outside IR35', format: 'money' },
+            { key: 'equivalentInsideDayRate', label: 'Inside day rate to match outside take-home', format: 'money', hint: 'Per day, same billable days' },
+        ],
+        formula: (v) => {
+            const assignment = (Number(v.dayRate) || 0) * (Number(v.daysPerYear) || 0);
+            const marginAnnual = (Number(v.umbrellaMarginMonthly) || 0) * 12;
+            const inside = ir35InsideTakeHome(assignment, marginAnnual);
+            const salary = Number(v.directorSalary) || 12570;
+            const employerNILtd = 0.15 * Math.max(0, salary - 5000);
+            const profit = assignment - salary - employerNILtd - (Number(v.accountancyAnnual) || 0) - (Number(v.businessCostsAnnual) || 0);
+            const ct = ukCorporationTax(profit);
+            const dividends = Math.max(0, profit - ct);
+            const divTax = profit > 0 ? ukDividendTax(dividends, salary, String(v.taxYear ?? '2026/27')) : 0;
+            const takeHomeOutside = profit > 0
+                ? salary + dividends - divTax
+                : Math.max(0, assignment - employerNILtd - (Number(v.accountancyAnnual) || 0) - (Number(v.businessCostsAnnual) || 0));
+            let equiv = 0;
+            const days = Number(v.daysPerYear) || 0;
+            if (days > 0 && takeHomeOutside > 0) {
+                let lo = 0;
+                let hi = Math.max(assignment * 3, assignment + 100000);
+                for (let i = 0; i < 80; i++) {
+                    const mid = (lo + hi) / 2;
+                    if (ir35InsideTakeHome(mid, marginAnnual).takeHome < takeHomeOutside) lo = mid; else hi = mid;
+                }
+                equiv = hi / days;
+            }
+            return {
+                takeHomeInsideAnnual: round2(inside.takeHome),
+                takeHomeInsideMonthly: round2(inside.takeHome / 12),
+                insideEmployerNI: round2(inside.employerNI),
+                insideIncomeTax: round2(inside.incomeTax),
+                insideEmployeeNI: round2(inside.employeeNI),
+                takeHomeOutsideAnnual: round2(takeHomeOutside),
+                takeHomeOutsideMonthly: round2(takeHomeOutside / 12),
+                corporationTax: round2(ct),
+                dividendTax: round2(divTax),
+                difference: round2(takeHomeOutside - inside.takeHome),
+                equivalentInsideDayRate: round2(equiv),
+            };
+        },
+        disclaimer: 'Estimate only. Standard case: England, Wales or Northern Ireland; single-director company; no pension contributions, student-loan repayments, or other income; no Employment Allowance (not available to single-director companies); no apprenticeship levy; umbrella margin as entered. Your accountant or umbrella company governs.',
+        sourceLabel: 'HMRC — off-payroll working (IR35), dividend tax, Corporation Tax, NI rates',
+        sourceHref: 'https://www.gov.uk/guidance/understanding-off-payroll-working-ir35',
     },
 };
 

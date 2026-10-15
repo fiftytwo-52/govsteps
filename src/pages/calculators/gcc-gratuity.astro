@@ -1,0 +1,54 @@
+---
+import CalculatorPage from '../../components/CalculatorPage.astro';
+
+const steps = [
+  { phase: 'before', title: 'Pick your country', detail: 'Choose the country where you worked. Each Gulf country has its own gratuity law — the calculator switches formula, wage base, and currency to match.', duration: '1 min' },
+  { phase: 'fill', title: 'Enter your last monthly wage', detail: 'UAE, Qatar, and Oman use basic wage only. Kuwait uses last total wage (basic + regular allowances). Saudi uses last wage — check your contract for which allowances count.', duration: '2 min' },
+  { phase: 'fill', title: 'Enter your service time', detail: 'Full years plus a pro-rated partial year (e.g. 7.5). Enter service time net of unpaid-leave days, which do not count toward service.', duration: '2 min' },
+  { phase: 'fill', title: 'Say how the job ended', detail: 'Employer-ended and resignation give the same result in the UAE, Qatar, and Oman. In Saudi Arabia and Kuwait, resigning applies a tiered share of the full entitlement.', duration: '1 min' },
+  { phase: 'fill', title: 'Calculate your gratuity', detail: 'Enter your details in the calculator below — it applies your country’s formula, wage base, and resignation share automatically. Check the breakdown: gratuity, full entitlement before any resignation share, the share applied, and the rule used.', duration: '2 min' },
+  { phase: 'followup', title: 'Check the result against your settlement', detail: 'Compare the calculator result with your employer end-of-service statement. Flag any use of the wrong wage base (basic vs total), a missing pro-rata partial year, or a resignation share applied where the law gives none.', duration: '15 min' },
+  { phase: 'followup', title: 'Dispute if short-paid', detail: 'Raise it with your employer first, then the labour authority in your country (MOHRE in the UAE, the Ministry of Labour in Qatar/Oman, PAM in Kuwait, MHRSD in Saudi Arabia).', duration: 'Varies' },
+] as const;
+
+const faqs = [
+  { q: 'What is gratuity / end-of-service benefit?', a: 'A lump-sum payment your employer owes you when your job ends, based on your last wage and how long you worked there. Every Gulf country has its own law for it — there is no single GCC-wide formula, which is why this calculator switches rules by country.' },
+  { q: 'Which country’s law applies to me?', a: 'The country where you worked, under the contract governed by that country’s labour law. If you transferred between Gulf countries mid-career, each period is usually settled under the country where it was worked — check your contracts.' },
+  { q: 'Is gratuity based on basic or total salary?', a: 'It depends on the country. The UAE, Qatar, and Oman calculate on basic wage only. Kuwait calculates on last total wage (basic + regular allowances). Saudi Arabia calculates on last wage — check your contract for which allowances count toward it.' },
+  { q: 'Does resigning reduce my gratuity?', a: 'In the UAE, Qatar, and Oman, no — resignation does not reduce the award under the rules applied here. In Saudi Arabia (Labour Law Art. 85) and Kuwait (Labour Law Art. 53), resigning applies a tiered share: the calculator shows the share it applied and the full entitlement underneath.' },
+  { q: 'Why is Bahrain not included?', a: 'Since 1 March 2024, expat gratuity in Bahrain is paid through the Social Insurance Organization (SIO) fund system — employers contribute monthly (4.2% of wages for the first three years, 8.4% after) — rather than the old lump-sum formula. Use the SIO portal for Bahrain.' },
+  { q: 'Is this legal advice?', a: 'No. This calculator is informational only, not legal advice. Contract terms can be more generous than the legal minimum, and individual cases (dismissal for misconduct, domestic workers, DIFC/ADGM) follow separate rules. Confirm your figure against the official source and your settlement statement.' },
+];
+
+const officialRules = [
+  { rule: 'UAE — Federal Decree-Law 33/2021, Art. 51: 21 days of basic wage per year for the first 5 years, 30 days per year after, pro-rated for partial years; 1+ year of continuous service; total capped at 2 years’ total wage (basic + allowances). The calculator caps against basic wage because it only takes basic salary — your true legal cap may be higher if you receive allowances.', source: 'Federal Decree-Law 33/2021 (MOHRE)', href: 'https://mohre.gov.ae/en/media-center/news/15/11/2021/uae-president-issues-federal-decree-law-on-regulation-of-labour-relations-in-private-sector' },
+  { rule: 'Saudi Arabia — Labour Law, Art. 84: half a month’s wage per year for the first 5 years, one month’s wage per year after, on the last wage, pro-rated for partial years. Art. 85 (resignation): under 2 years no award; 2–5 years one-third; over 5 to under 10 years two-thirds; 10+ years full. Art. 87 exceptions (force majeure; marriage/childbirth for female workers) give the full award.', source: 'Saudi Labour Law, Arts. 84–85, 87 — via the Ministry of Human Resources and Social Development (MHRSD)', href: 'https://www.hrsd.gov.sa' },
+  { rule: 'Qatar — Labour Law No. 14 of 2004, Art. 54: minimum 3 weeks’ (21 days) basic wage per year of service; 1+ year of continuous service; last basic wage as the basis; fractions of a year paid in proportion. No resignation reduction and no cap in the statute. Your contract may set a higher rate (e.g. 30 days per year) — enter it in the calculator.', source: 'Labour Law No. 14 of 2004, Art. 54 — full law text (Scribd copy)', href: 'https://www.scribd.com/document/609894610/Qatar-Law-14-of-2004' },
+  { rule: 'Kuwait — Labour Law No. 6 of 2010, Art. 51: 15 days’ pay per year for the first 5 years, 30 days per year after; daily wage = wage ÷ 26 (Art. 67: actual working days); total capped at 18 months’ wage. Art. 53 (resignation): under 3 years no award; 3–5 years half; 5–10 years two-thirds; 10+ years full. Arts. 55, 62: the base is the last total wage, including regular allowances.', source: 'Labour Law No. 6 of 2010, Arts. 51, 53, 55, 62, 67 — via PAM advisory reporting (Arab Times)', href: 'https://www.arabtimesonline.com/news/kuwaits-public-authority-of-manpower-clarifies-end-of-service-rights-and-notice-periods/' },
+  { rule: 'Oman — Labour Law (Royal Decree 53/2023), Art. 61: workers not covered by the Social Protection Law get a gratuity of not less than one basic wage per year of service, on the last basic wage. Service before 31 July 2023 uses the old law: 15 days’ wages (half a month) per year for the first 3 years, one month per year after. A savings/provident system for expats is being phased in — confirm whether gratuity or the fund applies to you.', source: 'Labour Law RD 53/2023, Art. 61 — via Ministry of Labour clarification (Oman Observer)', href: 'https://www.omanobserver.om/article/1194067/oman/labour/labour-ministry-clarifies-end-of-service-gratuity' },
+  { rule: 'Bahrain — not covered by this calculator. Since 1 March 2024, expat gratuity is paid through the SIO fund system (employer contributions of 4.2% of wages for the first three years, 8.4% after), calculated on basic salary plus social allowance.', source: 'End of Service Gratuity for non-Bahrainis (SIO Bahrain)', href: 'https://www.sio.gov.bh/en/end-of-service-gratuity-for-non-bahrainis' },
+];
+
+const related = [
+  { href: '/uae/guides/how-to-calculate-uae-gratuity-end-of-service/', label: 'How to Calculate Your UAE Gratuity', note: 'The full UAE guide — eligibility, formula, cap, and disputes.' },
+  { href: '/uae/guides/how-to-file-a-labour-complaint-in-the-uae/', label: 'How to File a Labour Complaint in the UAE', note: 'If your UAE employer short-pays your gratuity.' },
+  { href: '/calculators/uk-ir35/', label: 'IR35 Take-Home Calculator', note: 'Our other new calculator — inside vs outside IR35 take-home pay.' },
+];
+---
+
+<CalculatorPage
+  title="GCC Gratuity Calculator"
+  metaTitle="GCC Gratuity Calculator: UAE, Saudi, Qatar, Kuwait, Oman (2026)"
+  description="Estimate your end-of-service gratuity in the UAE, Saudi Arabia, Qatar, Kuwait, or Oman — each country’s own formula, wage base, and resignation rules."
+  category="benefits"
+  calculatorId="gcc-gratuity"
+  calculatorStepIndex={4}
+  steps={steps}
+  faqs={faqs}
+  officialRulesIntro="Every figure this calculator applies comes from the labour law named below. The calculator switches formula, wage base, currency, and resignation share when you change country."
+  officialRules={officialRules}
+  related={related}
+  lastReviewed="15 October 2026"
+  breadcrumbCountry="UAE & Gulf"
+  breadcrumbHref="/uae/"
+/>

@@ -1,0 +1,209 @@
+---
+// Shared layout for standalone calculator pages (/calculators/[slug]):
+// STEPS FIRST, with the calculator embedded inside the designated step
+// (calculatorStepIndex) — never as a separate block above the steps.
+// Then Official rules, FAQ, Related.
+// Every figure on the page must cite its official source in the Official
+// rules section (and wherever the figure appears); anything unverifiable is
+// user-entered input or marked "varies" — never presented as fact.
+import Layout from '../layouts/Layout.astro';
+import StepTimeline from './StepTimeline.astro';
+import Faq from './Faq.astro';
+import Icon from './Icon.astro';
+import type { Step } from '../data/guides';
+
+export interface RuleItem {
+  rule: string;
+  source: string;
+  href?: string;
+}
+
+export interface RelatedLink {
+  href: string;
+  label: string;
+  note: string;
+}
+
+interface Props {
+  title: string;
+  metaTitle: string;
+  description: string;
+  category: string;
+  calculatorId: string;
+  /** 0-based index of the step that holds the calculator */
+  calculatorStepIndex: number;
+  steps: Step[];
+  faqs: { q: string; a: string }[];
+  officialRulesIntro: string;
+  officialRules: RuleItem[];
+  related: RelatedLink[];
+  lastReviewed: string;
+  breadcrumbCountry: string;
+  breadcrumbHref: string;
+}
+
+const {
+  title,
+  metaTitle,
+  description,
+  category,
+  calculatorId,
+  calculatorStepIndex,
+  steps,
+  faqs,
+  officialRulesIntro,
+  officialRules,
+  related,
+  lastReviewed,
+  breadcrumbCountry,
+  breadcrumbHref,
+} = Astro.props;
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  inLanguage: 'en',
+  author: { '@type': 'Organization', name: 'GovSteps Editorial Team', url: new URL('/about/', Astro.site).toString() },
+  publisher: { '@type': 'Organization', name: 'GovSteps', url: new URL('/', Astro.site).toString() },
+  step: steps.map((step, i) => ({
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: step.title,
+    text: step.detail,
+  })),
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', Astro.site).toString() },
+    { '@type': 'ListItem', position: 2, name: breadcrumbCountry, item: new URL(breadcrumbHref, Astro.site).toString() },
+    { '@type': 'ListItem', position: 3, name: title, item: pageUrl },
+  ],
+};
+---
+
+<Layout title={metaTitle} description={description} schema={[howToSchema, faqSchema, breadcrumbSchema]}>
+  <section class="border-b border-hairline bg-hairline-soft/60 dark:border-hairline-dark dark:bg-hairline-soft-dark/40">
+    <div class="container-geist py-6 sm:py-8">
+      <nav class="font-mono text-xs text-mute dark:text-mute-dark" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-link dark:hover:text-link-dark">Home</a>
+        <span class="mx-1.5">/</span>
+        <a href={breadcrumbHref} class="hover:text-link dark:hover:text-link-dark">{breadcrumbCountry}</a>
+        <span class="mx-1.5">/</span>
+        <span class="text-body dark:text-body-dark">{title}</span>
+      </nav>
+
+      <h1 class="heading-lg mt-3 max-w-3xl text-ink dark:text-ink-dark">{title}</h1>
+      <p class="mt-3 max-w-2xl text-base leading-relaxed text-body dark:text-body-dark">{description}</p>
+
+      <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-mute dark:text-mute-dark">
+        <span class="flex items-center gap-1.5">
+          <Icon name="calendar" class="size-3.5 text-link" />
+          Last reviewed: <strong class="font-medium text-ink dark:text-ink-dark">{lastReviewed}</strong>
+        </span>
+        <span class="hidden sm:inline text-hairline-dark">|</span>
+        <span class="flex items-center gap-1.5">
+          <Icon name="shield" class="size-3.5 text-link" />
+          Informational only, not legal or tax advice.
+        </span>
+      </div>
+
+      <div class="mt-4 flex flex-wrap gap-3">
+        <a
+          href="#official-rules"
+          class="inline-flex items-center gap-2 rounded-full bg-amber-400 px-5 py-2.5 text-sm font-semibold text-navy-900 shadow-sm transition hover:bg-amber-300"
+        >
+          <Icon name="file" class="size-4" />
+          Official rules
+        </a>
+        <a
+          href="#calculator"
+          class="inline-flex items-center gap-2 rounded-full border border-link px-5 py-2.5 text-sm font-semibold text-link transition hover:bg-link hover:text-white dark:border-link-dark dark:text-link-dark dark:hover:bg-link-dark dark:hover:text-canvas-dark"
+        >
+          <Icon name="dollar" class="size-4" />
+          Jump to calculator
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container-geist py-6 lg:py-8">
+    <div class="max-w-3xl">
+      <section>
+        <p class="eyebrow">The Steps</p>
+        <h2 class="heading-md mt-1.5 text-ink dark:text-ink-dark">How to use this calculator</h2>
+        <div class="mt-4">
+          <StepTimeline steps={steps} category={category} calculatorId={calculatorId} calculatorStepIndex={calculatorStepIndex} />
+        </div>
+      </section>
+
+      <section id="official-rules" class="mt-8 scroll-mt-24">
+        <p class="eyebrow">Legal basis</p>
+        <h2 class="heading-md mt-1.5 text-ink dark:text-ink-dark">Official rules</h2>
+        <p class="mt-2 text-sm leading-relaxed text-body dark:text-body-dark">{officialRulesIntro}</p>
+        <ul class="mt-4 space-y-3">
+          {officialRules.map((r) => (
+            <li class="rounded-md border border-hairline bg-canvas-elevated p-4 text-sm leading-relaxed dark:border-hairline-dark dark:bg-canvas-elevated-dark">
+              <p class="text-body dark:text-body-dark">{r.rule}</p>
+              <p class="mt-1.5 text-xs text-mute dark:text-mute-dark">
+                Source: {r.href ? (
+                  <a href={r.href} target="_blank" rel="noopener noreferrer" class="font-medium text-link underline decoration-hairline hover:text-link-deep dark:text-link-dark">{r.source}</a>
+                ) : (
+                  <span class="font-medium text-ink dark:text-ink-dark">{r.source}</span>
+                )}
+              </p>
+            </li>
+          ))}
+        </ul>
+        <p class="mt-3 text-xs leading-relaxed text-mute dark:text-mute-dark">
+          Where no official English page publishes a rule, we cite the law itself by name and article, and link the law text or the labour authority's own reporting — labelled as such. Rates and thresholds are as stated for the date shown; always confirm against the official source before acting.
+        </p>
+      </section>
+
+      <section class="mt-8">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="heading-md mt-1 text-ink dark:text-ink-dark">Frequently Asked Questions</h2>
+        <div class="mt-3">
+          <Faq faqs={faqs} />
+        </div>
+      </section>
+
+      {related.length > 0 && (
+        <section class="mt-8">
+          <p class="eyebrow">Related</p>
+          <h2 class="heading-md mt-1 text-ink dark:text-ink-dark">Related guides &amp; calculators</h2>
+          <div class="mt-3.5 grid gap-3 sm:grid-cols-2">
+            {related.map((r) => (
+              <a
+                href={r.href}
+                class="group flex flex-col justify-between rounded-lg border border-hairline bg-canvas-elevated p-4 text-sm font-medium text-ink transition-all hover:-translate-y-0.5 hover:border-link hover:text-link dark:border-hairline-dark dark:bg-canvas-elevated-dark dark:text-ink-dark dark:hover:border-link-dark dark:hover:text-link-dark"
+              >
+                <div class="flex items-start justify-between gap-2">
+                  <span>{r.label}</span>
+                  <Icon name="arrowright" class="mt-0.5 size-3.5 shrink-0 -translate-x-1 text-mute opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-link group-hover:opacity-100 dark:text-mute-dark dark:group-hover:text-link-dark" />
+                </div>
+                <p class="mt-2 text-xs font-normal text-mute dark:text-mute-dark">{r.note}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
+  </div>
+</Layout>
