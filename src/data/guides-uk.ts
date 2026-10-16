@@ -532,6 +532,7 @@ export const guides: Guide[] = [
         slug: 'how-to-see-a-gp-and-register-with-the-nhs',
         country: 'uk',
         updatedAt: '2025',
+        lastReviewed: '2026-10-16',
         title: 'How to Register with a GP (NHS) and See a Doctor',
         metaTitle: 'How to Register with an NHS GP: Step-by-Step Guide',
         description: 'NHS GP registration: finding a surgery, the GMS1 form, proof of address rules for immigrants, appointments, and what to do in an emergency.',
@@ -580,6 +581,7 @@ export const guides: Guide[] = [
         slug: 'how-to-register-a-uk-limited-company',
         country: 'uk',
         updatedAt: '2025',
+        lastReviewed: '2026-10-16',
         title: 'How to Register a Limited Company (UK)',
         metaTitle: 'How to Register a UK Ltd Company: Step-by-Step Guide',
         description: 'UK limited company guide: choosing a name, registering with Companies House, SIC codes, the confirmation statement, and Corporation Tax registration.',
@@ -587,8 +589,8 @@ export const guides: Guide[] = [
         audience: ['Native', 'Immigrant'],
         difficulty: 'Medium',
         totalTime: '24 hours (online registration)',
-        totalCost: '£50 online (2025 Companies House fee)',
-        summary: 'Register a private limited company online at Companies House for £50, appoint directors, state your SIC code, and register for Corporation Tax within 3 months of trading.',
+        totalCost: '£100 online (from 1 Feb 2026)',
+        summary: 'Register a private limited company online at Companies House for £100, appoint directors, state your SIC code, and register for Corporation Tax within 3 months of trading.',
         documents: [
             'Chosen company name (and 2–3 backups)',
             'Registered office address in the UK',
@@ -606,7 +608,7 @@ export const guides: Guide[] = [
             },
             { phase: 'before', title: 'Decide on directors, shareholders, and the registered office', detail: 'You need at least one director (16+). Shareholders (members) own the company — you can be the sole director and shareholder. The registered office must be a real UK address where official mail is received (it appears on the public register). Your home address can be used but will be public — many use a company-secretarial address service.', duration: '1–2 hours' },
             {
-                phase: 'submit', title: 'Register online with Companies House', detail: 'Register at: find-and-update.company-information.service.gov.uk — the online incorporation fee is £50 (2025; same-day service by 6-hour post also £50 as of May 2024 changes; paper registration is £71). You will need to verify your identity (new 2024/25 rule) and provide director/shareholder details, SIC code, and a memorandum/articles (standard templates provided).', duration: '1 hour',
+                phase: 'submit', title: 'Register online with Companies House', detail: 'Register at: find-and-update.company-information.service.gov.uk — the online incorporation fee is £100 from 1 February 2026 (paper £124; same-day digital £156). Directors must verify their identity with Companies House — new directors must verify before acting as a director (from 18 November 2025) — and provide director/shareholder details, SIC code, and a memorandum/articles (standard templates provided).', duration: '1 hour',
                 links: [
                     { label: 'Set up a limited company (gov.uk)', href: 'https://www.gov.uk/limited-company-formation' },
                 ],
@@ -618,7 +620,7 @@ export const guides: Guide[] = [
                     { label: 'Corporation Tax registration (gov.uk)', href: 'https://www.gov.uk/corporation-tax' },
                 ],
             },
-            { phase: 'followup', title: 'Meet ongoing filing duties', detail: 'Every year the company must: file a confirmation statement (£13 online), file annual accounts with Companies House, pay Corporation Tax (19–25% depending on profit, main rate 25% above £250,000), and maintain PAYE if it has employees. Penalties for late filing escalate quickly — set calendar reminders for your accounting reference date.', duration: 'Ongoing' },
+            { phase: 'followup', title: 'Meet ongoing filing duties', detail: 'Every year the company must: file a confirmation statement (£50 online from 1 February 2026), file annual accounts with Companies House, pay Corporation Tax (19–25% depending on profit, main rate 25% above £250,000), and maintain PAYE if it has employees. Penalties for late filing escalate quickly — set calendar reminders for your accounting reference date.', duration: 'Ongoing' },
         ],
         faqs: [
             { q: 'Can a non-UK resident register a UK limited company?', a: 'Yes — there is no residency requirement for directors or shareholders. But you need a UK registered office address, and opening a UK business bank account as a non-resident can be harder. Check whether a UK company creates tax obligations in your home country too.' },
@@ -685,6 +687,7 @@ export const guides: Guide[] = [
         slug: 'how-to-get-a-share-code-and-prove-right-to-work-or-rent',
         country: 'uk',
         updatedAt: '2025',
+        lastReviewed: '2026-10-16',
         title: 'How to Get a Share Code (Prove Right to Work or Rent in the UK)',
         metaTitle: 'UK Share Codes: Prove Your Right to Work or Rent Step-by-Step',
         description: 'Share code guide: what eVisa share codes are, how to generate one for landlords and employers, how long they last, and what to do if you have a BRP.',
@@ -707,18 +710,18 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'go', title: 'Generate the share code', detail: 'Sign in to the "view and prove" service, choose the type you need: "right to work" (for employers) or "right to rent" (for landlords) — they are different codes. The service produces a 9-character code valid 90 days (right to work) or 60 days (right to rent).', duration: '5 min',
+                phase: 'go', title: 'Generate the share code', detail: 'Sign in to the "view and prove" service, choose the type you need: "right to work" (for employers) or "right to rent" (for landlords) — they are different codes. The service produces a 9-character code valid 90 days — for right to work, right to rent, and other purposes.', duration: '5 min',
                 links: [
                     { label: 'View and prove your status', href: 'https://www.gov.uk/view-prove-immigration-status' },
                 ],
             },
-            { phase: 'submit', title: 'Give the code to the employer or landlord', detail: 'They enter the code plus your date of birth at the employer/landlord checking service and get an instant official record, valid as a statutory excuse against discrimination. You can generate a fresh code any time — codes are free and unlimited.' },
+            { phase: 'submit', title: 'Give the code to the employer or landlord', detail: 'They enter the code plus your date of birth at the employer/landlord checking service and get an instant official record — a correct check gives the employer or landlord a statutory excuse against a civil penalty. A code can be used as many times as needed within its 90 days; you can generate a fresh code any time — codes are free and unlimited.' },
             { phase: 'followup', title: 'BRP holders: transition to eVisa', detail: 'BRPs expired on 31 December 2024 and are no longer valid proof of status. If you had a BRP, you still have lawful status — create a UKVI account and use eVisa share codes instead. Do not book travel relying on a BRP.', duration: '15 min' },
             { phase: 'receive', title: 'Keep proof for travel too', detail: 'A share code is only for work/rent. For travel, generate an "eVisa share code" for airlines and border control, and carry your physical passport. Airlines verify your eVisa when you check in for UK-bound flights.', duration: '—' },
         ],
         faqs: [
             { q: 'My BRP expired 31 December 2024. Am I illegally in the UK?', a: 'No. If your BRP expiry date was 31 December 2024, your underlying immigration status continues as before — the card stopped, not your permission. Register for an eVisa and UKVI account; your status is what counts, not the plastic.' },
-            { q: 'How long does a share code last?', a: 'Right to work codes: 90 days. Right to rent codes: 60 days. Both are single-check codes — once used, generate a new one for the next employer or landlord. There is no limit on how many you can create.' },
+            { q: 'How long does a share code last?', a: 'All share codes last 90 days and can be used as many times as needed within that period. Codes are purpose-specific (a right-to-rent code starts with “R”) — generate a new one for a different purpose. There is no limit on how many you can create.' },
             { q: 'Does a share code show my full immigration history?', a: 'No — the landlord or employer sees only whether you have the right to work/rent and any conditions (like work-hour limits). The rest of your record stays private.' },
         ],
     },
@@ -726,6 +729,7 @@ export const guides: Guide[] = [
         slug: 'how-to-register-to-vote-uk',
         country: 'uk',
         updatedAt: '2025',
+        lastReviewed: '2026-10-16',
         title: 'How to Register to Vote in the UK',
         metaTitle: 'How to Register to Vote in the UK: Step-by-Step Guide',
         description: 'Register to vote in the UK: who is eligible, the 5-minute online form, when you need to re-register, and the photo ID rules for polling day.',
@@ -742,7 +746,7 @@ export const guides: Guide[] = [
         ],
         steps: [
             {
-                phase: 'before', title: 'Check you are eligible', detail: 'You can register if you are 16 or over (14 in Scotland and Wales for some elections) and a British, Irish, or qualifying Commonwealth citizen, or an EU citizen with settled/pre-settled status. You can only vote at 18 (16 in Scottish and Welsh elections).', duration: '5 min',
+                phase: 'before', title: 'Check you are eligible', detail: 'You can register if you are 16 or over (14 in Scotland and Wales) and a British, Irish, or qualifying Commonwealth citizen. EU citizens can register in England and Northern Ireland if they are citizens of Denmark, Luxembourg, Poland, Portugal or Spain, or if they are another EU citizen who had permission to enter or stay on or before 31 December 2020 without a break. You can only vote at 18 (16 in Scottish and Welsh elections).', duration: '5 min',
                 links: [
                     { label: 'Who can vote (gov.uk)', href: 'https://www.gov.uk/register-to-vote' },
                 ],
@@ -764,9 +768,9 @@ export const guides: Guide[] = [
             { phase: 'receive', title: 'Vote', detail: 'Polls are open 7am to 10pm on election day. You can also apply for a postal vote (no photo ID needed) or a proxy vote (someone votes for you). Register at least 12 working days before an election to vote in it.' },
         ],
         faqs: [
-            { q: 'I am an EU citizen living in the UK. Can I vote?', a: 'Yes, if you have settled or pre-settled status under the EU Settlement Scheme you can vote in local, devolved, and London elections, and in police and crime commissioner elections. You cannot vote in UK general elections unless you are a Commonwealth or Irish citizen.' },
+            { q: 'I am an EU citizen living in the UK. Can I vote?', a: 'It depends on your nationality and when you arrived. EU citizens from Denmark, Luxembourg, Poland, Portugal or Spain can vote in local elections; other EU citizens can vote in local elections only if they had permission to enter or stay on or before 31 December 2020 without a break. EU citizens cannot vote in UK general elections unless they are also a Commonwealth or Irish citizen. In Scotland and Wales the rules are broader — check the Electoral Commission for your nation.' },
             { q: 'Do I have to register? Will it affect my credit score?', a: 'Registration is not legally mandatory, but the electoral register is checked by credit reference agencies — being on it makes opening bank accounts, contracts, and mortgages easier. You can opt out of the "open register" version that is sold commercially.' },
-            { q: 'I missed the registration deadline. Can I still vote?', a: 'No — the deadline is 12 working days before a general election (11 days for local elections). If you are already registered but lost your poll card, you can still vote with photo ID at your assigned polling station.' },
+            { q: 'I missed the registration deadline. Can I still vote?', a: 'No — the deadline is midnight 12 working days before polling day. If you are already registered but lost your poll card, you can still vote with photo ID at your assigned polling station.' },
         ],
     },
     {

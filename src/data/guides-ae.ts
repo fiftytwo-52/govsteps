@@ -373,7 +373,7 @@ export const guides: Guide[] = [
         slug: 'how-to-register-for-uae-corporate-tax',
         country: 'ae',
         updatedAt: '2026',
-        lastReviewed: '2026-10-13',
+        lastReviewed: '2026-10-16',
         title: 'How to Register for UAE Corporate Tax (FTA EmaraTax)',
         metaTitle: 'UAE Corporate Tax Registration: Deadlines, Steps & 9% Rate (2026)',
         description: '0% up to AED 375,000, 9% above: who must register, EmaraTax deadlines by incorporation date, the registration steps, and filing rules.',
@@ -426,7 +426,7 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'followup', title: 'Keep records', detail: 'Retain supporting records for your filings. Confirm the current retention period in the FTA guidance before disposing of anything.', duration: 'Ongoing',
+                phase: 'followup', title: 'Keep records', detail: 'Retain supporting records for your filings for at least seven years from the end of the tax period to which they relate (FTA requirement).', duration: 'Ongoing',
                 links: [
                     { label: 'Corporate tax news (FTA)', href: 'https://tax.gov.ae/en/taxes/corporate.tax/news.aspx' },
                 ],
@@ -443,7 +443,7 @@ export const guides: Guide[] = [
         },
         {
           q: 'What is Small Business Relief in UAE corporate tax?',
-          a: 'Businesses with revenue of AED 3 million or less can elect for Small Business Relief, under which they are treated as having no taxable income. Tick the Small Business Relief box in the calculator to see the zero-tax result.',
+          a: 'Businesses with revenue of AED 3 million or less can elect for Small Business Relief, under which they are treated as having no taxable income. The relief is available for tax periods ending on or before 31 December 2029 (Ministerial Decision No. 131 of 2026, extending the previous 2026 cut-off). Electing it does not remove the duty to register and file a return. Tick the Small Business Relief box in the calculator to see the zero-tax result.',
         },
         {
           q: 'When is UAE corporate tax due?',
@@ -456,7 +456,7 @@ export const guides: Guide[] = [
         slug: 'how-to-set-up-a-business-in-the-uae',
         country: 'ae',
         updatedAt: '2026',
-        lastReviewed: '2026-10-13',
+        lastReviewed: '2026-10-16',
         title: 'How to Set Up a Business in the UAE: Mainland vs Free Zone',
         metaTitle: 'Start a Business in UAE: Mainland vs Free Zone Steps & Costs (2026)',
         description: 'Mainland via the emirate DED/DET or free zone via the zone authority: legal forms, trade name, approvals, MoA, premises, and fees — with the free-zone route compared.',
@@ -539,7 +539,7 @@ export const guides: Guide[] = [
         slug: 'how-to-open-a-bank-account-in-the-uae',
         country: 'ae',
         updatedAt: '2026',
-        lastReviewed: '2026-10-13',
+        lastReviewed: '2026-10-16',
         title: 'How to Open a Bank Account in the UAE (Personal Account for New Residents)',
         metaTitle: 'Open a Bank Account in UAE: Documents, Steps & Timeline (2026)',
         description: 'Personal account for a new resident: Emirates ID + residence visa, salary certificate, bank checks, activation, and IBAN — with the Central Bank 2-day rule.',

@@ -270,14 +270,15 @@ export const guides: Guide[] = [
         slug: 'how-to-apply-for-canadian-citizenship',
         country: 'ca',
         updatedAt: '2025',
+        lastReviewed: '2026-10-16',
         title: 'How to Apply for Canadian Citizenship',
-        metaTitle: 'How to Apply for Canadian Citizenship: Step-by-Step Guide (2025 Fees)',
+        metaTitle: 'How to Apply for Canadian Citizenship: Step-by-Step Guide (2026 Fees)',
         description: 'Canadian citizenship application: the 1,095-day rule, tax filing requirement, citizenship test, ceremony, and the 2025 fee.',
         category: 'immigration',
         audience: ['Immigrant'],
         difficulty: 'Hard',
         totalTime: 'About 1 year from application to ceremony',
-        totalCost: '$630 adult / $100 minor (2025 fees)',
+        totalCost: '$653 adult / $100 minor (2026 fees)',
         summary: 'After 3 years (1,095 days) of physical presence as a PR in the last 5 years — plus tax filings for 3 of those years — you can apply for citizenship. The process includes an online or in-person test for adults 18–54, an interview, and a ceremony where you take the oath and receive your citizenship certificate.',
         documents: [
             'Completed form CIT 0002 (adult) or CIT 0003 (minor)',
@@ -310,13 +311,13 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'submit', title: 'Pay fees and submit online', detail: 'Adult fee is $630 ($100 processing is non-refundable; the $530 right-of-citizenship portion is refunded only for refused applications). Minors pay $100. Most applicants submit through the IRCC portal. Keep every receipt and your file number for status checks.', duration: '1 hour',
+                phase: 'submit', title: 'Pay fees and submit online', detail: 'Adult fee is $653 ($530 processing, non-refundable, plus a $123 right-of-citizenship fee, refunded only if the application is refused). Minors pay $100. Stateless adults born to a Canadian parent pay $123 (right-of-citizenship fee only). Most applicants submit through the IRCC portal. Keep every receipt and your file number for status checks.', duration: '1 hour',
                 links: [
                     { label: 'Pay and submit (canada.ca)', href: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/application/pay-fees/pay-fees-citizenship.html' },
                 ],
             },
             {
-                phase: 'wait', title: 'Wait for the test invitation', detail: 'Processing time runs about 8 months before the test stage, fluctuating by office and season. When invited, adults 18–54 take a 20-question multiple-choice test (pass mark 15) on rights, history, government, and law — study the official "Discover Canada" guide and take the free practice tests. Ages 55+ skip the test but may have an interview.', duration: '6–10 months',
+                phase: 'wait', title: 'Wait for the test invitation', detail: 'IRCC processing for a citizenship grant was about 12 months as of October 2026, fluctuating by office and season. When invited, adults 18–54 take a 20-question multiple-choice test (pass mark 15) on rights, history, government, and law — study the official "Discover Canada" guide and take the free practice tests. Ages 55+ skip the test but may have an interview.', duration: 'About 12 months',
                 links: [
                     { label: 'Study: Discover Canada (canada.ca)', href: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/citizenship/citizenship-test.html' },
                 ],
@@ -327,13 +328,14 @@ export const guides: Guide[] = [
         faqs: [
             { q: 'Do days before becoming a PR count?', a: 'Yes, as half-days — each day as a temporary resident counts as 0.5, capped at a 365-day total credit. So two years on a work permit ≈ one year of presence.' },
             { q: 'Can I apply if I was outside Canada a lot?', a: 'Only presence days inside Canada count for the 1,095 (temporary-resident credit aside). Absences also get scrutinized at the interview — have your stamps and flight records ready. IRCC can also check whether you met your PR residency obligation during those years.' },
-            { q: 'What happens if I fail the test?', a: 'You get a second attempt on a later date. Failing twice sends you to an interview with a citizenship official who assesses your knowledge verbally. Only after that can the application be refused — and you can reapply.' },
+            { q: 'What happens if I fail the test?', a: 'You have up to 3 chances to pass the test. If you fail all attempts, you may be invited to an interview or hearing with a citizenship official who assesses your knowledge verbally. Only after that can the application be refused — and you can reapply.' },
         ],
     },
     {
         slug: 'how-to-file-taxes-in-canada',
         country: 'ca',
         updatedAt: '2025',
+        lastReviewed: '2026-10-16',
         title: 'How to File Your Taxes in Canada (CRA Return)',
         metaTitle: 'How to File Taxes in Canada: Step-by-Step Guide (CRA, 2025 Season)',
         description: 'First-time or annual Canadian tax return: who must file, SLips, NETFILE software, refunds, and benefits unlocked by filing.',
@@ -353,7 +355,7 @@ export const guides: Guide[] = [
         ],
         steps: [
             {
-                phase: 'before', title: 'Know whether you must (or should) file', detail: 'You MUST file if you owe tax, are self-employed, or received capital gains. You SHOULD file anyway if you had no income: benefits like the CGEB, Canada Child Benefit, and climate action incentive payments require a return, and newcomers create a "staircase" of residency-part-year filings. The filing deadline is April 30 (June 15 for self-employed, but interest on balances still starts May 1).', duration: '15 min',
+                phase: 'before', title: 'Know whether you must (or should) file', detail: 'You MUST file if you owe tax, are self-employed, or received capital gains. You SHOULD file anyway if you had no income: benefits like the CGEB and Canada Child Benefit require a return (the Canada Carbon Rebate ended with a final payment in April 2025 and is no longer paid), and newcomers create a "staircase" of residency-part-year filings. The filing deadline is April 30 (June 15 for self-employed, but interest on balances still starts May 1).', duration: '15 min',
                 links: [
                     { label: 'Who must file (canada.ca)', href: 'https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/filing-return.html' },
                 ],
@@ -383,7 +385,7 @@ export const guides: Guide[] = [
         ],
         faqs: [
             { q: 'I arrived mid-year. Do I report foreign income?', a: 'Only income received AFTER you became a tax resident (established residential ties — a home, spouse, or dependants in Canada). Earlier foreign income is excluded but still disclosed on the "world income" line for benefit calculations. Report foreign-source income after arrival even if not remitted to Canada.' },
-            { q: 'I have no income. Do I still file?', a: 'Yes — filing unlocks the CGEB, Canada Child Benefit, and other refundable credits. Around 40% of returns are filed for benefits rather than tax owed.' },
+            { q: 'I have no income. Do I still file?', a: 'Yes — filing unlocks the CGEB, Canada Child Benefit, and other refundable credits.' },
             { q: 'What about free clinics?', a: 'Community Volunteer Income Tax Program (CVITP) clinics file simple returns free for people with modest income and a simple situation (no rental, no capital gains). Find one near you through the CRA website or 211.' },
         ],
     },
@@ -391,6 +393,7 @@ export const guides: Guide[] = [
         slug: 'how-to-get-a-canadian-drivers-licence',
         country: 'ca',
         updatedAt: '2025',
+        lastReviewed: '2026-10-16',
         title: 'How to Get a Driver\'s Licence in Canada (Newcomers)',
         metaTitle: 'How to Get a Driver\'s Licence in Canada: Step-by-Step Guide (2025)',
         description: 'Canadian driver\'s licence for newcomers and new drivers: graduated licensing, foreign licence exchange rules, vision/knowledge/road tests.',
@@ -419,7 +422,7 @@ export const guides: Guide[] = [
                 phase: 'go', title: 'Gather proof of driving experience', detail: 'If you are not from an exchange country but drove at home, an official driving record (from your home licensing authority, on letterhead or stamped) can grant credit — in Ontario, 12+ months of verified experience lets you book the G2 road test immediately, and 24+ months can let you go straight to the full G after G2. Without a record you start as a new driver.', duration: '1–4 weeks to obtain by mail'
             },
             {
-                phase: 'go', title: 'Take the vision and knowledge tests', detail: 'Visit a DriveTest centre (Ontario), ICBC office (BC), or registry agent (Alberta). Pass the vision screening (bring glasses) and the written/signal knowledge test on rules and signs — typically 20–40 multiple-choice questions, available in multiple languages in some provinces. Passing gives you a learner licence (e.g., G1) with restrictions: zero alcohol, and a supervising fully-licensed driver beside you.', duration: '1–2 hours + study time',
+                phase: 'go', title: 'Take the vision and knowledge tests', detail: 'Visit a DriveTest centre (Ontario), ICBC office (BC), or registry agent (Alberta). Pass the vision screening (bring glasses) and the written/signal knowledge test on rules and signs — typically 20–40 multiple-choice questions, available in multiple languages in some provinces. Since 11 May 2026, Ontario applicants must also declare that Ontario is their primary place of residence and that their presence in Canada is legal. Passing gives you a learner licence (e.g., G1) with restrictions: zero alcohol, and a supervising fully-licensed driver beside you.', duration: '1–2 hours + study time',
                 links: [
                     { label: 'Ontario official driver handbook', href: 'https://www.ontario.ca/document/official-mto-drivers-handbook' },
                 ],
@@ -428,7 +431,7 @@ export const guides: Guide[] = [
                 phase: 'wait', title: 'Complete the graduated stages (new drivers)', detail: 'With G1 you must hold it 12 months (8 months with an approved driving course) before the first road test. Passing the G2 test lets you drive alone (still zero alcohol for under-21s in most provinces). The full G test (highway driving) follows after 12 months at G2. Experience credit shortens each stage — the agent tells you your exact timeline when you apply.', duration: '8–12 months (or shorter with credit)'
             },
             {
-                phase: 'submit', title: 'Pay fees as you go', detail: 'Ontario: ~$160 covers the knowledge test and 5-year licence; each road test is ~$55 ($90 for the G test). BC and Alberta structures differ. Fees are per attempt — failing means rebooking and repaying, so take a few practice lessons if it has been years since you drove.', duration: '—'
+                phase: 'submit', title: 'Pay fees as you go', detail: 'Ontario: the $159.75 G1 package covers the knowledge test, your first G2 road test and a five-year licence; the G road test is $91.25, and a knowledge-test retake is $16 (DriveTest fee list). BC and Alberta structures differ. Fees are per attempt — failing means rebooking and repaying, so take a few practice lessons if it has been years since you drove.', duration: '—'
             },
             { phase: 'followup', title: 'Consider driving school', detail: 'An approved beginner driver education course (Ontario) shortens the G1 wait by 4 months and often lowers insurance. Shop around — $500–$800 is typical, and insurers like Desjardins/Intact recognize certificate discounts for 1–3 years.', duration: '4 weeks' },
             { phase: 'receive', title: 'Full licence', detail: 'Your full provincial licence (the plastic card with the class, e.g., G) arrives by mail after passing the final test — a temporary paper licence covers you meanwhile. It doubles as photo ID everywhere in Canada, so keep it current and update your address with the licensing office within days of any move.', duration: '—' },

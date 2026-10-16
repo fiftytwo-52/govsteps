@@ -552,6 +552,7 @@ export const guides: Guide[] = [
         slug: 'how-to-apply-for-green-card-lottery',
         country: 'us',
         updatedAt: '2025',
+        lastReviewed: '2026-10-16',
         title: 'How to Apply for the Green Card Lottery (DV Program)',
         metaTitle: 'How to Apply for the DV Lottery (Green Card Lottery): Step-by-Step',
         description: 'Diversity Visa lottery guide: eligibility by country, the October entry window, photo requirements, avoiding scams, and what happens if you win.',
@@ -562,14 +563,14 @@ export const guides: Guide[] = [
         totalCost: 'Free to enter',
         summary: 'The Diversity Visa (DV) lottery gives up to 55,000 green cards per year to people from countries with low US immigration rates. Entry is FREE and only takes 30 minutes during the October window.',
         documents: [
-            'Valid passport (from an eligible country, or through spouse/parent)',
+            'Your name exactly as on your passport, if you have one — no passport is required to submit an entry',
             'Digital photo meeting strict DV requirements',
             'Education history (high school diploma or 2 years qualifying work)',
             'Family details (spouse and all children under 21)',
         ],
         steps: [
             {
-                phase: 'before', title: 'Check country eligibility', detail: 'Your country of birth must have low US immigration (under 50,000 immigrants in 5 years). Countries like India, China, Mexico, and Canada are excluded — but you may qualify through a spouse\'s or parent\'s country of birth.', duration: '15 min',
+                phase: 'before', title: 'Check country eligibility', detail: 'Your country of birth must have low US immigration (under 50,000 immigrants in 5 years). The ineligible list changes each cycle — for DV-2026 it included India, China, Mexico, Canada, Brazil, Nigeria, Pakistan and the Philippines, among others; check the current cycle\'s instructions. You may still qualify through a spouse\'s or parent\'s country of birth.', duration: '15 min',
                 links: [
                     { label: 'Married to a US citizen? Green card through marriage', href: '/guides/how-to-get-green-card-through-marriage/' },
                     { label: 'Eligible countries list (travel.state.gov)', href: 'https://travel.state.gov/content/travel/en/us-visas/immigrate/diversity-visa-program-entry/diversity-visa-submit-entry.html' },
@@ -578,7 +579,7 @@ export const guides: Guide[] = [
             { phase: 'before', title: 'Verify education/work requirement', detail: 'You need a US high school diploma or equivalent, OR 2 years of work experience in a job requiring 2+ years of training within the last 5 years.', duration: '15 min' },
             { phase: 'before', title: 'Get a compliant photo', detail: 'The photo must be 600×600 px, taken within 6 months, plain light background, no glasses, face centered. This is the #1 reason entries are disqualified.', duration: '30 min' },
             {
-                phase: 'fill', title: 'Submit the E-DV entry form', detail: 'The ONLY official site is dvprogram.state.gov (open early October to early November). Fill in your details, spouse, and ALL children. Submit and PRINT your confirmation number — it is the only way to check results.', duration: '30 min',
+                phase: 'fill', title: 'Submit the E-DV entry form', detail: 'The ONLY official site is dvprogram.state.gov. Entries are accepted only during the registration period announced in the official DV Instructions for that cycle (past cycles ran early October to early November). As of October 2026 the State Department still lists DV-2026 as the latest program and has not announced a new registration period — check the instructions page before entering. Fill in your details, spouse, and ALL children. Submit and PRINT your confirmation number — it is the only way to check results.', duration: '30 min',
                 links: [
                     { label: 'Official DV entry site (state.gov)', href: 'https://dvprogram.state.gov/' },
                 ],
@@ -595,13 +596,14 @@ export const guides: Guide[] = [
         faqs: [
             { q: 'Is there really no fee to enter?', a: 'Correct — entry is completely free at dvprogram.state.gov. Any website charging an "entry fee" is a middleman or scam. Fees only apply AFTER you win and pursue the visa.' },
             { q: 'Can I enter every year?', a: 'Yes, you can enter each year you are eligible. Only one entry per person per year, though — duplicate entries disqualify you entirely.' },
-            { q: 'What are my odds of winning?', a: 'It varies by region, but roughly 1 in 25 for eligible entrants overall. Winners are selected randomly; low case numbers have the best chance of actually getting a visa.' },
+            { q: 'What are my odds of winning?', a: 'Selection is random, and being selected is not a visa: the State Department selects more people than there are visas, and cases are processed by case number until visas run out — low case numbers have the best chance of actually getting a visa.' },
         ],
     },
     {
         slug: 'how-to-apply-for-unemployment-benefits',
         country: 'us',
         updatedAt: '2025',
+        lastReviewed: '2026-10-16',
         title: 'How to Apply for Unemployment Benefits',
         metaTitle: 'How to File for Unemployment: Step-by-Step Guide by State',
         description: 'Unemployment benefits guide: eligibility, weekly claim filing, work search requirements, benefit amounts, and how to avoid common application mistakes.',
@@ -638,7 +640,7 @@ export const guides: Guide[] = [
             { phase: 'receive', title: 'Receive payments', detail: 'Payments arrive by direct deposit or state debit card, typically 40–50% of your previous wages, for up to 26 weeks in most states.', duration: 'weekly' },
         ],
         faqs: [
-            { q: 'How much will I get per week?', a: 'It depends on your state and past earnings — usually about half your average weekly wage, capped by the state (caps range from ~$235 in Mississippi to ~$900+ in Massachusetts).' },
+            { q: 'How much will I get per week?', a: 'It depends on your state and past earnings — usually about half your average weekly wage, capped by the state (caps range from $235/week in Mississippi to $1,154/week in Massachusetts as of October 2026).' },
             { q: 'What if I quit my job?', a: 'Usually you do not qualify unless you quit for "good cause" (documented harassment, unsafe conditions, major pay cuts, following a relocating spouse). The state investigates and decides.' },
             { q: 'Are unemployment benefits taxable?', a: 'Yes, they count as taxable income. Choose voluntary 10% withholding on your claim, or set money aside for tax season — see our first-time tax filing guide.' },
         ],
@@ -647,6 +649,7 @@ export const guides: Guide[] = [
         slug: 'how-to-renew-a-green-card',
         country: 'us',
         updatedAt: '2025',
+        lastReviewed: '2026-10-16',
         title: 'How to Renew a Green Card (Form I-90)',
         metaTitle: 'How to Renew a Green Card: Step-by-Step I-90 Guide',
         description: 'Green card renewal guide: when to file Form I-90, online vs paper filing, biometrics appointment, fees, and what to do while waiting for the new card.',
@@ -677,7 +680,7 @@ export const guides: Guide[] = [
                     { label: 'Form I-90 (uscis.gov)', href: 'https://www.uscis.gov/i-90' },
                 ],
             },
-            { phase: 'submit', title: 'Pay the fees', detail: 'Pay $415 online or $465 paper. Fee waivers are rarely granted for I-90. Keep the receipt notice (I-797) — it extends your card validity for 12–24 months as temporary evidence of status.', duration: '10 min' },
+            { phase: 'submit', title: 'Pay the fees', detail: 'Pay $415 online or $465 paper (biometrics included). A fee waiver requires paper filing — you cannot file online if you are applying for one. Keep the receipt notice (I-797) — it extends your card validity for 24 months as temporary evidence of status.', duration: '10 min' },
             { phase: 'go', title: 'Attend the biometrics appointment', detail: 'You will get a notice with date, time, and an Application Support Center. Bring the notice and photo ID. Fingerprints and photo are taken for the new card.', duration: '30 min' },
             {
                 phase: 'wait', title: 'Track your case', detail: 'Processing takes 6–12 months depending on your field office. Check status online with your receipt number. Do not travel internationally with an expired card without first getting an I-551 stamp.', duration: '6–12 months',
@@ -697,6 +700,7 @@ export const guides: Guide[] = [
         slug: 'how-to-apply-for-aca-health-insurance',
         country: 'us',
         updatedAt: '2025',
+        lastReviewed: '2026-10-16',
         title: 'How to Get Health Insurance Through the ACA Marketplace',
         metaTitle: 'How to Apply for ACA Marketplace Health Insurance: Step-by-Step',
         description: 'ACA marketplace insurance guide: open enrollment dates, subsidies based on income, plan metal tiers, and how to apply at healthcare.gov or your state exchange.',
@@ -704,8 +708,8 @@ export const guides: Guide[] = [
         audience: ['Native', 'Immigrant'],
         difficulty: 'Medium',
         totalTime: '1–2 hours',
-        totalCost: '$0–$150+/month after subsidies',
-        summary: 'Apply at healthcare.gov (or your state exchange) during open enrollment (Nov 1 – Jan 15). Subsidies can drop premiums to $10 or less for low and middle incomes — most enrollees qualify.',
+        totalCost: 'Varies — credits now limited to 100–400% of the poverty level',
+        summary: 'Apply at healthcare.gov (or your state exchange) during open enrollment (Nov 1 – Jan 15). Premium tax credits are available if your household income is between 100% and 400% of the federal poverty level — the enhanced credits that expanded subsidies from 2021–2025 expired on 31 December 2025, so expect to pay more than in 2025.',
         documents: [
             'Social Security numbers (or document numbers for legal immigrants)',
             'Income estimate: pay stubs, W-2s, or last tax return',
@@ -715,26 +719,26 @@ export const guides: Guide[] = [
         ],
         steps: [
             {
-                phase: 'before', title: 'Know your enrollment window', detail: 'Open enrollment runs November 1 to January 15 (Jan 15 deadline for Feb 1 coverage in most states). Outside this window you need a qualifying life event — job loss, marriage, moving, having a baby — for a 60-day special enrollment window.', duration: '10 min',
+                phase: 'before', title: 'Know your enrollment window', detail: 'Open enrollment runs November 1 to January 15. Enroll by December 15 for coverage starting January 1; enroll December 16 – January 15 for coverage starting February 1. Outside this window you need a qualifying life event — job loss, marriage, moving, having a baby — for a 60-day special enrollment window.', duration: '10 min',
                 links: [
                     { label: 'Healthcare.gov', href: 'https://www.healthcare.gov/' },
                 ],
             },
             { phase: 'before', title: 'Estimate your household income', detail: 'Subsidies are based on expected yearly income. Use recent pay stubs × frequency. Overestimating means repaying credits at tax time; underestimating means a bigger refund.', duration: '30 min' },
             {
-                phase: 'before', title: 'Check if you qualify for Medicaid instead', detail: 'In expansion states, incomes under ~$21,000 (single) qualify for free Medicaid — the marketplace automatically routes you there. In non-expansion states there is a coverage gap.', duration: '15 min',
+                phase: 'before', title: 'Check if you qualify for Medicaid instead', detail: 'In expansion states, incomes under 138% of the federal poverty level (about $22,000 for a single person in 2026) qualify for free Medicaid — the marketplace automatically routes you there. In non-expansion states there is a coverage gap.', duration: '15 min',
                 links: [
                     { label: 'Turning 65? Medicare guide', href: '/guides/how-to-apply-for-medicare/' },
                 ],
             },
-            { phase: 'fill', title: 'Create an account and apply', detail: 'At healthcare.gov (or your state exchange like Covered California, NY State of Health). The application asks household, income, and citizenship/immigration details. Lawfully present immigrants qualify regardless of status duration.', duration: '45–60 min' },
+            { phase: 'fill', title: 'Create an account and apply', detail: 'At healthcare.gov (or your state exchange like Covered California, NY State of Health). The application asks household, income, and citizenship/immigration details. From 1 January 2027, premium tax credits and extra savings are limited to lawful permanent residents, Cuban/Haitian entrants, and Compact of Free Association migrants; other lawfully present immigrants can still buy Marketplace coverage without subsidies. DACA recipients cannot enroll in Marketplace coverage (since 25 August 2025).', duration: '45–60 min' },
             { phase: 'fill', title: 'Compare plans and pick a tier', detail: 'Bronze = lowest premium, high deductible (good if healthy). Silver = best value if you qualify for extra savings. Gold/Platinum = higher premiums, lower costs if you use care often. Check that your doctors are in-network.', duration: '30–60 min' },
             { phase: 'submit', title: 'Enroll and pay your first premium', detail: 'Pick a plan, enroll, then PAY the first premium directly to the insurer — coverage does not start until payment clears, even if the marketplace says "enrolled."', duration: '15 min' },
             { phase: 'followup', title: 'Report income changes', detail: 'Big income changes during the year change your subsidy. Report them to avoid surprises at tax time.', duration: 'ongoing' },
         ],
         faqs: [
-            { q: 'What income gets the biggest subsidy?', a: 'Premium tax credits cap your premium at a share of income — roughly 0–8.5% depending on earnings. In 2025, a single person earning ~$21,000–$32,000 can often get a robust Silver plan for $0–$10/month after subsidies.' },
-            { q: 'Can immigrants use the marketplace?', a: 'Lawfully present immigrants (green card holders, visa holders, DACA, TPS, and others) can buy marketplace plans and get subsidies. Undocumented residents cannot use the federal marketplace but may access state programs or community clinics.' },
+            { q: 'What income gets the biggest subsidy?', a: 'Premium tax credits are available for household incomes between 100% and 400% of the federal poverty level (for 2027 coverage, $15,960–$63,840 for a single person, per HealthCare.gov). The enhanced credits that capped premiums at 0–8.5% of income expired on 31 December 2025, so credits are smaller than in 2025 — compare plans rather than assuming a $0 premium.' },
+            { q: 'Can immigrants use the marketplace?', a: 'Lawfully present immigrants can buy marketplace plans. From 1 January 2027, only lawful permanent residents, Cuban/Haitian entrants, and COFA migrants qualify for premium tax credits and extra savings; other lawfully present immigrants (including TPS holders and visa holders) can enroll without subsidies. DACA recipients cannot enroll in Marketplace coverage. Undocumented residents cannot use the federal marketplace but may access state programs or community clinics.' },
             { q: 'What happens if I miss open enrollment?', a: 'You must wait a full year unless you have a qualifying life event (losing job coverage, marriage, divorce, new baby, moving states). Short-term plans exist but do not cover pre-existing conditions.' },
         ],
     },
@@ -742,13 +746,14 @@ export const guides: Guide[] = [
         slug: 'how-to-replace-a-lost-passport',
         country: 'us',
         updatedAt: '2025',
+        lastReviewed: '2026-10-16',
         title: 'How to Replace a Lost or Stolen Passport',
         metaTitle: 'How to Replace a Lost or Stolen US Passport: Step-by-Step',
         description: 'Lost passport replacement guide: reporting it lost/stolen, Form DS-11 and DS-64, replacement fees, expedited options, and travel emergencies.',
         category: 'ids',
         audience: ['Native', 'Immigrant'],
         difficulty: 'Easy',
-        totalTime: '6–8 weeks routine',
+        totalTime: '4–6 weeks routine',
         totalCost: '$165 (same as new passport)',
         summary: 'Report the loss immediately (online or by phone), then reapply in person with Form DS-11 plus Form DS-64. A lost passport reported stolen is invalidated to prevent misuse.',
         documents: [
@@ -785,7 +790,7 @@ export const guides: Guide[] = [
                     { label: 'Need your birth certificate?', href: '/guides/how-to-get-a-copy-of-birth-certificate/' },
                 ],
             },
-            { phase: 'wait', title: 'Wait for the replacement', detail: 'Routine: 6–8 weeks. Expedited: 2–3 weeks for +$60. Emergency travel within 14 days? Make an appointment at a regional passport agency.', duration: '6–8 weeks' },
+            { phase: 'wait', title: 'Wait for the replacement', detail: 'Routine: 4–6 weeks (plus up to 2 weeks mailing each way). Expedited: 2–3 weeks for +$60. Emergency travel within 14 days? Make an appointment at a regional passport agency.', duration: '4–6 weeks' },
             { phase: 'receive', title: 'Receive your new passport', detail: 'New number, new book. Update any visas or Global Entry/TSA PreCheck profiles tied to the old passport number.', duration: '—' },
         ],
         faqs: [
@@ -794,7 +799,7 @@ export const guides: Guide[] = [
             { q: 'Will a lost passport delay my replacement?', a: 'Not usually — the process is the same as a first-time application. The DS-64 statement replaces the old passport as your record.' },
             { q: 'Which forms do I need — DS-11, DS-64, or both?', a: 'Both. DS-64 is the statement explaining how the passport was lost or stolen; DS-11 is the application for the replacement itself. Submit them together in person — a lost passport cannot be replaced by mail with DS-82.' },
             { q: 'How much does a lost passport replacement cost?', a: 'The same as a new adult passport book: $130 application fee plus a $35 execution fee ($165 total). The DS-64 loss statement itself is free. Fees are non-refundable, even if the passport turns up later.' },
-            { q: 'How fast can I get the replacement?', a: 'Routine service takes several weeks; expedited service (extra $60) shortens it. If you travel within 14 days, book an urgent-travel appointment at a passport agency. For a life-or-death emergency within 3 days, call the National Passport Information Center for an emergency appointment.' },
+            { q: 'How fast can I get the replacement?', a: 'Routine service takes 4–6 weeks (plus mailing time); expedited service (extra $60) takes 2–3 weeks. If you travel within 14 days, book an urgent-travel appointment at a passport agency. For a life-or-death emergency within 3 days, call the National Passport Information Center for an emergency appointment.' },
         ],
     },
     {
