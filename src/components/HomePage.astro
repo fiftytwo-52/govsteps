@@ -45,8 +45,11 @@ const guideSearch = JSON.stringify(
     };
   }),
 );
+// Root (/) is both the US hub AND the site front door Google shows for
+// brand queries, so its title/description cover all four countries.
+// /uk, /can, /uae keep their country-specific titles.
 const pageTitle = code === 'us'
-  ? 'GovSteps — Step-by-Step Guides for US Government Paperwork'
+  ? 'GovSteps — Step-by-Step Guides for US, UK, Canada & UAE'
   : code === 'uk'
   ? 'GovSteps — Step-by-Step Guides for UK Government Paperwork'
   : code === 'ca'
@@ -54,7 +57,7 @@ const pageTitle = code === 'us'
   : 'GovSteps — Step-by-Step Guides for UAE Government Paperwork';
 
 const pageDescription = code === 'us'
-  ? 'Step-by-step guides for US government paperwork: taxes, immigration, passports, IDs, and benefits. Costs, fees, and verified official links.'
+  ? 'Step-by-step guides for US, UK, Canada and UAE government paperwork: taxes, immigration, passports, IDs, and benefits. Costs, fees, and verified official links.'
   : `Step-by-step guides for ${country.name} government paperwork: taxes, immigration, passports, IDs, and benefits. Costs, fees, and verified official links.`;
 
 const homeFaqs = [
