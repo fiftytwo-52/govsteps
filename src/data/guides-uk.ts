@@ -890,6 +890,7 @@ export const guides: Guide[] = [
         slug: 'how-to-register-a-birth-in-the-uk',
         country: 'uk',
         updatedAt: '2025',
+        lastReviewed: '2026-10-17',
         title: 'How to Register a Birth in the UK',
         metaTitle: 'How to Register a Birth in the UK: Deadlines, Documents and Costs',
         description: 'Register a baby born in the UK: the 42-day deadline, who can register, what to bring, certificate costs, and how citizenship works for children born in the UK.',
@@ -898,7 +899,7 @@ export const guides: Guide[] = [
         difficulty: 'Easy',
         totalTime: '30-minute appointment (within 42 days of the birth)',
         totalCost: 'Free to register; £12.50 per certificate copy',
-        summary: 'Every birth in England and Wales must be registered within 42 days (21 days in Scotland) at a register office. Registration itself is free — you pay only for certified copies of the birth certificate, which your child will need for passports, benefits, and school enrolment for life.',
+        summary: 'Every birth in England, Wales and Northern Ireland must be registered within 42 days (21 days in Scotland) at a register office. Registration itself is free — you pay only for certified copies of the birth certificate, which your child will need for passports, benefits, and school enrolment for life.',
         documents: [
             'Hospital birth record / discharge papers',
             'Your passports or ID',
@@ -920,7 +921,7 @@ export const guides: Guide[] = [
                     { label: 'Order certificates (gov.uk)', href: 'https://www.gov.uk/order-copy-birth-death-marriage-certificate' },
                 ],
             },
-            { phase: 'followup', title: 'Check your child\'s citizenship status', detail: 'A UK birth certificate does not automatically mean British citizenship. Children born in the UK are British if at least one parent was British or settled (ILR) at the time of birth. Otherwise the child may be able to register as British after you get settled status or after 10 years of residence.' },
+            { phase: 'followup', title: 'Check your child\'s citizenship status', detail: 'A UK birth certificate does not automatically mean British citizenship. Children born in the UK are British if at least one parent was British or settled (ILR) at the time of birth. Otherwise the child may be able to register as British after you get settled status or after the first 10 years of life (with no more than 90 days\' absence in each year).' },
             { phase: 'receive', title: 'Use the certificate for everything that follows', detail: 'The birth certificate unlocks the paperwork chain: add the child to your Child Benefit claim, apply for their first passport (if eligible), and register with a GP. Keep the certificates somewhere safe — they are the child\'s primary identity document for decades.' },
         ],
         faqs: [
@@ -933,6 +934,7 @@ export const guides: Guide[] = [
         slug: 'how-to-open-a-uk-bank-account-new-immigrant',
         country: 'uk',
         updatedAt: '2025',
+        lastReviewed: '2026-10-17',
         title: 'How to Open a UK Bank Account as a New Immigrant',
         metaTitle: 'How to Open a UK Bank Account as a New Immigrant (2025 Guide)',
         description: 'Open a UK bank account as a newcomer: which banks accept immigrants, documents to prepare, fast app-based onboarding, and avoiding rejections.',
@@ -941,9 +943,9 @@ export const guides: Guide[] = [
         difficulty: 'Medium',
         totalTime: '1 day to 2 weeks',
         totalCost: 'Free (standard accounts)',
-        summary: 'You need a UK bank account for salary, rent, and bills — but most banks want proof of address, which is hard in your first weeks. App-based banks (Monzo, Starling, Revolut) often onboard newcomers with just a passport and visa, and every major bank must offer a free basic account to applicants.',
+        summary: 'You need a UK bank account for salary, rent, and bills — but most banks want proof of address, which is hard in your first weeks. App-based banks (Monzo, Starling, Revolut) often onboard newcomers with just a passport and visa, and the nine largest personal current account providers must offer a free basic account to eligible applicants (legally resident in the UK with no other UK payment account with those features).',
         documents: [
-            'Passport with visa / BRP or eVisa share code',
+            'Passport with visa / eVisa share code',
             'Proof of UK address (tenancy agreement, bank letter, or council tax bill)',
             'Proof of income or employment (helps but not always required)',
             'Home-country bank statements (some banks ask for 3 months)',
@@ -952,7 +954,7 @@ export const guides: Guide[] = [
             {
                 phase: 'before', title: 'Understand the two document hurdles', detail: 'Banks must verify your identity (passport + visa is enough) and your UK address (the hard part). If you have no UK address history, target banks that accept a tenancy agreement or employer letter, or start with an app-based bank.', duration: '15 min',
                 links: [
-                    { label: 'Opening a bank account (gov.uk)', href: 'https://www.gov.uk/browse/tax' },
+                    { label: 'Opening a bank account (gov.uk)', href: 'https://www.gov.uk/government/collections/basic-bank-accounts' },
                 ],
             },
             {
@@ -961,8 +963,8 @@ export const guides: Guide[] = [
                     { label: 'FSCS protection checker', href: 'https://www.fscs.org.uk/check' },
                 ],
             },
-            { phase: 'fill', title: 'Apply for a high-street account once you have an address', detail: 'With a tenancy agreement or utility bill, apply to Barclays, HSBC, Lloyds, NatWest, or Nationwide online or in branch. Bring your passport, visa/BRP or share code, and address proof. Some banks let you book a branch appointment online — do this, walk-ins can wait weeks.' },
-            { phase: 'submit', title: 'Ask for a basic account if rejected', detail: 'If a bank refuses you a standard current account, it must consider you for a free basic bank account — no overdraft, no fees, but full debit card and direct debit facilities. Rejection for credit reasons cannot block you from a basic account.' },
+            { phase: 'fill', title: 'Apply for a high-street account once you have an address', detail: 'With a tenancy agreement or utility bill, apply to Barclays, HSBC, Lloyds, NatWest, or Nationwide online or in branch. Bring your passport, visa or eVisa share code, and address proof. Some banks let you book a branch appointment online — do this, walk-ins can wait weeks.' },
+            { phase: 'submit', title: 'Ask for a basic account if rejected', detail: 'If one of the nine largest providers refuses you a standard current account, ask about a free basic bank account — it must consider eligible applicants — no overdraft, no fees, but full debit card and direct debit facilities. Rejection for credit reasons cannot block you from a basic account.' },
             { phase: 'followup', title: 'Build your UK financial footprint', detail: 'Once the account is open, set up your salary payment, register for online banking, and keep the account active. After a few months of statements you will have the proof-of-address trail that makes renting, getting a phone contract, and switching banks much easier.' },
             { phase: 'receive', title: 'Switch later for better deals', detail: 'After you are settled, the Current Account Switch Service moves your account (with all direct debits) to a new bank in 7 working days, free, with a guarantee that nothing breaks. Many banks pay switch bonuses of £100–£200.' },
         ],
@@ -1032,13 +1034,14 @@ export const guides: Guide[] = [
         slug: 'how-to-claim-a-tax-refund-uk',
         country: 'uk',
         updatedAt: '2025',
+        lastReviewed: '2026-10-17',
         title: 'How to Claim a Tax Refund in the UK',
         metaTitle: 'How to Claim a UK Tax Refund: P800s, Uniform Relief and More',
         description: 'Claim a UK tax refund: your Personal Tax Account, P800 letters, uniform and work-from-home relief, marriage allowance, and refunds after leaving.',
         category: 'taxes',
         audience: ['Native', 'Immigrant'],
         difficulty: 'Easy',
-        totalTime: '5 min check; refunds pay in 2–6 weeks',
+        totalTime: '5 min check; online refunds usually within 2 weeks',
         totalCost: 'Free',
         summary: 'HMRC over-collects tax from millions of workers each year through emergency tax codes, mid-year job changes, and unclaimed reliefs. Check your Personal Tax Account — most refunds are claimed in 5 minutes online, and HMRC automatically posts P800 letters for many overpayments.',
         documents: [
@@ -1061,7 +1064,7 @@ export const guides: Guide[] = [
             },
             { phase: 'fill', title: 'Claim reliefs you are owed', detail: 'Common ones: uniform tax relief (flat-rate deduction if you wash your own work uniform — claim for the current year plus 4 back years), Marriage Allowance (transfer 10% of your allowance to a spouse, worth up to £252/year), and professional fees or subscriptions. Claim through your tax account or form P87.' },
             {
-                phase: 'submit', title: 'Respond to a P800 if you get one', detail: 'If HMRC spots an overpayment they send a P800 calculation after the tax year ends (usually June–October). Follow the link in the letter to claim online — refunds go to your bank in about 2–6 weeks. Beware: HMRC never asks for card details by email or phone; P800s arrive by post.', duration: '10 min',
+                phase: 'submit', title: 'Respond to a P800 if you get one', detail: 'If HMRC spots an overpayment they send a P800 calculation after the tax year ends (usually June–October). Follow the link in the letter to claim online — refunds claimed through your online account usually reach your bank within 2 weeks of making the claim. Beware: HMRC never asks for card details by email or phone; P800s arrive by post.', duration: '10 min',
                 links: [
                     { label: 'P800 and refunds (gov.uk)', href: 'https://www.gov.uk/claim-tax-refund' },
                 ],
@@ -1070,7 +1073,7 @@ export const guides: Guide[] = [
             { phase: 'receive', title: 'Fix the cause, not just the symptom', detail: 'After any refund, make sure your tax code is corrected for the current year — otherwise you overpay again next April. Ask your employer to check with HMRC, or update your estimated income in your Personal Tax Account so the code self-corrects.' },
         ],
         faqs: [
-            { q: 'How far back can I claim?', a: 'Four tax years plus the current one. For example, until 5 April 2026 you can claim back to the 2020/21 tax year. Older overpayments are gone for good — which is why the uniform and marriage allowance back-claims are worth doing in one sitting.' },
+            { q: 'How far back can I claim?', a: 'Four tax years plus the current one. For example, until 5 April 2027 you can claim back to the 2021/22 tax year. Older overpayments are gone for good — which is why the uniform and marriage allowance back-claims are worth doing in one sitting.' },
             { q: 'A company says they can get me a bigger refund for a fee.', a: 'Be careful. Refund firms file the same free claims you can make yourself and take a percentage (often 25–50%) of the refund. Some file false relief claims, leaving you liable when HMRC reopens them. HMRC only contacts you about refunds through official channels.' },
             { q: 'I am on a visa and leaving the UK permanently. Do I get all my tax back?', a: 'No — you get back only the tax overpaid under PAYE for the part-year you worked, not all tax paid. Your employer gives you a P45 when you leave; submit it with form P85. National Insurance contributions generally cannot be refunded, though some countries have totalisation agreements that count them toward pensions.' },
         ],

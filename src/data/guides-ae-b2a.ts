@@ -9,7 +9,7 @@ export const guides: Guide[] = [
         slug: 'how-to-apply-for-a-uae-green-visa',
         country: 'ae',
         updatedAt: '2026',
-        lastReviewed: '2026-10-13',
+        lastReviewed: '2026-10-17',
         title: 'How to Apply for a UAE Green Visa (5-Year Self-Sponsored Residence)',
         metaTitle: 'UAE Green Visa: Who Qualifies, How to Apply, Fees (2026)',
         description: 'The 5-year self-sponsored Green Visa for skilled workers, freelancers/self-employed, and investors: eligibility thresholds, MOHRE permits, documents, fees, and application steps.',
@@ -32,7 +32,7 @@ export const guides: Guide[] = [
         ],
         steps: [
             {
-                phase: 'before', title: 'Confirm your category and threshold', detail: 'Skilled workers: MOHRE skilled-worker permit, Skill Levels 1–3, bachelor degree or equivalent, and a minimum monthly salary (widely reported as AED 15,000 — confirm the current figure on the ICP service page before applying). Freelancers/self-employed: MOHRE freelancing or self-employment permit, degree or specialised diploma, and annual self-employment income of at least AED 250,000 over the previous two years, or proof of financial solvency. Investors/partners: contribution to a UAE company of at least AED 1,000,000 (per ICP residence rules), or proof of partnership plus licences and approvals.', duration: 'Self-check',
+                phase: 'before', title: 'Confirm your category and threshold', detail: 'Skilled workers: MOHRE skilled-worker permit, Skill Levels 1–3, bachelor degree or equivalent, and a minimum monthly salary of AED 15,000 (per Cabinet Resolution No. 65 of 2022). Freelancers/self-employed: MOHRE freelancing or self-employment permit, degree or specialised diploma, and annual self-employment income of at least AED 360,000 over the previous two years, or proof of financial solvency. Investors/partners: contribution to a UAE company of at least AED 1,000,000 (per ICP residence rules), or proof of partnership plus licences and approvals.', duration: 'Self-check',
                 links: [
                     { label: 'Green visa (u.ae)', href: 'https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/Investor-visa/Green-visa' },
                     { label: 'Issuing Residency Permit (ICP)', href: 'https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64' },
@@ -85,7 +85,7 @@ export const guides: Guide[] = [
         slug: 'how-to-apply-for-a-uae-remote-work-visa',
         country: 'ae',
         updatedAt: '2026',
-        lastReviewed: '2026-10-13',
+        lastReviewed: '2026-10-17',
         title: 'How to Apply for a UAE Remote Work Visa (Virtual Working Programme)',
         metaTitle: 'UAE Remote Work Visa (Virtual Working Programme): Requirements & Steps (2026)',
         description: 'Live in the UAE while working remotely for a company outside the UAE: USD 3,500/month income proof, employer letter, health insurance, entry permit, and residence steps.',
@@ -107,7 +107,7 @@ export const guides: Guide[] = [
         ],
         steps: [
             {
-                phase: 'before', title: 'Confirm you qualify', detail: 'You must be employed by, or contracted to, a company or organisation based outside the UAE, and your work must be performed remotely. Your income must be at least USD 3,500 per month or equivalent in foreign currency. Business owners have a separate, higher income test — confirm it on the ICP/GDRFA portal before applying. You may not work for a UAE-based employer on this visa.', duration: 'Self-check',
+                phase: 'before', title: 'Confirm you qualify', detail: 'You must be employed by, or contracted to, a company or organisation based outside the UAE, and your work must be performed remotely. Your income must be at least USD 3,500 per month or equivalent in foreign currency. The federal rule (Cabinet Resolution 65/2022, Art. 50) sets one income test — USD 3,500/month — for all applicants; confirm whether GDRFA Dubai applies any different test before applying. You may not work for a UAE-based employer on this visa.', duration: 'Self-check',
                 links: [
                     { label: 'Residence visa for working outside the UAE (u.ae)', href: 'https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/Residence-visa/residence-visa-for-working-outside-the-uae' },
                 ],
@@ -159,7 +159,7 @@ export const guides: Guide[] = [
         slug: 'how-to-apply-for-a-uae-student-visa',
         country: 'ae',
         updatedAt: '2026',
-        lastReviewed: '2026-10-13',
+        lastReviewed: '2026-10-17',
         title: 'How to Apply for a UAE Student Visa (University-Sponsored Residence)',
         metaTitle: 'UAE Student Visa: Requirements, Sponsor, Fees & Renewal (2026)',
         description: 'Study in the UAE on a residence visa sponsored by your accredited university or a resident parent: admission letter, study-duration certificate, medical, Emirates ID, and renewal.',
@@ -168,7 +168,7 @@ export const guides: Guide[] = [
         difficulty: 'Medium',
         totalTime: '2–4 weeks (end to end)',
         totalCost: 'Varies — confirm on ICP (residence issuance per ICP fee list + medical + Emirates ID + insurance)',
-        summary: 'A student can stay in the UAE for studying either under the sponsorship of a resident parent or under the sponsorship of the accredited university or college they study at — universities facilitate the process. The student residence visa is valid 1 year and renewable with proof of continued enrolment. You will need an admission letter, a university certificate stating the duration of study, a medical fitness test, an Emirates ID, and health insurance.',
+        summary: 'A student can stay in the UAE for studying either under the sponsorship of a resident parent or under the sponsorship of the accredited university or college they study at — universities facilitate the process. The student residence permit is issued for the duration of the study programme, and you may remain in the UAE for 180 days after completing the study period. Renew/extend in line with continued enrolment. You will need an admission letter, a university certificate stating the duration of study, a medical fitness test, an Emirates ID, and health insurance.',
         documents: [
             'Passport (at least 6 months remaining)',
             'Passport-size photo (white background)',
@@ -211,13 +211,13 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'submit', title: 'Residence permit is issued', detail: 'The student residence permit is issued for 1 year. Per ICP\'s published fee list, residence issuance is AED 100 application + AED 100 per year + AED 100 smart services; confirm the total in-portal, plus medical, Emirates ID, and insurance costs.', duration: 'Varies', cost: 'From ~AED 300 (residence issuance)',
+                phase: 'submit', title: 'Residence permit is issued', detail: 'The student residence permit is issued for the duration of the study programme (per ICP), and you may remain in the UAE for 180 days after completing the study period. Per ICP\'s published fee list, residence issuance is AED 100 application + AED 100 per year + AED 100 smart services; confirm the total in-portal, plus medical, Emirates ID, and insurance costs.', duration: 'Varies', cost: 'From ~AED 300 (residence issuance)',
                 links: [
                     { label: 'Issuing Residency Permit (ICP)', href: 'https://icp.gov.ae/en/services-details/?serviceid=64afe3c1035448005bd52e64' },
                 ],
             },
             {
-                phase: 'followup', title: 'Renew annually', detail: 'Renew each year with proof of continued enrolment (a fresh university certificate of study duration). Male students over 25 on a parent\'s sponsorship need evidence of attending a higher educational institute to stay on the parent\'s sponsorship.', duration: 'Before expiry',
+                phase: 'followup', title: 'Renew/extend with continued enrolment', detail: 'Extend in line with continued enrolment (a fresh university certificate of study duration). Male students over 25 on a parent\'s sponsorship need evidence of attending a higher educational institute to stay on the parent\'s sponsorship.', duration: 'Before expiry',
                 links: [
                     { label: 'Residence visa for studying in the UAE (u.ae)', href: 'https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/residence-visa-for-studying-in-the-uae' },
                 ],
@@ -225,7 +225,7 @@ export const guides: Guide[] = [
         ],
         faqs: [
             { q: 'Who sponsors a student visa — the university or a parent?', a: 'Either. You can be sponsored by the accredited university/college you study at, or by a resident parent. Universities usually facilitate the process for their students.' },
-            { q: 'How long is a student visa valid?', a: '1 year, renewable annually with proof of continued enrolment.' },
+            { q: 'How long is a student visa valid?', a: 'For the duration of the study programme, extendable with proof of continued enrolment — plus 180 days after completing the study period.' },
             { q: 'Can I work while studying on a student visa?', a: 'Part-time work may be possible with your university\'s permission and the relevant permit — confirm the current rules with your university and MOHRE before taking any job.' },
         ],
     },

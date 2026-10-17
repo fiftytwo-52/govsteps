@@ -550,14 +550,15 @@ export const guides: Guide[] = [
         slug: 'how-to-apply-for-a-canadian-work-permit',
         country: 'ca',
         updatedAt: '2025',
+        lastReviewed: '2026-10-17',
         title: 'How to Apply for a Canadian Work Permit',
         metaTitle: 'How to Apply for a Work Permit in Canada: Step-by-Step Guide (2025)',
         description: 'Canadian work permit routes: employer-specific permits with an LMIA, open work permits (PGWP, IEC, spousal), the portal, and processing times.',
         category: 'immigration',
         audience: ['Immigrant'],
         difficulty: 'Hard',
-        totalTime: '3 weeks (employer-specific online goal) to 6+ months',
-        totalCost: '$155 permit + $100 open work permit holder fee + $85 biometrics',
+        totalTime: 'Varies by stream and country — check current times on canada.ca',
+        totalCost: 'Employer-specific: $155 + $85 biometrics = $240; open permit: $155 + $100 + $85 = $340',
         summary: 'Canadian work permits are employer-specific (tied to one employer and LMIA) or open (any employer — post-graduation, spousal, IEC working holiday). The online application through the IRCC portal needs the employer\'s offer details (LMIA number or LMIA-exempt category), biometrics, and proof you will leave at the end.',
         documents: [
             'Valid passport',
@@ -584,7 +585,7 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'fill', title: 'Submit the online application', detail: 'Apply through the IRCC portal: answer eligibility questions, upload the offer letter (with LMIA number or exemption code), passport, photos, and supporting proof. Employer-specific permits now target a 3-week online processing goal; paper and complex cases run longer. Fees: $155 + $100 (open permit holder fee) + $85 biometrics.', duration: '2–4 hours',
+                phase: 'fill', title: 'Submit the online application', detail: 'Apply through the IRCC portal: answer eligibility questions, upload the offer letter (with LMIA number or exemption code), passport, photos, and supporting proof. Processing times vary by stream and country — check current times on canada.ca; paper and complex cases run longer. Fees: $155 + $85 biometrics for an employer-specific permit; add the $100 open work permit holder fee for an open permit.', duration: '2–4 hours',
                 links: [
                     { label: 'Apply online (canada.ca)', href: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/permit-application.html' },
                 ],
@@ -593,14 +594,14 @@ export const guides: Guide[] = [
                 phase: 'submit', title: 'Give biometrics', detail: 'After applying, you get a biometrics instruction letter within 24–72 hours — book at a VAC (Visa Application Centre) within 30 days. Fingerprints/photo take 15 minutes; fee is $85 (or $170 family). Biometrics are reused for 10 years across IRCC applications.', duration: '15 min + booking'
             },
             {
-                phase: 'wait', title: 'Wait for the decision and passport request', detail: 'IRCC may ask for extra documents or an upfront medical (healthcare, food handling, or certain-country applicants). Once approved you receive either a port-of-entry letter of introduction (apply from abroad — show it at the border where the officer issues the actual permit) or, if applying from inside Canada, the permit by mail.', duration: '3 weeks to 6+ months by route'
+                phase: 'wait', title: 'Wait for the decision and passport request', detail: 'IRCC may ask for extra documents or an upfront medical (healthcare, food handling, or certain-country applicants). Once approved you receive either a port-of-entry letter of introduction (apply from abroad — show it at the border where the officer issues the actual permit) or, if applying from inside Canada, the permit by mail.', duration: 'Varies by stream and country'
             },
             { phase: 'followup', title: 'Land and start work correctly', detail: 'At the border the officer prints your work permit — check the employer name, NOC, location, and expiry date BEFORE leaving the counter; errors are fixable on the spot but painful later. Then apply for your SIN (the permit is your status document) and register for provincial health coverage if the permit is 12+ months (province-dependent).', duration: '1–2 hours' },
             { phase: 'receive', title: 'Know your permit conditions', detail: 'Employer-specific permits tie you to one employer, one location, one role — changing jobs means a NEW permit before starting. Open permits let you work for anyone in Canada. Both stop the day they expire; apply for extensions at least 30 days before expiry to get maintained status.', duration: '—' },
         ],
         faqs: [
-            { q: 'Can my spouse work while I am on a work permit?', a: 'Often yes — spouses/common-law partners of workers in TEER 0–3 jobs (and some TEER 4–5 with 6+ months remaining) can get open work permits. The rules changed in 2025 (spousal open permits were narrowed), so verify the current policy for your NOC before your partner relies on it.' },
-            { q: 'What is maintained (implied) status?', a: 'If you apply to extend before your permit expires, you keep working under the same conditions until a decision. It does not apply if the permit already expired — then you must stop work and may need restoration (extra $229 fee, 90-day window).' },
+            { q: 'Can my spouse work while I am on a work permit?', a: 'Often yes — spouses/common-law partners can get open work permits only if the worker is in TEER 0 or 1, or a select TEER 2/3 occupation (natural and applied sciences, construction, health care, natural resources, education, sports, or military) with a work permit/authorization of at least 16 months (rules in force since 21 January 2025). The rules changed in 2025 (spousal open permits were narrowed), so verify the current policy for your NOC before your partner relies on it.' },
+            { q: 'What is maintained (implied) status?', a: 'If you apply to extend before your permit expires, you keep working under the same conditions until a decision. It does not apply if the permit already expired — then you must stop work and may need restoration ($246.25 restoration fee + $155 new work permit = $401.25 total, 90-day window).' },
             { q: 'Do US citizens need an LMIA?', a: 'Not for USMCA (former NAFTA) professional occupations — Americans and Mexicans in listed professions with a job offer and qualifications get LMIA-exempt employer-specific permits, usually processed in weeks.' },
         ],
     },
@@ -608,6 +609,7 @@ export const guides: Guide[] = [
         slug: 'how-to-apply-for-a-canadian-study-permit',
         country: 'ca',
         updatedAt: '2025',
+        lastReviewed: '2026-10-17',
         title: 'How to Apply for a Canadian Study Permit',
         metaTitle: 'How to Apply for a Study Permit in Canada: Step-by-Step Guide (2025 Rules)',
         description: 'Canadian study permit: getting a PAL from a designated school, the IRCC portal, SDS closures, proof of funds, and work rules for students.',
@@ -615,12 +617,12 @@ export const guides: Guide[] = [
         audience: ['Immigrant'],
         difficulty: 'Medium',
         totalTime: '4–12 weeks (varies by country)',
-        totalCost: '$150 permit + $85 biometrics; $20,635 proof of funds (2025)',
-        summary: 'You need an acceptance letter from a Designated Learning Institution, a provincial Attestation Letter (PAL/TAL — required since 2024), and proof of $20,635 plus first-year tuition for yourself. Apply online through the IRCC portal; approved applicants abroad get a letter of introduction and, if needed, a visa to travel.',
+        totalCost: '$150 permit + $85 biometrics; $23,448 proof of funds (from 1 Sept 2026)',
+        summary: 'You need an acceptance letter from a Designated Learning Institution, a provincial Attestation Letter (PAL/TAL — required since 2024), and proof of $23,448 plus first-year tuition for yourself (for applications on or after 1 September 2026 — IRCC figure, reported by Hindustan Times). Apply online through the IRCC portal; approved applicants abroad get a letter of introduction and, if needed, a visa to travel.',
         documents: [
             'Letter of acceptance from a Designated Learning Institution (DLI)',
             'Provincial Attestation Letter (PAL or TAL — the school arranges this after you accept)',
-            'Proof of funds: $20,635 living cost + first-year tuition + travel (2025 threshold)',
+            'Proof of funds: $23,448 living cost + first-year tuition + travel (from 1 Sept 2026)',
             'Financial instruments: GIC, bank statements, education loan sanction letter, or sponsor documents',
             'Passport and photos',
             'Statement of purpose / letter of explanation',
@@ -634,10 +636,16 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'go', title: 'Get accepted and secure your PAL', detail: 'Apply to the program, pay the tuition deposit, and the school issues the acceptance letter and then requests a provincial attestation letter (PAL) on your behalf — most provinces turn these around in days to weeks. Your study permit application cannot proceed without a PAL unless you are exempt (master\'s/doctoral, K–12, and a few other categories).', duration: '2–6 weeks'
+                phase: 'go', title: 'Get accepted and secure your PAL', detail: 'Apply to the program, pay the tuition deposit, and the school issues the acceptance letter and then requests a provincial attestation letter (PAL) on your behalf — most provinces turn these around in days to weeks. Your study permit application cannot proceed without a PAL unless you are exempt (master\'s/doctoral students at public DLIs, K–12, and a few other categories, including existing permit holders extending at the same DLI and level of study).', duration: '2–6 weeks',
+                links: [
+                    { label: '2026 PAL exemptions (CIC News, reporting IRCC)', href: 'https://www.cicnews.com/2025/11/canada-announces-2026-study-permit-cap-1162628.html' },
+                ]
             },
             {
-                phase: 'fill', title: 'Prepare the financial proof', detail: 'As of 2025 you must show $20,635 for living costs (single applicant) PLUS first-year tuition and travel money. Acceptable evidence: GIC (Guaranteed Investment Certificate) from a Canadian bank, 4–6 months of bank statements with a credible history, approved education loan, or a combination. Large unexplained recent deposits trigger refusal.', duration: '1–2 weeks'
+                phase: 'fill', title: 'Prepare the financial proof', detail: 'For applications on or after 1 September 2026 you must show $23,448 for living costs (single applicant) PLUS first-year tuition and travel money (IRCC figure, reported by Hindustan Times). Acceptable evidence: GIC (Guaranteed Investment Certificate) from a Canadian bank, 4–6 months of bank statements with a credible history, approved education loan, or a combination. Large unexplained recent deposits trigger refusal.', duration: '1–2 weeks',
+                links: [
+                    { label: 'Proof-of-funds increase (Hindustan Times, reporting IRCC)', href: 'https://www.hindustantimes.com/nri/indian-students-planning-to-study-in-canada-face-higher-proof-of-funds-requirement-from-september-1-what-to-know-101787989311054.html' },
+                ]
             },
             {
                 phase: 'submit', title: 'Apply online through the IRCC portal', detail: 'Complete the eligibility questionnaire, upload acceptance letter, PAL, financial proof, statement of purpose, passport, and medical exam (upfront required for many countries). Fee: $150 + $85 biometrics. The letter of explanation matters — weak study-plan narratives are a leading refusal reason for certain regions.', duration: '2–4 hours',
@@ -651,7 +659,7 @@ export const guides: Guide[] = [
         ],
         faqs: [
             { q: 'Is the SDS (Student Direct Stream) still available?', a: 'No — IRCC ended SDS in November 2024. All study permit applications now go through the regular stream, so the old GIC-fast-track route is gone; GICs remain valid financial proof but no longer speed processing.' },
-            { q: 'What is a PAL and do I need one?', a: 'A Provincial Attestation Letter — a cap-allocation document provinces issue to your school confirming your seat counts against the federal study permit cap. You need one for most college and bachelor applications. Master\'s, doctoral, and K–12 applicants are exempt.' },
+            { q: 'What is a PAL and do I need one?', a: 'A Provincial Attestation Letter — a cap-allocation document provinces issue to your school confirming your seat counts against the federal study permit cap. You need one for most college and bachelor applications. Master\'s and doctoral students at public DLIs, and K–12 applicants, are exempt — as are existing study-permit holders extending at the same DLI and level of study (per IRCC, reported by CIC News).' },
             { q: 'Can my spouse come with me?', a: 'Spouses of university master\'s/doctoral students and some professional programs can still get open work permits, but the eligibility list was tightened in 2025. Spouses of college and bachelor students generally no longer qualify — plan finances on a single income.' },
         ],
     },
@@ -659,6 +667,7 @@ export const guides: Guide[] = [
         slug: 'how-to-apply-for-cra-my-account',
         country: 'ca',
         updatedAt: '2025',
+        lastReviewed: '2026-10-17',
         title: 'How to Register for CRA My Account',
         metaTitle: 'How to Register for CRA My Account: Step-by-Step Guide (2025)',
         description: 'Set up CRA My Account online: registration options, the mailed security code, auto-fill returns, and tracking benefits and refunds.',
@@ -670,7 +679,7 @@ export const guides: Guide[] = [
         summary: 'CRA My Account lets you see your Notice of Assessment, RRSP and TFSA contribution room, benefit payments, and — critically — Auto-fill My Return, which imports every slip the CRA already holds. Register with your SIN and one of three identification routes; full access needs a one-time code mailed to your address.',
         documents: [
             'SIN (Social Insurance Number)',
-            'A recent tax return filed (you need specific line amounts from it) OR a CRA-accepted digital ID (Interac document verification)',
+            'A recent tax return filed (you need specific line amounts from it) OR the CRA document verification service (photo of a government-issued ID)',
             'Current mailing address on file with the CRA (the security code goes there)',
         ],
         steps: [
@@ -681,7 +690,7 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'go', title: 'Choose a registration route', detail: 'Three options: (1) CRA sign-in with your SIN + date of birth + tax-return line amounts — fastest; (2) Interac document verification (newer, verifies your ID with your bank app in minutes); (3) a provincial digital ID where available. You also need a personal access code if the system cannot verify you fully — it then mails one.', duration: '15 min'
+                phase: 'go', title: 'Choose a registration route', detail: 'Three options: (1) CRA sign-in with your SIN + date of birth + tax-return line amounts — fastest; (2) CRA document verification service — verify identity by taking a photo of a government-issued ID (Canadian passport, driver\'s licence, or provincial/territorial photo ID) with a camera-enabled mobile device; gives immediate full access without waiting for the mailed code; (3) a provincial digital ID where available. You also need a personal access code if the system cannot verify you fully — it then mails one.', duration: '15 min'
             },
             {
                 phase: 'fill', title: 'Create the credential (username and password)', detail: 'Set up your CRA user ID and password directly, or use a Sign-in Partner (your bank\'s login — then no separate CRA credential). Write answers to the security questions where none of the answers can be guessed from your social media (first pet, first school are risky).', duration: '10 min'
@@ -694,7 +703,7 @@ export const guides: Guide[] = [
                 phase: 'submit', title: 'Enter the code and unlock full access', detail: 'Sign back in, enter the code, and the account unlocks permanently. Enable multi-factor authentication (passcode to your phone) — the CRA added this after a spate of phishing-related account takeovers, and it now prompts on new devices.', duration: '5 min'
             },
             { phase: 'followup', title: 'Use it: auto-fill, track, and fix', detail: 'At tax time, use Auto-fill My Return in your NETFILE software to import every T4/T5/T2202. Year-round: track benefit payments (CCB, CGEB), check RRSP/TFSA room before contributing, view your Notice of Assessment for citizenship applications, and correct returns with ReFILE or a T1 adjustment.', duration: 'Ongoing' },
-            { phase: 'receive', title: 'Stay secure', detail: 'The CRA NEVER texts links or asks for prepaid cards. Phishing texts about "CRA refunds" surge every tax season — report them (30-40 fraud reporting) and never enter your credentials from an emailed link. Sign in only by typing canada.ca yourself or using a bookmark.', duration: '—' },
+            { phase: 'receive', title: 'Stay secure', detail: 'The CRA NEVER texts links or asks for prepaid cards. Phishing texts about "CRA refunds" surge every tax season — report them to the Canadian Anti-Fraud Centre at antifraudcentre.ca or 1-888-495-8501 and never enter your credentials from an emailed link. Sign in only by typing canada.ca yourself or using a bookmark.', duration: '—' },
         ],
         faqs: [
             { q: 'I am a brand-new resident with no tax history. How do I register?', a: 'You generally need one filed return first. Newcomers can file a part-year or nil return for the arrival year — even with zero income — which creates the CRA record needed to pass identity verification, and unlocks benefit applications.' },
@@ -706,6 +715,7 @@ export const guides: Guide[] = [
         slug: 'how-to-register-to-vote-in-canada',
         country: 'ca',
         updatedAt: '2025',
+        lastReviewed: '2026-10-17',
         title: 'How to Register to Vote in Canada',
         metaTitle: 'How to Register to Vote in Canada: Step-by-Step Guide',
         description: 'Register to vote in Canadian federal elections: who can vote, the online registration process, voting on election day, and accepted ID.',
@@ -728,7 +738,7 @@ export const guides: Guide[] = [
                 ],
             },
             {
-                phase: 'fill', title: 'Register or update your address online', detail: 'Use the Elections Canada Online Voter Registration Service with your driver\'s licence number. You can check whether you are already registered, update your address after a move, or register for the first time. Changes made after an election is called may not take effect for that election.', duration: '10 min',
+                phase: 'fill', title: 'Register or update your address online', detail: 'Use the Elections Canada Online Voter Registration Service with your driver\'s licence number. You can check whether you are already registered, update your address after a move, or register for the first time. Online registration stays open until 6 p.m. on the Tuesday before election day; after that, register at your polling place when you go to vote.', duration: '10 min',
                 links: [
                     { label: 'Online Voter Registration Service', href: 'https://www.elections.ca/content.aspx?section=vot&dir=reg&document=index&lang=e' },
                 ],
